@@ -169,56 +169,35 @@ grøn som hovedfarve.</div>
     <p>
       Deltagerne svarer på siden <a href="evaluering.html">evaluering.html</a>, som du deler sidst på dagen.
       Siden viser din formular, når du har koblet den på, og indtil da viser den spørgsmålene til papirbrug.
-      Scriptet herunder opretter hele formularen og et svar-regneark for dig på én gang.
+      Vejledningen herunder sætter formularen op i Microsoft Forms på ti minutter.
     </p>
 
     <div class="exercise">
-      <span class="label">Opsætning, ca. 10 min, én gang</span>
+      <span class="label">Opsætning i Microsoft Forms, ca. 10 min, én gang</span>
       <ol class="steps">
-        <li>Gå til <a href="https://script.new" target="_blank" rel="noopener">script.new</a>, og log ind med din Google-konto.</li>
-        <li>Slet eksempelkoden, indsæt scriptet herunder, og tryk på <strong>Kør</strong>. Godkend adgangen første gang.</li>
-        <li>Åbn loggen (Ctrl og Enter eller menuen Udførelseslog). Der står tre links: deltagerlinket, redigeringslinket og regnearket med svar.</li>
-        <li>Åbn <code>evaluering.html</code> i repoet, og indsæt deltagerlinket i linjen med <code>FORMULAR_URL</code>. Commit, og siden er live om et øjeblik.</li>
-        <li>Del sidens adresse sidst på kursusdagen, eller vis den som QR-kode på projektoren.</li>
+        <li>Gå til <a href="https://forms.office.com" target="_blank" rel="noopener">forms.office.com</a>, log ind med din arbejdskonto, og opret en ny formular med navnet »AI i praksis, evaluering«.</li>
+        <li>Tilføj spørgsmålene fra arket ovenfor: et obligatorisk valg med Dag 1, Dag 2 og Dag 3, fire tekstspørgsmål med langt svar slået til, et bedømmelsesspørgsmål med tallene 1 til 10, og til sidst et tekstspørgsmål om, hvad der skulle have været anderledes.</li>
+        <li>Under indstillingerne: vælg at <strong>alle kan svare</strong>, og lad være med at registrere navne, så svarene er anonyme.</li>
+        <li>Klik på <strong>Indsaml svar</strong>, og kopiér linket.</li>
+        <li>Åbn <code>evaluering.html</code> i repoet, og indsæt linket i linjen med <code>FORMULAR_URL</code>. Commit, og siden er live om et øjeblik.</li>
+        <li>Del sidens adresse sidst på kursusdagen. Forms kan også vise en QR-kode under Indsaml svar, klar til projektoren.</li>
       </ol>
     </div>
 
-    <div class="prompt" data-copy>function opretEvalueringsformular() {
-  var form = FormApp.create('AI i praksis, evaluering');
-  form.setDescription('Fem hurtige spørgsmål, fem minutter, anonymt.');
-  form.addMultipleChoiceItem()
-    .setTitle('Hvilken kursusdag evaluerer du?')
-    .setChoiceValues(['Dag 1', 'Dag 2', 'Dag 3'])
-    .setRequired(true);
-  form.addParagraphTextItem().setTitle('Hvad er det vigtigste, du tager med fra i dag?');
-  form.addParagraphTextItem().setTitle('Hvilken øvelse gav mest mening for dig, og hvorfor?');
-  form.addParagraphTextItem().setTitle('Hvor gik det for hurtigt eller for langsomt?');
-  form.addParagraphTextItem().setTitle('Hvad vil du prøve på jobbet inden næste kursusdag?');
-  form.addScaleItem()
-    .setTitle('Hvor meget af det, du har lært i dag, kan du bruge direkte i dit arbejde?')
-    .setBounds(1, 10)
-    .setLabels('Ingenting', 'Det hele');
-  form.addParagraphTextItem().setTitle('Hvad skulle have været anderledes, før du ville give en 10?');
-  var regneark = SpreadsheetApp.create('AI i praksis, evalueringssvar');
-  form.setDestination(FormApp.DestinationType.SPREADSHEET, regneark.getId());
-  Logger.log('Deltagerlink: ' + form.getPublishedUrl());
-  Logger.log('Rediger formularen: ' + form.getEditUrl());
-  Logger.log('Svarene lander her: ' + regneark.getUrl());
-}</div>
-
     <div class="note">
-      <span class="label">Bruger I Microsoft?</span>
-      Microsoft Forms virker lige så godt: opret formularen med de samme spørgsmål på
-      <a href="https://forms.office.com" target="_blank" rel="noopener">forms.office.com</a>,
-      og indsæt delelinket i <code>evaluering.html</code> på samme måde. Svarene kan åbnes direkte i Excel.
+      <span class="label">Foretrækker du Google?</span>
+      Google Forms virker lige så godt: opret formularen med de samme spørgsmål på
+      <a href="https://forms.google.com" target="_blank" rel="noopener">forms.google.com</a>,
+      og indsæt delelinket i <code>evaluering.html</code> på samme måde.
     </div>
 
     <h3>Dataanalysen</h3>
     <p>
-      Alle svar lander automatisk i regnearket med tidspunkt og kursusdag som kolonner, så du kan
-      filtrere og sammenligne på tværs af dage og hold. Den hurtigste analyse er at kopiere svarene
-      fra arket og bruge prompten herunder i din AI-assistent. Det er i øvrigt præcis promptmønsteret
-      fra modul 3, brugt på dine egne data.
+      Fanen <strong>Svar</strong> i Forms viser automatisk diagrammer for hvert spørgsmål.
+      Vil du dybere ned, så klik <strong>Åbn i Excel</strong>: hvert svar er en række med tidspunkt
+      og kursusdag som kolonner, så du kan filtrere og sammenligne på tværs af dage og hold.
+      Den hurtigste analyse er at kopiere rækkerne fra Excel og bruge prompten herunder i din
+      AI-assistent. Det er i øvrigt præcis promptmønsteret fra modul 3, brugt på dine egne data.
     </p>
 
     <div class="prompt" data-copy>Du er min dataanalytiker. Herunder indsætter jeg evalueringssvar fra kurset
@@ -277,7 +256,7 @@ og de tre mest konkrete ændringer jeg bør lave før næste kursusdag.
   <section id="vaerktoejskassen">
     <h2>Værktøjskassen: demoer med værdi</h2>
     <p>
-      Kurssiden har allerede et offentligt idékatalog på siden
+      Kursussiden har allerede et offentligt idékatalog på siden
       <a href="flere-vaerktoejer.html">Flere værktøjer</a>, som deltagerne selv kan gå på opdagelse i.
       Kassen her er dit supplement som underviser: demoer og lege, der bærer en pointe i undervisningen.
       Alle har gratis adgang nok til en demonstration. Tjek selv kvoter og arbejdspladsens regler,
