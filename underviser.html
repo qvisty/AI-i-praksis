@@ -161,7 +161,7 @@ grøn som hovedfarve.</div>
         <li>Hvilken øvelse gav mest mening for dig, og hvorfor?</li>
         <li>Hvor gik det for hurtigt eller for langsomt?</li>
         <li>Hvad vil du prøve på jobbet inden næste kursusdag?</li>
-        <li>På en skala fra 1 til 10, hvor tæt var dagen på din hverdag? Hvad ville gøre den til en 10?</li>
+        <li>På en skala fra 1 til 10: hvor meget af det, du har lært i dag, kan du bruge direkte i dit arbejde? Og hvad skulle have været anderledes, før du ville give en 10?</li>
       </ol>
     </div>
 
@@ -195,10 +195,10 @@ grøn som hovedfarve.</div>
   form.addParagraphTextItem().setTitle('Hvor gik det for hurtigt eller for langsomt?');
   form.addParagraphTextItem().setTitle('Hvad vil du prøve på jobbet inden næste kursusdag?');
   form.addScaleItem()
-    .setTitle('Hvor tæt var dagen på din hverdag?')
+    .setTitle('Hvor meget af det, du har lært i dag, kan du bruge direkte i dit arbejde?')
     .setBounds(1, 10)
-    .setLabels('Langt fra', 'Lige i øjet');
-  form.addParagraphTextItem().setTitle('Hvad ville gøre dagen til en 10?');
+    .setLabels('Ingenting', 'Det hele');
+  form.addParagraphTextItem().setTitle('Hvad skulle have været anderledes, før du ville give en 10?');
   var regneark = SpreadsheetApp.create('AI i praksis, evalueringssvar');
   form.setDestination(FormApp.DestinationType.SPREADSHEET, regneark.getId());
   Logger.log('Deltagerlink: ' + form.getPublishedUrl());
@@ -223,8 +223,9 @@ grøn som hovedfarve.</div>
 
     <div class="prompt" data-copy>Du er min dataanalytiker. Herunder indsætter jeg evalueringssvar fra kurset
 AI i praksis. Kolonnerne er tidspunkt, kursusdag, vigtigste pointe, bedste
-øvelse, tempo, næste skridt, score fra 1 til 10 og hvad der ville gøre dagen
-til en 10. Giv mig på dansk: gennemsnitsscore pr. kursusdag, de tre hyppigste
+øvelse, tempo, næste skridt, anvendeligheds-score fra 1 til 10 og hvad der
+skulle have været anderledes for at give en 10. Giv mig på dansk:
+gennemsnitsscore pr. kursusdag, de tre hyppigste
 temaer i fritekstsvarene med et citat til hver, en opsummering af tempo-svarene,
 og de tre mest konkrete ændringer jeg bør lave før næste kursusdag.
 
