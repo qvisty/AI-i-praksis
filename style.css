@@ -483,11 +483,46 @@ kbd {
   padding: 0.1em 0.45em;
 }
 
-.next {
-  display: inline-block;
-  margin-top: 2rem;
-  font-weight: 600;
-  font-size: 1.2rem;
+/* Paginering mellem modulerne (indsættes af site.js) */
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 4rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--border);
+}
+
+.pagination a { text-decoration: none; max-width: 48%; }
+
+.pagination .dir {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.pagination .ptitle { font-weight: 600; font-size: 1.15rem; }
+
+.pagination .pag-next { margin-left: auto; text-align: right; }
+
+.pagination.pagination-top {
+  margin: 0 0 1.5rem;
+  padding: 0;
+  border-top: none;
+}
+
+.pagination.pagination-top .ptitle { font-size: 1rem; }
+
+.slide-pagination { border-top: none; margin-top: 0; }
+
+.slide-inner .pagination .ptitle { font-size: 1.7rem; }
+.slide-inner .pagination .dir { font-size: 1rem; }
+
+@media print {
+  .pagination { display: none; }
 }
 
 /* ---------- Diasvisning ---------- */

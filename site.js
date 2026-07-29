@@ -52,6 +52,61 @@ document.querySelectorAll('main section').forEach(function (section) {
   exercise.appendChild(btn);
 });
 
+// Sidernes rækkefølge. Bruges af pagineringen nederst på siderne og af
+// det afsluttende bladre-dias i diasvisningen.
+var PAGE_SEQUENCE = [
+  { file: 'index.html', title: 'Forside' },
+  { file: 'modul-1-lovable.html', title: 'Modul 1: Byg en app med Lovable' },
+  { file: 'modul-2-github-claude.html', title: 'Modul 2: GitHub + Claude Code' },
+  { file: 'modul-3-ai-i-hverdagen.html', title: 'Modul 3: AI i din arbejdsdag' },
+  { file: 'modul-4-automatisering.html', title: 'Modul 4: Automatisér din egen hverdag' },
+  { file: 'modul-5-andre-modaliteter.html', title: 'Modul 5: Fra dokument til podcast' },
+  { file: 'modul-6-forstaa-ai.html', title: 'Modul 6: Forstå AI' },
+  { file: 'flere-vaerktoejer.html', title: 'Flere værktøjer at prøve' }
+];
+
+var pageFile = location.pathname.split('/').pop() || 'index.html';
+var pageIndex = -1;
+PAGE_SEQUENCE.forEach(function (p, i) { if (p.file === pageFile) pageIndex = i; });
+var pagePrev = pageIndex > 0 ? PAGE_SEQUENCE[pageIndex - 1] : null;
+var pageNext = pageIndex >= 0 && pageIndex < PAGE_SEQUENCE.length - 1 ? PAGE_SEQUENCE[pageIndex + 1] : null;
+
+function paginationLink(page, dir, hash) {
+  var a = document.createElement('a');
+  a.href = page.file + (hash || '');
+  a.className = dir === 'next' ? 'pag-next' : 'pag-prev';
+  var d = document.createElement('span');
+  d.className = 'dir';
+  d.textContent = dir === 'next' ? 'Næste' : 'Forrige';
+  var t = document.createElement('span');
+  t.className = 'ptitle';
+  t.textContent = page.title;
+  a.appendChild(d);
+  a.appendChild(t);
+  return a;
+}
+
+// Paginering på de almindelige sider: forrige-link øverst, begge retninger nederst.
+(function () {
+  var main = document.querySelector('main');
+  if (!main || pageIndex < 0) return;
+  if (pagePrev || pageNext) {
+    var bar = document.createElement('nav');
+    bar.className = 'pagination';
+    bar.setAttribute('aria-label', 'Bladring mellem modulerne');
+    if (pagePrev) bar.appendChild(paginationLink(pagePrev, 'prev'));
+    if (pageNext) bar.appendChild(paginationLink(pageNext, 'next'));
+    main.appendChild(bar);
+  }
+  if (pagePrev) {
+    var top = document.createElement('nav');
+    top.className = 'pagination pagination-top';
+    top.setAttribute('aria-label', 'Tilbage til forrige modul');
+    top.appendChild(paginationLink(pagePrev, 'prev'));
+    main.insertBefore(top, main.firstChild);
+  }
+})();
+
 // Diasvisning: deler sidens indhold op i små bidder og viser dem som dias,
 // der kan bladres med piletaster eller knapper, som i en præsentation.
 (function () {
@@ -134,6 +189,15 @@ document.querySelectorAll('main section').forEach(function (section) {
       flush();
       chunks.forEach(function (els) { list.push({ kicker: kicker, els: els }); });
     });
+    // Afsluttende dias: bladr videre til forrige eller næste modul,
+    // som åbner direkte i diasvisning.
+    if (pagePrev || pageNext) {
+      var wrap = document.createElement('div');
+      wrap.className = 'pagination slide-pagination';
+      if (pagePrev) wrap.appendChild(paginationLink(pagePrev, 'prev', '#dias'));
+      if (pageNext) wrap.appendChild(paginationLink(pageNext, 'next', '#dias'));
+      list.push({ kicker: 'Videre herfra', els: [wrap] });
+    }
     return list;
   }
 
