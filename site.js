@@ -33,12 +33,17 @@ document.querySelectorAll('main section').forEach(function (section) {
     head.appendChild(brand);
     head.appendChild(module);
     section.insertBefore(head, section.firstChild);
+    var foot = document.createElement('div');
+    foot.className = 'handout-foot';
+    foot.textContent = '© 2026 Jesper Qvist. AI i praksis, qvisty.github.io/AI-i-praksis';
+    section.appendChild(foot);
     document.body.classList.add('print-handout');
     section.classList.add('print-target');
     var cleanup = function () {
       document.body.classList.remove('print-handout');
       section.classList.remove('print-target');
       head.remove();
+      foot.remove();
       window.removeEventListener('afterprint', cleanup);
     };
     window.addEventListener('afterprint', cleanup);

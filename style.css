@@ -439,8 +439,8 @@ ul.sources {
   color: var(--muted);
 }
 
-/* Sidehoved på handouts (indsættes af site.js og vises kun ved print) */
-.handout-head { display: none; }
+/* Sidehoved og sidefod på handouts (indsættes af site.js og vises kun ved print) */
+.handout-head, .handout-foot { display: none; }
 
 @page {
   size: A4;
@@ -478,6 +478,21 @@ ul.sources {
   }
 
   body.print-handout .handout-head strong { color: #007a53; font-size: 13pt; }
+
+  /* Sidefoden gentages nederst på hver printet side */
+  body.print-handout .handout-foot {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-top: 1pt solid #007a53;
+    padding-top: 2mm;
+    font-size: 9pt;
+    color: #444;
+  }
+
+  body.print-handout .print-target { padding-bottom: 14mm; }
 
   body.print-handout .print-target h2 {
     font-size: 22pt;
