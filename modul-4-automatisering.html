@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Modul 4: Automatisér din egen hverdag</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <div class="inner">
+    <a class="brand" href="index.html">AI i praksis</a>
+    <a href="index.html">Forside</a>
+    <a href="modul-1-lovable.html">Modul 1: Lovable</a>
+    <a href="modul-2-github-claude.html">Modul 2: GitHub + Claude</a>
+    <a href="modul-3-ai-i-hverdagen.html">Modul 3: Hverdagen</a>
+    <a class="active" href="modul-4-automatisering.html">Modul 4: Automatisering</a>
+  </div>
+</nav>
+
+<main>
+
+  <header class="hero">
+    <span class="badge">Modul 4</span>
+    <h1>Automatisér din egen hverdag</h1>
+    <p class="lead">Din arbejdsplads har allerede robotterne. De ligger i Microsoft 365 og Google Workspace og venter på, at nogen tænder dem.</p>
+  </header>
+
+  <section id="hvorfor">
+    <h2>Hvorfor dette modul?</h2>
+    <p>
+      I modul 3 brugte du AI til enkeltopgaver. Men mange opgaver er ikke enkelte. De gentager sig:
+      den samme mail hver mandag, den samme vedhæftede fil, der skal gemmes, den samme besked,
+      der skal videre til det rigtige team. Den slags skal et menneske ikke gøre i hånden.
+      I dette modul bygger du din første automatisering i de systemer, du allerede har adgang til.
+    </p>
+    <div class="note">
+      <span class="label">Vigtigt før du starter</span>
+      Automatiseringer arbejder i din indbakke og dine filer. Byg dem derfor sammen med reglerne,
+      ikke uden om dem. Er du i tvivl om, hvad der er tilladt på din arbejdsplads, så spørg IT først.
+      Det er også den hurtigste vej til at få flere rettigheder, hvis du mangler dem.
+    </div>
+  </section>
+
+  <section id="spor">
+    <h2>Vælg dit spor</h2>
+    <p>Øvelserne findes i tre udgaver. Vælg det spor, der matcher din arbejdsplads.</p>
+    <div class="grid">
+      <div class="card">
+        <span class="badge">Spor A</span>
+        <h3>Microsoft 365</h3>
+        <p>Du bruger Outlook, Teams og OneDrive. Dit værktøj hedder <strong>Power Automate</strong> og ligger på <a href="https://make.powerautomate.com" target="_blank" rel="noopener">make.powerautomate.com</a>.</p>
+      </div>
+      <div class="card">
+        <span class="badge">Spor B</span>
+        <h3>Google Workspace</h3>
+        <p>Du bruger Gmail, Drive og Google Docs. Dine værktøjer er Gmails egne regler, <strong>Google Forms med Sheets</strong> og <strong>Apps Script</strong> til det avancerede.</p>
+      </div>
+      <div class="card">
+        <span class="badge">Spor C</span>
+        <h3>Blandet eller andet</h3>
+        <p>Ingen af delene, eller lidt af hvert. Så kig på <strong>Zapier</strong> eller <strong>Make</strong>, der kobler hundredvis af systemer sammen. Gratisudgaven rækker til øvelserne.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="oevelse-1">
+    <h2>Øvelse 1: Find din gentagelse</h2>
+
+    <div class="exercise">
+      <span class="label">Hands-on, ca. 10 min</span>
+      <ol class="steps">
+        <li>Skriv tre opgaver ned, du har gjort mindst fem gange den seneste måned, og som føles ens hver gang.</li>
+        <li>Vælg den af dem, der har en tydelig <strong>udløser</strong> (der kommer en mail, en fil, et svar i en formular) og en tydelig <strong>handling</strong> (gem, send, opret, giv besked).</li>
+        <li>Sig den højt for din sidemand som én sætning: »Når der sker X, skal der ske Y.« Kan du ikke sige den sætning, er opgaven ikke klar til automatisering endnu.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="oevelse-2">
+    <h2>Øvelse 2: Byg dit første flow</h2>
+
+    <div class="exercise">
+      <span class="label">Hands-on, ca. 30 min</span>
+      <ol class="steps">
+        <li><strong>Spor A:</strong> Log ind på Power Automate, og vælg <strong>Templates</strong>. Søg efter en skabelon tæt på din idé, f.eks. »Save email attachments to OneDrive« eller »Get a notification in Teams«. Aktivér den, og prøv den af med en testmail.</li>
+        <li><strong>Spor B:</strong> Opret en Google Form (f.eks. en tilmelding), lad svarene lande i et Sheet, og slå notifikationer til. Vil du videre, så bed din AI-assistent skrive et Apps Script, der sender en pæn kvitteringsmail for hvert nyt svar.</li>
+        <li><strong>Spor C:</strong> Opret en konto på Zapier, og byg en Zap med din udløser og handling, f.eks. »ny række i regneark giver besked i mail«.</li>
+        <li>Test flowet mindst tre gange, og prøv bevidst at brække det: hvad sker der ved en tom mail, et mærkeligt filnavn eller et svar med æøå?</li>
+      </ol>
+    </div>
+
+    <div class="note">
+      <span class="label">Brug det du lærte i modul 1 og 2</span>
+      Sidder du fast, så beskriv problemet for din AI-assistent med promptmønsteret fra modul 3.
+      Den kan både foreslå det rigtige flow, skrive Apps Script til dig og oversætte fejlbeskeder til dansk.
+    </div>
+  </section>
+
+  <section id="oevelse-3">
+    <h2>Øvelse 3: Sæt AI ind i flowet</h2>
+    <p>Det nye i disse værktøjer er, at AI nu kan være et trin i selve automatiseringen.</p>
+
+    <div class="exercise">
+      <span class="label">Hands-on, ca. 20 min</span>
+      <ol class="steps">
+        <li><strong>Spor A:</strong> Prøv Copilot i Power Automate: beskriv dit flow med almindelige ord, og lad Copilot bygge udkastet. Kig også på AI Builder, der kan læse tekst ud af dokumenter som trin i et flow.</li>
+        <li><strong>Spor B:</strong> Har din organisation Gemini i Workspace, så prøv »Help me write« i Gmail og Docs som det manuelle AI-trin, og overvej hvor det kunne ligge fast i din proces.</li>
+        <li><strong>Spor C:</strong> Tilføj et AI-trin i din Zap, f.eks. »opsummér indholdet af mailen, før beskeden sendes videre«.</li>
+        <li>Vurdér resultatet med samme blik som i modul 3: hvor god er kvaliteten, og hvor skal et menneske stadig kigge med?</li>
+      </ol>
+    </div>
+  </section>
+
+  <hr>
+
+  <section id="forklaring">
+    <h2>Hvad skete der lige?</h2>
+
+    <div class="explain">
+      <span class="label">Begreb: Udløser og handling</span>
+      Al automatisering består af de samme byggeklodser: en <strong>udløser</strong> (trigger),
+      eventuelle <strong>betingelser</strong> (kun hvis emnefeltet indeholder faktura) og en eller flere
+      <strong>handlinger</strong>. Din éne sætning fra øvelse 1 var i virkeligheden et program.
+    </div>
+
+    <div class="explain">
+      <span class="label">Begreb: Connector</span>
+      Værktøjerne kan tale med hundredvis af systemer via <strong>connectors</strong>: Outlook, Teams,
+      Gmail, regneark, kalendere og meget mere. Det er derfor, du ikke skal kode. Koblingen er
+      allerede bygget. Du vælger bare klodserne og rækkefølgen.
+    </div>
+
+    <div class="explain">
+      <span class="label">Automatisering og AI er to forskellige ting</span>
+      Et flow er <strong>deterministisk</strong>: samme input giver altid samme resultat. AI er det ikke.
+      Tommelfingerreglen er derfor: lad flowet klare det forudsigelige, lad AI'en klare det sproglige,
+      og lad et menneske godkende det vigtige. Kan du genkende mønsteret? Det er det samme som i modul 2.
+    </div>
+
+    <h3>Grænserne: governance i den virkelige verden</h3>
+    <ul>
+      <li><strong>Aftal det med IT:</strong> Automatiseringer med adgang til post og filer skal din arbejdsplads kende til.</li>
+      <li><strong>Personoplysninger:</strong> Flows der behandler persondata skal følge samme regler som alt andet. GDPR holder ikke fri, fordi det er en robot.</li>
+      <li><strong>Vedligehold:</strong> Et flow er en lille ansat. Skriv ned, hvad det gør, og hvem der ejer det, så det ikke bliver et spøgelse, når du skifter job.</li>
+    </ul>
+  </section>
+
+  <section id="opsamling">
+    <h2>Opsamling: hele kursets røde tråd</h2>
+    <ul>
+      <li>Modul 1: Du kan bygge en prototype med almindelige sætninger.</li>
+      <li>Modul 2: Du kan lede en AI-agent og godkende dens arbejde.</li>
+      <li>Modul 3: Du kan bruge AI som førsteudkast i dine daglige opgaver.</li>
+      <li>Modul 4: Du kan sætte det i system i din egen infrastruktur.</li>
+      <li>Og hele vejen igennem: AI'en foreslår, og du bestemmer.</li>
+    </ul>
+  </section>
+
+  <p><a class="next" href="index.html">Tilbage til forsiden</a></p>
+
+</main>
+
+<footer>
+  <div class="inner">
+    AI i praksis, modul 4. <a href="index.html">Tilbage til forsiden</a>
+  </div>
+</footer>
+
+<script src="copy.js"></script>
+
+</body>
+</html>

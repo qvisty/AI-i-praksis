@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Modul 3: AI i din arbejdsdag</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <div class="inner">
+    <a class="brand" href="index.html">AI i praksis</a>
+    <a href="index.html">Forside</a>
+    <a href="modul-1-lovable.html">Modul 1: Lovable</a>
+    <a href="modul-2-github-claude.html">Modul 2: GitHub + Claude</a>
+    <a class="active" href="modul-3-ai-i-hverdagen.html">Modul 3: Hverdagen</a>
+    <a href="modul-4-automatisering.html">Modul 4: Automatisering</a>
+  </div>
+</nav>
+
+<main>
+
+  <header class="hero">
+    <span class="badge">Modul 3</span>
+    <h1>AI i din arbejdsdag</h1>
+    <p class="lead">I modul 1 og 2 byggede vi. Nu vender vi blikket mod de opgaver, du allerede har: mails, referater, dokumenter og regneark.</p>
+  </header>
+
+  <section id="hvorfor">
+    <h2>Hvorfor dette modul?</h2>
+    <p>
+      De fleste kommer ikke til at bygge apps hver uge. Men alle skriver, læser og regner hver eneste dag.
+      Det er her, en AI-assistent som ChatGPT, Claude eller Copilot flytter mest i hverdagen.
+      Som altid gør vi det først og taler om det bagefter.
+    </p>
+    <div class="note">
+      <span class="label">Medbring en ægte opgave</span>
+      Øvelserne virker bedst med dit eget materiale. Find en mail, du skal svare på, et referat,
+      du skal skrive, eller et dokument, du skal sætte dig ind i. Brug ikke materiale med
+      personoplysninger eller fortroligt indhold. Er du i tvivl, så brug eksemplerne herunder.
+    </div>
+  </section>
+
+  <section id="oevelse-1">
+    <h2>Øvelse 1: Skriv og omskriv</h2>
+
+    <div class="exercise">
+      <span class="label">Hands-on, ca. 15 min</span>
+      <ol class="steps">
+        <li>Åbn den AI-assistent, du har adgang til (ChatGPT, Claude, Copilot eller Gemini).</li>
+        <li>Indsæt en mail eller tekst, du alligevel skulle skrive, og bed om et udkast. Brug evt. skabelonen herunder.</li>
+        <li>Bed derefter om tre varianter: en kortere, en venligere og en mere formel.</li>
+        <li>Vælg den bedste, og ret den til med dine egne ord. Det sidste punktum er altid dit.</li>
+      </ol>
+    </div>
+
+    <div class="prompt" data-copy>Du er min skrivehjælp. Jeg skal svare på mailen herunder. Skriv et udkast på dansk,
+venligt og professionelt, højst 120 ord. Pointen er at jeg gerne vil have mødet
+flyttet til næste uge uden at virke afvisende.
+
+[indsæt mailen her]</div>
+
+    <div class="note">
+      <span class="label">Tip</span>
+      Giv assistenten tre ting: hvem du er, hvad opgaven er, og hvordan resultatet skal se ud.
+      Jo mere kontekst, jo mindre skal du rette bagefter.
+    </div>
+  </section>
+
+  <section id="oevelse-2">
+    <h2>Øvelse 2: Fra bunke til overblik</h2>
+
+    <div class="exercise">
+      <span class="label">Hands-on, ca. 20 min</span>
+      <ol class="steps">
+        <li>Find et langt dokument, en rapport eller et mødereferat uden fortroligt indhold.</li>
+        <li>Indsæt det, og bed om et resumé på ti linjer med de tre vigtigste pointer øverst.</li>
+        <li>Stil derefter spørgsmål til teksten: »Hvad siger dokumentet om økonomi?«, »Hvilke deadlines nævnes?«</li>
+        <li>Slut med at bede om en liste over aftalte handlinger med ansvarlig person for hver.</li>
+      </ol>
+    </div>
+
+    <div class="prompt" data-copy>Læs teksten herunder. Giv mig først et resumé på højst ti linjer på dansk.
+Fremhæv derefter de tre vigtigste pointer som punktliste. Slut med en liste
+over alle aftaler og handlinger med navn på den ansvarlige, hvis det fremgår.
+
+[indsæt teksten her]</div>
+  </section>
+
+  <section id="oevelse-3">
+    <h2>Øvelse 3: Tal og regneark</h2>
+
+    <div class="exercise">
+      <span class="label">Hands-on, ca. 20 min</span>
+      <ol class="steps">
+        <li>Beskriv et regnearksproblem, du er stødt på, f.eks. »jeg vil tælle, hvor mange rækker der indeholder ordet afventer«.</li>
+        <li>Bed om formlen til Excel eller Google Sheets, og bed samtidig om en forklaring på, hvordan den virker.</li>
+        <li>Prøv formlen af i dit eget ark. Virker den ikke, så beskriv fejlen for assistenten, og prøv igen.</li>
+        <li>Bonus: indsæt et lille uddrag af tal uden følsomt indhold, og bed om tre observationer.</li>
+      </ol>
+    </div>
+
+    <div class="note">
+      <span class="label">Observation undervejs</span>
+      Læg mærke til, hvor tit du retter i AI'ens svar, før du bruger det. Det tal skal ikke være nul.
+      Er det nul, læser du ikke kritisk nok.
+    </div>
+  </section>
+
+  <hr>
+
+  <section id="forklaring">
+    <h2>Hvad skete der lige?</h2>
+
+    <div class="explain">
+      <span class="label">Begreb: Promptmønsteret</span>
+      Alle tre øvelser brugte det samme mønster: <strong>rolle</strong> (du er min skrivehjælp),
+      <strong>kontekst</strong> (her er mailen og situationen), <strong>opgave</strong> (skriv et udkast)
+      og <strong>format</strong> (dansk, højst 120 ord). Det mønster kan du genbruge til stort set alt.
+    </div>
+
+    <div class="explain">
+      <span class="label">Begreb: Hallucination</span>
+      En sprogmodel svarer altid, også når den ikke ved det. Den kan finde på tal, navne og kilder,
+      der lyder rigtige, men ikke er det. Derfor gælder reglen: alt hvad der skal være <em>korrekt</em>,
+      skal du selv kontrollere. AI'en leverer udkastet. Du leverer sandheden.
+    </div>
+
+    <div class="explain">
+      <span class="label">Begreb: AI som førsteudkast</span>
+      Den største gevinst i hverdagen er ikke, at AI'en skriver færdigt for dig.
+      Det er, at du aldrig mere starter på et blankt stykke papir. Et udkast på ti sekunder,
+      som du retter til på to minutter, slår et kvarter med skriveblokade.
+    </div>
+
+    <h3>Grænserne: det skal du huske</h3>
+    <ul>
+      <li><strong>Fortrolighed:</strong> Personoplysninger og forretningshemmeligheder hører kun hjemme i værktøjer, din arbejdsplads har godkendt.</li>
+      <li><strong>Fakta:</strong> Kontrollér tal, navne, datoer og citater, før de går videre.</li>
+      <li><strong>Ansvar:</strong> Det er dit navn, der står som afsender. AI'en er et værktøj, ikke en undskyldning.</li>
+    </ul>
+  </section>
+
+  <section id="refleksion">
+    <h2>Refleksion i plenum</h2>
+    <ul>
+      <li>Hvilken af de tre øvelser rammer flest timer i din typiske uge?</li>
+      <li>Hvornår stolede du for meget eller for lidt på svaret?</li>
+      <li>Hvilken opgave vil du give AI'en som det første i morgen?</li>
+    </ul>
+  </section>
+
+  <p><a class="next" href="modul-4-automatisering.html">Videre til modul 4: Automatisér din egen hverdag</a></p>
+
+</main>
+
+<footer>
+  <div class="inner">
+    AI i praksis, modul 3. <a href="index.html">Tilbage til forsiden</a>
+  </div>
+</footer>
+
+<script src="copy.js"></script>
+
+</body>
+</html>

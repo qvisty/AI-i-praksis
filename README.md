@@ -12,6 +12,8 @@ Siden bruges i stedet for slides og udgives med GitHub Pages.
 | `index.html` | Forside: kursets idé, program og forberedelse |
 | `modul-1-lovable.html` | Modul 1: Byg en app med Lovable (praksis først, forklaring bagefter) |
 | `modul-2-github-claude.html` | Modul 2: GitHub + Claude Code |
+| `modul-3-ai-i-hverdagen.html` | Modul 3: AI i din arbejdsdag (mails, referater, regneark) |
+| `modul-4-automatisering.html` | Modul 4: Automatisering i egen infrastruktur (Power Automate, Google, Zapier) |
 | `style.css` | Fælles design (lyst/mørkt tema, øvelses- og forklaringsbokse) |
 | `copy.js` | "Kopiér"-knapper på prompt-eksemplerne |
 
