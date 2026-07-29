@@ -165,6 +165,71 @@ grøn som hovedfarve.</div>
       </ol>
     </div>
 
+    <h3>Den digitale udgave</h3>
+    <p>
+      Deltagerne svarer på siden <a href="evaluering.html">evaluering.html</a>, som du deler sidst på dagen.
+      Siden viser din formular, når du har koblet den på, og indtil da viser den spørgsmålene til papirbrug.
+      Scriptet herunder opretter hele formularen og et svar-regneark for dig på én gang.
+    </p>
+
+    <div class="exercise">
+      <span class="label">Opsætning, ca. 10 min, én gang</span>
+      <ol class="steps">
+        <li>Gå til <a href="https://script.new" target="_blank" rel="noopener">script.new</a>, og log ind med din Google-konto.</li>
+        <li>Slet eksempelkoden, indsæt scriptet herunder, og tryk på <strong>Kør</strong>. Godkend adgangen første gang.</li>
+        <li>Åbn loggen (Ctrl og Enter eller menuen Udførelseslog). Der står tre links: deltagerlinket, redigeringslinket og regnearket med svar.</li>
+        <li>Åbn <code>evaluering.html</code> i repoet, og indsæt deltagerlinket i linjen med <code>FORMULAR_URL</code>. Commit, og siden er live om et øjeblik.</li>
+        <li>Del sidens adresse sidst på kursusdagen, eller vis den som QR-kode på projektoren.</li>
+      </ol>
+    </div>
+
+    <div class="prompt" data-copy>function opretEvalueringsformular() {
+  var form = FormApp.create('AI i praksis, evaluering');
+  form.setDescription('Fem hurtige spørgsmål, fem minutter, anonymt.');
+  form.addMultipleChoiceItem()
+    .setTitle('Hvilken kursusdag evaluerer du?')
+    .setChoiceValues(['Dag 1', 'Dag 2', 'Dag 3'])
+    .setRequired(true);
+  form.addParagraphTextItem().setTitle('Hvad er det vigtigste, du tager med fra i dag?');
+  form.addParagraphTextItem().setTitle('Hvilken øvelse gav mest mening for dig, og hvorfor?');
+  form.addParagraphTextItem().setTitle('Hvor gik det for hurtigt eller for langsomt?');
+  form.addParagraphTextItem().setTitle('Hvad vil du prøve på jobbet inden næste kursusdag?');
+  form.addScaleItem()
+    .setTitle('Hvor tæt var dagen på din hverdag?')
+    .setBounds(1, 10)
+    .setLabels('Langt fra', 'Lige i øjet');
+  form.addParagraphTextItem().setTitle('Hvad ville gøre dagen til en 10?');
+  var regneark = SpreadsheetApp.create('AI i praksis, evalueringssvar');
+  form.setDestination(FormApp.DestinationType.SPREADSHEET, regneark.getId());
+  Logger.log('Deltagerlink: ' + form.getPublishedUrl());
+  Logger.log('Rediger formularen: ' + form.getEditUrl());
+  Logger.log('Svarene lander her: ' + regneark.getUrl());
+}</div>
+
+    <div class="note">
+      <span class="label">Bruger I Microsoft?</span>
+      Microsoft Forms virker lige så godt: opret formularen med de samme spørgsmål på
+      <a href="https://forms.office.com" target="_blank" rel="noopener">forms.office.com</a>,
+      og indsæt delelinket i <code>evaluering.html</code> på samme måde. Svarene kan åbnes direkte i Excel.
+    </div>
+
+    <h3>Dataanalysen</h3>
+    <p>
+      Alle svar lander automatisk i regnearket med tidspunkt og kursusdag som kolonner, så du kan
+      filtrere og sammenligne på tværs af dage og hold. Den hurtigste analyse er at kopiere svarene
+      fra arket og bruge prompten herunder i din AI-assistent. Det er i øvrigt præcis promptmønsteret
+      fra modul 3, brugt på dine egne data.
+    </p>
+
+    <div class="prompt" data-copy>Du er min dataanalytiker. Herunder indsætter jeg evalueringssvar fra kurset
+AI i praksis. Kolonnerne er tidspunkt, kursusdag, vigtigste pointe, bedste
+øvelse, tempo, næste skridt, score fra 1 til 10 og hvad der ville gøre dagen
+til en 10. Giv mig på dansk: gennemsnitsscore pr. kursusdag, de tre hyppigste
+temaer i fritekstsvarene med et citat til hver, en opsummering af tempo-svarene,
+og de tre mest konkrete ændringer jeg bør lave før næste kursusdag.
+
+[indsæt svarene her, kopieret direkte fra regnearket]</div>
+
     <div class="note">
       <span class="label">Brug svarene aktivt</span>
       Start hver kursusdag med tre linjer om, hvad du har ændret på baggrund af evalueringen.

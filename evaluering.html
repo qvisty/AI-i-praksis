@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Evaluering</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <div class="inner">
+    <a class="brand" href="index.html">AI i praksis</a>
+    <a href="index.html">Til forsiden</a>
+  </div>
+</nav>
+
+<main>
+
+  <header class="hero">
+    <div class="hero-text">
+      <span class="badge">Evaluering</span>
+      <h1>Hvordan var dagen?</h1>
+      <p class="lead">Fem hurtige spørgsmål, fem minutter, anonymt. Din feedback former næste kursusdag.</p>
+    </div>
+    <img class="hero-art" src="assets/hero-modul-3.svg" alt="">
+  </header>
+
+  <section id="formular">
+    <div id="form-holder"></div>
+
+    <div id="form-fallback" hidden>
+      <div class="note">
+        <span class="label">Formularen er ikke koblet til endnu</span>
+        Underviseren har endnu ikke indsat linket til den digitale formular. Spørgsmålene er dem her,
+        så de kan også besvares på papir. Vejledningen til at koble formularen på står på undervisersiden.
+      </div>
+      <div class="exercise">
+        <span class="label">Spørgsmålene, 5 min</span>
+        <ol class="steps">
+          <li>Hvilken kursusdag evaluerer du? Dag 1, 2 eller 3?</li>
+          <li>Hvad er det vigtigste, du tager med fra i dag?</li>
+          <li>Hvilken øvelse gav mest mening for dig, og hvorfor?</li>
+          <li>Hvor gik det for hurtigt eller for langsomt?</li>
+          <li>Hvad vil du prøve på jobbet inden næste kursusdag?</li>
+          <li>På en skala fra 1 til 10, hvor tæt var dagen på din hverdag? Og hvad ville gøre den til en 10?</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="inner">
+    AI i praksis, evaluering. © 2026 Jesper Qvist. <a href="index.html">Tilbage til forsiden</a>
+  </div>
+</footer>
+
+<script>
+  // UNDERVISER: Indsæt linket til din formular mellem anførselstegnene herunder.
+  // Brug delelinket fra Google Forms eller Microsoft Forms. Vejledningen står
+  // på undervisersiden under afsnittet om evaluering.
+  var FORMULAR_URL = '';
+
+  var holder = document.getElementById('form-holder');
+  var fallback = document.getElementById('form-fallback');
+  if (FORMULAR_URL) {
+    var frame = document.createElement('iframe');
+    frame.src = FORMULAR_URL;
+    frame.title = 'Evalueringsformular';
+    frame.style.width = '100%';
+    frame.style.height = '1400px';
+    frame.style.border = 'none';
+    holder.appendChild(frame);
+  } else {
+    fallback.hidden = false;
+  }
+</script>
+<script src="site.js"></script>
+
+</body>
+</html>
