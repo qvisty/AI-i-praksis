@@ -303,6 +303,7 @@ header.hero p.lead {
 
 section {
   margin-top: 4rem;
+  scroll-margin-top: 6rem;
 }
 
 h2 {
@@ -602,6 +603,93 @@ kbd {
   border-bottom-width: 2px;
   border-radius: 6px;
   padding: 0.1em 0.45em;
+}
+
+/* Indholdsfortegnelse pr. side (bygges af site.js) */
+.toc ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.toc a {
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.toc a:hover { color: var(--accent); }
+
+.toc a.current { color: var(--accent); font-weight: 600; }
+
+.toc-inline {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.9rem 1.3rem;
+  margin: 0 0 2rem;
+}
+
+.toc-inline ul { display: none; margin-top: 0.9rem; }
+.toc-inline.open ul { display: flex; }
+
+.toc-toggle {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--fg);
+  font-weight: 600;
+  font-size: 1rem;
+  font-family: inherit;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.toc-toggle::after {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg) translateY(-2px);
+  transition: transform 0.2s ease;
+}
+
+.toc-inline.open .toc-toggle::after { transform: rotate(225deg) translateY(-1px); }
+
+.toc-side { display: none; }
+
+@media (min-width: 1400px) {
+  .toc-inline { display: none; }
+
+  .toc-side {
+    display: block;
+    position: fixed;
+    top: 7rem;
+    left: calc(50% + 29rem);
+    width: 14rem;
+    max-height: calc(100vh - 9rem);
+    overflow-y: auto;
+    z-index: 5;
+  }
+
+  .toc-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.8rem;
+  }
+}
+
+@media print {
+  .toc { display: none; }
 }
 
 /* Paginering mellem modulerne (indsættes af site.js) */

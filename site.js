@@ -172,6 +172,72 @@ function paginationLink(page, dir, hash) {
   });
 })();
 
+// Navigation inden for siden: en indholdsfortegnelse bygget af sektionernes
+// overskrifter. Fast i margenen på brede skærme, sammenklappelig boks på små.
+(function () {
+  var main = document.querySelector('main');
+  if (!main) return;
+  var sections = Array.prototype.filter.call(main.querySelectorAll(':scope > section'), function (s) {
+    return s.id && s.querySelector(':scope > h2');
+  });
+  if (sections.length < 3) return;
+
+  function buildList() {
+    var ul = document.createElement('ul');
+    sections.forEach(function (s) {
+      var li = document.createElement('li');
+      var a = document.createElement('a');
+      a.href = '#' + s.id;
+      a.textContent = s.querySelector(':scope > h2').textContent;
+      a.setAttribute('data-target', s.id);
+      li.appendChild(a);
+      ul.appendChild(li);
+    });
+    return ul;
+  }
+
+  var inline = document.createElement('nav');
+  inline.className = 'toc toc-inline';
+  inline.setAttribute('aria-label', 'Indhold på siden');
+  var toggle = document.createElement('button');
+  toggle.type = 'button';
+  toggle.className = 'toc-toggle';
+  toggle.textContent = 'Indhold på siden';
+  toggle.setAttribute('aria-expanded', 'false');
+  inline.appendChild(toggle);
+  inline.appendChild(buildList());
+  toggle.addEventListener('click', function () {
+    var open = inline.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  var hero = main.querySelector('header.hero');
+  if (hero) { hero.insertAdjacentElement('afterend', inline); }
+  else { main.insertBefore(inline, main.firstChild); }
+
+  var side = document.createElement('nav');
+  side.className = 'toc toc-side';
+  side.setAttribute('aria-label', 'På denne side');
+  var title = document.createElement('div');
+  title.className = 'toc-title';
+  title.textContent = 'På denne side';
+  side.appendChild(title);
+  side.appendChild(buildList());
+  document.body.appendChild(side);
+
+  if ('IntersectionObserver' in window) {
+    var spy = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          document.querySelectorAll('.toc a').forEach(function (a) {
+            a.classList.toggle('current', a.getAttribute('data-target') === entry.target.id);
+          });
+        }
+      });
+    }, { rootMargin: '-15% 0px -70% 0px' });
+    sections.forEach(function (s) { spy.observe(s); });
+  }
+})();
+
 // Diasvisning: deler sidens indhold op i små bidder og viser dem som dias,
 // der kan bladres med piletaster eller knapper, som i en præsentation.
 (function () {
