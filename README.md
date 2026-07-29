@@ -1,5 +1,7 @@
 # AI i praksis
 
+**Kursussiden er live her: <https://qvisty.github.io/AI-i-praksis/>**
+
 Kursusside for kurset **AI i praksis** — et hands-on AI-kursus for voksne i arbejde.
 Siden bruges i stedet for slides og udgives med GitHub Pages.
 
