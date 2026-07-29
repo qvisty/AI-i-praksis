@@ -318,6 +318,20 @@ kbd {
   font-size: 1.2rem;
 }
 
+/* Kildehenvisninger */
+p.source {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin: 0.8rem 0 0;
+}
+
+p.source a { color: var(--muted); }
+
+ul.sources {
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
 @media print {
   nav, .prompt button.copy { display: none; }
   body { font-size: 11pt; }
