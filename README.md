@@ -20,7 +20,7 @@ Siden bruges i stedet for slides og udgives med GitHub Pages.
 | `underviser.html` | Underviserside: forberedelse, talenoter, evaluering, hjemmeopgaver og værktøjskasse. Kun linket fra forsidens sidefod. Skjules ved at slette det link |
 | `evaluering.html` | Deltagernes evalueringsside. Indsæt formularlinket i `FORMULAR_URL` i filen, se undervisersiden |
 | `style.css` | Fælles design (lyst/mørkt tema, øvelses- og forklaringsbokse, animationer) |
-| `site.js` | "Kopiér"-knapper på prompt-eksemplerne og indtoning ved scroll |
+| `site.js` | "Kopiér"-knapper, print af handouts, diasvisning og indtoning ved scroll |
 | `assets/` | Håndlavede SVG-illustrationer til hver side |
 
 ## Udgivelse

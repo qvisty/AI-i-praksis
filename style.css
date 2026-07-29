@@ -490,6 +490,96 @@ kbd {
   font-size: 1.2rem;
 }
 
+/* ---------- Diasvisning ---------- */
+
+.slides-toggle {
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--muted);
+  border-radius: 8px;
+  padding: 0.3rem 0.9rem;
+  font-size: 0.95rem;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.slides-toggle:hover { color: var(--accent); border-color: var(--accent); }
+
+body.slides-open { overflow: hidden; }
+
+.slide-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--bg);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+}
+
+.slide-stage {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  padding: 2.5rem 2rem 1.5rem;
+}
+
+.slide-inner {
+  max-width: 62rem;
+  width: 100%;
+  margin: auto;
+  font-size: 1.3rem;
+}
+
+.slide-inner .kicker {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.2rem;
+}
+
+.slide-inner header.hero { padding: 0; }
+.slide-inner h1 { font-size: clamp(2.6rem, 6vw, 4.2rem); }
+.slide-inner h3 { font-size: 2rem; margin-top: 0.5rem; }
+.slide-inner p, .slide-inner li { max-width: none; }
+.slide-inner img.figure { max-width: 520px; }
+.slide-inner .card { margin: 0.6rem 0; }
+.slide-inner .card:hover { transform: none; box-shadow: none; }
+
+.slide-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0.8rem 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.slide-controls button {
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--fg);
+  border-radius: 8px;
+  padding: 0.45rem 1.2rem;
+  font-size: 1rem;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.slide-controls button:hover { color: var(--accent); border-color: var(--accent); }
+
+.slide-count {
+  color: var(--muted);
+  font-size: 1rem;
+  min-width: 5.5rem;
+  text-align: center;
+}
+
+@media print {
+  .slides-toggle, .slide-overlay { display: none; }
+}
+
 /* Kildehenvisninger */
 p.source {
   font-size: 0.85rem;
