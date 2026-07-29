@@ -12,16 +12,12 @@ Siden bruges i stedet for slides og udgives med GitHub Pages.
 | `modul-2-github-claude.html` | Modul 2: GitHub + Claude Code |
 | `style.css` | Fælles design (lyst/mørkt tema, øvelses- og forklaringsbokse) |
 | `copy.js` | "Kopiér"-knapper på prompt-eksemplerne |
-| `.github/workflows/pages.yml` | Automatisk udgivelse til GitHub Pages ved hvert push |
 
-## Udgivelse (engangsopsætning)
+## Udgivelse
 
-1. Gå til repoets **Settings → Pages**.
-2. Under **Source**: vælg **GitHub Actions**.
-3. Push til repoet (eller kør workflowet manuelt under **Actions**) — siden udgives på
-   `https://<brugernavn>.github.io/AI-i-praksis/`.
-
-Herefter udgives siden automatisk, hver gang der pushes.
+Siden udgives med GitHub Pages direkte fra `main` (**Settings → Pages → Deploy from a
+branch → main / root**) og ligger på <https://qvisty.github.io/AI-i-praksis/>.
+Hvert push til `main` udgives automatisk efter et øjebliks tid.
 
 ## Redigering
 
