@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Undervisersiden</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <div class="inner">
+    <a class="brand" href="index.html">AI i praksis</a>
+    <a href="index.html">Til forsiden</a>
+  </div>
+</nav>
+
+<main>
+
+  <header class="hero">
+    <div class="hero-text">
+      <span class="badge">Kun til underviseren</span>
+      <h1>Undervisersiden</h1>
+      <p class="lead">Forberedelse, talenoter, evaluering og hjemmeopgaver, samlet ét sted. Siden er ikke linket fra modulerne.</p>
+    </div>
+    <img class="hero-art" src="assets/hero-forside.svg" alt="">
+  </header>
+
+  <section id="om-siden">
+    <div class="note">
+      <span class="label">Sådan skjuler du siden</span>
+      Siden er kun linket fra forsidens sidefod og er markeret, så søgemaskiner ikke indekserer den.
+      Vil du skjule den helt, sletter du linket i sidefoden på <code>index.html</code>.
+      Vil du fjerne den, sletter du filen <code>underviser.html</code>.
+    </div>
+  </section>
+
+  <section id="licenser">
+    <h2>Før kurset: licenser, konti og kvoter</h2>
+    <p>
+      Den største praktiske risiko i et hands-on-kursus er værktøjer, der låser midt i en øvelse.
+      Gå listen igennem senest en uge før hver kursusdag.
+    </p>
+
+    <div class="exercise">
+      <span class="label">Tjekliste, ca. 30 min</span>
+      <ol class="steps">
+        <li><strong>Lovable:</strong> Gratisplanen har en begrænset daglig kvote af beskeder. Test hvor langt kvoten rækker i øvelserne, og beslut om deltagerne skal oprette konto hjemmefra, eller om der skal betalte pladser til. Bed alle oprette konto før dag 1.</li>
+        <li><strong>GitHub:</strong> Gratis og uden kvoteproblemer. Bed deltagerne oprette konto med privat mail før dag 1, så kontoen følger dem og ikke jobbet.</li>
+        <li><strong>Claude Code:</strong> Kræver et Claude-abonnement for at arbejde i repos. Afklar om deltagerne har adgang, eller om øvelse 2 i modul 2 skal køres som fælles demo fra din maskine.</li>
+        <li><strong>NotebookLM:</strong> Kræver en Google-konto. Vær opmærksom på, at nogle arbejdspladser har slået tjenesten fra på arbejdskonti. En privat Google-konto er den sikre reserve.</li>
+        <li><strong>Copilot:</strong> Kræver arbejdslicens gennem Microsoft 365. Spørg på forhånd, hvor mange deltagere der har den, så du ved, om øvelse 3 i modul 5 er for alle eller for få.</li>
+        <li><strong>Power Automate, Apps Script og Zapier:</strong> Afhænger af deltagernes arbejdsplads. Formularen herunder afdækker, hvem der har hvad, så du kan planlægge sporene i modul 4.</li>
+        <li><strong>Lokalet:</strong> Test projektor, wifi og strømstik til alle. Bed deltagerne medbringe en computer, de selv bestemmer over. Arbejdscomputere kan have blokeret flere af værktøjerne.</li>
+        <li><strong>Nødplan:</strong> Optag korte skærmvideoer af hver øvelse, mens du forbereder dig. Ligger de klar, kan du altid vise flowet, selv hvis et værktøj er nede eller har skiftet design.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="cases">
+    <h2>Før kurset: deltagernes egne cases</h2>
+    <p>
+      Kurset virker bedst, når eksemplerne kommer fra deltagernes egen hverdag. Send en kort formular
+      ud sammen med kursusbekræftelsen. Svarene giver dig råstof til at skræddersy øvelserne,
+      og svaret om systemer afgør, hvilke spor du skal forberede i modul 4.
+    </p>
+
+    <div class="exercise">
+      <span class="label">Spørgsmål til tilmeldingsformularen</span>
+      <ol class="steps">
+        <li>Navn og arbejdsområde. Hvad laver du i hverdagen?</li>
+        <li>Beskriv en lille, irriterende opgave, du gentager hver uge.</li>
+        <li>Hvilke AI-værktøjer har du allerede prøvet, om nogen?</li>
+        <li>Bruger I Microsoft 365, Google Workspace eller noget tredje på din arbejdsplads?</li>
+        <li>Hvad vil du allerhelst kunne, når kurset er slut?</li>
+      </ol>
+    </div>
+
+    <p>Byg formularen i Lovable, så har du samtidig en frisk demo til dag 1. Prompten herunder er klar til brug.</p>
+
+    <div class="prompt" data-copy>Lav en enkel tilmeldingsformular til et kursus, der hedder AI i praksis.
+Formularen skal spørge om navn, arbejdsområde, en lille irriterende opgave
+man gentager hver uge, hvilke AI-værktøjer man har prøvet, om arbejdspladsen
+bruger Microsoft 365 eller Google Workspace eller andet, og hvad man helst
+vil kunne efter kurset. Svarene skal vises i en simpel oversigt, som kun jeg
+kan se via et hemmeligt link. Dansk sprog, venligt og enkelt design med
+grøn som hovedfarve.</div>
+
+    <div class="note">
+      <span class="label">Alternativ</span>
+      Microsoft Forms eller Google Forms virker lige så godt og ligger måske allerede inden for
+      arbejdspladsens rammer. Pointen er svarene, ikke værktøjet.
+    </div>
+  </section>
+
+  <section id="guide">
+    <h2>Underviserguide, modul for modul</h2>
+    <p>Tidsboksene svarer til programmet på forsiden. Ret dem til efter dit hold.</p>
+
+    <div class="card">
+      <span class="badge">Modul 1: Lovable</span>
+      <h3>Sådan kører du det</h3>
+      <p><strong>Tidsbokse:</strong> 10 min velkomst uden slides, 20 min øvelse 1, 15 min øvelse 2, 5 min øvelse 3, pause, 30 min forklaring og refleksion.</p>
+      <p><strong>Her knækker det tit:</strong> Login-bøvl de første ti minutter (hav en oprettet reservekonto klar). Deltagere, der skriver for korte prompts og bliver skuffede (peg på skabelonerne). Kvoten, der slipper op for de hurtigste (sæt dem til at hjælpe sidemanden i stedet for at bygge videre).</p>
+      <p><strong>Plenumspørgsmål:</strong> Hvad overraskede dig mest? Hvornår gik dialogen skævt, og hvad fik den på sporet igen? Hvem fik noget, der faktisk kunne bruges på jobbet i morgen?</p>
+    </div>
+
+    <div class="card">
+      <span class="badge">Modul 2: GitHub + Claude</span>
+      <h3>Sådan kører du det</h3>
+      <p><strong>Tidsbokse:</strong> 10 min om hvorfor prototyper skal have et hjem, 15 min øvelse 1, 25 min øvelse 2, 15 min øvelse 3, 10 min bonusøvelsen til de hurtige, 15 min det store billede.</p>
+      <p><strong>Her knækker det tit:</strong> Forvirring om forskellen på commit og gem (brug historik-visningen som aha-oplevelse). Claude Code-adgang, der mangler (kør øvelse 2 som fælles demo fra din maskine, og lad deltagerne diktere prompten). Merge-knappen, der skræmmer (mind om at alt kan rulles tilbage, det er hele pointen).</p>
+      <p><strong>Plenumspørgsmål:</strong> Hvordan føltes det at godkende en andens arbejde uden at kunne læse koden? Hvor i jeres hverdag findes mønsteret forslag og godkendelse allerede?</p>
+    </div>
+
+    <div class="card">
+      <span class="badge">Modul 3: Hverdagen</span>
+      <h3>Sådan kører du det</h3>
+      <p><strong>Tidsbokse:</strong> 10 min siden sidst, 15 min øvelse 1, 20 min øvelse 2, 20 min øvelse 3, pause, 25 min forklaring med promptmønsteret, 15 min refleksion.</p>
+      <p><strong>Her knækker det tit:</strong> Deltagere uden eget materiale (hav to neutrale eksempeltekster klar til udlevering). Nogen indsætter fortroligt indhold (stop venligt, og brug det som anledning til fortrolighedssnakken). Regnearksøvelsen, der bliver for åben (giv et konkret eksempelark til dem, der ikke selv har et).</p>
+      <p><strong>Plenumspørgsmål:</strong> Hvilken øvelse rammer flest timer i din uge? Hvor mange rettede i AI'ens udkast, og hvad siger det om arbejdsdelingen?</p>
+    </div>
+
+    <div class="card">
+      <span class="badge">Modul 4: Automatisering</span>
+      <h3>Sådan kører du det</h3>
+      <p><strong>Tidsbokse:</strong> 10 min intro og sporvalg, 10 min øvelse 1, 30 min øvelse 2, pause, 20 min øvelse 3, 20 min forklaring og governance, 10 min opsamling.</p>
+      <p><strong>Her knækker det tit:</strong> Rettighedsproblemer på arbejdscomputere (fordel deltagerne, så mindst én pr. bord har adgang, og lad dem bygge i par). Flows der ikke trigger under testen (lær dem at kigge i kørselshistorikken frem for at bygge om). Spor C-deltagere, der farer vild i Zapier (hold dem på den simpleste skabelon).</p>
+      <p><strong>Plenumspørgsmål:</strong> Hvad er jeres når X så Y-sætning? Hvem skal I tale med hjemme, før flowet må gå i drift?</p>
+    </div>
+
+    <div class="card">
+      <span class="badge">Modul 5: NotebookLM</span>
+      <h3>Sådan kører du det</h3>
+      <p><strong>Tidsbokse:</strong> 10 min siden sidst, 20 min øvelse 1, 15 min øvelse 2 med fælles lyt, pause, 15 min øvelse 3, 25 min forklaring, 15 min refleksion.</p>
+      <p><strong>Her knækker det tit:</strong> Deltagere uden et tungt dokument (hav en offentlig rapport klar som fælles kilde). Podcastgenerering, der tager et par minutter (sæt den i gang, og brug ventetiden på kildehenvisningsøvelsen). Copilot-øvelsen, hvor kun få har licens (gør den til demo, og lad resten sammenligne på NotebookLM).</p>
+      <p><strong>Plenumspørgsmål:</strong> Hvad fik podcasten frem, som du ikke fangede ved at skimme? Hvornår er lyd bedre end tekst for dig?</p>
+    </div>
+
+    <div class="card">
+      <span class="badge">Modul 6: Teorien</span>
+      <h3>Sådan kører du det</h3>
+      <p><strong>Tidsbokse:</strong> 30 min historien med tidslinjen på projektoren, 15 min hvad sker der derinde, 20 min ordbogen som parøvelse, 20 min værdi og de store diskussioner, 15 min kursets røde tråd.</p>
+      <p><strong>Her knækker det tit:</strong> Teoritræthed efter frokost (kør ordbogen som aktivitet, ikke som gennemgang: par forklarer ord for hinanden med egne eksempler). Diskussioner, der stikker af i teknologiskepsis eller begejstring (brug værdikortene og diskussionslisten til at holde begge sider i rummet).</p>
+      <p><strong>Plenumspørgsmål:</strong> Hvilket nedslag i historien overraskede mest? Hvilken af de fire diskussioner er vigtigst på jeres arbejdsplads lige nu?</p>
+    </div>
+  </section>
+
+  <section id="evaluering">
+    <h2>Evaluering efter hver dag</h2>
+    <p>
+      Fem spørgsmål, samme sæt hver dag, så du kan sammenligne på tværs af dagene og holdene.
+      Print arket herunder som handout, eller byg det som formular med prompten fra case-afsnittet som forlæg.
+    </p>
+
+    <div class="exercise">
+      <span class="label">Evalueringsark, 5 min sidst på dagen</span>
+      <ol class="steps">
+        <li>Hvad er det vigtigste, du tager med fra i dag?</li>
+        <li>Hvilken øvelse gav mest mening for dig, og hvorfor?</li>
+        <li>Hvor gik det for hurtigt eller for langsomt?</li>
+        <li>Hvad vil du prøve på jobbet inden næste kursusdag?</li>
+        <li>På en skala fra 1 til 10, hvor tæt var dagen på din hverdag? Hvad ville gøre den til en 10?</li>
+      </ol>
+    </div>
+
+    <div class="note">
+      <span class="label">Brug svarene aktivt</span>
+      Start hver kursusdag med tre linjer om, hvad du har ændret på baggrund af evalueringen.
+      Det viser deltagerne, at feedback virker, og det er i sig selv en pointe om iteration.
+    </div>
+  </section>
+
+  <section id="hjemmeopgaver">
+    <h2>Hjemmeopgaver mellem dagene</h2>
+    <p>
+      Det, der afgør om kurset sætter sig, er, om deltagerne bruger værktøjerne mellem kursusgangene.
+      Opgaverne er små med vilje. Print dem som handouts, og del dem ud sidst på dagen.
+    </p>
+
+    <div class="exercise">
+      <span class="label">Efter dag 1, ca. 30 min hjemme</span>
+      <ol class="steps">
+        <li>Vis din app fra modul 1 til en kollega eller derhjemme, og få én konkret feedback.</li>
+        <li>Lav rettelsen i Lovable, og send det nye link til samme person.</li>
+        <li>Skriv tre opgaver ned fra din arbejdsuge, hvor du tænker, at AI måske kunne hjælpe. Dem bruger vi som råstof på dag 2.</li>
+      </ol>
+    </div>
+
+    <div class="exercise">
+      <span class="label">Efter dag 2, ca. 45 min hjemme</span>
+      <ol class="steps">
+        <li>Brug promptmønsteret på tre ægte opgaver i løbet af ugen, og notér hvor meget du rettede i udkastene.</li>
+        <li>Lad dit flow fra modul 4 køre, og tjek kørselshistorikken efter en uge. Holdt det?</li>
+        <li>Find et tungt dokument på mindst 10 sider uden fortroligt indhold, og tag det med til dag 3. Det skal bruges i modul 5.</li>
+        <li>Frivilligt men anbefalet: se dokumentaren The Thinking Game inden dag 3. Linket står i modul 6.</li>
+      </ol>
+    </div>
+
+    <div class="exercise">
+      <span class="label">Efter dag 3, den vigtigste af dem alle</span>
+      <ol class="steps">
+        <li>Vælg ét resultat fra kurset, en app, et flow eller en podcast, og vis det til din leder eller dit team.</li>
+        <li>Aftal med IT eller din leder, hvilke værktøjer der er godkendt til hvad, så du ved, hvor grænserne går.</li>
+        <li>Sæt 20 minutter i kalenderen hver uge til at prøve én ny ting af. Små vaner slår store forsætter.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="vaerktoejskassen">
+    <h2>Værktøjskassen: flere værktøjer med værdi</h2>
+    <p>
+      Værktøjer, der kan vises som demo eller prøves som ekstraøvelse, når et hold er hurtigt igennem,
+      eller når du vil variere kurset mellem hold. Alle har gratis adgang nok til en demonstration.
+      Tjek selv kvoter og arbejdspladsens regler, inden du sætter et helt hold i gang.
+    </p>
+
+    <div class="grid">
+      <div class="card">
+        <span class="badge">Præsentationer</span>
+        <h3><a href="https://gamma.app" target="_blank" rel="noopener">Gamma</a></h3>
+        <p>Laver præsentationer og dokumenter ud fra en beskrivelse. Rammer målgruppen lige i hverdagen og er en stærk demo af, hvor meget formatarbejde AI kan overtage. Passer til modul 3.</p>
+      </div>
+      <div class="card">
+        <span class="badge">Diagrammer</span>
+        <h3><a href="https://www.napkin.ai" target="_blank" rel="noopener">Napkin</a></h3>
+        <p>Forvandler almindelig tekst til diagrammer og figurer, man kan sætte direkte i en præsentation. God hurtig gevinst for alle, der formidler på møder. Passer til modul 3.</p>
+      </div>
+      <div class="card">
+        <span class="badge">Transskription</span>
+        <h3><a href="https://goodtape.io" target="_blank" rel="noopener">Good Tape</a></h3>
+        <p>Dansk værktøj, der transskriberer lydoptagelser til tekst, bygget med europæisk databeskyttelse for øje. Oplagt til mødereferater og et godt afsæt for GDPR-snakken. Passer til modul 3 og 5.</p>
+      </div>
+      <div class="card">
+        <span class="badge">AI-søgning</span>
+        <h3><a href="https://www.perplexity.ai" target="_blank" rel="noopener">Perplexity</a></h3>
+        <p>Søgemaskine, der svarer med kildehenvisninger. God til at vise forskellen på at søge og at spørge, og kilderne knytter direkte an til kildeforankringen fra modul 5.</p>
+      </div>
+      <div class="card">
+        <span class="badge">Stemme</span>
+        <h3><a href="https://elevenlabs.io" target="_blank" rel="noopener">ElevenLabs</a></h3>
+        <p>Oplæsning og stemmekloning på dansk i høj kvalitet. En stærk demo før snakken om deepfakes og om, hvorfor man ikke længere kan stole på en stemme i telefonen. Passer til modul 5 og 6.</p>
+      </div>
+      <div class="card">
+        <span class="badge">Video</span>
+        <h3><a href="https://www.heygen.com" target="_blank" rel="noopener">HeyGen</a></h3>
+        <p>Avatarvideoer og oversættelse af video, hvor mundbevægelserne følger det nye sprog. Wow-effekt garanteret, og en konkret indgang til diskussionen om ægthed. Passer til modul 6.</p>
+      </div>
+      <div class="card">
+        <span class="badge">Musik</span>
+        <h3><a href="https://suno.com" target="_blank" rel="noopener">Suno</a></h3>
+        <p>Laver hele sange ud fra en beskrivelse. Brug den som energipause: lav en sang om holdets arbejdsplads, og tag ophavsretsdiskussionen bagefter, mens de griner. Passer som icebreaker og til modul 6.</p>
+      </div>
+      <div class="card">
+        <span class="badge">Forstå ML</span>
+        <h3><a href="https://teachablemachine.withgoogle.com" target="_blank" rel="noopener">Teachable Machine</a></h3>
+        <p>Træn din egen billedgenkendelse i browseren med webcam på to minutter. Den bedste pædagogiske demo af, hvad træning og eksempler betyder, der findes. Passer til modul 6 før tidslinjen.</p>
+      </div>
+      <div class="card">
+        <span class="badge">Leg</span>
+        <h3><a href="https://quickdraw.withgoogle.com" target="_blank" rel="noopener">Quick, Draw!</a></h3>
+        <p>Tegn, og lad en AI gætte hvad det er. To minutters sjov, der samtidig viser mønstergenkendelse i praksis. God som opvarmning lige efter frokost.</p>
+      </div>
+      <div class="card">
+        <span class="badge">Europæisk AI</span>
+        <h3><a href="https://chat.mistral.ai" target="_blank" rel="noopener">Le Chat fra Mistral</a></h3>
+        <p>En europæisk chatassistent på niveau med de amerikanske til hverdagsbrug. God at kende, når diskussionen om datasuverænitet og europæiske alternativer kommer op. Passer til modul 6.</p>
+      </div>
+      <div class="card">
+        <span class="badge">Lokal AI</span>
+        <h3><a href="https://lmstudio.ai" target="_blank" rel="noopener">LM Studio</a></h3>
+        <p>Kør sprogmodeller lokalt på din egen computer uden internetforbindelse. Demoen, der beviser pointen om open source-modeller fra ordbogen: teknologien kan ejes og køres selv. Passer til modul 6.</p>
+      </div>
+      <div class="card">
+        <span class="badge">Live-samtale</span>
+        <h3><a href="https://aistudio.google.com" target="_blank" rel="noopener">Google AI Studio</a></h3>
+        <p>Tal med en AI i realtid, og del din skærm, mens den kigger med og vejleder. Et kig ind i, hvordan AI-hjælp kommer til at føles om få år. Stærk afslutningsdemo på dag 3.</p>
+      </div>
+    </div>
+
+    <div class="note">
+      <span class="label">Princip for at tage nye værktøjer ind</span>
+      Et værktøj skal ind på kurset, hvis det enten sparer deltagerne tid i hverdagen eller giver en
+      aha-oplevelse, der bærer en pointe. Kan det ingen af delene, er det støj, uanset hvor imponerende det er.
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="inner">
+    AI i praksis, undervisersiden. © 2026 Jesper Qvist. <a href="index.html">Tilbage til forsiden</a>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+
+</body>
+</html>
