@@ -176,9 +176,12 @@ document.querySelectorAll('main section').forEach(function (section) {
     overlay.innerHTML =
       '<div class="slide-stage"><div class="slide-inner"></div></div>' +
       '<div class="slide-controls">' +
+      '<span class="slide-foot">© 2026 Jesper Qvist, qvisty.github.io/AI-i-praksis</span>' +
+      '<span class="slide-nav">' +
       '<button type="button" class="slide-prev">Forrige</button>' +
       '<span class="slide-count"></span>' +
       '<button type="button" class="slide-next">Næste</button>' +
+      '</span>' +
       '<button type="button" class="slide-exit">Luk</button>' +
       '</div>';
     document.body.appendChild(overlay);
