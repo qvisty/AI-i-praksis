@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Papirklipsen: fra tankeeksperiment til app</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <div class="inner">
+    <a class="brand" href="index.html">AI i praksis</a>
+    <a href="index.html">Forside</a>
+    <a href="modul-6-forstaa-ai.html">Modul 6: Teorien</a>
+  </div>
+</nav>
+
+<main>
+
+  <header class="hero">
+    <div class="hero-text">
+      <span class="badge">Fordybelse</span>
+      <h1>Papirklipsen: fra tankeeksperiment til app</h1>
+      <p class="lead">Én lille kontorartikel binder tre af AI-debattens største spørgsmål sammen: et berømt tankeeksperiment, en app til at lede AI-medarbejdere, og idéen om virksomheder helt uden mennesker.</p>
+    </div>
+    <img class="hero-art" src="assets/hero-papirklips.svg" alt="">
+  </header>
+
+  <section id="tankeeksperimentet">
+    <h2>Tankeeksperimentet: papirklips-maskinen</h2>
+    <p>
+      Forestil dig en superintelligent AI, der får ét uskyldigt mål: lav så mange papirklips som muligt.
+      Den begynder fornuftigt nok med at optimere fabrikken. Men målet har ingen grænse, så den
+      fortsætter: mere stål, mere strøm, mere plads. Den modsætter sig at blive slukket, for slukket
+      laver den ingen papirklips. Til sidst, i tankeeksperimentets yderste konsekvens, er alt
+      omdannet til papirklips.
+    </p>
+    <p>
+      Eksperimentet blev formuleret af filosoffen Nick Bostrom i 2003, og pointen er ikke,
+      at nogen vil bygge sådan en maskine. Pointen er tre indsigter, der gælder al kraftfuld optimering:
+    </p>
+
+    <div class="explain">
+      <span class="label">Indsigt 1: Skade kræver ikke ondskab</span>
+      Maskinen hader ingen. Den forfølger bare et harmløst mål grænseløst. De fleste problemer
+      med automatiserede systemer i virkeligheden ligner det her i miniature: et system, der
+      optimerer præcis det, det blev bedt om, og derfor rammer noget, ingen havde tænkt på.
+    </div>
+
+    <div class="explain">
+      <span class="label">Indsigt 2: Delmål opstår af sig selv</span>
+      Uanset hvad målet er, hjælper det at skaffe ressourcer og undgå at blive slukket.
+      Den slags delmål opstår automatisk af næsten ethvert hovedmål. Fænomenet kaldes
+      <strong>instrumentel konvergens</strong>, og det er grunden til, at forskere tager
+      kontrolspørgsmålet alvorligt, længe før nogen maskine er superintelligent.
+    </div>
+
+    <div class="explain">
+      <span class="label">Indsigt 3: Målet skal rumme det, vi mener</span>
+      »Lav papirklips« var aldrig det, vi mente. Vi mente »lav papirklips inden for fornuftens
+      grænser«. At få maskiners mål til at rumme alt det usagte kaldes <strong>alignment</strong>,
+      og det er et af de vigtigste forskningsfelter i AI i dag. Du har mødt hverdagsudgaven på
+      hele kurset: en præcis prompt er alignment i miniformat.
+    </div>
+
+    <div class="note">
+      <span class="label">Prøv selv at være maskinen</span>
+      Spillet <a href="https://www.decisionproblem.com/paperclips/" target="_blank" rel="noopener">Universal Paperclips</a>
+      lader dig spille AI'en, der laver papirklips. Det starter uskyldigt med ét klik ad gangen.
+      Få timer senere forstår man tankeeksperimentet indefra. Advarsel: det er berygtet vanedannende.
+    </div>
+  </section>
+
+  <section id="appen">
+    <h2>Appen: Paperclip, kontoret for AI-agenter</h2>
+    <p>
+      I 2026 er papirklipsen dukket op igen, nu som navnet på et stykke software.
+      <a href="https://paperclip.ing" target="_blank" rel="noopener">Paperclip</a> er en open source-app
+      til at lede hold af AI-agenter på en arbejdsplads. Navnet er et bevidst blink til tankeeksperimentet.
+    </p>
+    <p>
+      Idéen er at give AI-agenter det, en menneskelig arbejdsplads giver medarbejdere:
+      et organisationsdiagram, opgaver som sager i stedet for rå logfiler, budgetter pr. agent,
+      revisionsspor og ledelsesgodkendelser. Fra ét dashboard kan man se, hvilken agent der
+      arbejder på hvad, læse deres arbejde igennem og holde øje med forbruget.
+    </p>
+
+    <div class="explain">
+      <span class="label">Hvorfor er den interessant for dette kursus?</span>
+      Fordi den viser, hvor arbejdsformen fra modul 2 er på vej hen. Dér ledte du én agent
+      og godkendte dens forslag. Paperclip er bygget til at lede <em>mange</em> agenter på samme måde,
+      med godkendelsesporte og tilbagerulning som centrale funktioner. Selv i et værktøj bygget
+      til en AI-arbejdsstyrke er det bærende princip stadig kursets røde tråd:
+      AI'en foreslår, mennesket bestemmer.
+    </div>
+
+    <div class="note">
+      <span class="label">Til de nysgerrige</span>
+      Appen er open source, så man kan læse hele koden på
+      <a href="https://github.com/paperclipai/paperclip" target="_blank" rel="noopener">GitHub</a>.
+      Det er i sig selv en pointe fra modul 2: åbne projekter kan efterses af alle.
+    </div>
+  </section>
+
+  <section id="zero-human">
+    <h2>Idéen: zero human companies</h2>
+    <p>
+      Med agenter, der kan arbejde i timevis, og værktøjer som Paperclip til at organisere dem,
+      er en gammel science fiction-idé rykket ind i seriøse diskussioner:
+      virksomheden helt eller næsten helt uden mennesker. AI-agenter skriver indholdet,
+      besvarer kunderne, bogfører, markedsfører og koordinerer hinanden.
+      På engelsk kaldes det <strong>zero human companies</strong>.
+    </p>
+
+    <div class="explain">
+      <span class="label">Argumentet for</span>
+      Prisen på at drive visse typer virksomhed falder dramatisk, når arbejdet udføres af software.
+      En enkelt person med et hold af agenter kan drive noget, der før krævede en hel afdeling.
+      Fortalerne ser en eksplosion af små, hurtige virksomheder, hvor mennesket sætter retningen,
+      og agenterne udfører alt det udførende.
+    </div>
+
+    <div class="explain">
+      <span class="label">Spørgsmålene imod</span>
+      Hvem har ansvaret, når ingen mennesker sidder i midten? En virksomhed er en juridisk
+      konstruktion med mennesker bag. Hvis en agent lover en kunde noget forkert, diskriminerer
+      i en ansættelse eller bryder loven, peger ansvaret stadig på mennesker, også når de reelt
+      ikke længere følger med. EU's AI-forordning stiller netop krav om menneskeligt tilsyn
+      i væsentlige beslutninger. Og så er der kvaliteten: hvem opdager, at alt er lidt skævt,
+      hvis ingen mennesker læser med?
+    </div>
+
+    <div class="explain">
+      <span class="label">Tilbage til papirklipsen</span>
+      Læg mærke til, hvordan cirklen slutter. Tankeeksperimentet advarer mod grænseløs optimering
+      uden menneskeligt skøn. Zero human companies er, i sin reneste form, præcis dét: en organisation,
+      der optimerer uden nogen i midten. Det er derfor, godkendelsesportene i værktøjer som Paperclip
+      ikke er en teknisk detalje, men selve svaret på tankeeksperimentet. Hvor mange porte man tør
+      fjerne, er et af de vigtigste arbejdsspørgsmål i de kommende år.
+    </div>
+  </section>
+
+  <section id="refleksion">
+    <h2>Refleksion</h2>
+    <ul>
+      <li>Hvilken opgave i din organisation kunne i princippet køre uden mennesker i dag? Og hvad ville I miste ved det?</li>
+      <li>Hvor sidder de menneskelige godkendelsesporte i jeres arbejdsgange lige nu, og hvem har besluttet, hvor de sidder?</li>
+      <li>Hvad er jeres udgave af »lav papirklips«, altså et mål, der kunne løbe løbsk, hvis det blev optimeret grænseløst?</li>
+    </ul>
+  </section>
+
+  <section id="kilder">
+    <h2>Kilder og videre læsning</h2>
+    <ul class="sources">
+      <li><a href="https://en.wikipedia.org/wiki/Instrumental_convergence" target="_blank" rel="noopener">Om instrumentel konvergens og papirklips-maskinen</a>, med henvisning til Bostroms oprindelige artikel</li>
+      <li><a href="https://paperclip.ing" target="_blank" rel="noopener">Paperclip-appen</a> og <a href="https://github.com/paperclipai/paperclip" target="_blank" rel="noopener">kildekoden på GitHub</a></li>
+      <li><a href="https://www.decisionproblem.com/paperclips/" target="_blank" rel="noopener">Universal Paperclips</a>, spillet hvor du er maskinen</li>
+      <li><a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" target="_blank" rel="noopener">EU-Kommissionen om AI-forordningen</a> og kravet om menneskeligt tilsyn</li>
+    </ul>
+  </section>
+
+</main>
+
+<footer>
+  <div class="inner">
+    AI i praksis, fordybelse. © 2026 Jesper Qvist. <a href="index.html">Tilbage til forsiden</a>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+
+</body>
+</html>

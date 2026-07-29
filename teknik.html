@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Til de tekniske</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <div class="inner">
+    <a class="brand" href="index.html">AI i praksis</a>
+    <a href="index.html">Forside</a>
+    <a href="modul-2-github-claude.html">Modul 2: GitHub + Claude</a>
+    <a href="modul-4-automatisering.html">Modul 4: Automatisering</a>
+  </div>
+</nav>
+
+<main>
+
+  <header class="hero">
+    <div class="hero-text">
+      <span class="badge">Til de tekniske</span>
+      <h1>Det dybe spor</h1>
+      <p class="lead">Kan du i forvejen lidt kode, eller vil du gerne kunne det, så er det her dine ekstra øvelser. Fire spor, der går et spadestik dybere end modulerne.</p>
+    </div>
+    <img class="hero-art" src="assets/hero-teknik.svg" alt="">
+  </header>
+
+  <section id="om">
+    <h2>Sådan bruger du siden</h2>
+    <p>
+      Sporene her er valgfri fordybelse til dig, der er hurtigt igennem modulernes øvelser,
+      eller som vil arbejde videre hjemme. Spor A og B forlænger modul 2, spor C forlænger modul 4,
+      og spor D giver dig din egen AI-server på skrivebordet. Alle spor kan tages hver for sig.
+    </p>
+    <div class="note">
+      <span class="label">Husk kursets grundregel</span>
+      Også her gælder reglen fra forsiden: private konti og fiktivt indhold, medmindre din
+      arbejdsplads har givet lov. Og installér kun software på en computer, du selv bestemmer over.
+    </div>
+  </section>
+
+  <section id="spor-a">
+    <h2>Spor A: Terminalen og git</h2>
+    <p>
+      I modul 2 brugte du git gennem GitHubs hjemmeside. Professionelle bruger git fra terminalen,
+      og det er mindre skummelt, end det ser ud. Du kan endda hente hele denne kursusside ned
+      og se dens fulde historik.
+    </p>
+
+    <div class="exercise">
+      <span class="label">Hands-on, ca. 30 min</span>
+      <ol class="steps">
+        <li>Installér git fra <a href="https://git-scm.com" target="_blank" rel="noopener">git-scm.com</a>. På Mac kan du i stedet skrive <code>xcode-select --install</code> i Terminal.</li>
+        <li>Åbn terminalen (Terminal på Mac, Git Bash på Windows), og hent kursets repo med kommandoerne herunder.</li>
+        <li>Kig på historikken med <code>git log</code>. Det, du ser, er hele denne kurssides tilblivelse, commit for commit.</li>
+        <li>Åbn en fil i en teksteditor, lav en lille ændring, og se hvad git siger med <code>git status</code> og <code>git diff</code>.</li>
+      </ol>
+    </div>
+
+    <div class="prompt" data-copy>git clone https://github.com/qvisty/AI-i-praksis.git
+cd AI-i-praksis
+git log --oneline
+git status</div>
+
+    <div class="explain">
+      <span class="label">Hvad du lige har lært</span>
+      <code>clone</code> henter et repo med hele dets historik. <code>log</code> viser historikken.
+      <code>status</code> og <code>diff</code> viser, hvad der er ændret siden sidste commit.
+      Det er de fire kommandoer, man bruger halvfems procent af tiden.
+    </div>
+  </section>
+
+  <section id="spor-b">
+    <h2>Spor B: Claude Code i terminalen</h2>
+    <p>
+      I modul 2 arbejdede Claude Code for dig via browseren. I terminalen kommer du tættere på:
+      du kan se hvert værktøjskald, agenten laver, og arbejde i et lokalt repo på din egen maskine.
+      Kræver et Claude-abonnement og Node.js fra <a href="https://nodejs.org" target="_blank" rel="noopener">nodejs.org</a>.
+    </p>
+
+    <div class="exercise">
+      <span class="label">Hands-on, ca. 30 min</span>
+      <ol class="steps">
+        <li>Installér Claude Code med kommandoen herunder, og log ind første gang du starter den.</li>
+        <li>Stil dig i repo-mappen fra spor A, og start agenten med <code>claude</code>.</li>
+        <li>Giv den en lille opgave på dansk, f.eks. »ret en stavefejl« eller »forklar hvad site.js gør«. Se hvordan den læser filer og foreslår ændringer, som du skal godkende.</li>
+        <li>Opret en fil med navnet <code>CLAUDE.md</code> i mappen, og skriv tre linjer om projektets regler, f.eks. at al tekst skal være på dansk. Agenten læser den automatisk, og du har nu skrevet din første instruks til en AI-medarbejder.</li>
+      </ol>
+    </div>
+
+    <div class="prompt" data-copy>npm install -g @anthropic-ai/claude-code
+cd AI-i-praksis
+claude</div>
+
+    <div class="explain">
+      <span class="label">Hvad du lige har lært</span>
+      En agent i terminalen er den samme arbejdsdeling som i modul 2, bare tættere på:
+      mål ind, forslag ud, menneske i midten. <code>CLAUDE.md</code> er projektets faste
+      instruks til agenten, en slags medarbejderhåndbog på tre linjer.
+    </div>
+  </section>
+
+  <section id="spor-c">
+    <h2>Spor C: Webhooks og Apps Script i hånden</h2>
+    <p>
+      I modul 4 klikkede du flows sammen. Under alle flow-værktøjerne ligger det samme byggeelement:
+      en <strong>webhook</strong>, altså en webadresse, der udløser kode, når nogen kalder den.
+      Her bygger du din egen fra bunden.
+    </p>
+
+    <div class="exercise">
+      <span class="label">Hands-on, ca. 30 min</span>
+      <ol class="steps">
+        <li>Gå til <a href="https://script.new" target="_blank" rel="noopener">script.new</a>, og indsæt scriptet herunder med din egen mail.</li>
+        <li>Vælg <strong>Udrul</strong>, derefter <strong>Ny udrulning</strong> og typen <strong>Webapp</strong>. Sæt adgang til »Alle«, og kopiér webadressen.</li>
+        <li>Kald din webhook fra terminalen med curl-kommandoen herunder, med din egen webadresse sat ind.</li>
+        <li>Tjek din indbakke. Du har lige bygget det, der ligger under hvert eneste flow i modul 4.</li>
+      </ol>
+    </div>
+
+    <div class="prompt" data-copy>function doPost(e) {
+  var data = JSON.parse(e.postData.contents);
+  MailApp.sendEmail('din@mail.dk', 'Din webhook virker', JSON.stringify(data, null, 2));
+  return ContentService.createTextOutput('ok');
+}</div>
+
+    <div class="prompt" data-copy>curl -X POST -H "Content-Type: application/json" -d '{"besked":"hej fra terminalen"}' DIN-WEBAPP-ADRESSE</div>
+
+    <div class="explain">
+      <span class="label">Hvad du lige har lært</span>
+      En webhook er bare en adresse plus kode, der kører ved kald. Flow-værktøjernes udløsere
+      og handlinger er pakket ind i præcis det her. Kan du webhooks, kan du koble næsten
+      alt sammen med alt, også uden et flow-værktøj imellem.
+    </div>
+  </section>
+
+  <section id="spor-d">
+    <h2>Spor D: Kør en sprogmodel på din egen maskine</h2>
+    <p>
+      Alt på kurset er kørt i skyen. Men åbne modeller kan køre lokalt på en almindelig computer,
+      helt uden internetforbindelse. Det er den håndgribelige udgave af ordbogens
+      »open source-model«, og et stærkt argument i enhver diskussion om databeskyttelse.
+    </p>
+
+    <div class="exercise">
+      <span class="label">Hands-on, ca. 45 min</span>
+      <ol class="steps">
+        <li>Installér <a href="https://lmstudio.ai" target="_blank" rel="noopener">LM Studio</a>, og hent en lille åben model gennem appens søgefunktion. Vælg en af de små, den skal bare kunne køre på din maskine.</li>
+        <li>Chat med modellen, og sluk så for wifi. Chat videre. Lad pointen synke ind: modellen bor på din disk.</li>
+        <li>Start den lokale server i LM Studio (fanen Developer), og tal med din model via kommandoen herunder. Det er samme slags API, som professionelle systemer bruger mod skyen.</li>
+        <li>Sammenlign med en cloudmodel: hastighed, kvalitet, dansk. Hvad koster forskellen, og hvad køber den?</li>
+      </ol>
+    </div>
+
+    <div class="prompt" data-copy>curl http://localhost:1234/v1/chat/completions -H "Content-Type: application/json" -d '{"messages":[{"role":"user","content":"Forklar hvad en webhook er, paa dansk, i to saetninger"}]}'</div>
+
+    <div class="explain">
+      <span class="label">Hvad du lige har lært</span>
+      En sprogmodel er en fil plus et program, der kører den. API'et er bare en aftale om,
+      hvordan man taler med den. Alternativet <a href="https://ollama.com" target="_blank" rel="noopener">Ollama</a>
+      gør det samme direkte fra terminalen, hvis du vil helt ned i maskinrummet.
+    </div>
+  </section>
+
+  <section id="kilder">
+    <h2>Kilder og videre læsning</h2>
+    <ul class="sources">
+      <li><a href="https://git-scm.com/doc" target="_blank" rel="noopener">Gits officielle dokumentation</a> med bogen Pro Git gratis online</li>
+      <li><a href="https://claude.com/claude-code" target="_blank" rel="noopener">Claude Code</a> med dokumentation og installationsvejledning</li>
+      <li><a href="https://developers.google.com/apps-script" target="_blank" rel="noopener">Apps Script-dokumentationen</a>, herunder webapps og doPost</li>
+      <li><a href="https://lmstudio.ai" target="_blank" rel="noopener">LM Studio</a> og <a href="https://ollama.com" target="_blank" rel="noopener">Ollama</a> til lokale modeller</li>
+    </ul>
+  </section>
+
+</main>
+
+<footer>
+  <div class="inner">
+    AI i praksis, til de tekniske. © 2026 Jesper Qvist. <a href="index.html">Tilbage til forsiden</a>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+
+</body>
+</html>

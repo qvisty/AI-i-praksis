@@ -19,6 +19,8 @@ Siden bruges i stedet for slides og udgives med GitHub Pages.
 | `flere-vaerktoejer.html` | Ekstra idékatalog: 12 værktøjer, korte kursusøvelser og valgkriterier |
 | `underviser.html` | Underviserside: forberedelse, talenoter, evaluering, hjemmeopgaver og værktøjskasse. Kun linket fra forsidens sidefod. Skjules ved at slette det link |
 | `evaluering.html` | Deltagernes evalueringsside. Indsæt formularlinket i `FORMULAR_URL` i filen, se undervisersiden |
+| `papirklips.html` | Fordybelse: papirklips-tankeeksperimentet, appen Paperclip og zero human companies. Linket fra modul 6 |
+| `teknik.html` | Til de tekniske: fire dybe spor med git, Claude Code i terminalen, webhooks og lokal AI. Linket fra modul 2 og 4 |
 | `style.css` | Fælles design (lyst/mørkt tema, øvelses- og forklaringsbokse, animationer) |
 | `site.js` | "Kopiér"-knapper, print af handouts, diasvisning og indtoning ved scroll |
 | `assets/` | Håndlavede SVG-illustrationer til hver side |

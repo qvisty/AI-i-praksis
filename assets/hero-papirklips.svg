@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240" role="img" aria-hidden="true">
+  <style>
+    .k1 { animation: pop 5s ease-in-out infinite; }
+    .k2 { animation: pop 5s ease-in-out 0.7s infinite; }
+    .k3 { animation: pop 5s ease-in-out 1.4s infinite; }
+    .k4 { animation: pop 5s ease-in-out 2.1s infinite; }
+    .k5 { animation: pop 5s ease-in-out 2.8s infinite; }
+    @keyframes pop { 0%, 8% { opacity: 0; } 20%, 85% { opacity: 1; } 100% { opacity: 0; } }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; opacity: 1 !important; } }
+  </style>
+  <g fill="none" stroke-linecap="round">
+    <g stroke="#007a53" stroke-width="7">
+      <path d="M120 60 v96 a26 26 0 0 0 52 0 V72 a16 16 0 0 0 -32 0 v76 a6 6 0 0 0 12 0 V84"/>
+    </g>
+    <g class="k1" stroke="#0f9d68" stroke-width="4.5">
+      <path d="M52 150 v40 a11 11 0 0 0 22 0 v-35 a7 7 0 0 0 -14 0 v32"/>
+    </g>
+    <g class="k2" stroke="#34c08e" stroke-width="4.5">
+      <path d="M228 48 v40 a11 11 0 0 0 22 0 V53 a7 7 0 0 0 -14 0 v32"/>
+    </g>
+    <g class="k3" stroke="#69a58f" stroke-width="4.5">
+      <path d="M252 140 v40 a11 11 0 0 0 22 0 v-35 a7 7 0 0 0 -14 0 v32"/>
+    </g>
+    <g class="k4" stroke="#0f9d68" stroke-width="4.5">
+      <path d="M62 40 v40 a11 11 0 0 0 22 0 V45 a7 7 0 0 0 -14 0 v32"/>
+    </g>
+    <g class="k5" stroke="#34c08e" stroke-width="4.5">
+      <path d="M186 178 v34 a10 10 0 0 0 20 0 v-30 a6 6 0 0 0 -12 0 v27"/>
+    </g>
+  </g>
+</svg>
