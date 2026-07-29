@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 160" role="img" aria-label="Sprogmodellen gætter det næste ord blandt flere muligheder">
+  <style>
+    text { font-family: system-ui, sans-serif; font-weight: 700; font-size: 16px; }
+    .sentence { fill: #ffffff; }
+    .w1 { animation: guess 4.5s ease-in-out infinite; }
+    .w2 { animation: guess 4.5s ease-in-out 1.5s infinite; }
+    .w3 { animation: guess 4.5s ease-in-out 3s infinite; }
+    @keyframes guess { 0%, 8% { opacity: 0.15; } 16%, 26% { opacity: 1; } 34%, 100% { opacity: 0.15; } }
+    @media (prefers-reduced-motion: reduce) { .w1, .w2, .w3 { animation: none !important; opacity: 0.8; } }
+  </style>
+  <rect x="16" y="56" width="252" height="44" rx="22" fill="#007a53"/>
+  <text class="sentence" x="142" y="84" text-anchor="middle">AI'en gætter det næste</text>
+  <g class="w1">
+    <rect x="288" y="10" width="112" height="38" rx="19" fill="#34c08e"/>
+    <text x="344" y="35" text-anchor="middle" fill="#ffffff">ord</text>
+  </g>
+  <g class="w2">
+    <rect x="288" y="60" width="112" height="38" rx="19" fill="#0f9d68"/>
+    <text x="344" y="85" text-anchor="middle" fill="#ffffff">skridt</text>
+  </g>
+  <g class="w3">
+    <rect x="288" y="110" width="112" height="38" rx="19" fill="#69a58f"/>
+    <text x="344" y="135" text-anchor="middle" fill="#ffffff">tegn</text>
+  </g>
+</svg>

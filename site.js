@@ -14,6 +14,39 @@ document.querySelectorAll('.prompt[data-copy]').forEach(function (box) {
   box.appendChild(btn);
 });
 
+// Sætter en "Print handout"-knap på alle øvelsessektioner. Knappen printer
+// sektionen som et rent A4-ark med sidehoved, klar til kopiering.
+document.querySelectorAll('main section').forEach(function (section) {
+  var exercise = section.querySelector('.exercise');
+  if (!exercise) return;
+  var btn = document.createElement('button');
+  btn.className = 'print-btn';
+  btn.type = 'button';
+  btn.textContent = 'Print handout';
+  btn.addEventListener('click', function () {
+    var head = document.createElement('div');
+    head.className = 'handout-head';
+    var brand = document.createElement('strong');
+    brand.textContent = 'AI i praksis';
+    var module = document.createElement('span');
+    module.textContent = document.title;
+    head.appendChild(brand);
+    head.appendChild(module);
+    section.insertBefore(head, section.firstChild);
+    document.body.classList.add('print-handout');
+    section.classList.add('print-target');
+    var cleanup = function () {
+      document.body.classList.remove('print-handout');
+      section.classList.remove('print-target');
+      head.remove();
+      window.removeEventListener('afterprint', cleanup);
+    };
+    window.addEventListener('afterprint', cleanup);
+    window.print();
+  });
+  exercise.appendChild(btn);
+});
+
 // Toner sektionerne blidt ind, når de ruller ind i billedet.
 var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 if (!reducedMotion && 'IntersectionObserver' in window) {

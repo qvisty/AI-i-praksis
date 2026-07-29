@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 220" role="img" aria-label="Iterationens kredsløb: prøv, kig og ret i en cirkel">
+  <style>
+    text { font-family: system-ui, sans-serif; font-weight: 700; font-size: 16px; fill: #ffffff; }
+    .orbit { animation: spin 6s linear infinite; transform-box: view-box; transform-origin: 180px 110px; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @media (prefers-reduced-motion: reduce) { .orbit { animation: none; } }
+  </style>
+  <circle cx="180" cy="110" r="72" fill="none" stroke="#94a3b8" stroke-width="3" stroke-dasharray="4 8"/>
+  <g class="orbit">
+    <circle cx="180" cy="38" r="7" fill="#34c08e"/>
+  </g>
+  <g>
+    <rect x="132" y="8" width="96" height="34" rx="17" fill="#007a53"/>
+    <text x="180" y="31" text-anchor="middle">PRØV</text>
+  </g>
+  <g>
+    <rect x="252" y="150" width="96" height="34" rx="17" fill="#0f9d68"/>
+    <text x="300" y="173" text-anchor="middle">KIG</text>
+  </g>
+  <g>
+    <rect x="12" y="150" width="96" height="34" rx="17" fill="#34c08e"/>
+    <text x="60" y="173" text-anchor="middle">RET</text>
+  </g>
+</svg>

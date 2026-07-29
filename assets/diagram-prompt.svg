@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 200" role="img" aria-label="Promptmønsteret: rolle, kontekst, opgave og format samles til en god prompt">
+  <style>
+    text { font-family: system-ui, sans-serif; font-weight: 700; font-size: 15px; fill: #ffffff; }
+    .c1 { animation: slide 6s ease-in-out infinite; }
+    .c2 { animation: slide 6s ease-in-out 0.4s infinite; }
+    .c3 { animation: slide 6s ease-in-out 0.8s infinite; }
+    .c4 { animation: slide 6s ease-in-out 1.2s infinite; }
+    @keyframes slide { 0%, 6% { opacity: 0; transform: translateX(-14px); } 18%, 88% { opacity: 1; transform: translateX(0); } 100% { opacity: 0; } }
+    @media (prefers-reduced-motion: reduce) { .c1, .c2, .c3, .c4 { animation: none !important; opacity: 1; } }
+  </style>
+  <g class="c1">
+    <rect x="16" y="14" width="130" height="34" rx="17" fill="#007a53"/>
+    <text x="81" y="37" text-anchor="middle">ROLLE</text>
+  </g>
+  <g class="c2">
+    <rect x="16" y="60" width="130" height="34" rx="17" fill="#0f9d68"/>
+    <text x="81" y="83" text-anchor="middle">KONTEKST</text>
+  </g>
+  <g class="c3">
+    <rect x="16" y="106" width="130" height="34" rx="17" fill="#34c08e"/>
+    <text x="81" y="129" text-anchor="middle">OPGAVE</text>
+  </g>
+  <g class="c4">
+    <rect x="16" y="152" width="130" height="34" rx="17" fill="#69a58f"/>
+    <text x="81" y="175" text-anchor="middle">FORMAT</text>
+  </g>
+  <path d="M158 100 h44" stroke="#94a3b8" stroke-width="4" stroke-linecap="round" stroke-dasharray="2 8"/>
+  <g>
+    <rect x="214" y="46" width="190" height="96" rx="20" fill="#007a53"/>
+    <path d="M240 142 l-8 20 26 -20 z" fill="#007a53"/>
+    <rect x="232" y="68" width="150" height="9" rx="4.5" fill="#ffffff" opacity="0.9"/>
+    <rect x="232" y="88" width="120" height="9" rx="4.5" fill="#ffffff" opacity="0.65"/>
+    <rect x="232" y="108" width="136" height="9" rx="4.5" fill="#ffffff" opacity="0.4"/>
+  </g>
+</svg>

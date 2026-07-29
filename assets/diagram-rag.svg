@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 200" role="img" aria-label="Kildeforankring: dine kilder går gennem AI-modellen og bliver til svar med henvisninger">
+  <style>
+    text { font-family: system-ui, sans-serif; font-weight: 700; fill: #ffffff; }
+    @media (prefers-reduced-motion: reduce) { .mover { display: none; } }
+  </style>
+  <g>
+    <rect x="20" y="34" width="74" height="94" rx="8" fill="none" stroke="#94a3b8" stroke-width="3"/>
+    <rect x="34" y="52" width="46" height="7" rx="3.5" fill="#94a3b8"/>
+    <rect x="34" y="68" width="46" height="7" rx="3.5" fill="#94a3b8" opacity="0.7"/>
+    <rect x="34" y="84" width="32" height="7" rx="3.5" fill="#94a3b8" opacity="0.5"/>
+  </g>
+  <g>
+    <rect x="38" y="62" width="74" height="94" rx="8" fill="#e9f5f0" stroke="#0f9d68" stroke-width="3"/>
+    <rect x="52" y="80" width="46" height="7" rx="3.5" fill="#0f9d68"/>
+    <rect x="52" y="96" width="46" height="7" rx="3.5" fill="#0f9d68" opacity="0.7"/>
+    <rect x="52" y="112" width="32" height="7" rx="3.5" fill="#0f9d68" opacity="0.5"/>
+  </g>
+  <path id="rag1" d="M118 108 C 150 108, 158 100, 182 100" stroke="#94a3b8" stroke-width="3.5" fill="none" stroke-dasharray="2 8" stroke-linecap="round"/>
+  <circle cx="216" cy="100" r="34" fill="#007a53"/>
+  <text x="216" y="107" text-anchor="middle" font-size="18">AI</text>
+  <path id="rag2" d="M254 100 C 278 100, 286 92, 306 92" stroke="#94a3b8" stroke-width="3.5" fill="none" stroke-dasharray="2 8" stroke-linecap="round"/>
+  <g>
+    <rect x="306" y="48" width="96" height="88" rx="12" fill="#0f9d68"/>
+    <rect x="320" y="66" width="68" height="8" rx="4" fill="#ffffff" opacity="0.9"/>
+    <rect x="320" y="84" width="52" height="8" rx="4" fill="#ffffff" opacity="0.65"/>
+    <rect x="320" y="102" width="60" height="8" rx="4" fill="#ffffff" opacity="0.4"/>
+    <circle cx="382" cy="120" r="10" fill="#ffffff"/>
+    <text x="382" y="125" text-anchor="middle" font-size="12" fill="#007a53">1</text>
+  </g>
+  <circle class="mover" r="6" fill="#34c08e">
+    <animateMotion dur="3s" repeatCount="indefinite">
+      <mpath href="#rag1"/>
+    </animateMotion>
+  </circle>
+  <circle class="mover" r="6" fill="#34c08e">
+    <animateMotion dur="3s" begin="1.5s" repeatCount="indefinite">
+      <mpath href="#rag2"/>
+    </animateMotion>
+  </circle>
+</svg>
