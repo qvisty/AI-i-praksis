@@ -107,6 +107,71 @@ function paginationLink(page, dir, hash) {
   }
 })();
 
+// Menuen bygges ét sted, så ingen sider bliver glemt i navigationen.
+// Undervisersiden holdes bevidst udenfor og nås via forsidens sidefod.
+(function () {
+  var inner = document.querySelector('nav .inner');
+  if (!inner) return;
+  var MENU = [
+    { file: 'index.html', label: 'Forside' },
+    { file: 'modul-1-lovable.html', label: 'Modul 1: Lovable' },
+    { file: 'modul-2-github-claude.html', label: 'Modul 2: GitHub + Claude' },
+    { file: 'modul-3-ai-i-hverdagen.html', label: 'Modul 3: Hverdagen' },
+    { file: 'modul-4-automatisering.html', label: 'Modul 4: Automatisering' },
+    { file: 'modul-5-andre-modaliteter.html', label: 'Modul 5: NotebookLM' },
+    { file: 'modul-6-forstaa-ai.html', label: 'Modul 6: Teorien' },
+    { label: 'Mere', children: [
+      { file: 'flere-vaerktoejer.html', label: 'Flere værktøjer' },
+      { file: 'teknik.html', label: 'Til de tekniske' },
+      { file: 'papirklips.html', label: 'Fordybelse: Papirklipsen' },
+      { file: 'evaluering.html', label: 'Evaluering' }
+    ] }
+  ];
+  Array.prototype.slice.call(inner.querySelectorAll('a:not(.brand)')).forEach(function (a) { a.remove(); });
+  MENU.forEach(function (item) {
+    if (item.children) {
+      var group = document.createElement('div');
+      group.className = 'nav-group';
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'nav-group-btn';
+      btn.textContent = item.label;
+      btn.setAttribute('aria-expanded', 'false');
+      var drop = document.createElement('div');
+      drop.className = 'nav-dropdown';
+      var groupActive = false;
+      item.children.forEach(function (c) {
+        var a = document.createElement('a');
+        a.href = c.file;
+        a.textContent = c.label;
+        if (c.file === pageFile) { a.className = 'active'; groupActive = true; }
+        drop.appendChild(a);
+      });
+      if (groupActive) btn.classList.add('active');
+      btn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        var open = group.classList.toggle('open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      group.appendChild(btn);
+      group.appendChild(drop);
+      inner.appendChild(group);
+    } else {
+      var a = document.createElement('a');
+      a.href = item.file;
+      a.textContent = item.label;
+      if (item.file === pageFile) a.className = 'active';
+      inner.appendChild(a);
+    }
+  });
+  document.addEventListener('click', function () {
+    document.querySelectorAll('.nav-group.open').forEach(function (g) {
+      g.classList.remove('open');
+      g.querySelector('.nav-group-btn').setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+
 // Diasvisning: deler sidens indhold op i små bidder og viser dem som dias,
 // der kan bladres med piletaster eller knapper, som i en præsentation.
 (function () {

@@ -134,6 +134,54 @@ nav a:not(.brand)::after {
 nav a:not(.brand):hover::after,
 nav a.active::after { right: 0; }
 
+/* Mere-menuen med fold ud (bygges af site.js) */
+.nav-group { position: relative; }
+
+.nav-group-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--muted);
+  font-size: 1rem;
+  font-family: inherit;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.nav-group-btn::after {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg) translateY(-2px);
+  transition: transform 0.2s ease;
+}
+
+.nav-group.open .nav-group-btn::after { transform: rotate(225deg) translateY(-1px); }
+
+.nav-group-btn:hover, .nav-group-btn.active { color: var(--accent); }
+
+.nav-dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  flex-direction: column;
+  gap: 0.6rem;
+  min-width: 15rem;
+  padding: 0.8rem 1.1rem;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  z-index: 20;
+}
+
+.nav-group.open .nav-dropdown { display: flex; }
+
 /* Sammenklappelig menu (struktureres af site.js) */
 .nav-links { display: contents; }
 .nav-burger { display: none; }
@@ -177,11 +225,22 @@ nav a.active::after { right: 0; }
     transition: max-height 0.3s ease;
   }
 
-  nav.open .nav-links { max-height: 34rem; }
+  nav.open .nav-links { max-height: 50rem; }
 
-  .nav-links a, .nav-links .slides-toggle {
+  .nav-links a, .nav-links .slides-toggle, .nav-links .nav-group-btn {
     padding: 0.55rem 0;
     font-size: 1.05rem;
+  }
+
+  .nav-group { width: 100%; }
+
+  .nav-dropdown {
+    position: static;
+    min-width: 0;
+    padding: 0 0 0.4rem 1.1rem;
+    background: none;
+    border: none;
+    box-shadow: none;
   }
 
   .nav-links a:not(.brand)::after { display: none; }
