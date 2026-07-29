@@ -1,13 +1,16 @@
 /* AI i praksis — fælles stylesheet */
 
+/* Grundfarve: Pantone 341 (#007a53) */
 :root {
   --bg: #fdfcf9;
   --fg: #1a1f2b;
   --muted: #5b6272;
-  --accent: #0f6fde;
-  --accent-soft: #e3effd;
-  --green: #14804a;
-  --green-soft: #e2f5ea;
+  --accent: #007a53;
+  --accent-soft: #e1f2eb;
+  --green: #007a53;
+  --green-soft: #e1f2eb;
+  --blue: #0f6fde;
+  --blue-soft: #e3effd;
   --amber: #92600a;
   --amber-soft: #fdf3dd;
   --card: #ffffff;
@@ -23,10 +26,12 @@
     --bg: #12151c;
     --fg: #e8ecf3;
     --muted: #9aa3b5;
-    --accent: #5da2f0;
-    --accent-soft: #1a2b42;
-    --green: #4fc98a;
-    --green-soft: #14301f;
+    --accent: #45c294;
+    --accent-soft: #0e3227;
+    --green: #45c294;
+    --green-soft: #0e3227;
+    --blue: #5da2f0;
+    --blue-soft: #1a2b42;
     --amber: #e3b35c;
     --amber-soft: #33270f;
     --card: #1a1f29;
@@ -190,14 +195,14 @@ footer .inner { max-width: var(--maxw); margin: 0 auto; }
 
 /* Forklaringsboks — teorien bagefter */
 .explain {
-  border-left: 5px solid var(--accent);
-  background: var(--accent-soft);
+  border-left: 5px solid var(--blue);
+  background: var(--blue-soft);
   border-radius: 0 var(--radius) var(--radius) 0;
   padding: 1.2rem 1.6rem;
   margin: 1.6rem 0;
 }
 
-.explain .label { color: var(--accent); }
+.explain .label { color: var(--blue); }
 
 /* Underviser-note / obs */
 .note {
@@ -285,7 +290,7 @@ ol.steps > li::before {
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
-  background: var(--fg);
+  background: var(--accent);
   color: var(--bg);
   font-weight: 700;
   display: flex;
