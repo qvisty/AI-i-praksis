@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Modul 5: Fra dokument til podcast</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <div class="inner">
+    <a class="brand" href="index.html">AI i praksis</a>
+    <a href="index.html">Forside</a>
+    <a href="modul-1-lovable.html">Modul 1: Lovable</a>
+    <a href="modul-2-github-claude.html">Modul 2: GitHub + Claude</a>
+    <a href="modul-3-ai-i-hverdagen.html">Modul 3: Hverdagen</a>
+    <a href="modul-4-automatisering.html">Modul 4: Automatisering</a>
+    <a class="active" href="modul-5-andre-modaliteter.html">Modul 5: NotebookLM</a>
+    <a href="modul-6-forstaa-ai.html">Modul 6: Teorien</a>
+  </div>
+</nav>
+
+<main>
+
+  <header class="hero">
+    <span class="badge">Modul 5</span>
+    <h1>Fra dokument til podcast</h1>
+    <p class="lead">Tunge rapporter, lange kontrakter og tætte fagtekster. I dette modul lader du AI'en formidle dem til dig i andre formater, blandt andet som en podcast, du kan høre på vej hjem.</p>
+  </header>
+
+  <section id="hvorfor">
+    <h2>Hvorfor dette modul?</h2>
+    <p>
+      Indtil nu har du chattet med AI'en om alt muligt. Værktøjet i dette modul er anderledes:
+      du giver det <strong>bestemte kilder</strong>, f.eks. en rapport, et regelsæt eller en række artikler,
+      og AI'en svarer <strong>kun ud fra dem</strong>, med henvisninger til præcis de afsnit, svaret bygger på.
+      Og så kan den omsætte kilderne til andre formater end tekst: en samtale mellem to værter,
+      et overblik, en studieguide eller en tidslinje.
+    </p>
+    <p>
+      Hovedværktøjet er Googles <strong>NotebookLM</strong>. Microsofts <strong>Copilot</strong> har
+      efterhånden den samme funktion, den er bare ikke helt så god endnu. Begge dele prøver vi.
+    </p>
+    <div class="note">
+      <span class="label">Medbring en tung tekst</span>
+      Find på forhånd et dokument på mindst 10 sider, som du <em>burde</em> læse, men ikke har fået læst.
+      En rapport, en vejledning, et udbudsmateriale. Uden personoplysninger og fortroligt indhold.
+    </div>
+  </section>
+
+  <section id="oevelse-1">
+    <h2>Øvelse 1: Byg din notesbog</h2>
+
+    <div class="exercise">
+      <span class="label">Hands-on, ca. 20 min</span>
+      <ol class="steps">
+        <li>Gå til <a href="https://notebooklm.google.com" target="_blank" rel="noopener">notebooklm.google.com</a>, og log ind med en Google-konto.</li>
+        <li>Opret en ny notesbog, og tilføj dit dokument som kilde. Du kan uploade PDF'er og tekstfiler, indsætte links til hjemmesider og YouTube-videoer eller vælge filer fra Google Drev.</li>
+        <li>Stil tre spørgsmål til indholdet, f.eks. »Hvad er de vigtigste konklusioner?« og »Hvad betyder det her for en afdeling som min?«</li>
+        <li>Klik på kildehenvisningerne i svarene, og se hvordan hvert svar peger tilbage på konkrete afsnit i dit dokument.</li>
+        <li>Tilføj en kilde mere om samme emne, og stil et spørgsmål, der kræver begge kilder.</li>
+      </ol>
+    </div>
+
+    <div class="note">
+      <span class="label">Læg mærke til forskellen</span>
+      Spørg om noget, der <em>ikke</em> står i kilderne. NotebookLM siger det, i stedet for at digte et svar.
+      Det er den store forskel på en almindelig chatbot og et kildeforankret værktøj.
+    </div>
+  </section>
+
+  <section id="oevelse-2">
+    <h2>Øvelse 2: Lav podcasten</h2>
+    <p>Nu til det, der plejer at få folk til at tabe kæben: NotebookLM kan lave en podcast ud af dine kilder, hvor to AI-værter taler indholdet igennem.</p>
+
+    <div class="exercise">
+      <span class="label">Hands-on, ca. 15 min</span>
+      <ol class="steps">
+        <li>Find funktionen <strong>Audio Overview</strong> (lydoversigt) i din notesbog, og vælg dansk som sprog, hvis den ikke allerede har gjort det.</li>
+        <li>Klik på <strong>Tilpas</strong>, før du genererer, og giv værterne en vinkel, f.eks. »fokusér på konsekvenserne for mellemledere« eller »forklar det for en, der er helt ny i emnet«.</li>
+        <li>Generér podcasten, og lyt til de første minutter sammen med din sidemand.</li>
+        <li>Diskutér: hvad fik samtalen frem, som du ikke havde fanget ved at skimme dokumentet?</li>
+      </ol>
+    </div>
+
+    <div class="note">
+      <span class="label">Prøv også de andre formater</span>
+      NotebookLM kan mere end lyd: studieguide, ofte stillede spørgsmål, tidslinje og videooverblik.
+      Samme kilder, forskellige modaliteter. Vælg det format, der passer til situationen og modtageren.
+    </div>
+  </section>
+
+  <section id="oevelse-3">
+    <h2>Øvelse 3: Samme øvelse i Copilot</h2>
+    <p>
+      Arbejder du et sted med Microsoft 365, har du sandsynligvis allerede en udgave af det samme.
+      Copilot kan svare ud fra filer, du giver den, og kan også lave en lydoversigt i podcastformat.
+      Kvaliteten er endnu ikke på højde med NotebookLM, især på dansk, men den bor til gengæld
+      dér, hvor dine dokumenter allerede ligger.
+    </p>
+
+    <div class="exercise">
+      <span class="label">Hands-on, ca. 15 min</span>
+      <ol class="steps">
+        <li>Åbn Copilot på din arbejdscomputer, og giv den det samme dokument som i øvelse 1.</li>
+        <li>Stil de samme tre spørgsmål, og sammenlign svarene med NotebookLMs.</li>
+        <li>Prøv lydfunktionen, hvis din licens har den, og sammenlign podcasten med NotebookLMs.</li>
+        <li>Gør status med din sidemand: hvilket værktøj ville du bruge til hvad, og hvorfor?</li>
+      </ol>
+    </div>
+  </section>
+
+  <hr>
+
+  <section id="forklaring">
+    <h2>Hvad skete der lige?</h2>
+
+    <div class="explain">
+      <span class="label">Begreb: Kildeforankring</span>
+      NotebookLM svarer kun ud fra de kilder, du selv har valgt, og viser hvor i kilderne svaret kommer fra.
+      Teknikken kaldes ofte <strong>RAG</strong> (retrieval augmented generation): modellen slår op i dit
+      materiale, før den formulerer sig. Det giver markant færre opdigtede svar end en åben chatbot.
+      Men husk reglen fra modul 3: vigtige fakta kontrollerer du stadig selv, nu er det bare nemt,
+      fordi henvisningen sidder lige ved svaret.
+    </div>
+
+    <div class="explain">
+      <span class="label">Begreb: Modalitet</span>
+      En modalitet er den form, indholdet kommer i: tekst, lyd, billede eller video.
+      Pointen i dette modul er, at indhold og form kan skilles ad. Den samme rapport kan blive
+      til et resumé, en samtale mellem to værter eller en tidslinje. Vælg modaliteten efter,
+      hvordan du (eller din modtager) bedst tager imod: nogle læser, andre lytter på cyklen.
+    </div>
+
+    <div class="explain">
+      <span class="label">Værktøjsvalget lige nu</span>
+      NotebookLM er i dag det stærkeste værktøj til kildeforankret arbejde og podcastformatet.
+      Copilot har de samme funktioner i en tidligere udgave, men bor i Microsoft 365 sammen med
+      jeres dokumenter og rettigheder, og den forbedres løbende. Det generelle råd: lær arbejdsformen,
+      ikke kun værktøjet. Formaterne bliver, selv om navnene skifter.
+    </div>
+
+    <h3>Grænserne: det skal du huske</h3>
+    <ul>
+      <li><strong>Upload er behandling:</strong> Når du uploader et dokument, behandler tjenesten det. Brug kun materiale, din arbejdsplads tillader i det pågældende værktøj.</li>
+      <li><strong>Podcasten forenkler:</strong> To muntre værter kan få alt til at lyde afklaret. Nuancer og forbehold fra kilden kan blive glattet ud.</li>
+      <li><strong>Lyt som forberedelse, ikke som erstatning:</strong> Podcasten giver dig overblikket, så du ved, hvor i dokumentet du skal læse grundigt.</li>
+    </ul>
+  </section>
+
+  <section id="refleksion">
+    <h2>Refleksion i plenum</h2>
+    <ul>
+      <li>Hvilket dokument i din indbakke lige nu ville du helst have som podcast?</li>
+      <li>Hvornår er lyd bedre end tekst for dig, og hvornår er det omvendt?</li>
+      <li>Hvem i din organisation kunne have glæde af et lydoverblik, som du kunne lave til dem i morgen?</li>
+    </ul>
+  </section>
+
+  <p><a class="next" href="modul-6-forstaa-ai.html">Videre til modul 6: Forstå AI</a></p>
+
+</main>
+
+<footer>
+  <div class="inner">
+    AI i praksis, modul 5. <a href="index.html">Tilbage til forsiden</a>
+  </div>
+</footer>
+
+<script src="copy.js"></script>
+
+</body>
+</html>

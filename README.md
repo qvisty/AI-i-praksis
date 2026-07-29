@@ -14,6 +14,8 @@ Siden bruges i stedet for slides og udgives med GitHub Pages.
 | `modul-2-github-claude.html` | Modul 2: GitHub + Claude Code |
 | `modul-3-ai-i-hverdagen.html` | Modul 3: AI i din arbejdsdag (mails, referater, regneark) |
 | `modul-4-automatisering.html` | Modul 4: Automatisering i egen infrastruktur (Power Automate, Google, Zapier) |
+| `modul-5-andre-modaliteter.html` | Modul 5: Komplekst indhold i andre modaliteter (NotebookLM, podcast, Copilot) |
+| `modul-6-forstaa-ai.html` | Modul 6: Teoretisk oplæg (AI'ens historie, ordbog, de store diskussioner) |
 | `style.css` | Fælles design (lyst/mørkt tema, øvelses- og forklaringsbokse) |
 | `copy.js` | "Kopiér"-knapper på prompt-eksemplerne |
 

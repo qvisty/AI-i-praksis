@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Modul 6: Forstå AI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <div class="inner">
+    <a class="brand" href="index.html">AI i praksis</a>
+    <a href="index.html">Forside</a>
+    <a href="modul-1-lovable.html">Modul 1: Lovable</a>
+    <a href="modul-2-github-claude.html">Modul 2: GitHub + Claude</a>
+    <a href="modul-3-ai-i-hverdagen.html">Modul 3: Hverdagen</a>
+    <a href="modul-4-automatisering.html">Modul 4: Automatisering</a>
+    <a href="modul-5-andre-modaliteter.html">Modul 5: NotebookLM</a>
+    <a class="active" href="modul-6-forstaa-ai.html">Modul 6: Teorien</a>
+  </div>
+</nav>
+
+<main>
+
+  <header class="hero">
+    <span class="badge">Modul 6</span>
+    <h1>Forstå AI: historien og ordene</h1>
+    <p class="lead">Kursets eneste rene teorimodul. Læn dig tilbage. Nu hænger vi begreber på alt det, du allerede har prøvet med hænderne.</p>
+  </header>
+
+  <section id="hvorfor">
+    <h2>Hvorfor teori til sidst?</h2>
+    <p>
+      De fleste kurser starter her. Vi slutter her, med vilje. Nu har du selv bygget en app,
+      ledet en AI-agent, skrevet med promptmønsteret, sat AI ind i et flow og hørt en rapport
+      som podcast. Det betyder, at hvert begreb i dette modul kan pege tilbage på noget,
+      du selv har oplevet. Teori uden erfaring er udenadslære. Teori efter erfaring er genkendelse.
+    </p>
+  </section>
+
+  <section id="historien">
+    <h2>Historien i otte nedslag</h2>
+    <p>AI er ikke opfundet i 2022. Det, der skete i 2022, var, at 70 års forskning pludselig fik et chatvindue.</p>
+    <table class="schedule">
+      <tr><th>År</th><th>Hvad skete der</th></tr>
+      <tr><td class="time">1950</td><td>Alan Turing stiller spørgsmålet »kan maskiner tænke?« og foreslår en test: kan en maskine i samtale narre et menneske til at tro, den også er et menneske?</td></tr>
+      <tr><td class="time">1956</td><td>Ordet »artificial intelligence« opfindes på en forskningskonference på Dartmouth College. Forventningen er, at problemet løses på en sommer. Det tager lidt længere.</td></tr>
+      <tr><td class="time">1960 til 1990</td><td>Ekspertsystemer bygges som håndskrevne regler: »hvis feber og udslæt, så overvej mæslinger«. De rammer et loft, skuffelsen breder sig, og bevillingerne fryser til i perioder, der i dag kaldes AI-vintre.</td></tr>
+      <tr><td class="time">1997</td><td>IBM's skakcomputer Deep Blue slår verdensmesteren Garry Kasparov. Maskinen vinder med rå beregningskraft, ikke med forståelse.</td></tr>
+      <tr><td class="time">2012</td><td>Gennembruddet for dyb læring: neurale netværk, der lærer af eksempler i stedet for regler, knuser konkurrencen i billedgenkendelse. Nøglen er data i enorme mængder og hurtige grafikkort.</td></tr>
+      <tr><td class="time">2017</td><td>Google-forskere udgiver artiklen »Attention Is All You Need« om en ny netværksarkitektur: transformeren. Den viser sig at være usædvanligt god til sprog og er motoren i stort set alt, du har brugt på dette kursus.</td></tr>
+      <tr><td class="time">2022</td><td>ChatGPT lanceres i november og når 100 millioner brugere på to måneder. Teknologien var flere år gammel. Det nye var, at alle pludselig kunne tale med den.</td></tr>
+      <tr><td class="time">2023 og frem</td><td>Modellerne bliver multimodale (tekst, billede, lyd og video i samme model) og får værktøjer i hænderne som agenter. Det er dét skifte, du mødte i modul 2 og 4. Samtidig kommer reguleringen, med EU's AI-forordning forrest.</td></tr>
+    </table>
+  </section>
+
+  <section id="hvordan">
+    <h2>Hvad er det egentlig, der sker derinde?</h2>
+
+    <div class="explain">
+      <span class="label">Én sætning at huske</span>
+      En sprogmodel er en maskine, der er trænet til at gætte det næste ord i en tekst,
+      og som er blevet så ufatteligt god til det, at gættene ligner tænkning.
+    </div>
+
+    <div class="explain">
+      <span class="label">Sådan er den blevet til</span>
+      Først læser modellen enorme mængder tekst og lærer sprogets mønstre: grammatik, fakta,
+      ræsonnementer og fordomme, alt hvad der ligger i teksten. Derefter trænes den med
+      menneskelig feedback, hvor bedømmere belønner svar, der er hjælpsomme og ærlige.
+      Resultatet er ikke en database med facts, men et mønster af sammenhænge.
+      Det er derfor, den kan formulere sig flot om ting, den tager fejl af.
+    </div>
+
+    <div class="explain">
+      <span class="label">Derfor oplevede du det, du oplevede</span>
+      Hallucinationerne fra modul 3: modellen gætter, også når den burde tie.
+      Kildeforankringen fra modul 5: giver man den et opslagsværk, gætter den mindre.
+      Iterationen fra modul 1: dine ord er modellens eneste virkelighed, så bedre ord giver bedre svar.
+      Menneskets godkendelse fra modul 2 og 4: gæt skal kontrolleres, før de får konsekvenser.
+    </div>
+  </section>
+
+  <section id="ordbog">
+    <h2>Ordbogen: ordene du skal kende</h2>
+    <p>Dem her støder du på i artikler, leverandørmøder og frokostdiskussioner. Nu har du selv prøvet det meste af det.</p>
+    <table class="schedule">
+      <tr><th>Ord</th><th>Betydning</th></tr>
+      <tr><td class="time">AI</td><td>Samlebetegnelse for software, der løser opgaver, som normalt kræver menneskelig intelligens. Et meget bredt begreb, brugt om alt fra skakprogrammer til ChatGPT.</td></tr>
+      <tr><td class="time">Maskinlæring</td><td>Den gren af AI, hvor systemet lærer mønstre af eksempler i stedet for at følge håndskrevne regler.</td></tr>
+      <tr><td class="time">Neuralt netværk</td><td>Den beregningsmodel, moderne AI bygger på. Løst inspireret af hjernens neuroner, i praksis matematik i mange lag.</td></tr>
+      <tr><td class="time">Sprogmodel (LLM)</td><td>Et neuralt netværk trænet på tekst til at forudsige det næste ord. ChatGPT, Claude, Gemini og Copilot er alle sprogmodeller med hver sin indpakning.</td></tr>
+      <tr><td class="time">Token</td><td>Den bid, modellen læser og skriver i. Cirka et ord eller et halvt. Priser og begrænsninger opgøres ofte i tokens.</td></tr>
+      <tr><td class="time">Kontekstvindue</td><td>Så meget modellen kan have i hovedet ad gangen: din samtale, dine dokumenter, dens egne svar. Løber det fulde, glemmer den begyndelsen.</td></tr>
+      <tr><td class="time">Prompt</td><td>Din instruks til modellen. Kurset har givet dig mønsteret: rolle, kontekst, opgave og format.</td></tr>
+      <tr><td class="time">Hallucination</td><td>Et selvsikkert, men opdigtet svar. En indbygget egenskab ved teknologien, ikke en fejl der forsvinder i næste version.</td></tr>
+      <tr><td class="time">Kildeforankring (RAG)</td><td>Teknik hvor modellen slår op i udvalgte kilder, før den svarer, og henviser til dem. Det, NotebookLM gør.</td></tr>
+      <tr><td class="time">Finjustering</td><td>Eftertræning af en færdig model på et bestemt område, f.eks. jura eller medicin, så den bliver skarpere dér.</td></tr>
+      <tr><td class="time">Agent</td><td>En AI, der ikke bare svarer, men arbejder mod et mål i flere trin med værktøjer i hænderne. Claude Code fra modul 2 er en agent.</td></tr>
+      <tr><td class="time">Multimodal</td><td>En model, der kan forstå og skabe flere formater: tekst, billeder, lyd og video.</td></tr>
+      <tr><td class="time">Open source-model</td><td>En model, der kan hentes og køres på egne maskiner, i modsætning til lukkede tjenester som ChatGPT. Vigtig i diskussioner om kontrol og databeskyttelse.</td></tr>
+      <tr><td class="time">AI-forordningen</td><td>EU's lov om AI (AI Act), der stiller krav efter risiko: jo mere indgribende anvendelse, jo strengere krav til dokumentation, kontrol og gennemsigtighed.</td></tr>
+    </table>
+  </section>
+
+  <section id="diskussioner">
+    <h2>De store diskussioner</h2>
+    <p>Ingen facitliste her, men fire debatter, du nu kan deltage i på et oplyst grundlag.</p>
+    <ul>
+      <li><strong>Arbejde:</strong> AI'en tager sjældent hele jobbet, men den flytter opgaverne. Historisk er nye opgaver kommet til. Hvor hurtigt det sker denne gang, er det åbne spørgsmål.</li>
+      <li><strong>Ophavsret og data:</strong> Modellerne er trænet på menneskers tekster og billeder. Hvem skal have kredit og betaling? Retssagerne kører, og svaret er ikke landet.</li>
+      <li><strong>Bias:</strong> Modellen lærer af os, også vores skævheder. Derfor kræver brug i ansættelse, kredit og sagsbehandling særlig omhu og er netop dér, AI-forordningen strammer til.</li>
+      <li><strong>Ressourcer:</strong> Træning og drift koster strøm, vand og chips. Gevinsterne skal holdes op mod forbruget, især når AI sættes på opgaver, en søgning kunne have løst.</li>
+    </ul>
+  </section>
+
+  <section id="refleksion">
+    <h2>Refleksion i plenum</h2>
+    <ul>
+      <li>Vælg et ord fra ordbogen, og forklar det for din sidemand med et eksempel fra dit eget arbejde.</li>
+      <li>Hvilket nedslag i historien overraskede dig mest?</li>
+      <li>Hvilken af de fire store diskussioner er vigtigst på din arbejdsplads lige nu?</li>
+    </ul>
+  </section>
+
+  <section id="opsamling">
+    <h2>Kursets røde tråd</h2>
+    <ul>
+      <li>Modul 1: Du kan bygge en prototype med almindelige sætninger.</li>
+      <li>Modul 2: Du kan lede en AI-agent og godkende dens arbejde.</li>
+      <li>Modul 3: Du kan bruge AI som førsteudkast i dine daglige opgaver.</li>
+      <li>Modul 4: Du kan sætte det i system i din egen infrastruktur.</li>
+      <li>Modul 5: Du kan omsætte tungt indhold til formater, der passer til modtageren.</li>
+      <li>Modul 6: Du kender historien og ordene, så du kan tale med og tænke selv.</li>
+      <li>Og hele vejen igennem: AI'en foreslår, og du bestemmer.</li>
+    </ul>
+  </section>
+
+  <p><a class="next" href="index.html">Tilbage til forsiden</a></p>
+
+</main>
+
+<footer>
+  <div class="inner">
+    AI i praksis, modul 6. <a href="index.html">Tilbage til forsiden</a>
+  </div>
+</footer>
+
+</body>
+</html>
