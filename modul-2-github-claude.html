@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Modul 2 · GitHub + Claude Code — AI i praksis</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <div class="inner">
+    <a class="brand" href="index.html">AI i praksis</a>
+    <a href="index.html">Forside</a>
+    <a href="modul-1-lovable.html">Modul 1 · Lovable</a>
+    <a class="active" href="modul-2-github-claude.html">Modul 2 · GitHub + Claude</a>
+  </div>
+</nav>
+
+<main>
+
+  <header class="hero">
+    <span class="badge">Modul 2</span>
+    <h1>GitHub + Claude Code</h1>
+    <p class="lead">Fra legetøj til værktøj: nu får dit projekt et hjem, en historik — og en AI-kollega, der arbejder for dig, mens du beholder kontrollen.</p>
+  </header>
+
+  <section id="hvorfor">
+    <h2>Hvorfor nu det her?</h2>
+    <p>
+      I modul 1 boede din app inde i Lovable. Det er fint til en prototype — men i den virkelige verden
+      har projekter brug for tre ting: et <strong>fælles sted at bo</strong>, en <strong>historik</strong>
+      over alle ændringer, og en måde at <strong>godkende ændringer</strong>, før de går live.
+      Det sted hedder GitHub, og det bruges af stort set alle, der bygger software — fra hobbyprojekter
+      til banker og styrelser.
+    </p>
+    <div class="note">
+      <span class="label">Meta-pointe</span>
+      Den side, du læser lige nu, ligger på GitHub og blev bygget af Claude Code ud fra en kort
+      beskrivelse på dansk. Alt hvad vi laver i dette modul, er præcis sådan, siden selv er blevet til.
+    </div>
+  </section>
+
+  <section id="oevelse-1">
+    <h2>Øvelse 1 · Dit første repository</h2>
+
+    <div class="exercise">
+      <span class="label">Hands-on · ca. 15 min</span>
+      <ol class="steps">
+        <li>Log ind på <a href="https://github.com" target="_blank" rel="noopener">github.com</a>.</li>
+        <li>Klik på <strong>+</strong> øverst til højre → <strong>New repository</strong>.</li>
+        <li>Giv det navnet <code>min-foerste-side</code>, vælg <strong>Public</strong>, og sæt flueben i <strong>Add a README file</strong>. Klik <strong>Create repository</strong>.</li>
+        <li>Klik på filen <code>README.md</code> → blyanten (<em>Edit</em>) → skriv et par linjer om dig selv eller dit projekt.</li>
+        <li>Klik <strong>Commit changes</strong>. Skriv en kort besked om, hvad du ændrede — f.eks. »Tilføjede præsentation«.</li>
+        <li>Klik derefter på <strong>History</strong> for filen, og se at din ændring er gemt med navn, tidspunkt og besked.</li>
+      </ol>
+    </div>
+
+    <div class="explain">
+      <span class="label">Hvad skete der lige?</span>
+      Et <strong>repository</strong> (»repo«) er en projektmappe med indbygget hukommelse.
+      Hver gang du gemmer, laver du en <strong>commit</strong>: et snapshot med en besked om,
+      hvad der blev ændret og hvorfor. Derfor kan man altid rulle tilbage, og derfor kan mange
+      arbejde i samme projekt uden at ødelægge noget for hinanden. Det er versionsstyring —
+      og du har lige lavet det uden at installere noget som helst.
+    </div>
+  </section>
+
+  <section id="oevelse-2">
+    <h2>Øvelse 2 · Sæt Claude Code på arbejde</h2>
+    <p>
+      Nu kobler vi en AI-agent på dit repo. Hvor Lovable byggede i sin egen lukkede verden,
+      arbejder <strong>Claude Code</strong> direkte i dit projekt — og foreslår ændringer,
+      som du bagefter godkender eller afviser.
+    </p>
+
+    <div class="exercise">
+      <span class="label">Hands-on · ca. 25 min</span>
+      <ol class="steps">
+        <li>Gå til <a href="https://claude.ai/code" target="_blank" rel="noopener">claude.ai/code</a> og log ind.</li>
+        <li>Forbind din GitHub-konto, og vælg dit repo <code>min-foerste-side</code>.</li>
+        <li>Giv Claude en opgave i almindeligt sprog — kopiér f.eks. prompten herunder.</li>
+        <li>Følg med, mens Claude arbejder: den læser, skriver filer og forklarer undervejs, hvad den gør.</li>
+        <li>Når den er færdig, har den lavet en <strong>pull request</strong> i dit repo. Den kigger vi på i øvelse 3.</li>
+      </ol>
+    </div>
+
+    <div class="prompt" data-copy>Byg en lille personlig hjemmeside i mit repo som en enkelt index.html med lidt CSS.
+Den skal have mit navn, tre linjer om hvad jeg arbejder med, og en pæn, rolig farvepalet.
+Alt indhold skal være på dansk.</div>
+
+    <div class="note">
+      <span class="label">Til dem der er foran</span>
+      Bed Claude om mere: en ekstra underside, et mørkt farvetema, eller at rette en stavefejl.
+      Hver opgave ender som et nyt forslag, du kan godkende.
+    </div>
+  </section>
+
+  <section id="oevelse-3">
+    <h2>Øvelse 3 · Godkend som en chef</h2>
+
+    <div class="exercise">
+      <span class="label">Hands-on · ca. 15 min</span>
+      <ol class="steps">
+        <li>Åbn dit repo på GitHub og klik på fanen <strong>Pull requests</strong>.</li>
+        <li>Åbn Claudes pull request og klik på <strong>Files changed</strong>: grønt er tilføjet, rødt er fjernet.</li>
+        <li>Læs Claudes beskrivelse af, hvad den har lavet. Er du tilfreds?</li>
+        <li>Er noget forkert, så skriv en kommentar — eller bed Claude om at rette det.</li>
+        <li>Er du tilfreds, så klik <strong>Merge pull request</strong>. Nu er ændringen en del af projektet.</li>
+      </ol>
+    </div>
+
+    <div class="explain">
+      <span class="label">Hvad skete der lige?</span>
+      En <strong>pull request</strong> er et forslag til en ændring: »her er hvad jeg gerne vil ændre,
+      og hvorfor«. Ingen ændring går ind i projektet, før et menneske har set på den og trykket merge.
+      Det er sådan, professionelle softwareteams arbejder — og det er præcis den arbejdsdeling,
+      der gør AI-agenter trygge at bruge: <strong>AI'en foreslår, du bestemmer</strong>.
+    </div>
+  </section>
+
+  <section id="oevelse-4">
+    <h2>Øvelse 4 (bonus) · Sæt din side på nettet</h2>
+    <div class="exercise">
+      <span class="label">Hands-on · ca. 10 min</span>
+      <ol class="steps">
+        <li>Gå til dit repos <strong>Settings</strong> → <strong>Pages</strong> i venstremenuen.</li>
+        <li>Under <em>Source</em>: vælg <strong>Deploy from a branch</strong>, vælg din hovedbranch og mappen <code>/ (root)</code>. Klik <strong>Save</strong>.</li>
+        <li>Vent et minut, genindlæs siden — og du får en offentlig adresse: <code>dit-brugernavn.github.io/min-foerste-side</code>.</li>
+        <li>Send linket til din sidemand.</li>
+      </ol>
+    </div>
+    <p>Det er GitHub Pages — gratis hosting af hjemmesider direkte fra et repo. Det er også sådan, denne kursusside bliver udgivet.</p>
+  </section>
+
+  <hr>
+
+  <section id="forklaring">
+    <h2>Det store billede</h2>
+
+    <div class="explain">
+      <span class="label">Lovable vs. Claude Code</span>
+      <strong>Lovable</strong> er lukket og lynhurtigt: perfekt til at gå fra idé til prototype på minutter.
+      <strong>Claude Code + GitHub</strong> er åbent og kontrolleret: AI'en arbejder i <em>dit</em> projekt,
+      hver ændring har historik, og intet sker uden din godkendelse. Det første er en skitseblok,
+      det andet er et værksted.
+    </div>
+
+    <div class="explain">
+      <span class="label">Begreb · AI-agent</span>
+      I modul 1 svarede AI'en på én besked ad gangen. Claude Code er en <strong>agent</strong>:
+      den får et mål og arbejder sig selv frem mod det — læser filer, skriver kode, retter sine egne fejl
+      og melder tilbage, når den er færdig. Din rolle skifter fra at <em>skrive</em> til at <em>lede</em>:
+      formulér opgaven klart, og bedøm resultatet.
+    </div>
+
+    <div class="explain">
+      <span class="label">Hvorfor mennesket i midten er pointen</span>
+      Alt i dette modul havde samme mønster: AI'en foreslår — mennesket godkender.
+      Det mønster kan du tage med til alt andet AI-brug på jobbet: lad AI'en lave udkastet,
+      men lad aldrig noget gå ud ad døren, som et menneske ikke har stået inde for.
+    </div>
+  </section>
+
+  <section id="opsamling">
+    <h2>Opsamling: hvad tager du med hjem?</h2>
+    <ul>
+      <li>Du kan gå fra idé til fungerende prototype på under en time — brug det til at <em>vise</em> i stedet for at forklare.</li>
+      <li>Præcise beskeder og iteration er vigtigere end tekniske færdigheder.</li>
+      <li>AI'en foreslår, du bestemmer — sådan bruger man AI ansvarligt.</li>
+      <li>Find én lille opgave i din hverdag i denne uge, og prøv at løse den med det, du har lært i dag.</li>
+    </ul>
+  </section>
+
+  <p><a class="next" href="index.html">← Tilbage til forsiden</a></p>
+
+</main>
+
+<footer>
+  <div class="inner">
+    AI i praksis · Modul 2 — <a href="index.html">tilbage til forsiden</a>
+  </div>
+</footer>
+
+<script src="copy.js"></script>
+
+</body>
+</html>
