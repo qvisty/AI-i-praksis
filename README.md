@@ -16,6 +16,7 @@ Siden bruges i stedet for slides og udgives med GitHub Pages.
 | `modul-4-automatisering.html` | Modul 4: Automatisering i egen infrastruktur (Power Automate, Google, Zapier) |
 | `modul-5-andre-modaliteter.html` | Modul 5: Komplekst indhold i andre modaliteter (NotebookLM, podcast, Copilot) |
 | `modul-6-forstaa-ai.html` | Modul 6: Teoretisk oplæg (AI'ens historie, ordbog, de store diskussioner) |
+| `flere-vaerktoejer.html` | Ekstra idékatalog: 12 værktøjer, korte kursusøvelser og valgkriterier |
 | `underviser.html` | Underviserside: forberedelse, talenoter, evaluering, hjemmeopgaver og værktøjskasse. Kun linket fra forsidens sidefod. Skjules ved at slette det link |
 | `style.css` | Fælles design (lyst/mørkt tema, øvelses- og forklaringsbokse, animationer) |
 | `site.js` | "Kopiér"-knapper på prompt-eksemplerne og indtoning ved scroll |
