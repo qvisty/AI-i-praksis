@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240" role="img" aria-hidden="true">
+  <style>
+    @media (prefers-reduced-motion: reduce) { .mover { display: none; } }
+  </style>
+  <path id="flow" d="M56 190 C 56 120, 150 170, 160 110 C 168 62, 250 90, 262 50" stroke="#94a3b8" stroke-width="4" fill="none" stroke-linecap="round" stroke-dasharray="2 10"/>
+  <g>
+    <circle cx="56" cy="190" r="26" fill="#007a53"/>
+    <path d="M60 176 l-12 18 h9 l-4 14 13 -19 h-9 z" fill="#ffffff"/>
+  </g>
+  <g>
+    <circle cx="160" cy="110" r="24" fill="#0f9d68"/>
+    <circle cx="160" cy="110" r="9" fill="none" stroke="#ffffff" stroke-width="4"/>
+    <path d="M160 92 v8 M160 120 v8 M142 110 h8 M170 110 h8" stroke="#ffffff" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  <g>
+    <circle cx="262" cy="50" r="22" fill="#34c08e"/>
+    <path d="M251 50 l8 9 15 -17" stroke="#ffffff" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <circle class="mover" r="7" fill="#007a53">
+    <animateMotion dur="4s" repeatCount="indefinite" rotate="0">
+      <mpath href="#flow"/>
+    </animateMotion>
+  </circle>
+</svg>

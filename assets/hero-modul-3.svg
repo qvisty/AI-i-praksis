@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240" role="img" aria-hidden="true">
+  <style>
+    .write { animation: write 4s ease-in-out infinite; }
+    .env { animation: f 6s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+    @keyframes write { 0%, 15% { width: 0; } 70%, 100% { width: 96px; } }
+    @keyframes f { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; width: 96px; } }
+  </style>
+  <rect x="52" y="30" width="150" height="184" rx="12" fill="none" stroke="#94a3b8" stroke-width="3"/>
+  <rect x="72" y="54" width="76" height="12" rx="6" fill="#007a53"/>
+  <rect x="72" y="84" width="110" height="8" rx="4" fill="#94a3b8" opacity="0.6"/>
+  <rect x="72" y="102" width="110" height="8" rx="4" fill="#94a3b8" opacity="0.6"/>
+  <rect x="72" y="120" width="84" height="8" rx="4" fill="#94a3b8" opacity="0.6"/>
+  <rect class="write" x="72" y="146" width="96" height="10" rx="5" fill="#0f9d68"/>
+  <g class="env">
+    <rect x="196" y="140" width="100" height="66" rx="10" fill="#007a53"/>
+    <path d="M196 148 l50 34 50 -34" stroke="#ffffff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <path d="M236 54 l5 12 12 5 -12 5 -5 12 -5 -12 -12 -5 12 -5 z" fill="#34c08e"/>
+</svg>

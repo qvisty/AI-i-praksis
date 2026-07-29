@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240" role="img" aria-hidden="true">
+  <style>
+    .float { animation: f 6s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+    .float2 { animation: f 6s ease-in-out 1.2s infinite; transform-box: fill-box; transform-origin: center; }
+    .dot { animation: blink 1.6s ease-in-out infinite; }
+    .dot2 { animation: blink 1.6s ease-in-out 0.25s infinite; }
+    .dot3 { animation: blink 1.6s ease-in-out 0.5s infinite; }
+    .spark { animation: pulse 3s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+    @keyframes f { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+    @keyframes blink { 0%,100% { opacity: 0.25; } 50% { opacity: 1; } }
+    @keyframes pulse { 0%,100% { transform: scale(1); opacity: 0.7; } 50% { transform: scale(1.25); opacity: 1; } }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
+  <rect x="60" y="150" width="200" height="34" rx="10" fill="#007a53" opacity="0.18"/>
+  <rect x="80" y="112" width="160" height="34" rx="10" fill="#007a53" opacity="0.45"/>
+  <rect x="100" y="74" width="120" height="34" rx="10" fill="#007a53"/>
+  <g class="float">
+    <rect x="176" y="18" width="112" height="52" rx="16" fill="#0f9d68"/>
+    <path d="M196 70 l-6 14 20 -14 z" fill="#0f9d68"/>
+    <circle class="dot" cx="212" cy="44" r="6" fill="#ffffff"/>
+    <circle class="dot2" cx="232" cy="44" r="6" fill="#ffffff"/>
+    <circle class="dot3" cx="252" cy="44" r="6" fill="#ffffff"/>
+  </g>
+  <g class="float2">
+    <circle cx="46" cy="60" r="14" fill="none" stroke="#94a3b8" stroke-width="3" opacity="0.7"/>
+    <circle cx="46" cy="60" r="5" fill="#94a3b8" opacity="0.7"/>
+  </g>
+  <path class="spark" d="M52 190 l6 14 14 6 -14 6 -6 14 -6 -14 -14 -6 14 -6 z" fill="#34c08e"/>
+</svg>

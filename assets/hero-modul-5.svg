@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240" role="img" aria-hidden="true">
+  <style>
+    .bar { transform-box: fill-box; transform-origin: center; animation: eq 1.4s ease-in-out infinite; }
+    .d1 { animation-delay: 0s; } .d2 { animation-delay: 0.2s; } .d3 { animation-delay: 0.4s; }
+    .d4 { animation-delay: 0.6s; } .d5 { animation-delay: 0.8s; } .d6 { animation-delay: 1s; }
+    @keyframes eq { 0%,100% { transform: scaleY(0.45); } 50% { transform: scaleY(1); } }
+    @media (prefers-reduced-motion: reduce) { .bar { animation: none !important; } }
+  </style>
+  <path d="M96 120 v-16 a64 64 0 0 1 128 0 v16" stroke="#94a3b8" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <rect x="82" y="116" width="30" height="52" rx="12" fill="#007a53"/>
+  <rect x="208" y="116" width="30" height="52" rx="12" fill="#007a53"/>
+  <rect class="bar d1" x="118" y="182" width="12" height="40" rx="6" fill="#0f9d68"/>
+  <rect class="bar d2" x="136" y="174" width="12" height="56" rx="6" fill="#34c08e"/>
+  <rect class="bar d3" x="154" y="168" width="12" height="68" rx="6" fill="#007a53"/>
+  <rect class="bar d4" x="172" y="174" width="12" height="56" rx="6" fill="#34c08e"/>
+  <rect class="bar d5" x="190" y="182" width="12" height="40" rx="6" fill="#0f9d68"/>
+  <rect class="bar d6" x="208" y="188" width="12" height="28" rx="6" fill="#94a3b8"/>
+  <path d="M64 60 l5 12 12 5 -12 5 -5 12 -5 -12 -12 -5 12 -5 z" fill="#34c08e"/>
+</svg>

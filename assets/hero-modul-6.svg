@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240" role="img" aria-hidden="true">
+  <style>
+    .p1 { animation: glow 5s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+    .p2 { animation: glow 5s ease-in-out 1s infinite; transform-box: fill-box; transform-origin: center; }
+    .p3 { animation: glow 5s ease-in-out 2s infinite; transform-box: fill-box; transform-origin: center; }
+    .p4 { animation: glow 5s ease-in-out 3s infinite; transform-box: fill-box; transform-origin: center; }
+    .p5 { animation: glow 5s ease-in-out 4s infinite; transform-box: fill-box; transform-origin: center; }
+    @keyframes glow { 0%,100% { transform: scale(1); opacity: 0.8; } 10% { transform: scale(1.35); opacity: 1; } 20% { transform: scale(1); } }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
+  <path d="M30 200 C 100 195, 150 175, 200 130 C 240 95, 265 60, 290 30" stroke="#94a3b8" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <circle class="p1" cx="45" cy="199" r="10" fill="#007a53"/>
+  <circle class="p2" cx="110" cy="189" r="10" fill="#007a53"/>
+  <circle class="p3" cx="175" cy="152" r="10" fill="#0f9d68"/>
+  <circle class="p4" cx="232" cy="99" r="10" fill="#0f9d68"/>
+  <circle class="p5" cx="283" cy="38" r="10" fill="#34c08e"/>
+  <g opacity="0.85">
+    <line x1="60" y1="60" x2="100" y2="90" stroke="#94a3b8" stroke-width="2.5"/>
+    <line x1="60" y1="60" x2="110" y2="44" stroke="#94a3b8" stroke-width="2.5"/>
+    <line x1="100" y1="90" x2="110" y2="44" stroke="#94a3b8" stroke-width="2.5"/>
+    <circle cx="60" cy="60" r="8" fill="#007a53"/>
+    <circle cx="100" cy="90" r="8" fill="#0f9d68"/>
+    <circle cx="110" cy="44" r="8" fill="#34c08e"/>
+  </g>
+</svg>

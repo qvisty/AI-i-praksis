@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240" role="img" aria-hidden="true">
+  <style>
+    .n1 { animation: pop 4.5s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+    .n2 { animation: pop 4.5s ease-in-out 0.7s infinite; transform-box: fill-box; transform-origin: center; }
+    .n3 { animation: pop 4.5s ease-in-out 1.4s infinite; transform-box: fill-box; transform-origin: center; }
+    .n4 { animation: pop 4.5s ease-in-out 2.1s infinite; transform-box: fill-box; transform-origin: center; }
+    .check { animation: pop 4.5s ease-in-out 2.8s infinite; transform-box: fill-box; transform-origin: center; }
+    @keyframes pop { 0%,100% { transform: scale(1); } 12% { transform: scale(1.25); } 24% { transform: scale(1); } }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
+  <path d="M110 210 L110 30" stroke="#94a3b8" stroke-width="5" stroke-linecap="round" fill="none"/>
+  <path d="M110 170 C 110 120, 200 150, 200 100 C 200 78, 160 70, 110 62" stroke="#0f9d68" stroke-width="5" stroke-linecap="round" fill="none"/>
+  <circle class="n1" cx="110" cy="190" r="12" fill="#007a53"/>
+  <circle class="n2" cx="200" cy="100" r="12" fill="#0f9d68"/>
+  <circle class="n3" cx="110" cy="120" r="12" fill="#007a53"/>
+  <circle class="n4" cx="110" cy="62" r="12" fill="#007a53"/>
+  <g class="check">
+    <circle cx="238" cy="52" r="22" fill="#34c08e"/>
+    <path d="M227 52 l8 9 16 -18" stroke="#ffffff" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>
