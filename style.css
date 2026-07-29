@@ -134,6 +134,68 @@ nav a:not(.brand)::after {
 nav a:not(.brand):hover::after,
 nav a.active::after { right: 0; }
 
+/* Sammenklappelig menu (struktureres af site.js) */
+.nav-links { display: contents; }
+.nav-burger { display: none; }
+
+@media (max-width: 860px) {
+  .nav-burger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 44px;
+    height: 38px;
+    margin-left: auto;
+    padding: 0 11px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  .nav-burger span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background: var(--fg);
+    border-radius: 2px;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+  }
+
+  nav.open .nav-burger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  nav.open .nav-burger span:nth-child(2) { opacity: 0; }
+  nav.open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  nav.open .nav-links { max-height: 34rem; }
+
+  .nav-links a, .nav-links .slides-toggle {
+    padding: 0.55rem 0;
+    font-size: 1.05rem;
+  }
+
+  .nav-links a:not(.brand)::after { display: none; }
+
+  .nav-links .slides-toggle {
+    margin: 0.5rem 0;
+    padding: 0.3rem 0.9rem;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .nav-links, .nav-burger span { transition: none; }
+  }
+}
+
 /* ---------- Layout ---------- */
 
 main {

@@ -274,6 +274,34 @@ function paginationLink(page, dir, hash) {
   if (location.hash === '#dias') open();
 })();
 
+// Sammenklappelig menu på smalle skærme: menupunkterne samles i en boks,
+// der foldes ud og ind med en burger-knap. På brede skærme ændres intet.
+(function () {
+  var navEl = document.querySelector('nav');
+  var inner = document.querySelector('nav .inner');
+  if (!navEl || !inner) return;
+  var brand = inner.querySelector('.brand');
+  var wrap = document.createElement('div');
+  wrap.className = 'nav-links';
+  Array.prototype.slice.call(inner.children).forEach(function (el) {
+    if (el !== brand) wrap.appendChild(el);
+  });
+  var burger = document.createElement('button');
+  burger.className = 'nav-burger';
+  burger.type = 'button';
+  burger.setAttribute('aria-label', 'Menu');
+  burger.setAttribute('aria-expanded', 'false');
+  burger.appendChild(document.createElement('span'));
+  burger.appendChild(document.createElement('span'));
+  burger.appendChild(document.createElement('span'));
+  inner.appendChild(burger);
+  inner.appendChild(wrap);
+  burger.addEventListener('click', function () {
+    var open = navEl.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+})();
+
 // Toner sektionerne blidt ind, når de ruller ind i billedet.
 var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 if (!reducedMotion && 'IntersectionObserver' in window) {
