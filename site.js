@@ -52,22 +52,37 @@ document.querySelectorAll('main section').forEach(function (section) {
   exercise.appendChild(btn);
 });
 
-// Sidernes rækkefølge. Bruges af pagineringen nederst på siderne og af
-// det afsluttende bladre-dias i diasvisningen.
-var PAGE_SEQUENCE = [
-  { file: 'index.html', title: 'Forside' },
-  { file: 'modul-1-lovable.html', title: 'Modul 1: Byg en app med Lovable' },
-  { file: 'modul-2-github-claude.html', title: 'Modul 2: GitHub + Claude Code' },
-  { file: 'modul-3-ai-i-hverdagen.html', title: 'Modul 3: AI i din arbejdsdag' },
-  { file: 'modul-4-automatisering.html', title: 'Modul 4: Automatisér din egen hverdag' },
-  { file: 'modul-5-andre-modaliteter.html', title: 'Modul 5: Fra dokument til podcast' },
-  { file: 'modul-6-forstaa-ai.html', title: 'Modul 6: Forstå AI' },
-  { file: 'flere-vaerktoejer.html', title: 'Flere værktøjer at prøve' }
+// Sidernes rækkefølger. Bruges af pagineringen nederst på siderne og af
+// det afsluttende bladre-dias i diasvisningen. Modulerne og kursusdagene
+// er hver sin kæde.
+var PAGE_SEQUENCES = [
+  [
+    { file: 'index.html', title: 'Forside' },
+    { file: 'modul-1-lovable.html', title: 'Modul 1: Byg en app med Lovable' },
+    { file: 'modul-2-github-claude.html', title: 'Modul 2: GitHub + Claude Code' },
+    { file: 'modul-3-ai-i-hverdagen.html', title: 'Modul 3: AI i din arbejdsdag' },
+    { file: 'modul-4-automatisering.html', title: 'Modul 4: Automatisér din egen hverdag' },
+    { file: 'modul-5-andre-modaliteter.html', title: 'Modul 5: Fra dokument til podcast' },
+    { file: 'modul-6-forstaa-ai.html', title: 'Modul 6: Forstå AI' },
+    { file: 'flere-vaerktoejer.html', title: 'Flere værktøjer at prøve' }
+  ],
+  [
+    { file: 'dag-1.html', title: 'Dag 1' },
+    { file: 'dag-2.html', title: 'Dag 2' },
+    { file: 'dag-3.html', title: 'Dag 3' },
+    { file: 'dag-4.html', title: 'Dag 4' },
+    { file: 'proeven.html', title: 'Prøven' }
+  ]
 ];
 
 var pageFile = location.pathname.split('/').pop() || 'index.html';
 var pageIndex = -1;
-PAGE_SEQUENCE.forEach(function (p, i) { if (p.file === pageFile) pageIndex = i; });
+var PAGE_SEQUENCE = [];
+PAGE_SEQUENCES.forEach(function (seq) {
+  seq.forEach(function (p, i) {
+    if (p.file === pageFile) { PAGE_SEQUENCE = seq; pageIndex = i; }
+  });
+});
 var pagePrev = pageIndex > 0 ? PAGE_SEQUENCE[pageIndex - 1] : null;
 var pageNext = pageIndex >= 0 && pageIndex < PAGE_SEQUENCE.length - 1 ? PAGE_SEQUENCE[pageIndex + 1] : null;
 
@@ -114,6 +129,13 @@ function paginationLink(page, dir, hash) {
   if (!inner) return;
   var MENU = [
     { file: 'index.html', label: 'Forside' },
+    { label: 'Kursusdage', children: [
+      { file: 'dag-1.html', label: 'Dag 1' },
+      { file: 'dag-2.html', label: 'Dag 2' },
+      { file: 'dag-3.html', label: 'Dag 3' },
+      { file: 'dag-4.html', label: 'Dag 4' },
+      { file: 'proeven.html', label: 'Prøven' }
+    ] },
     { file: 'modul-1-lovable.html', label: 'Modul 1: Lovable' },
     { file: 'modul-2-github-claude.html', label: 'Modul 2: GitHub + Claude' },
     { file: 'modul-3-ai-i-hverdagen.html', label: 'Modul 3: Hverdagen' },
@@ -151,6 +173,12 @@ function paginationLink(page, dir, hash) {
       if (groupActive) btn.classList.add('active');
       btn.addEventListener('click', function (e) {
         e.stopPropagation();
+        document.querySelectorAll('.nav-group.open').forEach(function (g) {
+          if (g !== group) {
+            g.classList.remove('open');
+            g.querySelector('.nav-group-btn').setAttribute('aria-expanded', 'false');
+          }
+        });
         var open = group.classList.toggle('open');
         btn.setAttribute('aria-expanded', open ? 'true' : 'false');
       });

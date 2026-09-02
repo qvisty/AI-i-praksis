@@ -22,6 +22,8 @@ Siden bruges i stedet for slides og udgives med GitHub Pages.
 | `papirklips.html` | Fordybelse: papirklips-tankeeksperimentet, appen Paperclip og zero human companies. Linket fra modul 6 |
 | `teknik.html` | Til de tekniske: fire dybe spor med git, Claude Code i terminalen, webhooks og lokal AI. Linket fra modul 2 og 4 |
 | `oversigt.html` | Oversigt og stikord: selvopdaterende indholdsfortegnelse over alle sider plus alfabetisk stikordsregister |
+| `dag-1.html` til `dag-4.html` | Kursusgangene: skeletsider til program, materialer og hjemmeopgaver, med udkommenterede skabeloner i filerne |
+| `proeven.html` | Prøven: skeletside til erhvervscasen og den mundtlige prøve |
 | `style.css` | Fælles design (lyst/mørkt tema, øvelses- og forklaringsbokse, animationer) |
 | `site.js` | "Kopiér"-knapper, print af handouts, diasvisning og indtoning ved scroll |
 | `assets/` | Håndlavede SVG-illustrationer til hver side |

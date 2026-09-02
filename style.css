@@ -86,7 +86,7 @@ body::before {
 
 /* ---------- Navigation ---------- */
 
-nav {
+nav:not(.pagination):not(.toc) {
   position: sticky;
   top: 0;
   z-index: 10;
@@ -111,16 +111,16 @@ nav .brand {
   margin-right: auto;
 }
 
-nav a {
+nav .inner a {
   color: var(--muted);
   text-decoration: none;
   font-size: 1rem;
   position: relative;
 }
 
-nav a:hover, nav a.active { color: var(--accent); }
+nav .inner a:hover, nav .inner a.active { color: var(--accent); }
 
-nav a:not(.brand)::after {
+nav .inner a:not(.brand)::after {
   content: "";
   position: absolute;
   left: 0;
@@ -131,8 +131,8 @@ nav a:not(.brand)::after {
   transition: right 0.25s ease;
 }
 
-nav a:not(.brand):hover::after,
-nav a.active::after { right: 0; }
+nav .inner a:not(.brand):hover::after,
+nav .inner a.active::after { right: 0; }
 
 /* Mere-menuen med fold ud (bygges af site.js) */
 .nav-group { position: relative; }
