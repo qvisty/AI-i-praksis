@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240" role="img" aria-hidden="true">
+  <style>
+    .lens { animation: seek 7s ease-in-out infinite; transform-box: view-box; transform-origin: center; }
+    @keyframes seek {
+      0%, 100% { transform: translate(0, 0); }
+      25% { transform: translate(-30px, 34px); }
+      55% { transform: translate(26px, 64px); }
+      80% { transform: translate(-10px, 10px); }
+    }
+    @media (prefers-reduced-motion: reduce) { .lens { animation: none; } }
+  </style>
+  <rect x="56" y="24" width="180" height="192" rx="12" fill="none" stroke="#94a3b8" stroke-width="3"/>
+  <rect x="236" y="44" width="26" height="30" rx="6" fill="#007a53"/>
+  <rect x="236" y="84" width="26" height="30" rx="6" fill="#0f9d68"/>
+  <rect x="236" y="124" width="26" height="30" rx="6" fill="#34c08e"/>
+  <rect x="236" y="164" width="26" height="30" rx="6" fill="#69a58f"/>
+  <rect x="76" y="48" width="52" height="10" rx="5" fill="#007a53"/>
+  <rect x="76" y="72" width="120" height="7" rx="3.5" fill="#94a3b8" opacity="0.6"/>
+  <rect x="76" y="90" width="104" height="7" rx="3.5" fill="#94a3b8" opacity="0.6"/>
+  <rect x="76" y="114" width="52" height="10" rx="5" fill="#0f9d68"/>
+  <rect x="76" y="138" width="120" height="7" rx="3.5" fill="#94a3b8" opacity="0.6"/>
+  <rect x="76" y="156" width="88" height="7" rx="3.5" fill="#94a3b8" opacity="0.6"/>
+  <rect x="76" y="180" width="112" height="7" rx="3.5" fill="#94a3b8" opacity="0.4"/>
+  <g class="lens">
+    <circle cx="150" cy="86" r="26" fill="none" stroke="#007a53" stroke-width="6"/>
+    <path d="M169 105 l20 20" stroke="#007a53" stroke-width="7" stroke-linecap="round"/>
+  </g>
+</svg>

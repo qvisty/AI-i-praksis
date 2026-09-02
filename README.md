@@ -21,6 +21,7 @@ Siden bruges i stedet for slides og udgives med GitHub Pages.
 | `evaluering.html` | Deltagernes evalueringsside. Indsæt formularlinket i `FORMULAR_URL` i filen, se undervisersiden |
 | `papirklips.html` | Fordybelse: papirklips-tankeeksperimentet, appen Paperclip og zero human companies. Linket fra modul 6 |
 | `teknik.html` | Til de tekniske: fire dybe spor med git, Claude Code i terminalen, webhooks og lokal AI. Linket fra modul 2 og 4 |
+| `oversigt.html` | Oversigt og stikord: selvopdaterende indholdsfortegnelse over alle sider plus alfabetisk stikordsregister |
 | `style.css` | Fælles design (lyst/mørkt tema, øvelses- og forklaringsbokse, animationer) |
 | `site.js` | "Kopiér"-knapper, print af handouts, diasvisning og indtoning ved scroll |
 | `assets/` | Håndlavede SVG-illustrationer til hver side |

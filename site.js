@@ -121,6 +121,7 @@ function paginationLink(page, dir, hash) {
     { file: 'modul-5-andre-modaliteter.html', label: 'Modul 5: NotebookLM' },
     { file: 'modul-6-forstaa-ai.html', label: 'Modul 6: Teorien' },
     { label: 'Mere', children: [
+      { file: 'oversigt.html', label: 'Oversigt og stikord' },
       { file: 'flere-vaerktoejer.html', label: 'Flere værktøjer' },
       { file: 'teknik.html', label: 'Til de tekniske' },
       { file: 'papirklips.html', label: 'Fordybelse: Papirklipsen' },
