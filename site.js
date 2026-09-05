@@ -462,6 +462,19 @@ function paginationLink(page, dir, hash) {
   });
 })();
 
+// Link til det formelle kursus hos UCL i sidefoden på alle sider.
+(function () {
+  var foot = document.querySelector('footer .inner');
+  if (!foot) return;
+  foot.appendChild(document.createTextNode(' '));
+  var a = document.createElement('a');
+  a.href = 'https://www.ucl.dk/efteruddannelser-og-kurser/efteruddannelser/akademimoduler/ai-i-praksis';
+  a.target = '_blank';
+  a.rel = 'noopener';
+  a.textContent = 'Kurset hos UCL';
+  foot.appendChild(a);
+})();
+
 // Toner sektionerne blidt ind, når de ruller ind i billedet.
 var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 if (!reducedMotion && 'IntersectionObserver' in window) {
