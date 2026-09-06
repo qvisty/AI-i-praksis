@@ -1,0 +1,12 @@
+# Lokale editor- og agentfiler
+.vscode/
+**/.vscode/
+.claude/
+.codex/
+.gemini/
+.superdoc/
+.venv/
+
+# Lokale systemfiler
+.DS_Store
+Thumbs.db

@@ -54,6 +54,7 @@ Dette repository er kursussiden for **AI i praksis**. Arbejd altid videre i den 
 ## Før commit og push
 - Kør `get_errors` på alle ændrede HTML-, CSS- og JavaScript-filer.
 - Kør `node --check site.js`, når JavaScript er ændret.
+- Kør `node scripts/check-links.js` efter ændringer i sider eller materialelinks.
 - Kør `git diff --check`.
 - Kontrollér lokale links og assets, især dagspdf’er, Markdown-filer og billeder.
 - Se `git status --short`, og stage kun den dag og de materialer, der er klar til publicering.
@@ -65,6 +66,7 @@ Dette repository er kursussiden for **AI i praksis**. Arbejd altid videre i den 
 - `filer/Ai-i-praksis-dagN/`: kildemateriale til den enkelte dag
 - `modul-1-lovable.html` til `modul-4-automatisering.html`: egne praksisudvidelser
 - `markdown.html`: rendered visning af lokale Markdown-filer
+- `scripts/check-links.js`: dependency-frit check af lokale HTML-links og anchors
 - `site.js`: navigation, diasvisning, Markdown-link-routing og interaktion
 - `style.css`: fælles styling
 - `README.md`: repository-overblik og udgivelsesinformation

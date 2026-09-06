@@ -27,6 +27,7 @@ Siden bruges i stedet for slides og udgives med GitHub Pages.
 | `AGENTS.md` | Arbejdsaftaler for Claude Code og andre coding agents: UCL-spor, egne udvidelser, Markdown-materialer og publicering |
 | `style.css` | Fælles design (lyst/mørkt tema, øvelses- og forklaringsbokse, animationer) |
 | `site.js` | "Kopiér"-knapper, print af handouts, diasvisning og indtoning ved scroll |
+| `scripts/check-links.js` | Lokalt check af HTML-links og anchors uden ekstra dependencies |
 | `assets/` | Håndlavede SVG-illustrationer til hver side |
 
 ## Udgivelse
