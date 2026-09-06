@@ -22,8 +22,9 @@ Siden bruges i stedet for slides og udgives med GitHub Pages.
 | `papirklips.html` | Fordybelse: papirklips-tankeeksperimentet, appen Paperclip og zero human companies. Linket fra modul 6 |
 | `teknik.html` | Til de tekniske: fire dybe spor med git, Claude Code i terminalen, webhooks og lokal AI. Linket fra modul 2 og 4 |
 | `oversigt.html` | Oversigt og stikord: selvopdaterende indholdsfortegnelse over alle sider plus alfabetisk stikordsregister |
-| `dag-1.html` til `dag-4.html` | Kursusgangene: skeletsider til program, materialer og hjemmeopgaver, med udkommenterede skabeloner i filerne |
+| `dag-1.html` til `dag-4.html` | Kursusgangene: UCL-underviserens dagsforløb med Jesper Qvists egne praksisudvidelser, materialer og hjemmeopgaver |
 | `proeven.html` | Prøven: skeletside til erhvervscasen og den mundtlige prøve |
+| `AGENTS.md` | Arbejdsaftaler for Claude Code og andre coding agents: UCL-spor, egne udvidelser, Markdown-materialer og publicering |
 | `style.css` | Fælles design (lyst/mørkt tema, øvelses- og forklaringsbokse, animationer) |
 | `site.js` | "Kopiér"-knapper, print af handouts, diasvisning og indtoning ved scroll |
 | `assets/` | Håndlavede SVG-illustrationer til hver side |
@@ -37,6 +38,8 @@ Hvert push til `main` udgives automatisk efter et øjebliks tid.
 
 ## Redigering
 
-Alt indhold er ren HTML/CSS uden byggetrin. Redigér filerne direkte (evt. i GitHubs
-webeditor) og commit. Nye moduler laves nemmest ved at kopiere en eksisterende modulside
-og tilføje et link i navigationen og på forsiden.
+Alt indhold er ren HTML/CSS/JavaScript uden byggetrin. Læs `AGENTS.md`, før du ændrer
+kursusdagene. Følg altid UCL-PDF’en som hovedforløb, og læg egne moduler ind som tydeligt
+markerede udvidelser. Nye dag-materialer formatteres som læsbar Markdown og publiceres kun,
+når den pågældende dag er klar. Nye moduler laves nemmest ved at kopiere en eksisterende
+modulside og tilføje et link i navigationen og på forsiden.
