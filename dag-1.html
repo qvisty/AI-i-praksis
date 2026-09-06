@@ -21,47 +21,193 @@
     <div class="hero-text">
       <span class="badge">Kursusgang 1</span>
       <h1>Dag 1</h1>
-      <p class="lead">Program, materialer og noter til kursusgang 1. Indholdet er på vej.</p>
+      <p class="lead">Introduktion til AI, AI gennem historien og de grundlæggende principper bag generativ AI.</p>
     </div>
   </header>
 
-  <section id="indhold">
-    <h2>Indhold på vej</h2>
-    <div class="note">
-      <span class="label">Under opbygning</span>
-      Denne side fyldes med dagens program, links til modulerne og materialer, efterhånden som
-      kursusgangen planlægges. Kig forbi igen, eller brug modulerne i menuen så længe.
+  <section id="overblik">
+    <h2>Dagens overblik</h2>
+    <p>
+      I dag bygger vi et fælles grundlag for resten af kurset. Vi bevæger os fra AI's historie
+      og forskellige typer AI til generativ AI, sprogmodeller og de begreber, der forklarer,
+      hvad der sker, når vi skriver til dem.
+    </p>
+    <div class="explain">
+      <span class="label">Dagens røde tråd</span>
+      AI er ikke kun noget, vi skal bruge. Vi skal også kunne forstå, hvad den gør, vurdere
+      svarene kritisk og vælge, hvornår den er et godt værktøj.
     </div>
   </section>
-
-  <!-- Skabelon til senere: fjern kommentartegnene, og fyld ud.
 
   <section id="program">
     <h2>Program for dagen</h2>
     <table class="schedule">
       <tr><th>Tid</th><th>Hvad sker der</th></tr>
-      <tr><td class="time">08.00</td><td>...</td></tr>
+      <tr><td class="time">Start</td><td>Velkomst, præsentationer og forventningsafstemning</td></tr>
+      <tr><td class="time">1</td><td>Hvad ved vi om AI? Fælles afsæt og første samtale</td></tr>
+      <tr><td class="time">2</td><td>AI gennem historien: fra regler og ekspertsystemer til maskinlæring, dyb læring og generativ AI</td></tr>
+      <tr><td class="time">3</td><td>Hvad er generativ AI? GPT, sprogmodeller, prompts, guardrails, tokens og context window</td></tr>
+      <tr><td class="time">4</td><td>Hvordan bruger vi generativ AI konstruktivt? Prompt-afprøvning, analyse af data og refleksion</td></tr>
+      <tr><td class="time">Slut</td><td>Eksamen, opgaver til næste gang og medbring headset</td></tr>
+    </table>
+  </section>
+
+  <section id="samtaler">
+    <h2>Samtaler og drøftelser</h2>
+    <div class="grid">
+      <div class="card">
+        <span class="badge">Ved start</span>
+        <h3>Hvad ved du om AI?</h3>
+        <p>Tal i 10 minutter med din sidemakker om dit forhold til og din viden om AI.</p>
+      </div>
+      <div class="card">
+        <span class="badge">Forventninger</span>
+        <h3>Hvad skal faget kunne?</h3>
+        <p>Tal om, hvad I håber at lære, hvilken arbejdsform I forventer, og hvad der vil gøre faget relevant.</p>
+      </div>
+      <div class="card">
+        <span class="badge">Opsamling</span>
+        <h3>AI eller menneske?</h3>
+        <p>Efter Turing-øvelsen undersøger vi, hvad der virker overbevisende, og hvad mennesker og AI hver især gør bedst.</p>
+      </div>
+      <div class="card">
+        <span class="badge">Sund skepsis</span>
+        <h3>Hvad må man dele?</h3>
+        <p>Vi bruger tommelfingerreglen: Del kun data, der tåler offentlighed, og tag selv ansvar for at kontrollere informationen.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="oevelser">
+    <h2>Øvelser</h2>
+    <div class="exercise">
+      <span class="label">Øvelse 1: Turing</span>
+      <ol class="steps">
+        <li>Gå sammen to og to, og få AI til at lave 10 spørgsmål.</li>
+        <li>Besvar selv fem spørgsmål, og lad AI besvare de fem andre.</li>
+        <li>Bland svarene, og lad en anden gruppe gætte, om hvert svar er skrevet af et menneske eller AI.</li>
+        <li>Byt roller, og tal bagefter om forskellene mellem svarene.</li>
+      </ol>
+    </div>
+    <div class="exercise">
+      <span class="label">Øvelse 2: Skriv en prompt</span>
+      <ol class="steps">
+        <li>Skriv en prompt frit fra leveren.</li>
+        <li>Indtast den i <a href="https://copilot.microsoft.com/" target="_blank" rel="noopener">Copilot</a>.</li>
+        <li>Se, hvad der sker, når du bygger videre på prompten med mere kontekst eller et tydeligere ønsket output.</li>
+      </ol>
+    </div>
+    <div class="exercise">
+      <span class="label">Øvelse 3: En krypteret besked</span>
+      <ol class="steps">
+        <li>Skriv en hemmelig sætning, som du ikke viser til nogen.</li>
+        <li>Omdan den til tokens ved hjælp af den fælles token-tabel.</li>
+        <li>Byt besked med din sidemakker, og detokenisér den.</li>
+        <li>Drøft, om guardrails burde forhindre beskeden i at blive detokeniseret.</li>
+      </ol>
+    </div>
+    <div class="note">
+      <span class="label">Fælles eksempel</span>
+      Vi ser også på, hvordan generativ AI kan skabe et billede af en LEGO-and, og på hvordan
+      små ændringer i en prompt kan ændre resultatet.
+    </div>
+  </section>
+
+  <section id="arbejdsark">
+    <h2>Arbejdsark til øvelserne</h2>
+    <p>
+      Vælg ét arbejdsark, når du skal afprøve din prompt. Start enkelt, og byg derefter videre
+      med mere kontekst, en målgruppe eller et bestemt format. Brug kun ufølsomt materiale.
+    </p>
+    <div class="grid">
+      <div class="card">
+        <span class="badge">Skriv og omskriv</span>
+        <h3>Tekst til en bestemt modtager</h3>
+        <p>Omskriv en tekst til et andet sprog, en anden tone eller en bestemt målgruppe. Prøv for eksempel at gøre den mere ungdommelig eller lettere at læse.</p>
+        <a href="filer/Ai-i-praksis-dag1/Skriv%20tekst%20om%20til%20andet%20publikum.md" target="_blank" rel="noopener">Åbn arbejdsarket</a>
+      </div>
+      <div class="card">
+        <span class="badge">Kreativ tekst</span>
+        <h3>Skriv en konfirmationssang</h3>
+        <p>Afprøv, hvordan AI arbejder med genre, detaljer og personlige oplysninger i en sang om gaming, fodbold og det at være ung.</p>
+        <a href="filer/Ai-i-praksis-dag1/Konfirmationssangen.md" target="_blank" rel="noopener">Åbn arbejdsarket</a>
+      </div>
+      <div class="card">
+        <span class="badge">Planlægning</span>
+        <h3>Lav en mødeplan</h3>
+        <p>Giv AI en planlægningsopgave med timer, rullende fredage og faste hensyn. Undersøg bagefter, hvad der mangler i prompten.</p>
+        <a href="filer/Ai-i-praksis-dag1/Få%20hjælp%20til%20mødeplanlægning.md" target="_blank" rel="noopener">Åbn arbejdsarket</a>
+      </div>
+      <div class="card">
+        <span class="badge">Regneark</span>
+        <h3>Få hjælp til Excel</h3>
+        <p>Bed AI forklare eller skrive en formel, der sammenligner to ark. Tilpas sværhedsgraden til dit eget niveau.</p>
+        <a href="filer/Ai-i-praksis-dag1/Få%20hjælp%20til%20Excel.md" target="_blank" rel="noopener">Åbn arbejdsarket</a>
+      </div>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <span class="badge">Analyse</span>
+        <h3>Tal om Forsvaret</h3>
+        <p>Brug offentlig statistik til at få AI til at beskrive udviklingen i værnepligtige og ansatte, og drøft forskellen på beskrivelse og konklusion.</p>
+        <a href="filer/Ai-i-praksis-dag1/Tal%20om%20Forsvaret.md" target="_blank" rel="noopener">Åbn arbejdsarket</a>
+      </div>
+      <div class="card">
+        <span class="badge">Sikkerhed</span>
+        <h3>Skriv om IT-sikkerhed</h3>
+        <p>Få AI til at skrive en intranetartikel og en flyer. Sammenlign, hvordan målgruppe, format og risici ændrer outputtet.</p>
+        <a href="filer/Ai-i-praksis-dag1/Bed%20AI%20om%20at%20skrive%20hvorfor%20IT-sikkerhed.md" target="_blank" rel="noopener">Åbn arbejdsarket</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="begreber">
+    <h2>Begreber fra dagen</h2>
+    <table class="schedule">
+      <tr><th>Begreb</th><th>Kort forklaring</th></tr>
+      <tr><td class="time">Regelbaseret AI</td><td>Systemer, der følger regler, mennesker har skrevet.</td></tr>
+      <tr><td class="time">Maskinlæring</td><td>Systemer, der lærer mønstre fra data i stedet for kun at følge regler.</td></tr>
+      <tr><td class="time">Generativ AI</td><td>AI, der kan generere nyt indhold som tekst, billeder, lyd eller kode.</td></tr>
+      <tr><td class="time">GPT</td><td>Generative Pre-trained Transformer: en model, der er fortrænet på store mængder data og genererer tekst.</td></tr>
+      <tr><td class="time">Prompt</td><td>Din instruktion, kontekst og opgave til AI.</td></tr>
+      <tr><td class="time">Guardrails</td><td>Sikkerhedsmekanismer, der styrer, hvad systemet må svare på.</td></tr>
+      <tr><td class="time">Tokens</td><td>De mindre enheder, tekst opdeles i, for eksempel orddele eller tegn.</td></tr>
+      <tr><td class="time">Context window</td><td>Den information modellen kan arbejde med under en samtale.</td></tr>
     </table>
   </section>
 
   <section id="materialer">
     <h2>Materialer</h2>
+    <h3>Præsentation og fordybelse</h3>
     <ul>
-      <li><a href="modul-1-lovable.html">...</a></li>
+      <li><a href="filer/Ai-i-praksis-dag1/Dag%201%20-%203526.pdf">PowerPoint: Dag 1</a></li>
+      <li><a href="filer/Ai-i-praksis-dag1/Visions_of_Artificial_Intelligence_and_R.pdf">Visions of Artificial Intelligence and Reality</a> <span class="muted">(interessant, ikke påkrævet)</span></li>
+      <li><a href="filer/Ai-i-praksis-dag1/Minding_the_Future_Artificial_Intelligen.pdf">Minding the Future: Artificial Intelligence</a> <span class="muted">(interessant, ikke påkrævet)</span></li>
+      <li><a href="modul-6-forstaa-ai.html">Fordybelse: Forstå AI</a></li>
     </ul>
+    <h3>Læsning om prompting</h3>
+    <ul>
+      <li><a href="filer/Ai-i-praksis-dag1/Engelske%20tekster%20%28læseguide%29.md" target="_blank" rel="noopener">Engelske tekster: læseguide</a> <span class="muted">(prioriteret læsning og ekstra spor)</span></li>
+      <li><a href="filer/Ai-i-praksis-dag1/The%20AI%20Job%20That%20Pays%20Up%20to%20%24335K%E2%80%94and%20You.md" target="_blank" rel="noopener">The AI Job That Pays Up to $335K—and You Don't Need a Computer Engineering Background</a></li>
+    </ul>
+    <div class="note">
+      <span class="label">Flere materialer kommer</span>
+      Der kommer flere `.md`-filer i mappen <strong>filer/Ai-i-praksis-dag1</strong>.
+      De kan placeres under den øvelse eller det begreb, de understøtter, i stedet for kun at
+      blive samlet i en lang liste.
+    </div>
   </section>
 
   <section id="hjemmeopgave">
     <h2>Inden næste gang</h2>
     <div class="exercise">
-      <span class="label">Hjemmeopgave</span>
+      <span class="label">Forberedelse</span>
       <ol class="steps">
-        <li>...</li>
+        <li>Tænk over tre ting, der betyder noget for dig.</li>
+        <li>Medbring headset.</li>
       </ol>
     </div>
   </section>
-
-  -->
 
 </main>
 
