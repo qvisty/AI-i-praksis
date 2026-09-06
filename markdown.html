@@ -13,7 +13,7 @@
 <nav>
   <div class="inner">
     <a class="brand" href="index.html">AI i praksis</a>
-    <a href="dag-1.html">Tilbage til Dag 1</a>
+    <a href="dag-1.html" data-day-link>Tilbage til Dag 1</a>
   </div>
 </nav>
 
@@ -31,7 +31,7 @@
 
 <footer>
   <div class="inner">
-    AI i praksis. <a href="dag-1.html">Tilbage til Dag 1</a>
+    AI i praksis. <a href="dag-1.html" data-day-link>Tilbage til Dag 1</a>
   </div>
 </footer>
 
@@ -44,11 +44,52 @@
     var title = document.getElementById('markdown-title');
     var source = document.getElementById('markdown-source');
 
+    /**
+     * Peger tilbage-linkene på den kursusdag, materialet hører til.
+     * @param {string} filePath Stien til markdownfilen fra ?file=.
+     */
+    function updateDayLinks(filePath) {
+      var match = filePath.match(/Ai-i-praksis-dag(\d)/);
+      if (!match) return;
+      document.querySelectorAll('[data-day-link]').forEach(function (link) {
+        link.href = 'dag-' + match[1] + '.html';
+        link.textContent = 'Tilbage til Dag ' + match[1];
+      });
+    }
+
+    /**
+     * Gør relative links og billeder i materialet brugbare fra denne side.
+     * Links til andre markdownfiler sendes gennem markdown.html, så de også bliver renderet.
+     * @param {HTMLElement} container Elementet med det renderede materiale.
+     * @param {URL} baseUrl Adressen på den markdownfil, indholdet kommer fra.
+     */
+    function resolveLinks(container, baseUrl) {
+      var pageBase = new URL('.', location.href).href;
+      container.querySelectorAll('a[href], img[src]').forEach(function (element) {
+        var attribute = element.hasAttribute('href') ? 'href' : 'src';
+        var value = element.getAttribute(attribute);
+        if (!value || value.startsWith('#') || value.indexOf('://') !== -1) return;
+        var absolute = new URL(value, baseUrl.href);
+        if (attribute === 'href' && absolute.pathname.endsWith('.md') && absolute.href.indexOf(pageBase) === 0) {
+          var relative = decodeURIComponent(absolute.href.slice(pageBase.length));
+          element.setAttribute('href', 'markdown.html?file=' + encodeURIComponent(relative));
+          return;
+        }
+        element.setAttribute(attribute, absolute.href);
+        if (attribute === 'href') {
+          element.target = '_blank';
+          element.rel = 'noopener';
+        }
+      });
+    }
+
     if (!file || !file.endsWith('.md') || file.indexOf('://') !== -1 || file.indexOf('..') !== -1) {
       title.textContent = 'Materialet kunne ikke åbnes';
       content.innerHTML = '<p>Linket til materialet er ikke gyldigt.</p>';
       return;
     }
+
+    updateDayLinks(file);
 
     var sourceUrl = new URL(file, location.href);
     source.textContent = sourceUrl.pathname.split('/').pop();
@@ -68,16 +109,7 @@
         } else {
           title.textContent = sourceUrl.pathname.split('/').pop().replace(/\.md$/, '');
         }
-        content.querySelectorAll('a[href], img[src]').forEach(function (element) {
-          var attribute = element.hasAttribute('href') ? 'href' : 'src';
-          var value = element.getAttribute(attribute);
-          if (!value || value.startsWith('#') || value.indexOf('://') !== -1) return;
-          element.setAttribute(attribute, new URL(value, sourceUrl.href).href);
-          if (attribute === 'href') {
-            element.target = '_blank';
-            element.rel = 'noopener';
-          }
-        });
+        resolveLinks(content, sourceUrl);
       })
       .catch(function () {
         title.textContent = 'Materialet kunne ikke åbnes';

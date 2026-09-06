@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Dag 2</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 </head>
 <body>
 
@@ -21,48 +22,289 @@
     <div class="hero-text">
       <span class="badge">Kursusgang 2</span>
       <h1>Dag 2</h1>
-      <p class="lead">Program, materialer og noter til kursusgang 2. Indholdet er på vej.</p>
+      <p class="lead">Praktisk brug og sund skepsis: de syv typer AI, og hvad generativ AI kan, når den laver billeder og lyd.</p>
     </div>
   </header>
 
-  <section id="indhold">
-    <h2>Indhold på vej</h2>
+  <section id="overblik">
+    <h2>Dagens overblik</h2>
+    <p>
+      Dag 1 handlede om tekst. I dag udvider vi til billeder og lyd. Først får vi et kort over
+      de syv typer AI, så vi ved, hvad vi kan forvente af teknologien. Derefter prøver vi det
+      selv i to øvelser, hvor vi genererer et billede og et stykke musik.
+    </p>
     <div class="note">
-      <span class="label">Under opbygning</span>
-      Denne side fyldes med dagens program, links til modulerne og materialer, efterhånden som
-      kursusgangen planlægges. Kig forbi igen, eller brug modulerne i menuen så længe.
+      <span class="label">To spor gennem dagen</span>
+      Denne side følger først UCL-underviserens originale dag 2-materiale i samme rækkefølge som
+      <a href="filer/Ai-i-praksis-dag2/Dag%202%20-%203526.pdf">diasshowet</a>. Undervejs peger
+      <strong>Mine udvidelser</strong> på dine egne moduler, når de går mere praktisk eller dybt
+      ind i det samme emne.
+    </div>
+    <nav class="day-stepper" aria-label="Dagens trin">
+      <a href="#program"><strong>1</strong><span>Start dagen</span></a>
+      <a href="#samtaler"><strong>2</strong><span>Tal sammen</span></a>
+      <a href="#oevelser"><strong>3</strong><span>Prøv AI</span></a>
+      <a href="#begreber"><strong>4</strong><span>Forstå begreberne</span></a>
+      <a href="#materialer"><strong>5</strong><span>Gå videre</span></a>
+    </nav>
+    <div class="explain">
+      <span class="label">Dagens røde tråd</span>
+      AI er stærk til mønstre og viden, men svagere til egentlig forståelse af verden. Det gælder
+      også, når den laver billeder og lyd. Derfor hører teknik og sund skepsis sammen hele dagen.
     </div>
   </section>
 
-  <!-- Skabelon til senere: fjern kommentartegnene, og fyld ud.
+  <section id="saadan-bruger-du-siden">
+    <div class="note">
+      <span class="label">Gå trin for trin</span>
+      Følg siden fra top til bund sammen med undervisningen. Du kan også vælge
+      <strong>Diasvisning</strong> i menuen, hvis du vil gennemgå indholdet ét dias ad gangen.
+    </div>
+  </section>
+
+  <section id="dias">
+    <h2>UCL’s diasshow: Dag 2</h2>
+    <p>Her kan du bladre gennem det originale UCL-materiale direkte på siden. Brug pilene eller sidetallet til at følge undervisningen.</p>
+    <div class="pdf-slideshow" data-pdf-slideshow data-pdf="filer/Ai-i-praksis-dag2/Dag%202%20-%203526.pdf" data-pages="38">
+      <div class="pdf-stage"><canvas aria-label="UCL’s dias for Dag 2" data-pdf-canvas></canvas></div>
+      <div class="pdf-controls">
+        <button type="button" data-pdf-prev>Forrige</button>
+        <label>Slide <input type="number" min="1" max="38" value="1" data-pdf-page></label>
+        <span data-pdf-count>af 38</span>
+        <button type="button" data-pdf-next>Næste</button>
+        <button type="button" data-pdf-fullscreen>Vis stort</button>
+        <a href="filer/Ai-i-praksis-dag2/Dag%202%20-%203526.pdf" download>Download</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="forberedelse">
+    <h2>Tag med hjemmefra</h2>
+    <p>Forberedelsen til i dag er kort, og det meste blev aftalt på dag 1.</p>
+    <div class="grid">
+      <div class="card">
+        <span class="badge">1. Tænk</span>
+        <h3>Tre ting, der betyder noget for dig</h3>
+        <p>De tre ting bliver til råmaterialet i dagens billedøvelse, så vælg noget, du gerne vil vise frem.</p>
+      </div>
+      <div class="card">
+        <span class="badge">2. Husk</span>
+        <h3>Headset</h3>
+        <p>Vi genererer og lytter til musik i den anden øvelse. Uden headset bliver lokalet et rodet lydbillede.</p>
+      </div>
+      <div class="card">
+        <span class="badge">3. Kig på</span>
+        <h3>Prompts til billeder</h3>
+        <p>En kort guide til motiv, stil, lys og udsnit gør den første øvelse nemmere.</p>
+        <a href="filer/Ai-i-praksis-dag2/AI%20Image%20Prompting%20101.md" target="_blank" rel="noopener">Åbn AI Image Prompting 101</a>
+      </div>
+    </div>
+    <div class="note">
+      <span class="label">Valgfri fordybelse</span>
+      Etik-teksterne og de videnskabelige artikler giver mest mening efter øvelserne. Du finder dem
+      under <a href="#materialer">Materialer</a>, når du har prøvet at generere noget selv.
+    </div>
+  </section>
 
   <section id="program">
     <h2>Program for dagen</h2>
+    <p>Følg UCL-sporet fra venstre mod højre. Brug højre kolonne, når du vil koble dagens begreb til en praktisk aktivitet.</p>
     <table class="schedule">
-      <tr><th>Tid</th><th>Hvad sker der</th></tr>
-      <tr><td class="time">08.00</td><td>...</td></tr>
+      <tr><th>UCL’s diasshow</th><th>Mine udvidelser</th></tr>
+      <tr><td><strong>Opsamling fra sidst</strong><br>Slides 1-2: Hvad tog I med jer, hvad har I tænkt over, og hvilke spørgsmål er dukket op?</td><td><a href="modul-1-lovable.html#oevelse-3">Modul 1: Del din app</a><br>Et konkret afsæt for refleksionen: hvad byggede du, og hvad ville du ændre nu?</td></tr>
+      <tr><td><strong>Prompt-elementer: de 7 byggeblokke</strong><br>Slides 3-4: Opgave, rolle, format, kontekst, begrænsning, eksempler og data</td><td><a href="modul-3-ai-i-hverdagen.html#oevelse-1">Modul 3: Skriv og omskriv</a><br>De samme byggeblokke afprøvet på en almindelig arbejdsopgave.</td></tr>
+      <tr><td><strong>Typer af AI: overblik</strong><br>Slide 5: De syv typer og de to spor, de hører til</td><td><a href="modul-6-forstaa-ai.html#typer">Modul 6: Typer af AI</a><br>Samme opdeling med flere danske eksempler.</td></tr>
+      <tr><td><strong>Smal AI, AGI og superintelligens</strong><br>Slides 6-14: Det filosofiske spor, og hvorfor AGI er svær at opnå</td><td><a href="modul-6-forstaa-ai.html#diskussioner">Modul 6: De store diskussioner</a><br>Forventninger, hype og hvad der reelt er på vej.</td></tr>
+      <tr><td><strong>Fra reaktiv maskine til selvbevidst AI</strong><br>Slides 15-22: Det konkrete spor, hukommelse, theory of mind og følelser kontra mønstre</td><td><a href="modul-6-forstaa-ai.html#ordbog">Modul 6: Ordbogen</a><br>Slå de begreber op, der går igen i dagens gennemgang.</td></tr>
+      <tr><td><strong>LLM, world models og forståelse</strong><br>Slides 23-24: Hvor går grænsen mellem viden og forståelse? Med <a href="https://bbycroft.net/llm" target="_blank" rel="noopener">LLM Visualization</a></td><td><a href="modul-6-forstaa-ai.html#hvordan">Modul 6: Hvad sker der derinde?</a><br>En rolig forklaring på maskinrummet bag sprogmodellen.</td></tr>
+      <tr><td><strong>Hvor er vi i dag?</strong><br>Slides 25-26: ChatGPT placeret mellem typerne, og <a href="https://trackingai.org/home" target="_blank" rel="noopener">IQ-målinger af modeller</a></td><td><a href="modul-6-forstaa-ai.html#vaerdi">Modul 6: AI’s værdi for verden</a><br>Konkrete resultater i stedet for målinger af intelligens.</td></tr>
+      <tr><td><strong>Opsamling: to spor, syv typer</strong><br>Slide 27: Det filosofiske og det konkrete spor sat sammen</td><td><a href="#begreber">Begreberne på denne side</a><br>Tabellen samler de syv typer, som de blev gennemgået.</td></tr>
+      <tr><td><strong>Resten af dagen: billeder, lyd og generativ AI</strong><br>Slides 28-29: Hvorfor skal vi kunne gennemskue det indhold, vi møder hver dag?</td><td><a href="modul-5-andre-modaliteter.html#hvorfor">Modul 5: Andre modaliteter</a><br>Hvad der sker, når AI skifter fra tekst til lyd og billeder.</td></tr>
+      <tr><td><strong>Øvelse: Billeder</strong><br>Slides 30-32: Skab, justér og præsentér et billede, og reflektér over processen</td><td><a href="flere-vaerktoejer.html#formidling">Flere værktøjer: visuel formidling</a><br>Firefly, Canva og de andre værktøjer, du kan bruge til øvelsen.</td></tr>
+      <tr><td><strong>Hvad kan AI?</strong><br>Slides 33-34: Billeder, tekst, lyd, video, kode, software, agenter, computer vision og forbudt AI</td><td><a href="flere-vaerktoejer.html#smagemenu">Flere værktøjer: smagemenuen</a><br>45 minutter, hvor du prøver flere modaliteter af på egen hånd.</td></tr>
+      <tr><td><strong>Øvelse: Musik</strong><br>Slides 35-38: Genre og tema trækkes tilfældigt, og musikken genereres og justeres</td><td><a href="modul-5-andre-modaliteter.html#oevelse-2">Modul 5: Lav podcasten</a><br>Samme greb i en arbejdssammenhæng: fra tekst til færdig lyd.</td></tr>
     </table>
+  </section>
+
+  <section id="samtaler">
+    <h2>Samtaler og drøftelser</h2>
+    <div class="grid">
+      <div class="card">
+        <span class="badge">Ved start</span>
+        <h3>Refleksion fra sidst</h3>
+        <p>Hvad tog I med jer fra dag 1, hvad har I tænkt over siden, og er der spørgsmål, der er dukket op undervejs?</p>
+      </div>
+      <div class="card">
+        <span class="badge">Undervejs</span>
+        <h3>Kender du en AI med hukommelse?</h3>
+        <p>Kom med et eksempel på begrænset hukommelse-AI fra din egen hverdag. Anbefalinger og forslag, der ændrer sig, når du bruger tjenesten, er et godt sted at kigge.</p>
+      </div>
+      <div class="card">
+        <span class="badge">Midtvejs</span>
+        <h3>Viden eller forståelse?</h3>
+        <p>En sprogmodel har enorm viden, men ikke nødvendigvis forståelse. Hvor går grænsen, og hvad betyder det for det, vi bruger den til?</p>
+      </div>
+      <div class="card">
+        <span class="badge">Opsamling</span>
+        <h3>To spor, syv typer</h3>
+        <p>Det filosofiske spor (1-3) og det konkrete spor (4-7) beskriver det samme fra hver sin vinkel. Hvor vil I placere den AI, I selv bruger?</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="oevelser">
+    <h2>Øvelser</h2>
+    <div class="exercise">
+      <span class="label">Øvelse 1: Billeder</span>
+      <ol class="steps">
+        <li><strong>Del 1, opgaven:</strong> skab et billede ud fra tre ting, der betyder noget for jer. Brug 10-15 minutter på at tale med din sidemakker om, hvordan I vil gribe opgaven an.</li>
+        <li><strong>Del 1, justér:</strong> foretag mindst tre tilpasninger eller korrektioner af billedet undervejs. Skriv gerne ned, hvad du ændrede hver gang.</li>
+        <li><strong>Del 2, præsentér:</strong> vis billedet for din sidemakker, og forklar kort, hvad det forestiller. Fortæl, hvordan I kom frem til de tre ting, hvad I skrev, og hvad der skete undervejs.</li>
+        <li><strong>Del 3, opsamling:</strong> hvad virkede, hvad var udfordrende, hvad vil I gøre anderledes, og hvad kan vi tage med videre?</li>
+      </ol>
+    </div>
+    <div class="exercise">
+      <span class="label">Øvelse 2: Musik</span>
+      <ol class="steps">
+        <li><strong>Del 1, post-its:</strong> skriv én musikgenre på den første seddel og ét tema på den anden. For eksempel barokmusik og klimakrise, eller hardcore techno og barndomsminder.</li>
+        <li><strong>Del 2, generér:</strong> træk én tilfældig genre og ét tilfældigt tema fra bunken, og brug kombinationen til at generere et stykke musik på <a href="https://suno.com/" target="_blank" rel="noopener">suno.com</a>. Tilpas og justér løbende, indtil I er tilfredse.</li>
+        <li><strong>Del 3, afspil:</strong> spil musikstykket for din sidemakker, og fortæl, hvilken genre og hvilket tema I trak, og hvordan I greb opgaven an.</li>
+        <li><strong>Del 4, opsamling:</strong> hvad virkede, hvad var udfordrende, hvad vil I gøre anderledes, og hvad kan vi tage med videre?</li>
+      </ol>
+    </div>
+    <div class="note">
+      <span class="label">Sund skepsis i øvelserne</span>
+      Brug private konti og ufølsomt indhold. Læg ikke billeder af kolleger eller borgere op, og brug
+      ikke fortroligt materiale som udgangspunkt. Se også, hvad værktøjet skriver om rettigheder til
+      det, du genererer.
+    </div>
+  </section>
+
+  <section id="begreber">
+    <h2>Begreber fra dagen</h2>
+    <h3>Prompt-elementer: de syv byggeblokke</h3>
+    <p>Der findes ikke én liste, der altid skal være i en prompt. Man skriver bedre prompts ved at vide, hvad der er gavnligt at tage med.</p>
+    <table class="schedule">
+      <tr><th>Byggeblok</th><th>Hvad den gør</th></tr>
+      <tr><td class="time">1. Opgave</td><td>Hvad skal der konkret laves?</td></tr>
+      <tr><td class="time">2. Rolle</td><td>Hvem skal AI’en være, mens den løser opgaven?</td></tr>
+      <tr><td class="time">3. Format</td><td>Hvordan skal svaret se ud: liste, mail, tabel eller billede?</td></tr>
+      <tr><td class="time">4. Kontekst</td><td>Hvad er baggrunden, og hvem er modtageren?</td></tr>
+      <tr><td class="time">5. Begrænsning</td><td>Hvad må den ikke gøre: længde, tone, sprog eller indhold?</td></tr>
+      <tr><td class="time">6. Eksempler</td><td>Et eksempel på et godt svar viser mere end en forklaring.</td></tr>
+      <tr><td class="time">7. Data</td><td>Det materiale, den skal arbejde ud fra.</td></tr>
+    </table>
+    <h3>De syv typer AI</h3>
+    <p>De første tre hører til det filosofiske spor, de sidste fire til det konkrete. Type 4-5 svarer til smal AI, og type 6-7 svarer til AGI.</p>
+    <table class="schedule">
+      <tr><th>Type</th><th>Kort forklaring</th></tr>
+      <tr><td class="time">1. Smal AI</td><td>Automatiserer små, afgrænsede handlinger, for eksempel mailsortering. Lærer ikke selvstændigt.</td></tr>
+      <tr><td class="time">2. AGI</td><td>Kunstig generel intelligens: lærer, tænker og præsterer på menneskeligt niveau. Findes ikke endnu.</td></tr>
+      <tr><td class="time">3. Superintelligens</td><td>Overgår menneskers viden og evner. Den teoretiske horisont.</td></tr>
+      <tr><td class="time">4. Reaktiv maskine AI</td><td>Reagerer på det, der sker lige nu, og gemmer ikke information til fremtiden.</td></tr>
+      <tr><td class="time">5. Begrænset hukommelse AI</td><td>Bruger data og tidligere erfaringer og lærer mønstre om brugere og situationer.</td></tr>
+      <tr><td class="time">6. Theory of Mind</td><td>Ville kunne forstå menneskers mentale tilstande, ikke bare genkende mønstre.</td></tr>
+      <tr><td class="time">7. Selvbevidst AI</td><td>Ville have en fornemmelse af sig selv. Rejser spørgsmålet om, hvad intelligens egentlig er.</td></tr>
+    </table>
+    <div class="explain">
+      <span class="label">Begreb: World models</span>
+      Den næste bølge handler om at lære AI at forholde sig til verden og ikke kun til tekst.
+      En sprogmodel har kæmpe viden, men ikke nødvendigvis kæmpe forståelse. Prøv
+      <a href="https://bbycroft.net/llm" target="_blank" rel="noopener">LLM Visualization</a> og se, hvad
+      der faktisk sker inde i modellen.
+    </div>
   </section>
 
   <section id="materialer">
     <h2>Materialer</h2>
+    <p>
+      Materialerne følger dagens bevægelse: lær at prompte billeder, prøv det, og tag derefter
+      diskussionen om etik og rettigheder. Du behøver ikke læse alt.
+    </p>
+    <div class="grid material-grid">
+      <div class="card">
+        <span class="badge">Start her</span>
+        <h3>Prompts til billeder</h3>
+        <p>Én kort guide til billedprompts og ét overblik over værktøjerne er nok til at komme i gang med øvelsen.</p>
+        <ul>
+          <li><a href="filer/Ai-i-praksis-dag2/AI%20Image%20Prompting%20101.md" target="_blank" rel="noopener">AI Image Prompting 101</a></li>
+          <li><a href="filer/Ai-i-praksis-dag2/Best%20AI%20image%20generators%20of%202025.md" target="_blank" rel="noopener">Best AI image generators of 2025</a></li>
+          <li><a href="filer/Ai-i-praksis-dag2/Engelske%20tekster%20%28læseguide%29.md" target="_blank" rel="noopener">Engelske tekster: læseguide</a></li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="badge">Efter øvelsen</span>
+        <h3>Etik og ophavsret</h3>
+        <p>Fire tekster om samme spørgsmål: hvad er modellen trænet på, og hvem ejer resultatet? Vælg én som hovedkilde.</p>
+        <ul>
+          <li><a href="filer/Ai-i-praksis-dag2/The%20Ethics%20of%20AI%20Art.md" target="_blank" rel="noopener">The Ethics of AI Art</a></li>
+          <li><a href="filer/Ai-i-praksis-dag2/How%20to%20Generate%20and%20Use%20AI%20Art%20Ethically.md" target="_blank" rel="noopener">How to Generate and Use AI Art Ethically</a></li>
+          <li><a href="filer/Ai-i-praksis-dag2/Ethical%20AI%20art%20generation%20-%20Adobe%20Firefly%20may%20be%20the%20answer.md" target="_blank" rel="noopener">Firefly som etisk svar?</a></li>
+          <li><a href="filer/Ai-i-praksis-dag2/Adobes%20thoughts%20on%20the%20ethics%20of%20AI-generated%20images.md" target="_blank" rel="noopener">Adobe om betaling til bidragyderne</a></li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="badge">Se og lær</span>
+        <h3>Videoer om AI-billeder</h3>
+        <p>Tre kurser på LinkedIn Learning. Grundvideoen er nok, hvis du bare vil forstå feltet.</p>
+        <ul>
+          <li><a href="filer/Ai-i-praksis-dag2/Engelske%20videoer.md" target="_blank" rel="noopener">Engelske videoer: samlet liste</a></li>
+          <li><a href="filer/Ai-i-praksis-dag2/Generative%20AI%20Imaging%20-%20What%20Creative%20Pros%20Need%20to%20Know.md" target="_blank" rel="noopener">Generative AI Imaging</a></li>
+          <li><a href="filer/Ai-i-praksis-dag2/Using%20AI%20Imagery%20for%20Illustration%20and%20Design.md" target="_blank" rel="noopener">Using AI Imagery for Illustration and Design</a></li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="badge">Værktøjer</span>
+        <h3>Software og webapplikationer</h3>
+        <p>Værktøjerne til dagens to øvelser. Du behøver kun ét af billedværktøjerne.</p>
+        <ul>
+          <li><a href="filer/Ai-i-praksis-dag2/Software-web-applikationer.md" target="_blank" rel="noopener">Samlet liste med sikkerhedsnote</a></li>
+          <li><a href="filer/Ai-i-praksis-dag2/Adobe%20Firefly.md" target="_blank" rel="noopener">Adobe Firefly</a></li>
+          <li><a href="filer/Ai-i-praksis-dag2/ChatGPT.md" target="_blank" rel="noopener">ChatGPT</a>, <a href="filer/Ai-i-praksis-dag2/Copilot.md" target="_blank" rel="noopener">Copilot</a> og <a href="filer/Ai-i-praksis-dag2/Gemini.md" target="_blank" rel="noopener">Gemini</a></li>
+        </ul>
+      </div>
+    </div>
+    <h3>Præsentation og videre fordybelse</h3>
     <ul>
-      <li><a href="modul-1-lovable.html">...</a></li>
+      <li><a href="filer/Ai-i-praksis-dag2/Dag%202%20-%203526.pdf">PowerPoint: Dag 2</a></li>
+      <li><a href="filer/Ai-i-praksis-dag2/Tekster%20på%20dansk%20%28læseguide%29.md" target="_blank" rel="noopener">Tekster på dansk: læseguide</a></li>
+      <li><a href="filer/Ai-i-praksis-dag2/The%20best%20AI%20art%20tutorials%20-%20Lidt%20ældre%20men%20gode.md" target="_blank" rel="noopener">The best AI art tutorials</a> <span class="muted">(lidt ældre, men fremgangsmåden holder)</span></li>
+      <li><a href="filer/Ai-i-praksis-dag2/How%20to%20Become%20a%20Prompt%20Engineer%20-%20A%20Comprehensive%20Guide.md" target="_blank" rel="noopener">How to Become a Prompt Engineer</a> <span class="muted">(prompting som fag)</span></li>
+      <li><a href="filer/Ai-i-praksis-dag2/GPT-5%20Prompting%20Guide%20-%20Practical%20Strategies%20for%20Innovation%20and%20Effectiveness.md" target="_blank" rel="noopener">GPT-5 Prompting Guide</a> <span class="muted">(byg videre på de syv byggeblokke)</span></li>
+      <li><a href="filer/Ai-i-praksis-dag2/AI%20Taking%20Over%20Jobs%20-%20What%20to%20Know%20About%20the%20Future%20of%20Jobs.md" target="_blank" rel="noopener">AI Taking Over Jobs</a> <span class="muted">(AI og arbejdsmarkedet)</span></li>
+      <li><a href="filer/Ai-i-praksis-dag2/Midjourney%20-%20Tips%20and%20Techniques%20for%20Creating%20Images.md" target="_blank" rel="noopener">Midjourney: Tips and Techniques</a> <span class="muted">(kun hvis du arbejder videre med Midjourney)</span></li>
+      <li><a href="filer/Ai-i-praksis-dag2/Punishing_Artificial_Intelligence_Legal.pdf">Punishing Artificial Intelligence</a> <span class="muted">(ikke påkrævet)</span></li>
+      <li><a href="filer/Ai-i-praksis-dag2/A_Redhead_Walks_into_a_Bar_Experiences_o.pdf">A Redhead Walks into a Bar</a> <span class="muted">(ikke påkrævet)</span></li>
+      <li><a href="filer/Ai-i-praksis-dag2/OpenAssistant_Conversations_Democratizin.pdf">OpenAssistant Conversations</a> <span class="muted">(ikke påkrævet)</span></li>
     </ul>
+    <div class="note">
+      <span class="label">Sådan vælger du</span>
+      Til selve dag 2 er billedguiden og ét værktøj nok. Etik-teksterne hører til efter øvelsen, og
+      de videnskabelige artikler er fordybelse, ikke ekstra lektier.
+    </div>
   </section>
 
-  <section id="hjemmeopgave">
-    <h2>Inden næste gang</h2>
+  <section id="efter-dagen">
+    <h2>Efter dagen</h2>
     <div class="exercise">
-      <span class="label">Hjemmeopgave</span>
+      <span class="label">Tag med videre</span>
       <ol class="steps">
-        <li>...</li>
+        <li>Gem dit billede og dit musikstykke sammen med de prompts, du brugte. Begge dele er gode eksempler til prøven.</li>
+        <li>Notér én opgave i dit eget arbejde, hvor genereret billede eller lyd ville give mening, og én hvor det ville være en dårlig idé.</li>
+        <li>Har du lyst til at læse videre, så vælg én tekst fra etik-sporet under <a href="#materialer">Materialer</a>.</li>
       </ol>
     </div>
   </section>
 
-  -->
-
+  <section id="evaluering">
+    <h2>Evaluér dagen</h2>
+    <div class="note">
+      <span class="label">Sidst på dagen, 2-3 minutter</span>
+      Inden du går: <a href="evaluering.html?dag=2">evaluér dag 2</a>.
+      Det er anonymt, og svarene bliver læst inden næste kursusdag. Det er dem, der afgør,
+      hvad der bliver lavet om.
+    </div>
+  </section>
 </main>
 
 <footer>
