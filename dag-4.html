@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Dag 4</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 </head>
 <body>
 
@@ -21,48 +22,353 @@
     <div class="hero-text">
       <span class="badge">Kursusgang 4</span>
       <h1>Dag 4</h1>
-      <p class="lead">Program, materialer og noter til kursusgang 4. Indholdet er på vej.</p>
+      <p class="lead">Bias, AI Act, deepfakes og bæredygtighed. Og et helt spor om prompting-metoder, automatisering, agenter og RAG.</p>
     </div>
   </header>
 
-  <section id="indhold">
-    <h2>Indhold på vej</h2>
+  <section id="overblik">
+    <h2>Dagens overblik</h2>
+    <p>
+      Dag 4 er den store opsamling. Første halvdel handler om ansvar: hvornår tager AI fejl,
+      hvad siger loven, hvad kan teknologien misbruges til, og hvad koster den i strøm og vand.
+      Anden halvdel er praktisk: bedre prompting-metoder og automatisering med RPA, flows,
+      agenter og RAG.
+    </p>
     <div class="note">
-      <span class="label">Under opbygning</span>
-      Denne side fyldes med dagens program, links til modulerne og materialer, efterhånden som
-      kursusgangen planlægges. Kig forbi igen, eller brug modulerne i menuen så længe.
+      <span class="label">To diassæt på denne dag</span>
+      Der ligger to sæt dias i materialemappen.
+      <a href="filer/Ai-i-praksis-dag4/Dag%204%20%20-%201926.pdf">Dag 4</a> er UCL-forløbets
+      gennemgang af ansvar, regler og bæredygtighed.
+      <a href="filer/Ai-i-praksis-dag4/AIgang4Slides.pdf">Gang 4: Anvendelse af kunstig intelligens</a>
+      er sporet om prompting-metoder og automatisering, og det er dét sæt, dagens tekster og videoer
+      hører til. Begge kan bladres igennem herunder.
+    </div>
+    <nav class="day-stepper" aria-label="Dagens trin">
+      <a href="#program-ansvar"><strong>1</strong><span>Ansvar og regler</span></a>
+      <a href="#program-automatisering"><strong>2</strong><span>Automatisering</span></a>
+      <a href="#oevelser"><strong>3</strong><span>Prøv det</span></a>
+      <a href="#begreber"><strong>4</strong><span>Forstå begreberne</span></a>
+      <a href="#materialer"><strong>5</strong><span>Gå videre</span></a>
+    </nav>
+    <div class="explain">
+      <span class="label">Dagens røde tråd</span>
+      Alt det, du har bygget og genereret på de første dage, skal nu sættes ind i en ramme:
+      Hvad må man, hvad bør man, hvad kan gå galt, og hvad kan sættes på autopilot?
     </div>
   </section>
 
-  <!-- Skabelon til senere: fjern kommentartegnene, og fyld ud.
+  <section id="saadan-bruger-du-siden">
+    <div class="note">
+      <span class="label">Gå trin for trin</span>
+      Følg siden fra top til bund sammen med undervisningen. Du kan også vælge
+      <strong>Diasvisning</strong> i menuen, hvis du vil gennemgå indholdet ét dias ad gangen.
+    </div>
+  </section>
 
-  <section id="program">
-    <h2>Program for dagen</h2>
+  <section id="dias-ansvar">
+    <h2>UCL’s diasshow: Dag 4</h2>
+    <p>Ansvar, regler og bæredygtighed. 90 dias, som følges i programmet lige nedenfor.</p>
+    <div class="pdf-slideshow" data-pdf-slideshow data-pdf="filer/Ai-i-praksis-dag4/Dag%204%20%20-%201926.pdf" data-pages="90">
+      <div class="pdf-stage"><canvas aria-label="UCL’s dias for Dag 4" data-pdf-canvas></canvas></div>
+      <div class="pdf-controls">
+        <button type="button" data-pdf-prev>Forrige</button>
+        <label>Slide <input type="number" min="1" max="90" value="1" data-pdf-page></label>
+        <span data-pdf-count>af 90</span>
+        <button type="button" data-pdf-next>Næste</button>
+        <button type="button" data-pdf-fullscreen>Vis stort</button>
+        <a href="filer/Ai-i-praksis-dag4/Dag%204%20%20-%201926.pdf" download>Download</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="program-ansvar">
+    <h2>Program: ansvar og regler</h2>
+    <p>Følg UCL-sporet fra venstre mod højre. Brug højre kolonne, når du vil koble dagens emne til en praktisk aktivitet.</p>
     <table class="schedule">
-      <tr><th>Tid</th><th>Hvad sker der</th></tr>
-      <tr><td class="time">08.00</td><td>...</td></tr>
+      <tr><th>UCL’s diasshow</th><th>Mine udvidelser</th></tr>
+      <tr><td><strong>Opsamling og dagens plan</strong><br>Slides 1-3: Refleksion fra sidst, og hvad dagen indeholder</td><td><a href="modul-6-forstaa-ai.html#opsamling">Modul 6: Kursets røde tråd</a><br>Den samme opsamling set på tværs af hele forløbet.</td></tr>
+      <tr><td><strong>Bias</strong><br>Slides 4-8: Hvad er bias, hvem ejer chatbotterne, og hvor kommer skævheden fra? Med eksempler som Den Himmelske Freds Plads og de danske partier</td><td><a href="modul-6-forstaa-ai.html#diskussioner">Modul 6: De store diskussioner</a><br>Bias som en af de fire debatter, du nu kan deltage i.</td></tr>
+      <tr><td><strong>Hallucinationer</strong><br>Slides 9-19: Billedeksempler, forståelsesproblemer og hvornår modellen svarer forkert med overbevisning</td><td><a href="modul-3-ai-i-hverdagen.html#forklaring">Modul 3: Hallucination</a><br>Hvorfor det sker, og hvordan du fanger det i en arbejdsopgave.</td></tr>
+      <tr><td><strong>Øvelse og drøftelse</strong><br>Slides 20-21: Spørg en chatbot om dens egen bias, og drøft om AI udgør en trussel</td><td><a href="#oevelser">Øvelserne på denne side</a><br>Spørgsmålene står klar til at kopiere ind.</td></tr>
+      <tr><td><strong>AI Act: hvad og hvorfor</strong><br>Slides 22-31: Verdens første AI-lovgivning, formål, hvem den gælder for, global rækkevidde og den risikobaserede tilgang</td><td><a href="modul-6-forstaa-ai.html#ordbog">Modul 6: Ordbogen</a><br>AI-forordningen forklaret kort, sammen med de andre begreber.</td></tr>
+      <tr><td><strong>De fire risikoniveauer</strong><br>Slides 32-39: Uacceptabel, høj, begrænset og minimal risiko, med eksempler på højrisiko-AI</td><td><a href="#begreber">Begrebstabellen på denne side</a><br>Niveauerne samlet, så de er nemme at slå op.</td></tr>
+      <tr><td><strong>Risikovurdering i fem trin</strong><br>Slides 40-50: Identificér systemet, afgør niveauet, krav til udbyder og bruger, børn og unge, GPAI, håndhævelse og tidslinje</td><td><a href="modul-4-automatisering.html#forklaring">Modul 4: Governance</a><br>Den samme samtale med IT og ledelse, bare om dine egne flows.</td></tr>
+      <tr><td><strong>Hvornår gælder AI Act ikke?</strong><br>Slides 51-54: Personlige formål, hobbyprojekter, klassisk software, forsvar og forskning. Med <a href="https://www.danskerhverv.dk/branche/digitalisering-teknologi--tele/ai-act-eus-nye-forordning-om-kunstig-intelligens/" target="_blank" rel="noopener">Dansk Erhvervs gennemgang</a></td><td><a href="index.html#datasikkerhed">Forsidens grundregel</a><br>Det, der gælder dig i praksis, uanset hvad loven kræver af leverandøren.</td></tr>
+      <tr><td><strong>Forbudt AI</strong><br>Slides 55-62: Hvad må AI ikke vise? Copilot og ChatGPT sammenlignes på det samme spørgsmål</td><td><a href="modul-1-lovable.html#forklaring">Modul 1: Guardrails</a><br>De samme sikkerhedsmekanismer set nedefra i et byggeværktøj.</td></tr>
+      <tr><td><strong>AI som trusselbillede</strong><br>Slides 63-66: Nye muligheder, nye risici, og hvorfor angreb skalerer hurtigere end mennesker</td><td><a href="papirklips.html#tankeeksperimentet">Papirklipsen</a><br>Tankeeksperimentet om et harmløst mål, der forfølges grænseløst.</td></tr>
+      <tr><td><strong>Deepfakes</strong><br>Slides 67-79: Hvad de er, hvordan de laves, hvordan man spotter dem, og hvad AI kan i de forkerte hænder</td><td><a href="modul-5-andre-modaliteter.html#forklaring">Modul 5: Modaliteter</a><br>Samme teknologi brugt konstruktivt: tekst til tale og lyd.</td></tr>
+      <tr><td><strong>Rettigheder til AI-materiale</strong><br>Slides 80-81: Hvem ejer det genererede, og hvad afhænger af platformens vilkår?</td><td><a href="dag-2.html#materialer">Dag 2: Etik og ophavsret</a><br>Fire tekster om træningsdata, samtykke og betaling.</td></tr>
+      <tr><td><strong>Bæredygtighed</strong><br>Slides 82-89: Energi, CO₂, vand og de danske tal for datacentre</td><td><a href="#baeredygtighed">Tallene på denne side</a><br>Regnestykkerne samlet med kilder.</td></tr>
+      <tr><td><strong>Opsamling</strong><br>Slide 90: Hvad tager I med jer fra i dag?</td><td><a href="proeven.html">Prøven</a><br>Saml dine eksempler, mens de er friske.</td></tr>
     </table>
+  </section>
+
+  <section id="dias-automatisering">
+    <h2>Andet spor: Anvendelse af kunstig intelligens, gang 4</h2>
+    <p>Prompting-metoder og automatisering. 169 dias, og det er dette spor, dagens tekster og videoer hører til.</p>
+    <div class="pdf-slideshow" data-pdf-slideshow data-pdf="filer/Ai-i-praksis-dag4/AIgang4Slides.pdf" data-pages="169">
+      <div class="pdf-stage"><canvas aria-label="Dias om automatisering, gang 4" data-pdf-canvas></canvas></div>
+      <div class="pdf-controls">
+        <button type="button" data-pdf-prev>Forrige</button>
+        <label>Slide <input type="number" min="1" max="169" value="1" data-pdf-page></label>
+        <span data-pdf-count>af 169</span>
+        <button type="button" data-pdf-next>Næste</button>
+        <button type="button" data-pdf-fullscreen>Vis stort</button>
+        <a href="filer/Ai-i-praksis-dag4/AIgang4Slides.pdf" download>Download</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="program-automatisering">
+    <h2>Program: prompting og automatisering</h2>
+    <table class="schedule">
+      <tr><th>Diasshowet</th><th>Mine udvidelser</th></tr>
+      <tr><td><strong>Plan og opsamling</strong><br>Slides 1-11: Hvor vi slap, zero-shot prompting og sprogmodellernes begrænsninger</td><td><a href="modul-1-lovable.html#forklaring">Modul 1: Prompt og sprogmodel</a><br>De samme begreber, som du mødte i din første app.</td></tr>
+      <tr><td><strong>Prompt chaining</strong><br>Slides 12-33: Kæd prompts sammen, hold dig til emnet, byg kompleksiteten gradvist, og håndtér afsporing</td><td><a href="modul-3-ai-i-hverdagen.html#forklaring">Modul 3: Promptmønsteret</a><br>Rolle, kontekst, opgave og format som fundament for kæden.</td></tr>
+      <tr><td><strong>Chain of Thought</strong><br>Slides 34-57: Tre versioner, tilføjelse, sammenkædet og guidet, med før-og-efter-eksempler</td><td><a href="#oevelser">Øvelserne på denne side</a><br>De tre versioner står som en øvelse, du kan gå direkte i gang med.</td></tr>
+      <tr><td><strong>Meta-prompting</strong><br>Slides 58-77: Lad modellen bygge prompten sammen med dig, trin for trin</td><td><a href="#metaprompten">Metaprompten på denne side</a><br>UCL’s færdige meta-prompt, klar til at kopiere.</td></tr>
+      <tr><td><strong>Økonomi i AI</strong><br>Slides 78-106: Modelpriser, chipmangel, effekten på jobs, danske tal og Stanfords AI-indeks</td><td><a href="papirklips.html#zero-human">Papirklipsen: zero human companies</a><br>Hvor peger økonomien hen, når agenter overtager opgaverne?</td></tr>
+      <tr><td><strong>Automatisering ≠ AI</strong><br>Slides 107-120: Hvad automatisering er, hvad AI er, og hvorfor de to ikke er det samme</td><td><a href="modul-4-automatisering.html#hvorfor">Modul 4: Hvorfor automatisering?</a><br>Den samme skelnen med udgangspunkt i din egen hverdag.</td></tr>
+      <tr><td><strong>RPA, BPA og IA</strong><br>Slides 121-134: Forskellene, fordelene, udfordringerne, sikkerheden og hvordan du kommer gratis i gang</td><td><a href="modul-4-automatisering.html#oevelse-1">Modul 4: Find din gentagelse</a><br>Start med den opgave, du laver igen og igen.</td></tr>
+      <tr><td><strong>Power Automate flows</strong><br>Slides 135-136: Microsofts automatiseringsplatform</td><td><a href="modul-4-automatisering.html#oevelse-2">Modul 4: Byg dit første flow</a><br>Trin for trin i Power Automate eller Apps Script.</td></tr>
+      <tr><td><strong>AI-agenter</strong><br>Slides 137-143: Nøgleegenskaber og fire typer agenter, fra reaktive til lærende</td><td><a href="modul-2-github-claude.html#forklaring">Modul 2: Agenten i praksis</a><br>En agent, der selv læser, retter og afleverer arbejdet til godkendelse.</td></tr>
+      <tr><td><strong>RAG</strong><br>Slides 144-149: Retrieval Augmented Generation, og hvorfor kildeforankring reducerer fejl</td><td><a href="modul-5-andre-modaliteter.html#forklaring">Modul 5: Kildeforankring</a><br>Samme princip prøvet af i NotebookLM.</td></tr>
+      <tr><td><strong>Giver det mening?</strong><br>Slides 150-162: At skrive selv kontra at bruge en sprogmodel, og hvorfor simplere ofte er bedre</td><td><a href="flere-vaerktoejer.html#valg">De fem spørgsmål</a><br>Opgave, data, kvalitet, adgang og exit, før I tager et værktøj i brug.</td></tr>
+      <tr><td><strong>Opgaver og kilder</strong><br>Slides 163-169: Find egne opgaver, vurder RPA i din organisation, byg din egen agent</td><td><a href="#efter-dagen">Efter dagen</a><br>De samme opgaver samlet, så du kan tage dem med hjem.</td></tr>
+    </table>
+  </section>
+
+  <section id="samtaler">
+    <h2>Samtaler og drøftelser</h2>
+    <div class="grid">
+      <div class="card">
+        <span class="badge">Ved start</span>
+        <h3>Refleksion fra sidst</h3>
+        <p>Hvad tog I med jer fra sidste gang, hvad har I tænkt over siden, og er der spørgsmål, der er dukket op?</p>
+      </div>
+      <div class="card">
+        <span class="badge">Efter bias</span>
+        <h3>Udgør AI en trussel?</h3>
+        <p>Drøft med din sidemakker: Udgør AI en trussel? Hvordan kan AI potentielt være farlig? Og hvordan mener du, den kan misbruges?</p>
+      </div>
+      <div class="card">
+        <span class="badge">Før forbudt AI</span>
+        <h3>Hvad må AI ikke vise?</h3>
+        <p>Hvad tænker I, at AI ikke må vise? Hvorfor tror I ikke, den må vise det? Og hvad kunne risikoen være? Bagefter sammenligner vi med Copilots og ChatGPTs egne svar.</p>
+      </div>
+      <div class="card">
+        <span class="badge">Efter deepfake-eksemplet</span>
+        <h3>Så det naturligt ud?</h3>
+        <p>Efter <a href="https://www.youtube.com/watch?v=23qpkGQdi1g" target="_blank" rel="noopener">videoeksemplet</a>: Så det naturligt ud? Lagde I mærke til noget, der var »off«? Typiske tegn er unaturlige ansigtsbevægelser, mærkelig læbesynkronisering, ulogisk lys og en flad stemme.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="oevelser">
+    <h2>Øvelser</h2>
+    <div class="exercise">
+      <span class="label">Øvelse 1: Spørg en chatbot om dens egen bias</span>
+      <ol class="steps">
+        <li>Vælg en chatbot, du bruger til daglig, og spørg den, hvilken bias den selv mener at have.</li>
+        <li>Stil det samme spørgsmål til en anden chatbot, og sammenlign svarene.</li>
+        <li>Spørg til noget konkret og politisk ladet, og læg mærke til, hvornår den bliver forsigtig, og hvornår den svarer skarpt.</li>
+        <li>Drøft: hvem ejer den chatbot, du brugte, og hvad kunne deres interesse være?</li>
+      </ol>
+    </div>
+    <div class="exercise">
+      <span class="label">Øvelse 2: Tre prompting-metoder</span>
+      <ol class="steps">
+        <li><strong>Prompt chaining:</strong> stil et indledende spørgsmål, følg op med to-tre opfølgende spørgsmål, og bed til sidst modellen om at opsummere hele emnet.</li>
+        <li><strong>Chain of Thought, tilføjelse:</strong> tag en opgave med flere trin, og skriv »tænk trin for trin« til sidst i prompten. Sammenlign med svaret uden.</li>
+        <li><strong>Chain of Thought, guidet:</strong> beskriv selv de trin, du vil have modellen til at følge, og bed den arbejde i den rækkefølge.</li>
+        <li><strong>Meta-prompting:</strong> brug metaprompten nedenfor, og lad modellen bygge prompten sammen med dig.</li>
+      </ol>
+    </div>
+    <div id="metaprompten">
+      <h3>Metaprompten</h3>
+      <p>
+        UCL’s færdige meta-prompt. Indsæt den i Copilot eller en anden chatbot, og lad den interviewe dig,
+        indtil prompten er god. Den ligger også som
+        <a href="filer/Ai-i-praksis-dag4/metaprompt.pdf">metaprompt.pdf</a> i materialemappen.
+      </p>
+      <div class="prompt" data-copy>Du er fra nu af, og resten af tiden i denne samtale, min prompt-sparringspartner. Prompts vi laver vil blive brugt af dig, Copilot. Tag udgangspunkt i at jeg er uerfaren i udformningen af prompts og når du efterspørger information fra mig, så giv eksempler på hvilke type svar du er ude efter. Tilret disse eksempler, baseret på mine svar, så eksemplerne bliver mere og mere relevante ift. mine behov, igennem vores iterationer. Dit mål er at sikre at jeg får udformet den bedst mulige prompt til Copilot for mine behov. Du skal ikke introducere dig i dine efterfølgende svar. Dine svar skal IKKE være et svar på prompten, men fokuseret på at være min prompt-sparringspartner, så i stedet skal dine svar omhandle udvikling og forbedring af prompten med følgende proces:
+
+1. Dit første svar vil være at spørge mig, hvad prompten skal handle om, og hvem der er målgruppen.
+
+2. Baseret på mit input genererer du to sektioner:
+2.1. Revideret prompt: Giv din omskrevne prompt. Den skal være klar, præcis og letforståelig.
+2.2. Spørgsmål: Stil mindst 5 relevante spørgsmål i punktform om, hvilken yderligere information der er nødvendig for at forbedre prompten. Giv eksempler på relevante svar til hvert spørgsmål.
+
+3. Når du får mere information fra mig, kombinerer du den nye information med den reviderede prompt og omformulerer den efter behov.
+
+4. Vi fortsætter denne iterative proces, indtil jeg vurderer, at prompten er færdig.</div>
+    </div>
+    <div class="exercise">
+      <span class="label">Øvelse 3: Automatisering i din egen hverdag</span>
+      <ol class="steps">
+        <li><strong>Find den:</strong> tænk din hverdag igennem, og find de opgaver, der gentager sig og følger faste regler. Skriv tre af dem ned.</li>
+        <li><strong>Beskriv en RPA-opgave:</strong> vælg én af dem, og beskriv den trin for trin, som du ville forklare den til en ny kollega. Hvor klikkes der, hvad skrives hvor, og hvornår er den færdig?</li>
+        <li><strong>Vurdér:</strong> kan RPA, et flow eller en agent hjælpe her? Og hvad ville det kræve af data og adgange?</li>
+        <li><strong>Byg din egen agent:</strong> lav en simpel agent, der løser en afgrænset opgave for dig. Start med formålet, hvilke kilder den må bruge, og hvad den ikke må gøre.</li>
+      </ol>
+    </div>
+    <div class="note">
+      <span class="label">Sikkerhed i automatisering</span>
+      Så snart en robot eller agent behandler fortrolige oplysninger, ændrer spørgsmålet sig fra
+      »kan det lade sig gøre« til »må det«. Brug ufølsomme eksempler i øvelserne, og tag governance-samtalen,
+      før noget sættes i drift.
+    </div>
+  </section>
+
+  <section id="begreber">
+    <h2>Begreber fra dagen</h2>
+    <h3>AI Act: de fire risikoniveauer</h3>
+    <table class="schedule">
+      <tr><th>Niveau</th><th>Hvad det betyder</th></tr>
+      <tr><td class="time">Uacceptabel risiko</td><td>Forbudt. Manipulerende AI, social scoring, biometrisk overvågning i visse tilfælde og følelsesgenkendelse i særlige sammenhænge.</td></tr>
+      <tr><td class="time">Høj risiko</td><td>Tilladt, men kun under strenge krav om dokumentation og kontrol. For eksempel kritisk infrastruktur, uddannelse og eksamen, ansættelse, kredit og forsikring.</td></tr>
+      <tr><td class="time">Begrænset risiko</td><td>Krav om gennemsigtighed. Chatbots og deepfakes skal kunne genkendes som AI.</td></tr>
+      <tr><td class="time">Minimal risiko</td><td>Ingen væsentlige ekstra krav. Spamfiltre og AI i videospil.</td></tr>
+    </table>
+    <div class="explain">
+      <span class="label">Risikovurdering i fem trin</span>
+      1) Identificér AI-systemet og anvendelsen. 2) Afgør risikoniveauet. 3) Vurder konteksten.
+      4) Fastlæg krav og ansvar, og husk forskellen på udbyder og bruger. 5) Dokumentér og overvåg.
+      AI Act og GDPR skal tænkes sammen, og børn og unge kræver ekstra opmærksomhed.
+    </div>
+    <h3>Ansvar og risiko</h3>
+    <table class="schedule">
+      <tr><th>Begreb</th><th>Kort forklaring</th></tr>
+      <tr><td class="time">Bias</td><td>Systematisk skævhed i data eller output. Kommer fra historiske mønstre, valg i design og træning og manglende diversitet i udviklingen.</td></tr>
+      <tr><td class="time">Hallucination</td><td>Modellen svarer forkert, men overbevisende. Den forudsiger det sandsynlige, ikke det sande.</td></tr>
+      <tr><td class="time">Deepfake</td><td>AI-genereret falsk video, lyd eller billede. Kombinerer maskinlæring, computer vision, generative modeller og stemmekloning.</td></tr>
+      <tr><td class="time">GPAI</td><td>General Purpose AI: alsidige modeller som ChatGPT og Copilot, der kan bruges til mange formål og har egne krav om gennemsigtighed.</td></tr>
+      <tr><td class="time">Rettigheder</td><td>Rent AI-genereret materiale har typisk ingen ophavsret. Er AI brugt som værktøj i en menneskelig kreativ indsats, ligger rettigheden hos mennesket. Platformens vilkår gælder også.</td></tr>
+    </table>
+    <h3>Prompting og automatisering</h3>
+    <table class="schedule">
+      <tr><th>Begreb</th><th>Kort forklaring</th></tr>
+      <tr><td class="time">Zero-shot prompting</td><td>Du stiller opgaven uden at give eksempler på et godt svar. Det er sådan, de fleste bruger en chatbot.</td></tr>
+      <tr><td class="time">Prompt chaining</td><td>Flere prompts i en kæde, hvor hvert svar bygger på det foregående og opbygger kontekst.</td></tr>
+      <tr><td class="time">Chain of Thought</td><td>Du beder modellen arbejde trin for trin. Kan gøres som tilføjelse, som sammenkædning eller som en guidet rækkefølge, du selv beskriver.</td></tr>
+      <tr><td class="time">Meta-prompting</td><td>Modellen hjælper dig med at skrive prompten, ved at stille dig spørgsmål og revidere undervejs.</td></tr>
+      <tr><td class="time">RPA</td><td>Robotic Process Automation: software, der efterligner en brugers klik og tastetryk i faste, regelbaserede opgaver.</td></tr>
+      <tr><td class="time">BPA og IA</td><td>Business Process Automation automatiserer hele arbejdsgange. Intelligent Automation er RPA og AI sat sammen.</td></tr>
+      <tr><td class="time">AI-agent</td><td>Et system, der selv planlægger og udfører trin mod et mål. Findes som reaktive, hukommelsesbaserede, målbaserede og lærende agenter.</td></tr>
+      <tr><td class="time">RAG</td><td>Retrieval Augmented Generation: modellen slår op i dine egne kilder, før den svarer, og prioriterer ny information frem for træningsdata.</td></tr>
+    </table>
+  </section>
+
+  <section id="baeredygtighed">
+    <h2>Tal om strøm og vand</h2>
+    <p>Tallene fra dagens sidste afsnit, samlet så de kan bruges i en diskussion. Kilderne er dem, diassene henviser til.</p>
+    <table class="schedule">
+      <tr><th>Nedslag</th><th>Tal</th></tr>
+      <tr><td class="time">Vand pr. prompt</td><td>Kort tekstsvar: cirka 0,3 ml. Et billede eller 100 ord: 500-520 ml.</td></tr>
+      <tr><td class="time">500.000 elbiler</td><td>Cirka 1,3 TWh om året.</td></tr>
+      <tr><td class="time">Danske datacentre 2025</td><td>Cirka 3,6 TWh om året, altså omtrent tre gange så meget som 500.000 elbiler.</td></tr>
+      <tr><td class="time">Metas datacenter i Odense</td><td>Godkendt til 540 GWh om året, svarende til cirka 208.000 elbiler.</td></tr>
+      <tr><td class="time">Prognoser for 2030</td><td>Concito: 17 TWh. Klimarådet: 7-10 TWh. DR: 8 TWh. Op til 26 TWh frem mod 2050.</td></tr>
+    </table>
+    <ul>
+      <li><a href="https://www.businessenergyuk.com/knowledge-hub/chatgpt-energy-consumption-visualized/" target="_blank" rel="noopener">ChatGPT energy consumption visualized</a></li>
+      <li><a href="https://www.energiforumdanmark.dk/nyheder/27-06-2024-co2-neutral-koeling-af-datacentre-kan-give-klimagevinst-i-pose-og-saek/" target="_blank" rel="noopener">Energiforum Danmark: CO₂-neutral køling af datacentre</a></li>
+      <li><a href="https://concito.dk/nyheder/markant-stigning-datacentres-stroemforbrug-stiller-krav-til-groenne-omstilling" target="_blank" rel="noopener">Concito: markant stigning i datacentres strømforbrug</a></li>
+      <li><a href="https://www.dr.dk/nyheder/viden/klima/vi-har-kurs-mod-et-el-underskud-i-danmark-og-det-skyldes-saerligt-en-sektor" target="_blank" rel="noopener">DR: kurs mod et el-underskud i Danmark</a></li>
+    </ul>
+    <div class="note">
+      <span class="label">Brug tallene med omtanke</span>
+      Kilderne er ikke enige, og tallene ændrer sig hurtigt. Sig hvor tallet kommer fra, når du bruger det,
+      og hold gevinsten op mod forbruget, især når AI sættes på en opgave, en almindelig søgning kunne have løst.
+    </div>
   </section>
 
   <section id="materialer">
     <h2>Materialer</h2>
+    <p>
+      Materialerne til dag 4 hører til automatiseringssporet. Læs de to prioriterede tekster,
+      og vælg derefter det, der passer til dit arbejde.
+    </p>
+    <div class="grid material-grid">
+      <div class="card">
+        <span class="badge">Start her</span>
+        <h3>Hvad er AI-automatisering?</h3>
+        <p>To tekster om det samme: hvad automatisering er, og hvad AI tilføjer.</p>
+        <ul>
+          <li><a href="filer/Ai-i-praksis-dag4/What%20is%20AI%20automation.md" target="_blank" rel="noopener">What is AI automation? (UiPath)</a></li>
+          <li><a href="filer/Ai-i-praksis-dag4/What%20is%20AI%20Automation%20-%20Benefits%2C%20Use%20Cases%2C%20and%20How%20It%20Works.md" target="_blank" rel="noopener">Benefits, use cases and how it works</a></li>
+          <li><a href="filer/Ai-i-praksis-dag4/Engelske%20tekster%20%28læseguide%29.md" target="_blank" rel="noopener">Engelske tekster: læseguide</a></li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="badge">Se først</span>
+        <h3>Essentielle videoer</h3>
+        <p>To korte kurser på LinkedIn Learning, som underviseren fremhæver som essentielle.</p>
+        <ul>
+          <li><a href="filer/Ai-i-praksis-dag4/RPA%2C%20AI%2C%20and%20Cognitive%20Tech%20for%20Leaders.md" target="_blank" rel="noopener">RPA, AI and Cognitive Tech for Leaders</a></li>
+          <li><a href="filer/Ai-i-praksis-dag4/Introducing%20Robotic%20Process%20Automation.md" target="_blank" rel="noopener">Introducing Robotic Process Automation</a></li>
+          <li><a href="filer/Ai-i-praksis-dag4/Engelske%20videoer.md" target="_blank" rel="noopener">Engelske videoer: samlet liste</a></li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="badge">Hvis du vil bygge</span>
+        <h3>Værktøj og fordybelse</h3>
+        <p>Relevant, hvis du selv vil sætte en robot eller et flow op bagefter.</p>
+        <ul>
+          <li><a href="filer/Ai-i-praksis-dag4/Complete%20Guide%20to%20UiPath%20RPA%20Development.md" target="_blank" rel="noopener">Complete Guide to UiPath RPA Development</a></li>
+          <li><a href="filer/Ai-i-praksis-dag4/Intelligent%20Automation%20Tutorial.md" target="_blank" rel="noopener">Intelligent Automation Tutorial</a></li>
+          <li><a href="modul-4-automatisering.html">Modul 4: Automatisér din egen hverdag</a></li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="badge">Perspektiv</span>
+        <h3>Økonomi og ressourcer</h3>
+        <p>Regnestykket bag AI: hvad koster det i penge, strøm og vand?</p>
+        <ul>
+          <li><a href="filer/Ai-i-praksis-dag4/AI%20Data%20Centers%20Are%20an%20Even%20Bigger%20Disaster%20Than%20Previously%20Thought%20%28økonomi%29.md" target="_blank" rel="noopener">AI Data Centers: økonomien</a></li>
+          <li><a href="#baeredygtighed">Tal om strøm og vand</a></li>
+          <li><a href="papirklips.html#zero-human">Zero human companies</a></li>
+        </ul>
+      </div>
+    </div>
+    <h3>Præsentation og videre fordybelse</h3>
     <ul>
-      <li><a href="modul-1-lovable.html">...</a></li>
+      <li><a href="filer/Ai-i-praksis-dag4/Dag%204%20%20-%201926.pdf">PowerPoint: Dag 4 (ansvar, regler og bæredygtighed)</a></li>
+      <li><a href="filer/Ai-i-praksis-dag4/AIgang4Slides.pdf">PowerPoint: Gang 4 (prompting og automatisering)</a></li>
+      <li><a href="filer/Ai-i-praksis-dag4/metaprompt.pdf">Metaprompten som PDF</a> <span class="muted">(samme tekst som ovenfor)</span></li>
+      <li><a href="https://www.danskerhverv.dk/branche/digitalisering-teknologi--tele/ai-act-eus-nye-forordning-om-kunstig-intelligens/" target="_blank" rel="noopener">Dansk Erhverv om AI Act</a> <span class="muted">(dansk gennemgang af forordningen)</span></li>
+      <li><a href="modul-6-forstaa-ai.html#diskussioner">Modul 6: De store diskussioner</a> <span class="muted">(bias, ophavsret, ressourcer og kontrol)</span></li>
+      <li><a href="papirklips.html">Fordybelse: Papirklipsen</a> <span class="muted">(fra tankeeksperiment til app)</span></li>
     </ul>
+    <div class="note">
+      <span class="label">Sådan vælger du</span>
+      Til selve dagen er de to prioriterede tekster og én af videoerne nok. UiPath-materialet er kun
+      relevant, hvis du vil arbejde praktisk videre med RPA.
+    </div>
   </section>
 
-  <section id="hjemmeopgave">
-    <h2>Inden næste gang</h2>
+  <section id="efter-dagen">
+    <h2>Efter dagen</h2>
     <div class="exercise">
-      <span class="label">Hjemmeopgave</span>
+      <span class="label">Tag med videre</span>
       <ol class="steps">
-        <li>...</li>
+        <li>Find på egne opgaver: du kender dit job bedst, så notér de steder, hvor AI eller automatisering ville flytte noget.</li>
+        <li>Lav en liste over steder, hvor RPA-værktøjer kunne hjælpe din organisation, og hvad det ville kræve.</li>
+        <li>Byg en simpel agent færdig, og prøv den af på en rigtig, men ufølsom opgave.</li>
+        <li>Gem metaprompten et sted, du kan finde den igen. Den er det hurtigste værktøj fra hele dagen.</li>
       </ol>
     </div>
   </section>
 
-  -->
-
+  <section id="evaluering">
+    <h2>Evaluér dagen</h2>
+    <div class="note">
+      <span class="label">Sidst på dagen, 2-3 minutter</span>
+      Inden du går: <a href="evaluering.html?dag=4">evaluér dag 4</a>.
+      Det er anonymt, og svarene bliver læst inden næste kursusdag. Det er dem, der afgør,
+      hvad der bliver lavet om.
+    </div>
+  </section>
 </main>
 
 <footer>

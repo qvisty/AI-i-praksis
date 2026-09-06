@@ -21,48 +21,251 @@
     <div class="hero-text">
       <span class="badge">Kursusgang 3</span>
       <h1>Dag 3</h1>
-      <p class="lead">Program, materialer og noter til kursusgang 3. Indholdet er på vej.</p>
+      <p class="lead">Agenter, kritisk sans og AI’s aftryk. Materialerne er lagt op, diasshowet mangler endnu.</p>
     </div>
   </header>
 
-  <section id="indhold">
-    <h2>Indhold på vej</h2>
+  <section id="overblik">
+    <h2>Dagens overblik</h2>
     <div class="note">
-      <span class="label">Under opbygning</span>
-      Denne side fyldes med dagens program, links til modulerne og materialer, efterhånden som
-      kursusgangen planlægges. Kig forbi igen, eller brug modulerne i menuen så længe.
+      <span class="label">Diasshowet mangler endnu</span>
+      UCL’s dias til dag 3 er ikke lagt op endnu, så denne side har ikke et program med slidenumre
+      som <a href="dag-1.html">dag 1</a>, <a href="dag-2.html">dag 2</a> og <a href="dag-4.html">dag 4</a>.
+      Til gengæld ligger dagens materialer i mappen, og de peger tydeligt i tre retninger. Siden er
+      bygget ud fra dem. Når diassene kommer, lægges UCL-programmet ind øverst, og resten bliver stående.
+    </div>
+    <p>
+      De tre spor i materialerne er: hvad AI gør ved vores egen tænkning, hvordan du bygger din egen
+      agent, og hvad AI faktisk koster i strøm og vand. Dertil en samlet guide til prompt engineering.
+    </p>
+    <nav class="day-stepper" aria-label="Dagens trin">
+      <a href="#kritisk-sans"><strong>1</strong><span>Kritisk sans</span></a>
+      <a href="#agenter"><strong>2</strong><span>Byg en agent</span></a>
+      <a href="#ressourcer"><strong>3</strong><span>Strøm og vand</span></a>
+      <a href="#prompting"><strong>4</strong><span>Bedre prompts</span></a>
+      <a href="#materialer"><strong>5</strong><span>Gå videre</span></a>
+    </nav>
+    <div class="explain">
+      <span class="label">Dagens røde tråd</span>
+      Dag 3 er der, hvor værktøjet begynder at arbejde selv. Derfor hører to spørgsmål med:
+      Hvad sker der med min egen tænkning, når jeg lader den om det? Og hvad koster det?
     </div>
   </section>
 
-  <!-- Skabelon til senere: fjern kommentartegnene, og fyld ud.
+  <section id="kritisk-sans">
+    <h2>Spor 1: Hvad gør AI ved vores tænkning?</h2>
+    <p>
+      Underviseren fremhæver de to tekster som essentiel og skræmmende læsning. Læs mindst én af dem,
+      og tag din egen erfaring med til drøftelsen.
+    </p>
+    <div class="grid">
+      <div class="card">
+        <span class="badge">Prioriteret</span>
+        <h3>Hukommelse og karakterer</h3>
+        <p>Ny undersøgelse om sammenhængen mellem hyppig brug af chatbots, faglige resultater og hukommelse.</p>
+        <a href="filer/Ai-i-praksis-dag3/ChatGPT%20linked%20to%20declining%20academic%20performance%20and%20memory%20loss%20in%20new%20study.md" target="_blank" rel="noopener">Åbn læsetippet</a>
+      </div>
+      <div class="card">
+        <span class="badge">Prioriteret</span>
+        <h3>Kritisk tænkning</h3>
+        <p>MIT-studie om, hvad der sker med hjerneaktivitet og ejerskab til teksten, når AI skriver for os.</p>
+        <a href="filer/Ai-i-praksis-dag3/ChatGPT%20May%20Be%20Eroding%20Critical%20Thinking%20Skills%2C%20According%20to%20a%20New%20MIT%20Study.md" target="_blank" rel="noopener">Åbn læsetippet</a>
+      </div>
+      <div class="card">
+        <span class="badge">Læs kritisk</span>
+        <h3>Sammenhæng er ikke årsag</h3>
+        <p>Begge tekster viser sammenhænge, ikke beviser. Spørg til metode, deltagerantal og hvad der egentlig blev målt. Det er den samme kildekritik, vi bruger på AI-svar.</p>
+      </div>
+    </div>
+    <div class="exercise">
+      <span class="label">Drøftelse</span>
+      <ol class="steps">
+        <li>Hvornår har du selv mærket, at AI overtog tænkningen frem for at hjælpe den på vej?</li>
+        <li>Hvilke opgaver vil du bevidst blive ved med at løse selv, og hvorfor?</li>
+        <li>Hvad ville I sige til en kollega, der lader AI skrive alt, uden at læse det igennem?</li>
+      </ol>
+    </div>
+    <div class="note">
+      <span class="label">Mine udvidelser</span>
+      <a href="modul-3-ai-i-hverdagen.html#refleksion">Modul 3: Refleksion i plenum</a> stiller de samme
+      spørgsmål ud fra en helt almindelig arbejdsdag, og
+      <a href="modul-6-forstaa-ai.html#diskussioner">Modul 6: De store diskussioner</a> sætter dem ind i
+      den bredere debat om arbejde, ophavsret, bias og ressourcer.
+    </div>
+  </section>
 
-  <section id="program">
-    <h2>Program for dagen</h2>
+  <section id="agenter">
+    <h2>Spor 2: Byg din egen agent</h2>
+    <p>
+      Materialerne indeholder en vejledning til hvert af de to store værktøjer. Vælg den, der passer
+      til det, du har adgang til, og byg noget lille og afgrænset.
+    </p>
+    <div class="grid">
+      <div class="card">
+        <span class="badge">Hvis du bruger ChatGPT</span>
+        <h3>How to Create a ChatGPT Agent</h3>
+        <p>Trin for trin: formål, instruktioner, kilder og afprøvning.</p>
+        <a href="filer/Ai-i-praksis-dag3/How%20to%20Create%20a%20ChatGPT%20Agent%20-%20Step-by-Step%20Guide.md" target="_blank" rel="noopener">Åbn vejledningen</a>
+      </div>
+      <div class="card">
+        <span class="badge">Hvis du bruger Copilot</span>
+        <h3>Copilot Studio agent builder</h3>
+        <p>Microsofts egen dokumentation, og den rigtige vej, hvis agenten skal kunne se arbejdspladsens indhold.</p>
+        <a href="filer/Ai-i-praksis-dag3/Build%20agents%20with%20Copilot%20Studio%20agent%20builder.md" target="_blank" rel="noopener">Åbn vejledningen</a>
+      </div>
+    </div>
+    <div class="exercise">
+      <span class="label">Øvelse: en agent, der kan én ting</span>
+      <ol class="steps">
+        <li>Vælg en opgave, du laver ofte, og som følger et fast mønster. For eksempel at opsummere referater eller svare på den samme type henvendelse.</li>
+        <li>Skriv agentens formål i én sætning: hvad skal den kunne, og for hvem?</li>
+        <li>Giv den instruktioner, tone og eventuelle kilder. Skriv også tydeligt, hvad den <em>ikke</em> må gøre.</li>
+        <li>Afprøv den på tre virkelige, men ufølsomme eksempler, og ret instruktionerne efter hvert forsøg.</li>
+        <li>Vurdér til sidst: sparer den dig tid, og kan du stå inde for det, den leverer?</li>
+      </ol>
+    </div>
+    <div class="note">
+      <span class="label">Mine udvidelser</span>
+      <a href="modul-2-github-claude.html#forklaring">Modul 2</a> viser agenten i arbejde på en
+      kodeopgave, hvor du selv godkender resultatet.
+      <a href="modul-4-automatisering.html#oevelse-3">Modul 4: Sæt AI ind i flowet</a> tager samme idé
+      videre, hvor agenten bliver et led i en automatiseret arbejdsgang.
+      Agent-typerne, fra reaktive til lærende, gennemgås på <a href="dag-4.html#begreber">dag 4</a>.
+    </div>
+  </section>
+
+  <section id="ressourcer">
+    <h2>Spor 3: Hvad koster AI i strøm og vand?</h2>
+    <p>
+      To kilder, der ikke er enige. Det er netop pointen: uenigheden handler mest om, hvad man tæller
+      med, og om hvilken slags opgave man måler på.
+    </p>
+    <div class="grid">
+      <div class="card">
+        <span class="badge">Nyhedsartikel</span>
+        <h3>Alarmerende strømforbrug</h3>
+        <p>Om energiforbruget ved generativ AI, især når det gælder billeder og video frem for tekst.</p>
+        <a href="filer/Ai-i-praksis-dag3/Researchers%20Just%20Found%20Something%20Extremely%20Alarming%20About%20AI’s%20Power%20Usage.md" target="_blank" rel="noopener">Åbn læsetippet</a>
+      </div>
+      <div class="card">
+        <span class="badge">Akademisk artikel</span>
+        <h3>Google måler i produktion</h3>
+        <p>Første måling af energi, CO₂ og vand i et rigtigt AI-driftsmiljø. Underviserens vurdering: essentiel læsning med mere aktuelle tal.</p>
+        <a href="filer/Ai-i-praksis-dag3/measuring_the_environmental_impact_of_delivering_ai_at_google_scale.pdf">Åbn artiklen (PDF)</a>
+      </div>
+    </div>
     <table class="schedule">
-      <tr><th>Tid</th><th>Hvad sker der</th></tr>
-      <tr><td class="time">08.00</td><td>...</td></tr>
+      <tr><th>Googles tal for én tekstprompt</th><th>Målt resultat</th></tr>
+      <tr><td class="time">Energi</td><td>0,24 Wh, altså mindre end ni sekunders tv.</td></tr>
+      <tr><td class="time">Vand</td><td>0,26 ml, svarende til cirka fem dråber.</td></tr>
+      <tr><td class="time">Udvikling på ét år</td><td>33 gange lavere energiforbrug og 44 gange lavere CO₂-aftryk pr. prompt.</td></tr>
+      <tr><td class="time">Forbehold</td><td>Tallene gælder tekst, ikke billeder og video, og de er målt af udbyderen selv.</td></tr>
     </table>
+    <div class="exercise">
+      <span class="label">Drøftelse: hvem har ret?</span>
+      <ol class="steps">
+        <li>Læs de to kilders tal op mod hinanden. Hvor stor er forskellen, og hvad måler de hver især på?</li>
+        <li>Hvad betyder det for konklusionen, at den ene kilde er udbyderen selv?</li>
+        <li>Hold tallene op mod <a href="dag-4.html#baeredygtighed">tallene fra dag 4</a> om danske datacentre. Passer billedet sammen?</li>
+        <li>Hvornår er en almindelig søgning et bedre valg end en prompt?</li>
+      </ol>
+    </div>
+    <div class="note">
+      <span class="label">Mine udvidelser</span>
+      Ressourcespørgsmålet er en af de fire debatter i
+      <a href="modul-6-forstaa-ai.html#diskussioner">Modul 6</a>, og
+      <a href="teknik.html#spor-d">teknik-siden</a> viser den anden vej rundt: at køre en mindre model
+      lokalt på egen maskine.
+    </div>
+  </section>
+
+  <section id="prompting">
+    <h2>Bonus: prompt engineering samlet ét sted</h2>
+    <p>
+      Materialemappen indeholder en samlet guide til prompt engineering i GPT-5-æraen. Underviserens
+      vurdering: god opsummering af mange af de råd, vi har gennemgået, og mere til.
+    </p>
+    <div class="explain">
+      <span class="label">Sådan bruger du den</span>
+      Guiden er lang. Skim teknikkerne, og gå i dybden med de to-tre, der ligner dine egne opgaver.
+      Brug diagnoseafsnittet, når et svar bliver vagt, og vend tilbage til scorecardet, når du vil
+      stramme en prompt op. Afsnittene om skabeloner til konkrete roller er de hurtigste at bruge på jobbet.
+    </div>
+    <ul>
+      <li><a href="filer/Ai-i-praksis-dag3/Humanity’s%20Last%20Prompt%20Engineering%20Guide_%20Built%20for%20the%20GPT-5%20Era.pdf">Humanity’s Last Prompt Engineering Guide: Built for the GPT-5 Era (PDF)</a></li>
+      <li><a href="dag-4.html#metaprompten">Metaprompten fra dag 4</a> <span class="muted">(lad modellen bygge prompten sammen med dig)</span></li>
+      <li><a href="dag-2.html#begreber">De syv byggeblokke fra dag 2</a> <span class="muted">(opgave, rolle, format, kontekst, begrænsning, eksempler, data)</span></li>
+    </ul>
   </section>
 
   <section id="materialer">
     <h2>Materialer</h2>
-    <ul>
-      <li><a href="modul-1-lovable.html">...</a></li>
-    </ul>
-  </section>
-
-  <section id="hjemmeopgave">
-    <h2>Inden næste gang</h2>
-    <div class="exercise">
-      <span class="label">Hjemmeopgave</span>
-      <ol class="steps">
-        <li>...</li>
-      </ol>
+    <p>Alt indholdet i dag 3-mappen, samlet efter funktion. Du behøver ikke læse alt.</p>
+    <div class="grid material-grid">
+      <div class="card">
+        <span class="badge">Start her</span>
+        <h3>Læseguiden</h3>
+        <p>Underviserens egen prioritering af teksterne, med de tre spor og anbefalingerne.</p>
+        <ul>
+          <li><a href="filer/Ai-i-praksis-dag3/Engelske%20tekster%20%28læseguide%29.md" target="_blank" rel="noopener">Engelske tekster: læseguide</a></li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="badge">Prioriteret</span>
+        <h3>AI og vores tænkning</h3>
+        <p>De to tekster, underviseren kalder essentiel og skræmmende læsning. Vælg mindst én.</p>
+        <ul>
+          <li><a href="filer/Ai-i-praksis-dag3/ChatGPT%20linked%20to%20declining%20academic%20performance%20and%20memory%20loss%20in%20new%20study.md" target="_blank" rel="noopener">Karakterer og hukommelse (PsyPost)</a></li>
+          <li><a href="filer/Ai-i-praksis-dag3/ChatGPT%20May%20Be%20Eroding%20Critical%20Thinking%20Skills%2C%20According%20to%20a%20New%20MIT%20Study.md" target="_blank" rel="noopener">Kritisk tænkning (TIME om MIT-studiet)</a></li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="badge">Vælg dit værktøj</span>
+        <h3>Agent-vejledninger</h3>
+        <p>Én guide til ChatGPT og én til Copilot. Du skal kun bruge den ene.</p>
+        <ul>
+          <li><a href="filer/Ai-i-praksis-dag3/How%20to%20Create%20a%20ChatGPT%20Agent%20-%20Step-by-Step%20Guide.md" target="_blank" rel="noopener">How to Create a ChatGPT Agent</a></li>
+          <li><a href="filer/Ai-i-praksis-dag3/Build%20agents%20with%20Copilot%20Studio%20agent%20builder.md" target="_blank" rel="noopener">Copilot Studio agent builder</a></li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="badge">Perspektiv</span>
+        <h3>Strøm, vand og prompts</h3>
+        <p>Nyhedsartikel, akademisk artikel og den store prompt-guide.</p>
+        <ul>
+          <li><a href="filer/Ai-i-praksis-dag3/Researchers%20Just%20Found%20Something%20Extremely%20Alarming%20About%20AI’s%20Power%20Usage.md" target="_blank" rel="noopener">AI’s strømforbrug (Futurism)</a></li>
+          <li><a href="filer/Ai-i-praksis-dag3/measuring_the_environmental_impact_of_delivering_ai_at_google_scale.pdf">Googles måling i produktion (PDF)</a></li>
+          <li><a href="filer/Ai-i-praksis-dag3/Humanity’s%20Last%20Prompt%20Engineering%20Guide_%20Built%20for%20the%20GPT-5%20Era.pdf">Prompt engineering-guiden (PDF)</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="note">
+      <span class="label">Sådan vælger du</span>
+      Én tekst om AI og tænkning plus agent-guiden til dit eget værktøj er nok til dagen.
+      Google-artiklen og prompt-guiden er fordybelse, ikke lektier.
     </div>
   </section>
 
-  -->
+  <section id="naar-diassene-kommer">
+    <h2>Når diassene kommer</h2>
+    <div class="note">
+      <span class="label">Sådan opdateres siden</span>
+      Når UCL’s dias til dag 3 er lagt i materialemappen, får siden samme opbygning som de andre dage:
+      en diasvisning med download, et program med slidenumre, og en kolonne med
+      <strong>Mine udvidelser</strong>. Indholdet herover bliver stående, fordi det bygger på dagens
+      egne materialer.
+    </div>
+  </section>
 
+  <section id="evaluering">
+    <h2>Evaluér dagen</h2>
+    <div class="note">
+      <span class="label">Sidst på dagen, 2-3 minutter</span>
+      Inden du går: <a href="evaluering.html?dag=3">evaluér dag 3</a>.
+      Det er anonymt, og svarene bliver læst inden næste kursusdag. Det er dem, der afgør,
+      hvad der bliver lavet om.
+    </div>
+  </section>
 </main>
 
 <footer>
