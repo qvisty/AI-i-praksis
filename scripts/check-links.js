@@ -25,6 +25,8 @@ function collectFiles(directory, extensions) {
 
 /**
  * Checks a local URL and optional HTML anchor from one source file.
+ * A query string (for example evaluering.html?dag=2) is stripped before the
+ * lookup, since it is not part of the file path on disk.
  * @param {string} sourceFile File containing the reference.
  * @param {string} reference Relative URL or anchor.
  */
@@ -33,7 +35,8 @@ function checkReference(sourceFile, reference) {
   if (/^(https?:|mailto:|javascript:|data:)/i.test(reference)) return;
 
   const decoded = decodeURIComponent(reference);
-  const [target, anchor] = decoded.split('#');
+  const [withoutAnchor, anchor] = decoded.split('#');
+  const target = withoutAnchor.split('?')[0];
   const targetFile = target ? path.resolve(path.dirname(sourceFile), target) : sourceFile;
 
   if (!fs.existsSync(targetFile)) {
