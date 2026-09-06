@@ -431,6 +431,66 @@ footer .inner { max-width: var(--maxw); margin: 0 auto; }
   margin-bottom: 0.6rem;
 }
 
+/* Trinviseren på kursusdagene */
+nav.day-stepper {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.8rem;
+  margin: 2rem 0;
+  padding: 0;
+  background: none;
+  border: none;
+}
+
+nav.day-stepper::before {
+  content: "";
+  position: absolute;
+  top: 1.15rem;
+  left: 10%;
+  right: 10%;
+  border-top: 2px solid var(--border);
+  z-index: -1;
+}
+
+nav.day-stepper a {
+  display: grid;
+  justify-items: center;
+  gap: 0.45rem;
+  color: var(--muted);
+  text-align: center;
+  text-decoration: none;
+  font-size: 0.92rem;
+}
+
+nav.day-stepper a:hover { color: var(--accent); }
+
+nav.day-stepper strong {
+  display: grid;
+  place-items: center;
+  width: 2.3rem;
+  height: 2.3rem;
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  background: var(--bg);
+  color: var(--accent);
+  font-size: 1rem;
+}
+
+nav.day-stepper a:hover strong {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+@media (max-width: 560px) {
+  nav.day-stepper {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.1rem 0.6rem;
+  }
+
+  nav.day-stepper::before { display: none; }
+}
+
 /* Øvelsesboks — det praktiske */
 .exercise {
   position: relative;
