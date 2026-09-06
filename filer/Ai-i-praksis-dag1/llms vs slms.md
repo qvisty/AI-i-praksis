@@ -1,3 +1,7 @@
-LLMs vs. SLMs: The Differences in Large & Small Language Models
+# LLM’er vs. SLM’er
 
-https://www.splunk.com/en_us/blog/learn/language-models-slm-vs-llm.html
+Artikel om forskellene på store og små sprogmodeller, deres styrker og begrænsninger.
+
+[Læs artiklen hos Splunk](https://www.splunk.com/en_us/blog/learn/language-models-slm-vs-llm.html)
+
+> Valgfri fordybelse, især hvis du vil forstå lokale modeller.

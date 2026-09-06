@@ -52,6 +52,26 @@ document.querySelectorAll('main section').forEach(function (section) {
   exercise.appendChild(btn);
 });
 
+// Giver kursusdagens originale PDF et enkelt sæt forrige/næste-kontroller.
+document.querySelectorAll('[data-pdf-slideshow]').forEach(function (show) {
+  var frame = show.querySelector('iframe');
+  var pageInput = show.querySelector('[data-pdf-page]');
+  var pageCount = show.querySelector('[data-pdf-count]');
+  var total = Number(show.getAttribute('data-pages')) || 1;
+  var page = 1;
+
+  function showPage(nextPage) {
+    page = Math.min(total, Math.max(1, nextPage));
+    frame.src = show.getAttribute('data-pdf') + '#page=' + page + '&view=FitH';
+    pageInput.value = page;
+    pageCount.textContent = 'af ' + total;
+  }
+
+  show.querySelector('[data-pdf-prev]').addEventListener('click', function () { showPage(page - 1); });
+  show.querySelector('[data-pdf-next]').addEventListener('click', function () { showPage(page + 1); });
+  pageInput.addEventListener('change', function () { showPage(Number(pageInput.value)); });
+});
+
 // Sidernes rækkefølger. Bruges af pagineringen nederst på siderne og af
 // det afsluttende bladre-dias i diasvisningen. Modulerne og kursusdagene
 // er hver sin kæde.

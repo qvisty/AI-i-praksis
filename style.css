@@ -482,6 +482,59 @@ nav.day-stepper a:hover strong {
   color: var(--bg);
 }
 
+.pdf-slideshow {
+  background: var(--code-bg);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin: 1.5rem 0;
+}
+
+.pdf-slideshow iframe {
+  display: block;
+  width: 100%;
+  height: min(70vh, 42rem);
+  border: 0;
+  background: #ffffff;
+}
+
+.pdf-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  padding: 0.8rem 1rem;
+  color: var(--code-fg);
+  font-size: 0.95rem;
+}
+
+.pdf-controls button,
+.pdf-controls a {
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 8px;
+  padding: 0.35rem 0.75rem;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--code-fg);
+  font: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.pdf-controls button:hover,
+.pdf-controls a:hover { background: rgba(255, 255, 255, 0.18); }
+
+.pdf-controls input {
+  width: 4.2rem;
+  margin-left: 0.25rem;
+  padding: 0.3rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 6px;
+  background: var(--card);
+  color: var(--fg);
+  font: inherit;
+  text-align: center;
+}
+
 @media (max-width: 560px) {
   nav.day-stepper {
     grid-template-columns: repeat(2, 1fr);
@@ -489,6 +542,8 @@ nav.day-stepper a:hover strong {
   }
 
   nav.day-stepper::before { display: none; }
+
+  .pdf-slideshow iframe { height: 58vh; }
 }
 
 /* Øvelsesboks — det praktiske */

@@ -1,3 +1,7 @@
-The AI Job That Pays Up to $335K—and You Don’t Need a Computer Engineering Background
+# The AI Job That Pays Up to $335K
 
-https://time.com/6272103/ai-prompt-engineer-job/
+Artikel om prompt engineering som job og om, hvordan man kan arbejde med AI uden en baggrund i computer science.
+
+[Læs artiklen hos TIME](https://time.com/6272103/ai-prompt-engineer-job/)
+
+> Valgfri læsning om AI som arbejdsfelt.

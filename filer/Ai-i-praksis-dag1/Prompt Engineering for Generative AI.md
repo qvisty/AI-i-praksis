@@ -1,3 +1,5 @@
-Prompt Engineering for Generative AI
+# Prompt Engineering for Generative AI
 
-https://cloud.google.com/discover/what-is-prompt-engineering
+Googles introduktion til prompt engineering og til, hvordan man skriver bedre instruktioner til generativ AI.
+
+[Læs Googles guide](https://cloud.google.com/discover/what-is-prompt-engineering)

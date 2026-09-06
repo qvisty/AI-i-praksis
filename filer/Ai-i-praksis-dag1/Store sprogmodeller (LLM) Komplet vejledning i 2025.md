@@ -1,3 +1,5 @@
-Store sprogmodeller (LLM): Komplet vejledning i 2025
+# Store sprogmodeller (LLM)
 
-https://da.shaip.com/blog/a-guide-large-language-model-llm/
+Udfoldet vejledning i, hvad store sprogmodeller er, og hvordan de fungerer.
+
+[Læs vejledningen hos Shaip](https://da.shaip.com/blog/a-guide-large-language-model-llm/)

@@ -1,11 +1,13 @@
-Engelske videoer
+# Engelske videoer
 
-Videoer på engelsk, en del kræver abonnement på LinkedIn Learning, men man kan oprette en prøveperiode der.
+Videoer på engelsk. Nogle kræver abonnement på LinkedIn Learning, men tjenesten tilbyder typisk en prøveperiode.
 
-https://www.linkedin.com/learning/generative-ai-skills-for-creative-content-opportunities-issues-and-ethics Glimrende gennemgang af hvad generativ AI er, hvordan de virker basalt og hvad vi kan bruge dem til. Essentiel.
+## Vælg én grundvideo
+- [Generative AI Skills for Creative Content](https://www.linkedin.com/learning/generative-ai-skills-for-creative-content-opportunities-issues-and-ethics) - generativ AI, muligheder, problemer og etik.
+- [Generative AI in a Nutshell](https://youtu.be/2IK3DFHRFfw) - kort introduktion til AI, hvordan den virker basalt, og hvad den kan bruges til.
 
-https://youtu.be/2IK3DFHRFfw Glimrende gennemgang af hvad AI er, hvordan de virker basalt og hvad vi kan bruge dem til. Essentiel.
+## Supplerende videoer
+- [Introduction to Large Language Models](https://www.linkedin.com/learning/introduction-to-large-language-models/) - en mere detaljeret introduktion til LLM’er.
+- [Installing, Running and Testing LLMs locally](https://www.linkedin.com/learning/installing-running-and-testing-llms-on-your-local-computer/) - praktisk video om lokale modeller, ikke nødvendig for Dag 1.
 
-https://www.linkedin.com/learning/introduction-to-large-language-models/  Rimeligt detaljeret gennemgang af hvad LLMer er og opremsning af flere af de relevante. Essentiel.
-
-https://www.linkedin.com/learning/installing-running-and-testing-llms-on-your-local-computer/ Kort om at køre LLMer lokalt. Praktisk men ikke essentiel.
+> **Anbefaling:** Se én grundvideo før Dag 1. Gem de tekniske videoer til senere.

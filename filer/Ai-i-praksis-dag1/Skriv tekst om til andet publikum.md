@@ -1,12 +1,18 @@
-Skriv tekst om til andet publikum
+# Skriv tekst om til et andet publikum
 
-Beskrivelse
+## Opgave
 Find en tekst, der er henvendt til et bestemt publikum.
 
-F.eks. ældre danskere, akademikere eller generelt bare en tekst/brev skrevet i f.eks. officiel tone fra kommune eller lignende.
+Eksempler på målgrupper og toner:
+- ældre danskere
+- akademikere
+- en officiel tekst eller et brev fra en kommune
 
 
-Få AI værktøjet til at hjælpe dig med at omskrive det til et andet sprog/tone
+## Byg videre
+1. Få AI-værktøjet til at omskrive teksten til et andet sprog eller en anden tone.
+2. Gør teksten mere ungdommelig eller lettere at læse, for eksempel ved at sænke lix-tallet.
+3. Bed AI ramme en bestemt gruppes sprogbrug.
 
 
-Få det gjort mere ”ungdommeligt”, letlæselidt (f.eks. sænk lix-tal), ram en bestemt gruppe sprogbrug etc.
+> Sammenlign altid den nye tekst med originalen. En bedre tone må ikke ændre budskabet.

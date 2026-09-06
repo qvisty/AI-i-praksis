@@ -1,5 +1,7 @@
-The Last Question, novelle af Isaac Asimov 
+# The Last Question
 
-- Teksten er ikke pensum
+Novelle af Isaac Asimov.
 
-http://www.thelastquestion.net/
+> **Ikke pensum:** En god historie og et filosofisk perspektiv på computere, AI og en meget lang fremtid.
+
+[Læs novellen](http://www.thelastquestion.net/)

@@ -1,10 +1,16 @@
-Få hjælp til mødeplanlægning
+# Få hjælp til mødeplanlægning
 
-Beskrivelse
-AI er rigtig godt værktøj til lave mødeplaner. 
-Bed den skemalægge x antal timer over 4 uger, hvor de har rullende fredage f.eks. rullende fredage er hvor mødetiderne skifter, så man ikke altid har åbneren eller lukkeren på en fredag. 
-Der skal yderligere trækkes tid ud til andet arbejde og så er det de resterende timer, som skal skemalægges. 
-Føj en medarbejder til, hvor det er aftalt at vedkommende skal gå kl.12 hver onsdag i sin mødeplan.
+## Opgave
+AI er et godt værktøj til at lave første udkast til mødeplaner.
 
-"Her indsættes Få hjælp til mødeplanlægning.png" 
+Bed AI om at:
+- skemalægge et bestemt antal timer over fire uger
+- lave rullende fredage, så mødetiderne skifter
+- trække tid ud til andet arbejde og skemalægge resten
+- tage hensyn til en medarbejder, der skal gå kl. 12 hver onsdag
+
+## Eksempel
+![Eksempel på mødeplan](Få%20hjælp%20til%20mødeplanlægning.png)
+
+> Brug fiktive medarbejdere og tider. Kontrollér altid planen manuelt.
 

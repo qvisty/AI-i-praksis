@@ -1,3 +1,5 @@
-Simply explained GPT-5 Prompting
+# Simply Explained: GPT-5 Prompting
 
-https://www.architjn.com/blog/simply-explained-gpt-5-prompting-guide
+Praktisk guide, der samler promptteknikker og eksempler.
+
+[Læs guiden](https://www.architjn.com/blog/simply-explained-gpt-5-prompting-guide)
