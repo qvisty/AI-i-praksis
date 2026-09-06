@@ -520,6 +520,14 @@ nav.day-stepper a:hover strong {
   margin: 1.5rem 0;
 }
 
+.pdf-slideshow:fullscreen,
+.pdf-slideshow.pdf-is-fullscreen {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  border-radius: 0;
+}
+
 .pdf-stage {
   display: block;
   width: 100%;
@@ -528,6 +536,9 @@ nav.day-stepper a:hover strong {
   overflow: auto;
   text-align: center;
 }
+
+.pdf-slideshow:fullscreen .pdf-stage,
+.pdf-slideshow.pdf-is-fullscreen .pdf-stage { height: calc(100vh - 4.5rem); }
 
 .pdf-stage canvas {
   display: block;

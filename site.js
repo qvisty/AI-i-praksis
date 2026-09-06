@@ -64,6 +64,7 @@ document.querySelectorAll('[data-pdf-slideshow]').forEach(function (show) {
   var canvas = show.querySelector('[data-pdf-canvas]');
   var pageInput = show.querySelector('[data-pdf-page]');
   var pageCount = show.querySelector('[data-pdf-count]');
+  var fullscreenButton = show.querySelector('[data-pdf-fullscreen]');
   var total = Number(show.getAttribute('data-pages')) || 1;
   var page = 1;
   var pdf = null;
@@ -96,6 +97,20 @@ document.querySelectorAll('[data-pdf-slideshow]').forEach(function (show) {
   show.querySelector('[data-pdf-prev]').addEventListener('click', function () { showPage(page - 1); });
   show.querySelector('[data-pdf-next]').addEventListener('click', function () { showPage(page + 1); });
   pageInput.addEventListener('change', function () { showPage(Number(pageInput.value)); });
+  fullscreenButton.addEventListener('click', function () {
+    if (document.fullscreenElement === show) {
+      document.exitFullscreen();
+    } else if (show.requestFullscreen) {
+      show.requestFullscreen();
+    } else {
+      show.classList.toggle('pdf-is-fullscreen');
+    }
+  });
+  document.addEventListener('fullscreenchange', function () {
+    var isFullscreen = document.fullscreenElement === show;
+    show.classList.toggle('pdf-is-fullscreen', isFullscreen);
+    fullscreenButton.textContent = isFullscreen ? 'Luk stort' : 'Vis stort';
+  });
 });
 
 // Sidernes rækkefølger. Bruges af pagineringen nederst på siderne og af
