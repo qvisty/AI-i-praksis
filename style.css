@@ -659,6 +659,10 @@ nav.day-stepper a:hover strong {
 
 .note .label { color: var(--amber); }
 
+/* Længere noter med flere afsnit og lister */
+.note > p:first-of-type { margin-top: 0.2rem; }
+.note > p:last-child, .note > ol:last-child, .note > ul:last-child { margin-bottom: 0; }
+
 /* ---------- Prompts til at kopiere ---------- */
 
 .prompt {
