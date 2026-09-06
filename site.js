@@ -14,6 +14,13 @@ document.querySelectorAll('.prompt[data-copy]').forEach(function (box) {
   box.appendChild(btn);
 });
 
+// Sender lokale Markdown-links gennem sidens renderer i stedet for browserens rå tekstvisning.
+document.querySelectorAll('a[href$=".md"]').forEach(function (link) {
+  var file = link.getAttribute('href');
+  if (file.indexOf('://') !== -1) return;
+  link.href = 'markdown.html?file=' + encodeURIComponent(file);
+});
+
 // Sætter en "Print handout"-knap på alle øvelsessektioner. Knappen printer
 // sektionen som et rent A4-ark med sidehoved, klar til kopiering.
 document.querySelectorAll('main section').forEach(function (section) {
@@ -54,17 +61,36 @@ document.querySelectorAll('main section').forEach(function (section) {
 
 // Giver kursusdagens originale PDF et enkelt sæt forrige/næste-kontroller.
 document.querySelectorAll('[data-pdf-slideshow]').forEach(function (show) {
-  var frame = show.querySelector('iframe');
+  var canvas = show.querySelector('[data-pdf-canvas]');
   var pageInput = show.querySelector('[data-pdf-page]');
   var pageCount = show.querySelector('[data-pdf-count]');
   var total = Number(show.getAttribute('data-pages')) || 1;
   var page = 1;
+  var pdf = null;
+
+  if (!window.pdfjsLib) return;
+  window.pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+  window.pdfjsLib.getDocument(show.getAttribute('data-pdf')).promise.then(function (document) {
+    pdf = document;
+    total = document.numPages;
+    pageInput.max = total;
+    pageCount.textContent = 'af ' + total;
+    showPage(1);
+  });
 
   function showPage(nextPage) {
     page = Math.min(total, Math.max(1, nextPage));
-    frame.src = show.getAttribute('data-pdf') + '#page=' + page + '&view=FitH';
     pageInput.value = page;
     pageCount.textContent = 'af ' + total;
+    if (!pdf) return;
+    pdf.getPage(page).then(function (pdfPage) {
+      var viewport = pdfPage.getViewport({ scale: 1.4 });
+      var context = canvas.getContext('2d');
+      canvas.width = viewport.width;
+      canvas.height = viewport.height;
+      pdfPage.render({ canvasContext: context, viewport: viewport });
+    });
   }
 
   show.querySelector('[data-pdf-prev]').addEventListener('click', function () { showPage(page - 1); });

@@ -316,6 +316,37 @@ h3 { font-size: 1.35rem; margin: 2rem 0 0.6rem; }
 
 p, li { max-width: 46rem; }
 
+.markdown-content {
+  max-width: 48rem;
+  margin: 0 auto;
+}
+
+.markdown-content h1 { display: none; }
+.markdown-content h2 { margin-top: 2.5rem; }
+.markdown-content h3 { margin-top: 1.8rem; }
+.markdown-content img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 1.5rem 0;
+  border-radius: 8px;
+}
+
+.markdown-content blockquote {
+  margin: 1.5rem 0;
+  padding: 0.8rem 1.2rem;
+  border-left: 5px solid var(--amber);
+  background: var(--amber-soft);
+  color: var(--fg);
+}
+
+.markdown-content code {
+  padding: 0.1em 0.3em;
+  border-radius: 4px;
+  background: var(--border);
+  font-size: 0.9em;
+}
+
 a { color: var(--accent); }
 
 hr { border: none; border-top: 1px solid var(--border); margin: 3rem 0; }
@@ -489,12 +520,20 @@ nav.day-stepper a:hover strong {
   margin: 1.5rem 0;
 }
 
-.pdf-slideshow iframe {
+.pdf-stage {
   display: block;
   width: 100%;
   height: min(70vh, 42rem);
-  border: 0;
   background: #ffffff;
+  overflow: auto;
+  text-align: center;
+}
+
+.pdf-stage canvas {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
 }
 
 .pdf-controls {
@@ -543,7 +582,7 @@ nav.day-stepper a:hover strong {
 
   nav.day-stepper::before { display: none; }
 
-  .pdf-slideshow iframe { height: 58vh; }
+  .pdf-stage { height: 58vh; }
 }
 
 /* Øvelsesboks — det praktiske */

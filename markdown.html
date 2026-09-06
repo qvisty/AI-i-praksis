@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Materiale | AI i praksis</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.min.js"></script>
+</head>
+<body>
+
+<nav>
+  <div class="inner">
+    <a class="brand" href="index.html">AI i praksis</a>
+    <a href="dag-1.html">Tilbage til Dag 1</a>
+  </div>
+</nav>
+
+<main>
+  <header class="hero markdown-hero">
+    <div class="hero-text">
+      <span class="badge">Kursusmateriale</span>
+      <h1 id="markdown-title">Indlæser materiale</h1>
+      <p class="lead" id="markdown-source"></p>
+    </div>
+  </header>
+
+  <article id="markdown-content" class="markdown-content" aria-live="polite"></article>
+</main>
+
+<footer>
+  <div class="inner">
+    AI i praksis. <a href="dag-1.html">Tilbage til Dag 1</a>
+  </div>
+</footer>
+
+<script>
+  // Henter og renderer én lokal markdownfil med saniteret HTML.
+  (function () {
+    var params = new URLSearchParams(location.search);
+    var file = params.get('file') || '';
+    var content = document.getElementById('markdown-content');
+    var title = document.getElementById('markdown-title');
+    var source = document.getElementById('markdown-source');
+
+    if (!file || !file.endsWith('.md') || file.indexOf('://') !== -1 || file.indexOf('..') !== -1) {
+      title.textContent = 'Materialet kunne ikke åbnes';
+      content.innerHTML = '<p>Linket til materialet er ikke gyldigt.</p>';
+      return;
+    }
+
+    var sourceUrl = new URL(file, location.href);
+    source.textContent = sourceUrl.pathname.split('/').pop();
+    fetch(sourceUrl.href)
+      .then(function (response) {
+        if (!response.ok) throw new Error('Materialet blev ikke fundet');
+        return response.text();
+      })
+      .then(function (markdown) {
+        var rendered = DOMPurify.sanitize(marked.parse(markdown));
+        content.innerHTML = rendered;
+        var heading = content.querySelector('h1');
+        if (heading) {
+          title.textContent = heading.textContent;
+          heading.remove();
+          document.title = heading.textContent + ' | AI i praksis';
+        } else {
+          title.textContent = sourceUrl.pathname.split('/').pop().replace(/\.md$/, '');
+        }
+        content.querySelectorAll('a[href], img[src]').forEach(function (element) {
+          var attribute = element.hasAttribute('href') ? 'href' : 'src';
+          var value = element.getAttribute(attribute);
+          if (!value || value.startsWith('#') || value.indexOf('://') !== -1) return;
+          element.setAttribute(attribute, new URL(value, sourceUrl.href).href);
+          if (attribute === 'href') {
+            element.target = '_blank';
+            element.rel = 'noopener';
+          }
+        });
+      })
+      .catch(function () {
+        title.textContent = 'Materialet kunne ikke åbnes';
+        content.innerHTML = '<p>Der opstod en fejl ved indlæsning af materialet.</p>';
+      });
+  })();
+</script>
+</body>
+</html>

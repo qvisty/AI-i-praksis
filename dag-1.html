@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Dag 1</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 </head>
 <body>
 
@@ -65,7 +66,7 @@
     <h2>UCL’s diasshow: Dag 1</h2>
     <p>Her kan du bladre gennem det originale UCL-materiale direkte på siden. Brug pilene eller sidetallet til at følge undervisningen.</p>
     <div class="pdf-slideshow" data-pdf-slideshow data-pdf="filer/Ai-i-praksis-dag1/Dag%201%20-%203526.pdf" data-pages="68">
-      <iframe title="UCL’s diasshow for Dag 1" src="filer/Ai-i-praksis-dag1/Dag%201%20-%203526.pdf#page=1&view=FitH"></iframe>
+      <div class="pdf-stage"><canvas aria-label="UCL’s dias for Dag 1" data-pdf-canvas></canvas></div>
       <div class="pdf-controls">
         <button type="button" data-pdf-prev>Forrige</button>
         <label>Slide <input type="number" min="1" max="68" value="1" data-pdf-page></label>
