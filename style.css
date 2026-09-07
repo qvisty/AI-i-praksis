@@ -1656,3 +1656,88 @@ html.laast body > *:not(.adgang) { display: none !important; }
 @media print {
   .video { display: none; }
 }
+
+/* ---------- Dias-henvisninger i programtabellerne ---------- */
+
+.dias-chips {
+  display: block;
+  margin-top: 0.6rem;
+}
+
+.dias-chip {
+  position: relative;
+  display: inline-block;
+  margin: 0 0.35rem 0.35rem 0;
+  padding: 0.18rem 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.dias-chip strong {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.dias-chip.erstat strong { color: var(--amber); }
+
+.dias-chip:hover,
+.dias-chip:focus-visible {
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+.dias-chip-tip {
+  position: absolute;
+  left: 0;
+  bottom: calc(100% + 0.45rem);
+  z-index: 20;
+  width: max-content;
+  max-width: 21rem;
+  padding: 0.55rem 0.75rem;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+  color: var(--text);
+  font-size: 0.9rem;
+  line-height: 1.45;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.12s ease;
+}
+
+.dias-chip:hover .dias-chip-tip,
+.dias-chip:focus .dias-chip-tip,
+.dias-chip:focus-visible .dias-chip-tip {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Uden mus giver en skjult boks ingen mening: vis teksten direkte. */
+@media (hover: none), (max-width: 700px) {
+  .dias-chip {
+    display: block;
+    border-radius: 12px;
+    padding: 0.5rem 0.7rem;
+  }
+
+  .dias-chip-tip {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    display: block;
+    width: auto;
+    max-width: none;
+    margin-top: 0.25rem;
+    padding: 0;
+    background: none;
+    border: none;
+    box-shadow: none;
+    color: var(--muted);
+    font-size: 0.85rem;
+  }
+}

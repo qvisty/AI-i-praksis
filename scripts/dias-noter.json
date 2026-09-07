@@ -27,10 +27,10 @@
           "url": "flere-vaerktoejer.html#research"
         },
         {
-          "dias": 32,
+          "dias": 34,
           "type": "udvid",
           "titel": "Flere værktøjer: De fem spørgsmål",
-          "tekst": "Modelvalg er nemt. Værktøjsvalg på jobbet kræver fem spørgsmål mere.",
+          "tekst": "Modeloversigten er let. Værktøjsvalg på jobbet kræver fem spørgsmål mere.",
           "url": "flere-vaerktoejer.html#valg"
         },
         {
@@ -48,11 +48,18 @@
           "url": "modul-3-ai-i-hverdagen.html#oevelse-1"
         },
         {
-          "dias": 52,
+          "dias": 42,
           "type": "udvid",
           "titel": "Modul 1: Byg din første app",
-          "tekst": "Samme greb, større udbytte: byg noget, der virker.",
+          "tekst": "Send den samme prompt til Lovable, og se den blive til noget, du kan klikke i.",
           "url": "modul-1-lovable.html#oevelse-1"
+        },
+        {
+          "dias": 52,
+          "type": "udvid",
+          "titel": "Dag 2: Øvelse med billeder",
+          "tekst": "LEGO-anden er forretten. Dag 2 bruger en hel øvelse på billedgenerering.",
+          "url": "dag-2.html#oevelser"
         },
         {
           "dias": 57,
