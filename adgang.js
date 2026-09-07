@@ -11,7 +11,7 @@
   var STORAGE_KEY = 'ai-i-praksis-adgang';
   var SALT = 'ai-i-praksis:';
   // sha256(SALT + adgangskoden i små bogstaver). Selve koden står ikke i filen.
-  var EXPECTED = '3780575050c5e3fba2215b68cb8a19c0afa21b43a8428ba25aa3e245cd8cd9ae';
+  var EXPECTED = '43b5f6f4c006593a0e1607bcd1657bfc3dff1f2fdce0041240a335a854d72fab';
 
   var K = [
     0x428a2f98, 0x71374491, 0xb5c0fbcf, 0xe9b5dba5, 0x3956c25b, 0x59f111f1, 0x923f82a4, 0xab1c5ed5,
