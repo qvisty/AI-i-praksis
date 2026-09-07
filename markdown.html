@@ -8,6 +8,7 @@
   <script src="adgang.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.min.js"></script>
+  <script src="video.js"></script>
 </head>
 <body>
 
@@ -59,6 +60,43 @@
     }
 
     /**
+     * Læser filnavnet som et menneske ville skrive det. Stien er URL-kodet,
+     * så uden afkodning vises fx "Generative%20AI%20in%20a%20Nutshell.md".
+     * @param {URL} url Adressen på markdownfilen.
+     * @returns {string} Filnavnet uden sti, kodning og .md-endelse.
+     */
+    function readableName(url) {
+      var raw = url.pathname.split('/').pop();
+      var decoded = raw;
+      try {
+        decoded = decodeURIComponent(raw);
+      } catch (error) {
+        // Et ugyldigt kodet navn er bedre råt end slet ikke.
+      }
+      return decoded.replace(/\.md$/i, '');
+    }
+
+    /**
+     * Skriver underrubrikken: hvilken kursusdag materialet hører til, og
+     * filens navn hvis det tilføjer noget ud over overskriften.
+     * @param {string} filePath Stien fra ?file=.
+     * @param {URL} url Adressen på markdownfilen.
+     * @param {string} heading Overskriften materialet allerede viser.
+     */
+    function showSource(filePath, url, heading) {
+      var parts = [];
+      var day = filePath.match(/Ai-i-praksis-dag(\d)/);
+      if (day) parts.push('Dag ' + day[1]);
+
+      var name = readableName(url);
+      if (name && name.toLowerCase() !== String(heading || '').trim().toLowerCase()) {
+        parts.push(name);
+      }
+
+      source.textContent = parts.join(' · ');
+    }
+
+    /**
      * Gør relative links og billeder i materialet brugbare fra denne side.
      * Links til andre markdownfiler sendes gennem markdown.html, så de også bliver renderet.
      * @param {HTMLElement} container Elementet med det renderede materiale.
@@ -93,7 +131,6 @@
     updateDayLinks(file);
 
     var sourceUrl = new URL(file, location.href);
-    source.textContent = sourceUrl.pathname.split('/').pop();
     fetch(sourceUrl.href)
       .then(function (response) {
         if (!response.ok) throw new Error('Materialet blev ikke fundet');
@@ -106,11 +143,13 @@
         if (heading) {
           title.textContent = heading.textContent;
           heading.remove();
-          document.title = heading.textContent + ' | AI i praksis';
         } else {
-          title.textContent = sourceUrl.pathname.split('/').pop().replace(/\.md$/, '');
+          title.textContent = readableName(sourceUrl);
         }
+        document.title = title.textContent + ' | AI i praksis';
+        showSource(file, sourceUrl, title.textContent);
         resolveLinks(content, sourceUrl);
+        if (window.AIPVideo) window.AIPVideo.opgrader(content);
       })
       .catch(function () {
         title.textContent = 'Materialet kunne ikke åbnes';
