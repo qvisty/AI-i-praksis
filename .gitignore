@@ -10,3 +10,7 @@
 # Lokale systemfiler
 .DS_Store
 Thumbs.db
+
+# Python-cache fra indholdsværktøjerne i scripts/
+__pycache__/
+*.pyc
