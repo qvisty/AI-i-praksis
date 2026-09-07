@@ -1164,3 +1164,425 @@ ul.sources {
     -webkit-print-color-adjust: exact;
   }
 }
+
+/* ---------- Evaluering og resultater ---------- */
+
+/* Synlig fokusmarkering på hele sitet. Manglede før formularerne kom til. */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.eval-form { margin-top: 2rem; }
+
+.eval-felt {
+  border: none;
+  padding: 0;
+  margin: 0 0 2rem;
+  min-width: 0;
+}
+
+.eval-felt legend {
+  font-weight: 600;
+  font-size: 1.05rem;
+  padding: 0;
+  margin-bottom: 0.6rem;
+  line-height: 1.45;
+}
+
+.eval-valgfri {
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.eval-hjaelp {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin: 0.2rem 0 0.7rem;
+}
+
+.eval-fejl {
+  color: #b3261e;
+  font-size: 0.95rem;
+  margin: 0.45rem 0 0;
+  font-weight: 600;
+}
+
+.eval-opsamling {
+  border: 1px solid #b3261e;
+  border-left: 4px solid #b3261e;
+  border-radius: var(--radius);
+  padding: 0.9rem 1.2rem;
+  margin-bottom: 1.8rem;
+  color: #b3261e;
+  font-weight: 600;
+}
+
+@media (prefers-color-scheme: dark) {
+  .eval-fejl,
+  .eval-opsamling { color: #f2b8b5; }
+  .eval-opsamling { border-color: #f2b8b5; }
+}
+
+.eval-form input.eval-kort {
+  width: 100%;
+  max-width: 26rem;
+  font: inherit;
+  padding: 0.7rem 0.9rem;
+  background: var(--card);
+  color: var(--fg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+/* Introboksen foran kontaktfelterne skal staa lidt for sig selv. */
+.eval-intro { margin: 2.5rem 0 1.8rem; }
+
+.eval-form textarea {
+  width: 100%;
+  min-height: 5.5rem;
+  font: inherit;
+  padding: 0.7rem 0.9rem;
+  background: var(--card);
+  color: var(--fg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  resize: vertical;
+}
+
+.eval-felt[data-fejl] textarea,
+.eval-felt[data-fejl] input.eval-kort,
+.eval-felt[data-fejl] .valg-boks { border-color: #b3261e; }
+
+/* Valgmuligheder som chips. Radioknappen skjules, etiketten bærer udseendet. */
+.valg-raekke {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.valg { display: inline-flex; }
+
+.valg input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  pointer-events: none;
+}
+
+.valg-boks {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0.55rem 1.1rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--card);
+  color: var(--fg);
+  cursor: pointer;
+  line-height: 1.3;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.valg-boks:hover { border-color: var(--accent); }
+
+.valg input:checked + .valg-boks {
+  background: var(--accent);
+  color: var(--bg);
+  border-color: var(--accent);
+  font-weight: 600;
+}
+
+.valg input:focus-visible + .valg-boks {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.skala {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 0.4rem;
+}
+
+.skala .valg { display: block; }
+
+.skala .valg-boks {
+  border-radius: 10px;
+  justify-content: center;
+  padding: 0.55rem 0;
+  width: 100%;
+  font-variant-numeric: tabular-nums;
+}
+
+.skala-ender {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 560px) {
+  .skala { grid-template-columns: repeat(5, 1fr); }
+}
+
+.dag-vaelger .valg-boks {
+  padding: 0.7rem 1.3rem;
+  font-weight: 600;
+}
+
+.eval-afkryds {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  min-height: 44px;
+}
+
+.eval-afkryds input {
+  width: 1.15rem;
+  height: 1.15rem;
+  accent-color: var(--accent);
+}
+
+.knap {
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--fg);
+  border-radius: 8px;
+  padding: 0.55rem 1.3rem;
+  font: inherit;
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.knap:hover { color: var(--accent); border-color: var(--accent); }
+
+.knap-primaer {
+  background: var(--accent);
+  color: var(--bg);
+  border-color: var(--accent);
+  font-weight: 600;
+  padding: 0.75rem 1.8rem;
+  font-size: 1.05rem;
+}
+
+.knap-primaer:hover { color: var(--bg); opacity: 0.9; }
+
+.knap[disabled] { opacity: 0.6; cursor: progress; }
+
+.knap-tekst {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: var(--accent);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.eval-knapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.eval-status { margin-top: 2rem; }
+
+.eval-kladde {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.eval-kopi {
+  width: 100%;
+  min-height: 12rem;
+  margin-top: 0.6rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.9rem;
+  padding: 0.7rem 0.9rem;
+  background: var(--card);
+  color: var(--fg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+/* ---------- Resultatsiden ---------- */
+
+.laas {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.6rem;
+  max-width: 26rem;
+  margin: 2rem auto;
+}
+
+.laas input[type="password"] {
+  width: 100%;
+  font: inherit;
+  padding: 0.7rem 0.9rem;
+  margin: 0.8rem 0;
+  background: var(--bg);
+  color: var(--fg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.noegletal-vaerdi {
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Datoer og anden tekst braekker grimt i den store talstoerrelse. */
+.noegletal-vaerdi.lille {
+  font-size: 1.7rem;
+  white-space: nowrap;
+}
+
+.noegletal-navn {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-top: 0.3rem;
+}
+
+.bar-liste {
+  display: grid;
+  gap: 0.45rem;
+  margin: 1rem 0 1.6rem;
+}
+
+.bar-raekke {
+  display: grid;
+  grid-template-columns: 9rem 1fr 4rem;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.bar-navn {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.3;
+}
+
+.bar-spor {
+  background: var(--border);
+  border-radius: 999px;
+  height: 1.5rem;
+  overflow: hidden;
+}
+
+.bar-fyld {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 999px;
+  transition: width 0.6s ease;
+}
+
+.bar-fyld.blaa { background: var(--blue); }
+.bar-fyld.gul { background: var(--amber); }
+
+.bar-tal {
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  font-weight: 600;
+}
+
+@media (max-width: 560px) {
+  .bar-raekke { grid-template-columns: 6.5rem 1fr 3rem; }
+}
+
+.trend-graf {
+  width: 100%;
+  height: 11rem;
+  color: var(--accent);
+  margin: 1rem 0;
+}
+
+.svar-liste {
+  display: grid;
+  gap: 0.9rem;
+  margin: 1rem 0 2rem;
+}
+
+.svar-kort {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.9rem 1.2rem;
+}
+
+.svar-kort p {
+  margin: 0.3rem 0 0;
+  max-width: none;
+  white-space: pre-wrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bar-fyld { transition: none; }
+  .valg-boks { transition: none; }
+}
+
+@media print {
+  .eval-knapper,
+  .dag-vaelger,
+  .laas,
+  .eval-kladde { display: none; }
+}
+
+/* ---------- Adgangslås ---------- */
+
+/* Hele siden starter låst med <html class="laast">. adgang.js fjerner
+   klassen, når adgangskoden er skrevet rigtigt. */
+html.laast body { overflow: hidden; }
+html.laast body::before { display: none; }
+html.laast body > *:not(.adgang) { display: none !important; }
+
+.adgang {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: var(--bg);
+}
+
+.adgang::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(60% 60% at 50% 30%, color-mix(in srgb, var(--accent) 16%, transparent), transparent 70%);
+  pointer-events: none;
+}
+
+.adgang .laas {
+  position: relative;
+  margin: 0;
+  width: min(26rem, 100%);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+}
+
+.adgang h1 {
+  margin: 0;
+  font-size: 1.6rem;
+  color: var(--accent);
+}
+
+.adgang-label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.adgang .knap-primaer { width: 100%; }
+
+.kontakt-navn { font-weight: 600; margin: 0.3rem 0 0.6rem; }

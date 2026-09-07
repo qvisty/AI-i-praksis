@@ -18,7 +18,9 @@ Siden bruges i stedet for slides og udgives med GitHub Pages.
 | `modul-6-forstaa-ai.html` | Modul 6: Teoretisk oplæg (AI'ens historie, ordbog, de store diskussioner) |
 | `flere-vaerktoejer.html` | Ekstra idékatalog: 12 værktøjer, korte kursusøvelser og valgkriterier |
 | `underviser.html` | Underviserside: forberedelse, talenoter, evaluering, hjemmeopgaver og værktøjskasse. Kun linket fra forsidens sidefod. Skjules ved at slette det link |
-| `evaluering.html` | Deltagernes evalueringsside. Indsæt formularlinket i `FORMULAR_URL` i filen, se undervisersiden |
+| `evaluering.html` | Deltagernes evalueringsside: egen formular for dag 1-4 og en samlet evaluering. Dagen kan forvælges med `?dag=2` |
+| `evaluering.js` | Spørgsmålene som konfiguration, formularlogik, kladde i localStorage og afsendelse |
+| `resultater.html` og `resultater.js` | Underviserens resultatside: token-låst, med nøgletal, grafer og en færdig analyse-prompt. Bevidst ikke i menuen |
 | `papirklips.html` | Fordybelse: papirklips-tankeeksperimentet, appen Paperclip og zero human companies. Linket fra modul 6 |
 | `teknik.html` | Til de tekniske: fire dybe spor med git, Claude Code i terminalen, webhooks og lokal AI. Linket fra modul 2 og 4 |
 | `oversigt.html` | Oversigt og stikord: selvopdaterende indholdsfortegnelse over alle sider plus alfabetisk stikordsregister |
@@ -27,8 +29,33 @@ Siden bruges i stedet for slides og udgives med GitHub Pages.
 | `AGENTS.md` | Arbejdsaftaler for Claude Code og andre coding agents: UCL-spor, egne udvidelser, Markdown-materialer og publicering |
 | `style.css` | Fælles design (lyst/mørkt tema, øvelses- og forklaringsbokse, animationer) |
 | `site.js` | "Kopiér"-knapper, print af handouts, diasvisning og indtoning ved scroll |
+| `adgang.js` | Adgangslåsen: loginboks, tjek af adgangskoden og oplåsning af siden |
 | `scripts/check-links.js` | Lokalt check af HTML-links og anchors uden ekstra dependencies |
+| `scripts/apps-script/Kode.gs` | Referencekopi af det Google Apps Script, der modtager evalueringssvar. Indeholder ingen hemmeligheder |
+| `filer/evaluering-opsaetning.md` | Opsætning og drift af evalueringen: regneark, udrulning, token og nye spørgsmål |
 | `assets/` | Håndlavede SVG-illustrationer til hver side |
+
+## Adgangskode
+
+Hele siden er låst bag en fælles adgangskode, som deltagerne får på kurset.
+Koden står ikke i repositoriet, kun dens saltede SHA-256-hash i `adgang.js`.
+
+Sådan virker låsen:
+
+- Hver HTML-fil starter med `<html lang="da" class="laast">`, og `style.css` skjuler
+  alt indhold, så længe klassen er der. `adgang.js` fjerner klassen ved rigtig kode.
+- Adgangen huskes i `localStorage`, så koden kun skal skrives én gang pr. browser.
+- Store og små bogstaver samt mellemrum omkring koden ignoreres.
+
+Ny adgangskode sættes ved at udskifte `EXPECTED` i `adgang.js`. Hashen beregnes med:
+
+```bash
+node -e "const c=require('crypto');console.log(c.createHash('sha256').update('ai-i-praksis:'+process.argv[1].trim().toLowerCase()).digest('hex'))" DINKODE
+```
+
+Husk, at koden er en dørlås, ikke rigtig sikkerhed. Alt på siden ligger stadig i et
+offentligt repository og kan hentes direkte af den, der kender filnavnene. Læg derfor
+aldrig fortrolige oplysninger eller persondata på siden.
 
 ## Udgivelse
 

@@ -355,11 +355,19 @@ function paginationLink(page, dir, hash) {
     return out;
   }
 
+  /**
+   * Deler siden op i dias ved at klone sektionernes indhold ned i overlayet.
+   * Sektioner med data-ingen-dias springes over: en klonet formular ville give
+   * to radiogrupper med samme name, så et valg i overlayet afvælger i den
+   * rigtige formular.
+   * @returns {Array<{kicker: string, els: Element[]}>} Ét objekt pr. dias.
+   */
   function buildSlides() {
     var list = [];
     var hero = document.querySelector('header.hero');
     if (hero) list.push({ kicker: '', els: [hero.cloneNode(true)] });
     main.querySelectorAll(':scope > section').forEach(function (section) {
+      if (section.hasAttribute('data-ingen-dias')) return;
       var h2 = section.querySelector(':scope > h2');
       var kicker = h2 ? h2.textContent : '';
       var chunks = [];

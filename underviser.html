@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="da">
+<html lang="da" class="laast">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex">
   <title>Undervisersiden</title>
   <link rel="stylesheet" href="style.css">
+  <script src="adgang.js"></script>
 </head>
 <body>
 
@@ -150,70 +151,98 @@ grøn som hovedfarve.</div>
   <section id="evaluering">
     <h2>Evaluering efter hver dag</h2>
     <p>
-      Fem spørgsmål, samme sæt hver dag, så du kan sammenligne på tværs af dagene og holdene.
-      Print arket herunder som handout, eller byg det som formular med prompten fra case-afsnittet som forlæg.
+      Otte spørgsmål plus to frivillige kontaktfelter, samme kerne hver dag plus et par dagsspecifikke, så svarene kan sammenlignes
+      på tværs af dagene og holdene. Deltagerne bruger to-tre minutter. Princippet bag
+      spørgsmålene: hvert enkelt skal kunne oversættes til en beslutning inden næste kursusdag.
+      Derfor er der ingen "hvor tilfreds var du" — det svar kan man ikke handle på.
     </p>
 
     <div class="exercise">
-      <span class="label">Evalueringsark, 5 min sidst på dagen</span>
+      <span class="label">Spørgsmålene, samme ordlyd på skærm og papir</span>
       <ol class="steps">
-        <li>Hvad er det vigtigste, du tager med fra i dag?</li>
-        <li>Hvilken øvelse gav mest mening for dig, og hvorfor?</li>
-        <li>Hvor gik det for hurtigt eller for langsomt?</li>
-        <li>Hvad vil du prøve på jobbet inden næste kursusdag?</li>
-        <li>På en skala fra 1 til 10: hvor meget af det, du har lært i dag, kan du bruge direkte i dit arbejde? Og hvad skulle have været anderledes, før du ville give en 10?</li>
+        <li>På en skala fra 1 til 10: hvor meget af det, du har lavet i dag, kan du bruge i dit arbejde inden for de næste 14 dage?</li>
+        <li>Hvordan var tempoet i dag? For langsomt, passende eller for hurtigt?</li>
+        <li>Kunne du gøre dagens vigtigste øvelse igen i morgen — alene?</li>
+        <li>Har du brugt noget fra sidste kursusdag på dit arbejde siden da? <span class="muted">(ikke på dag 1)</span></li>
+        <li>Nævn én konkret ting fra i dag, du vil bruge først — og hvad du vil bruge den til.</li>
+        <li>Hvor gik du i stå i dag, eller hvad forstod du ikke?</li>
+        <li>Nævn én ting, jeg skal gøre anderledes næste kursusdag.</li>
+        <li>Noget andet, jeg skal vide? <span class="muted">(valgfrit)</span></li>
+        <li>Dit navn og din mail <span class="muted">(frivilligt, står allersidst)</span></li>
       </ol>
     </div>
 
-    <h3>Den digitale udgave</h3>
-    <p>
-      Deltagerne svarer på siden <a href="evaluering.html">evaluering.html</a>, som du deler sidst på dagen.
-      Siden viser din formular, når du har koblet den på, og indtil da viser den spørgsmålene til papirbrug.
-      Vejledningen herunder sætter formularen op i Microsoft Forms på ti minutter.
-    </p>
+    <div class="explain">
+      <span class="label">Hvorfor lige de spørgsmål</span>
+      <p>
+        <strong>"Kunne du gøre øvelsen igen — alene?"</strong> afslører, om du underviste eller blot
+        demonstrerede. Mange "nej, ikke endnu" betyder mere hands-on-tid, ikke flere slides.
+      </p>
+      <p>
+        <strong>"Har du brugt noget siden sidst?"</strong> er det eneste svar, der måler om kurset
+        sætter sig. De to nej-varianter skelner mellem "jeg nåede det ikke" og "jeg vidste ikke hvad
+        jeg skulle bruge det til" — to helt forskellige problemer, der kræver hver sin rettelse:
+        en mindre hjemmeopgave eller en bedre eksempelbank.
+      </p>
+      <p>
+        <strong>Ét ønske pr. deltager</strong> i stedet for en fri ønskeliste tvinger prioriteringen
+        frem og giver en liste, der kan handles på direkte.
+      </p>
+    </div>
 
+    <h3>Sådan deler du evalueringen sidst på dagen</h3>
     <div class="exercise">
-      <span class="label">Opsætning i Microsoft Forms, ca. 10 min, én gang</span>
+      <span class="label">3 trin, 3 minutter i plenum</span>
       <ol class="steps">
-        <li>Gå til <a href="https://forms.office.com" target="_blank" rel="noopener">forms.office.com</a>, log ind med din arbejdskonto, og opret en ny formular med navnet »AI i praksis, evaluering«.</li>
-        <li>Tilføj spørgsmålene fra arket ovenfor: et obligatorisk valg med Dag 1, Dag 2 og Dag 3, fire tekstspørgsmål med langt svar slået til, et bedømmelsesspørgsmål med tallene 1 til 10, og til sidst et tekstspørgsmål om, hvad der skulle have været anderledes.</li>
-        <li>Under indstillingerne: vælg at <strong>alle kan svare</strong>, og lad være med at registrere navne, så svarene er anonyme.</li>
-        <li>Klik på <strong>Indsaml svar</strong>, og kopiér linket.</li>
-        <li>Åbn <code>evaluering.html</code> i repoet, og indsæt linket i linjen med <code>FORMULAR_URL</code>. Commit, og siden er live om et øjeblik.</li>
-        <li>Del sidens adresse sidst på kursusdagen. Forms kan også vise en QR-kode under Indsaml svar, klar til projektoren.</li>
+        <li>Skriv adressen på projektoren: <code>qvisty.github.io/AI-i-praksis/evaluering.html?dag=2</code>. Dagen bliver forvalgt af sig selv, så ingen kommer til at svare på den forkerte dag. Der ligger også et link nederst på hver dagsside.</li>
+        <li>Giv tiden i plenum. Svarprocenten falder drastisk, hvis folk skal huske det hjemmefra.</li>
+        <li>Sig først, hvad du gjorde ved sidste dags svar. Det er dét, der får folk til at svare ærligt næste gang.</li>
+      </ol>
+    </div>
+
+    <h3>Sådan læser du svarene</h3>
+    <p>
+      Svarene lander i et privat Google-regneark, som kun du har adgang til. De vises på
+      <a href="resultater.html">resultatsiden</a>, der er låst med et læse-token.
+    </p>
+    <div class="exercise">
+      <span class="label">3 trin</span>
+      <ol class="steps">
+        <li>Åbn <a href="resultater.html">resultater.html</a> og indsæt læse-tokenet fra din password manager. Det gemmes kun i den fane, du sidder i.</li>
+        <li>Kig på tallene: antal svar pr. dag, fordelingen på anvendelighed, udviklingen fra dag til dag, og tempo sammenholdt med "kunne du gøre det selv".</li>
+        <li>Klik <strong>Kopiér alt som analyse-prompt</strong>, og sæt den ind i Claude eller ChatGPT. Prompten indeholder både alle svar og en forklaring på, hvad hvert spørgsmål skal afgøre, så analysen bliver handlingsanvisende i stedet for beskrivende.</li>
       </ol>
     </div>
 
     <div class="note">
-      <span class="label">Foretrækker du Google?</span>
-      Google Forms virker lige så godt: opret formularen med de samme spørgsmål på
-      <a href="https://forms.google.com" target="_blank" rel="noopener">forms.google.com</a>,
-      og indsæt delelinket i <code>evaluering.html</code> på samme måde.
+      <span class="label">Tokenet må aldrig i repoet</span>
+      Læse-tokenet ligger to steder: i Apps Script under Scriptegenskaber, og i din password manager.
+      Sitet er offentligt, og alt hvad der ligger i en fil på GitHub er offentligt — også selvom
+      filen er markeret <code>noindex</code>. Adressen til datamodtageren (<code>/exec</code>) må
+      gerne stå i koden, for den giver kun skriveadgang. Tokenet giver læseadgang og må ikke.
+      Del heller aldrig selve regnearket med nogen.
     </div>
 
-    <h3>Dataanalysen</h3>
+    <h3>Opsætning og vedligeholdelse</h3>
     <p>
-      Fanen <strong>Svar</strong> i Forms viser automatisk diagrammer for hvert spørgsmål.
-      Vil du dybere ned, så klik <strong>Åbn i Excel</strong>: hvert svar er en række med tidspunkt
-      og kursusdag som kolonner, så du kan filtrere og sammenligne på tværs af dage og hold.
-      Den hurtigste analyse er at kopiere rækkerne fra Excel og bruge prompten herunder i din
-      AI-assistent. Det er i øvrigt præcis promptmønsteret fra modul 3, brugt på dine egne data.
+      Førstegangsopsætningen tager omkring et kvarter og skal kun laves én gang.
+      <a href="filer/evaluering-opsaetning.md">Den fulde vejledning</a> dækker regnearket, koden,
+      udrulningen, tokenet, hvordan du tilføjer et spørgsmål, og hvordan du starter et nyt hold.
+      Apps Script-koden ligger som referencekopi i repoet under
+      <code>scripts/apps-script/Kode.gs</code>.
     </p>
-
-    <div class="prompt" data-copy>Du er min dataanalytiker. Herunder indsætter jeg evalueringssvar fra kurset
-AI i praksis. Kolonnerne er tidspunkt, kursusdag, vigtigste pointe, bedste
-øvelse, tempo, næste skridt, anvendeligheds-score fra 1 til 10 og hvad der
-skulle have været anderledes for at give en 10. Giv mig på dansk:
-gennemsnitsscore pr. kursusdag, de tre hyppigste
-temaer i fritekstsvarene med et citat til hver, en opsummering af tempo-svarene,
-og de tre mest konkrete ændringer jeg bør lave før næste kursusdag.
-
-[indsæt svarene her, kopieret direkte fra regnearket]</div>
+    <p>
+      Vil du grave dybere end resultatsiden, kan du også lade en AI-assistent læse regnearket
+      direkte gennem en Google Drive-forbindelse. Fanebladet <code>noegle</code> forklarer hver
+      eneste kolonne og hvilken beslutning svaret skal informere, så assistenten kan analysere
+      uden yderligere kontekst fra dig.
+    </p>
 
     <div class="note">
       <span class="label">Brug svarene aktivt</span>
       Start hver kursusdag med tre linjer om, hvad du har ændret på baggrund af evalueringen.
       Det viser deltagerne, at feedback virker, og det er i sig selv en pointe om iteration.
+      Analyse-prompten slutter med at bede om præcis de tre linjer.
     </div>
   </section>
 

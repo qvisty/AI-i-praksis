@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="da">
+<html lang="da" class="laast">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex">
   <title>Evaluering</title>
   <link rel="stylesheet" href="style.css">
+  <script src="adgang.js"></script>
 </head>
 <body>
 
@@ -22,32 +23,48 @@
     <div class="hero-text">
       <span class="badge">Evaluering</span>
       <h1>Hvordan var dagen?</h1>
-      <p class="lead">Fem hurtige spørgsmål, fem minutter, anonymt. Din feedback former næste kursusdag.</p>
+      <p class="lead">To til tre minutter. Svarene bliver læst inden næste kursusdag, og de ændrer noget.</p>
     </div>
     <img class="hero-art" src="assets/hero-modul-3.svg" alt="">
   </header>
 
-  <section id="formular">
-    <div id="form-holder"></div>
+  <section id="formular" data-ingen-dias>
+    <h2>Din evaluering</h2>
 
-    <div id="form-fallback" hidden>
+    <div class="note">
+      <span class="label">Du bestemmer selv</span>
+      Du kan svare helt anonymt — der er intet felt, du skal udfylde med navn eller mail.
+      Allernederst kan du frivilligt skrive dem, hvis du gerne vil have svar på noget.
+      Skriv frit, også det der ikke virkede. Svarene bruges kun til at gøre kurset bedre.
+    </div>
+
+    <p>Hvilken dag evaluerer du?</p>
+    <div id="dag-vaelger"></div>
+    <p id="eval-kladde" class="eval-kladde" hidden></p>
+
+    <div id="eval-form-holder"></div>
+    <div id="eval-status" class="eval-status" role="status" aria-live="polite"></div>
+
+    <noscript>
       <div class="note">
-        <span class="label">Formularen er ikke koblet til endnu</span>
-        Underviseren har endnu ikke indsat linket til den digitale formular. Spørgsmålene er dem her,
-        så de kan også besvares på papir. Vejledningen til at koble formularen på står på undervisersiden.
+        <span class="label">JavaScript er slået fra</span>
+        Formularen kan ikke vises. Spørgsmålene står herunder, så de kan besvares på papir i stedet.
       </div>
       <div class="exercise">
-        <span class="label">Spørgsmålene, 5 min</span>
+        <span class="label">Spørgsmålene, 2-3 min</span>
         <ol class="steps">
-          <li>Hvilken kursusdag evaluerer du? Dag 1, 2 eller 3?</li>
-          <li>Hvad er det vigtigste, du tager med fra i dag?</li>
-          <li>Hvilken øvelse gav mest mening for dig, og hvorfor?</li>
-          <li>Hvor gik det for hurtigt eller for langsomt?</li>
-          <li>Hvad vil du prøve på jobbet inden næste kursusdag?</li>
-          <li>På en skala fra 1 til 10: hvor meget af det, du har lært i dag, kan du bruge direkte i dit arbejde? Og hvad skulle have været anderledes, før du ville give en 10?</li>
+          <li>På en skala fra 1 til 10: hvor meget af det, du har lavet i dag, kan du bruge i dit arbejde inden for de næste 14 dage? (1 = intet af det, 10 = næsten det hele)</li>
+          <li>Hvordan var tempoet i dag? For langsomt, passende eller for hurtigt?</li>
+          <li>Kunne du gøre dagens vigtigste øvelse igen i morgen — alene? Ja på egen hånd, ja hvis du har siden eller dine noter ved hånden, eller nej, ikke endnu?</li>
+          <li>Har du brugt noget fra sidste kursusdag på dit arbejde siden da? Ja flere gange, ja én gang, nej du nåede det ikke, eller nej du vidste ikke hvad du skulle bruge det til? (Ikke på dag 1)</li>
+          <li>Nævn én konkret ting fra i dag, du vil bruge først — og hvad du vil bruge den til.</li>
+          <li>Hvor gik du i stå i dag, eller hvad forstod du ikke? Skriv gerne præcis hvilket trin eller hvilket ord.</li>
+          <li>Nævn én ting, jeg skal gøre anderledes næste kursusdag.</li>
+          <li>Noget andet, jeg skal vide?</li>
+          <li>Frivilligt: dit navn og din mail, hvis du gerne vil have svar. Lad felterne stå tomme, hvis du hellere vil være anonym.</li>
         </ol>
       </div>
-    </div>
+    </noscript>
   </section>
 
 </main>
@@ -58,26 +75,7 @@
   </div>
 </footer>
 
-<script>
-  // UNDERVISER: Indsæt linket til din formular mellem anførselstegnene herunder.
-  // Brug delelinket fra Microsoft Forms (eller Google Forms). Vejledningen står
-  // på undervisersiden under afsnittet om evaluering.
-  var FORMULAR_URL = '';
-
-  var holder = document.getElementById('form-holder');
-  var fallback = document.getElementById('form-fallback');
-  if (FORMULAR_URL) {
-    var frame = document.createElement('iframe');
-    frame.src = FORMULAR_URL;
-    frame.title = 'Evalueringsformular';
-    frame.style.width = '100%';
-    frame.style.height = '1400px';
-    frame.style.border = 'none';
-    holder.appendChild(frame);
-  } else {
-    fallback.hidden = false;
-  }
-</script>
+<script src="evaluering.js"></script>
 <script src="site.js"></script>
 
 </body>

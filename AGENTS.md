@@ -44,6 +44,15 @@ Dette repository er kursussiden for **AI i praksis**. Arbejd altid videre i den 
 - Knapperne skal skelne tydeligt mellem **Download** og **Vis stort**.
 - Brug ikke en ustabil iframe som eneste diasvisning. Bevar en fallback til download.
 
+## Adgangslås
+- Hele siden er låst bag én fælles adgangskode. Nye sider skal derfor have både
+  `class="laast"` på `<html>` og `<script src="adgang.js"></script>` i `<head>`,
+  ellers ligger siden åben.
+- Selve adgangskoden må ikke stå i repositoriet. Kun den saltede SHA-256-hash i
+  `adgang.js` må committes. Se `README.md` for kommandoen, der beregner en ny hash.
+- Låsen er en dørlås, ikke rigtig sikkerhed. Filer i `filer/` og `assets/` kan stadig
+  hentes direkte. Læg aldrig fortrolige oplysninger eller persondata på siden.
+
 ## Stil og sprog
 - Skriv på dansk, medmindre et kildemateriale eller en titel naturligt er på engelsk.
 - Bevar sidens eksisterende design, komponenter og CSS-klasser. Lav små, målrettede ændringer.
@@ -53,7 +62,7 @@ Dette repository er kursussiden for **AI i praksis**. Arbejd altid videre i den 
 
 ## Før commit og push
 - Kør `get_errors` på alle ændrede HTML-, CSS- og JavaScript-filer.
-- Kør `node --check site.js`, når JavaScript er ændret.
+- Kør `node --check site.js evaluering.js resultater.js`, når JavaScript er ændret.
 - Kør `node scripts/check-links.js` efter ændringer i sider eller materialelinks.
 - Kør `git diff --check`.
 - Kontrollér lokale links og assets, især dagspdf’er, Markdown-filer og billeder.
@@ -68,5 +77,8 @@ Dette repository er kursussiden for **AI i praksis**. Arbejd altid videre i den 
 - `markdown.html`: rendered visning af lokale Markdown-filer
 - `scripts/check-links.js`: dependency-frit check af lokale HTML-links og anchors
 - `site.js`: navigation, diasvisning, Markdown-link-routing og interaktion
+- `adgang.js`: adgangslåsen med loginboks og oplåsning af siden
+- `evaluering.js` og `resultater.js`: evalueringsformularen og den token-låste resultatside
+- `scripts/apps-script/Kode.gs`: referencekopi af Apps Script bag evalueringen. Læse-tokenet må aldrig i repoet
 - `style.css`: fælles styling
 - `README.md`: repository-overblik og udgivelsesinformation
