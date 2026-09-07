@@ -21,8 +21,9 @@ import os
 import shutil
 import sys
 
+import qrcode
 import pypdfium2 as pdfium
-from PIL import Image
+from PIL import Image, ImageChops, ImageDraw, ImageStat
 from pypdf import PdfReader, PdfWriter
 from pypdf.annotations import Link
 from reportlab.lib.colors import Color, HexColor
@@ -43,6 +44,7 @@ NOTE_BREDDE_MIN = 190.0
 POLSTRING = 9.0
 HJOERNE = 5.0
 KANT_MARGEN = 26.0                   # mindste afstand til diassets kant
+IKON_PLADS = 16.0                    # plads til lænkeikonet i overskriftslinjen
 
 
 def registrer_skrifter():
@@ -61,37 +63,33 @@ def registrer_skrifter():
 
 
 def optaget_kort(side, bredde, hoejde, oploesning=2):
-    """Laver et gitter over, hvor der allerede står noget på diasset.
+    """Laver en maske over, hvor der allerede står noget på diasset.
 
     Baggrunden er næsten ensfarvet, mens tekst, tabeller og billeder afviger
     tydeligt fra den. Testen måler kun afstanden til sidens dominerende farve,
     så den også virker på dias med mørk baggrund og lys tekst.
 
+    Masken er et Pillow-billede, så opslag sker i C og ikke i Python-løkker.
+    Uden det tager det store diassæt mange minutter.
+
     :param side: siden fra pypdfium2.
     :param bredde: sidens bredde i punkter.
     :param hoejde: sidens højde i punkter.
-    :param oploesning: felter pr. punkt i gitteret.
-    :returns: (gitter, kolonner, raekker, billede) hvor gitter[r][k] er True hvis optaget.
+    :param oploesning: felter pr. punkt i masken.
+    :returns: (maske, miniature) hvor hvide felter i masken er optaget.
     """
     billede = side.render(scale=2).to_pil().convert("RGB")
-    px_pr_pkt = billede.width / bredde
-
     smaa = billede.resize(
         (max(1, int(bredde * oploesning)), max(1, int(hoejde * oploesning))),
         Image.BOX,
     )
     dominerende = max(smaa.getcolors(smaa.width * smaa.height), key=lambda c: c[0])[1]
 
-    kolonner, raekker = smaa.size
-    data = smaa.load()
-    gitter = [[False] * kolonner for _ in range(raekker)]
-    for r in range(raekker):
-        for k in range(kolonner):
-            farve = data[k, r]
-            afstand = sum(abs(farve[i] - dominerende[i]) for i in range(3))
-            gitter[r][k] = afstand > 45
-    del px_pr_pkt
-    return gitter, kolonner, raekker, smaa
+    forskel = ImageChops.difference(smaa, Image.new("RGB", smaa.size, dominerende))
+    roed, groen, blaa = forskel.split()
+    stoerste = ImageChops.lighter(ImageChops.lighter(roed, groen), blaa)
+    maske = stoerste.point(lambda vaerdi: 255 if vaerdi > 18 else 0)
+    return maske, smaa
 
 
 def baggrund_er_moerk(billede, sidehoejde, x, y, bredde, hoejde, oploesning=2):
@@ -100,50 +98,55 @@ def baggrund_er_moerk(billede, sidehoejde, x, y, bredde, hoejde, oploesning=2):
     :param billede: den nedskalerede gengivelse af diasset.
     :returns: True hvis området er mørkt.
     """
-    k0 = max(0, int(x * oploesning))
-    k1 = min(billede.width, int((x + bredde) * oploesning))
-    r0 = max(0, int((sidehoejde - y - hoejde) * oploesning))
-    r1 = min(billede.height, int((sidehoejde - y) * oploesning))
-    if k1 <= k0 or r1 <= r0:
+    kasse = til_billedkasse(billede.width, billede.height, sidehoejde,
+                           x, y, bredde, hoejde, oploesning)
+    if kasse is None:
         return False
-    udsnit = billede.crop((k0, r0, k1, r1)).convert("L")
-    pixels = list(udsnit.getdata())
-    return sum(pixels) / len(pixels) < 140
+    udsnit = billede.crop(kasse).convert("L")
+    return ImageStat.Stat(udsnit).mean[0] < 140
 
 
-def er_frit(gitter, kolonner, raekker, x, y, bredde, hoejde, oploesning=2):
+def til_billedkasse(kolonner, raekker, sidehoejde, x, y, bredde, hoejde, oploesning=2):
+    """Regner et rektangel i punkter om til billedkoordinater.
+
+    PDF måler y nedefra, billedet oppefra.
+
+    :returns: (venstre, top, hoejre, bund) eller None hvis rektanglet er tomt.
+    """
+    venstre = max(0, int(x * oploesning))
+    hoejre = min(kolonner, int((x + bredde) * oploesning) + 1)
+    top = max(0, int((sidehoejde - y - hoejde) * oploesning))
+    bund = min(raekker, int((sidehoejde - y) * oploesning) + 1)
+    if hoejre <= venstre or bund <= top:
+        return None
+    return (venstre, top, hoejre, bund)
+
+
+def er_frit(maske, sidehoejde, x, y, bredde, hoejde, oploesning=2):
     """Tjekker om et rektangel i punktkoordinater er tomt på diasset.
 
     :param x: venstre kant i punkter, målt fra sidens venstre side.
     :param y: nederste kant i punkter, målt fra sidens bund.
     :returns: True hvis hele rektanglet er frit.
     """
-    k0 = max(0, int(x * oploesning))
-    k1 = min(kolonner, int((x + bredde) * oploesning) + 1)
-    # PDF regner y nedefra, billedet oppefra.
-    r0 = max(0, int((raekker / oploesning - y - hoejde) * oploesning))
-    r1 = min(raekker, int((raekker / oploesning - y) * oploesning) + 1)
-    for r in range(r0, r1):
-        raekke = gitter[r]
-        for k in range(k0, k1):
-            if raekke[k]:
-                return False
-    return True
+    kasse = til_billedkasse(maske.width, maske.height, sidehoejde,
+                            x, y, bredde, hoejde, oploesning)
+    if kasse is None:
+        return False
+    return maske.crop(kasse).getbbox() is None
 
 
-def markér_optaget(gitter, kolonner, raekker, sidehoejde, x, y, bredde, hoejde,
-                   oploesning=2, luft=6.0):
+def markér_optaget(maske, sidehoejde, x, y, bredde, hoejde, oploesning=2, luft=6.0):
     """Markerer en netop placeret note som optaget, så den næste ikke lander ovenpå."""
-    k0 = max(0, int((x - luft) * oploesning))
-    k1 = min(kolonner, int((x + bredde + luft) * oploesning) + 1)
-    r0 = max(0, int((sidehoejde - y - hoejde - luft) * oploesning))
-    r1 = min(raekker, int((sidehoejde - y + luft) * oploesning) + 1)
-    for r in range(r0, r1):
-        for k in range(k0, k1):
-            gitter[r][k] = True
+    kasse = til_billedkasse(maske.width, maske.height, sidehoejde,
+                            x - luft, y - luft, bredde + 2 * luft, hoejde + 2 * luft,
+                            oploesning)
+    if kasse is None:
+        return
+    ImageDraw.Draw(maske).rectangle(kasse, fill=255)
 
 
-def find_plads(gitter, kolonner, raekker, sidebredde, sidehoejde, bredde, hoejde):
+def find_plads(maske, sidebredde, sidehoejde, bredde, hoejde):
     """Finder et tomt sted til noten, helst nederst til venstre.
 
     :returns: (x, y) i punkter, eller None hvis diasset er fyldt.
@@ -152,12 +155,10 @@ def find_plads(gitter, kolonner, raekker, sidebredde, sidehoejde, bredde, hoejde
     top = int(sidehoejde - hoejde - KANT_MARGEN)
     if top <= int(KANT_MARGEN):
         return None
-    y_kandidater = list(range(int(KANT_MARGEN), top, 4))
-    x_kandidater = list(range(int(KANT_MARGEN), max(int(KANT_MARGEN) + 1,
-                                                    int(sidebredde - bredde - KANT_MARGEN)), 8))
-    for y in y_kandidater:
-        for x in x_kandidater:
-            if er_frit(gitter, kolonner, raekker, x - luft, y - luft,
+    x_slut = max(int(KANT_MARGEN) + 1, int(sidebredde - bredde - KANT_MARGEN))
+    for y in range(int(KANT_MARGEN), top, 4):
+        for x in range(int(KANT_MARGEN), x_slut, 8):
+            if er_frit(maske, sidehoejde, x - luft, y - luft,
                        bredde + 2 * luft, hoejde + 2 * luft):
                 return float(x), float(y)
     return None
@@ -171,21 +172,48 @@ def bryd_tekst(tekst, skrift, stoerrelse, bredde):
     return simpleSplit(tekst, skrift, stoerrelse, bredde)
 
 
-def maal_note(note, skrifter):
+def maal_note(note, skrifter, loft=None):
     """Beregner notens mål og de linjer, der skal tegnes.
 
+    :param loft: største tilladte bredde, når pladsen på diasset er trang.
     :returns: (bredde, hoejde, overskrift, linjer).
     """
     tekst_skrift, fed_skrift = skrifter
     overskrift = "%s  ·  %s" % (note["type"].upper(), note["titel"])
-    bredde_overskrift = pdfmetrics.stringWidth(overskrift, fed_skrift, 8.2) + 2 * POLSTRING
-    bredde = min(NOTE_BREDDE_MAKS, max(NOTE_BREDDE_MIN, bredde_overskrift))
+    bredde_overskrift = (pdfmetrics.stringWidth(overskrift, fed_skrift, 8.2)
+                         + 2 * POLSTRING + IKON_PLADS)
+    maks = NOTE_BREDDE_MAKS if loft is None else loft
+    bredde = min(maks, max(min(NOTE_BREDDE_MIN, maks), bredde_overskrift))
     linjer = bryd_tekst(note["tekst"], tekst_skrift, 9.0, bredde - 2 * POLSTRING)
-    if len(linjer) > 2:
-        bredde = NOTE_BREDDE_MAKS
+    if len(linjer) > 2 and bredde < maks:
+        bredde = maks
         linjer = bryd_tekst(note["tekst"], tekst_skrift, 9.0, bredde - 2 * POLSTRING)
     hoejde = POLSTRING + 10.0 + len(linjer) * 11.5 + POLSTRING - 2
     return bredde, hoejde, overskrift, linjer
+
+
+def tegn_laenkeikon(c, x, y, farve):
+    """Tegner det lille »åbn i ny fane«-ikon, der viser at noten kan klikkes.
+
+    :param c: reportlab-lærredet.
+    :param x: venstre kant af ikonet i punkter.
+    :param y: nederste kant af ikonet i punkter.
+    :param farve: stregfarven.
+    """
+    c.saveState()
+    c.setStrokeColor(farve)
+    c.setLineWidth(0.85)
+    c.setLineCap(1)
+    # vinduet, åbent i øverste højre hjørne
+    c.line(x, y, x + 6.4, y)
+    c.line(x, y, x, y + 6.4)
+    c.line(x, y + 6.4, x + 3.0, y + 6.4)
+    c.line(x + 6.4, y, x + 6.4, y + 3.0)
+    # pilen ud af vinduet
+    c.line(x + 3.7, y + 2.7, x + 8.8, y + 7.8)
+    c.line(x + 8.8, y + 7.8, x + 8.8, y + 4.3)
+    c.line(x + 8.8, y + 7.8, x + 5.3, y + 7.8)
+    c.restoreState()
 
 
 def tegn_note(note, skrifter, sidebredde, sidehoejde, x, y, bredde, hoejde,
@@ -207,6 +235,9 @@ def tegn_note(note, skrifter, sidebredde, sidehoejde, x, y, bredde, hoejde,
     c.drawString(x + POLSTRING, y + hoejde - POLSTRING - 8.0, overskrift)
 
     c.setFillColor(blaek)
+    tegn_laenkeikon(c, x + bredde - POLSTRING - 9.5, y + hoejde - POLSTRING - 9.0, blaek)
+
+    c.setFillColor(blaek)
     c.setFont(tekst_skrift, 9.0)
     linje_y = y + hoejde - POLSTRING - 20.0
     for linje in linjer:
@@ -216,6 +247,148 @@ def tegn_note(note, skrifter, sidebredde, sidehoejde, x, y, bredde, hoejde,
     c.save()
     buffer.seek(0)
     return buffer
+
+
+def allerede_noteret(laeser, basisurl):
+    """Ser efter noter fra en tidligere kørsel, så de ikke bliver stablet oven på hinanden.
+
+    :param laeser: den åbnede PDF.
+    :param basisurl: kursussidens adresse, som noternes lænker peger på.
+    :returns: True hvis PDF'en allerede indeholder mindst én note.
+    """
+    for side in laeser.pages:
+        for annotation in side.get("/Annots", []) or []:
+            try:
+                handling = annotation.get_object().get("/A", {})
+                if str(handling.get("/URI", "")).startswith(basisurl):
+                    return True
+            except Exception:
+                continue
+    return False
+
+
+def hent_skabelonbilleder(laeser, sidenummer, mappe, sidebredde, sidehoejde):
+    """Trækker diassættets egen baggrund og logo ud af et eksisterende dias.
+
+    :param laeser: den åbnede PDF.
+    :param sidenummer: det dias, skabelonen hentes fra (1-baseret).
+    :param mappe: mappe til de udpakkede billeder.
+    :returns: (baggrundssti, logosti), hvor begge kan være None.
+    """
+    os.makedirs(mappe, exist_ok=True)
+    baggrund = None
+    logo = None
+    try:
+        billeder = laeser.pages[sidenummer - 1].images
+    except Exception:
+        return None, None
+    sideforhold = sidebredde / sidehoejde
+    for billede in billeder:
+        sti = os.path.join(mappe, billede.name)
+        with open(sti, "wb") as f:
+            f.write(billede.data)
+        try:
+            with Image.open(sti) as aabnet:
+                bredde, hoejde = aabnet.size
+        except Exception:
+            continue
+        forhold = bredde / max(1, hoejde)
+        if abs(forhold - sideforhold) < 0.25 and bredde * hoejde > 200000:
+            baggrund = sti
+        elif forhold > 2.0:
+            logo = sti
+    return baggrund, logo
+
+
+def dominerende_farve(dokument, sidenummer):
+    """Finder diassættets grundfarve, når der ikke er et baggrundsbillede at genbruge.
+
+    :returns: (r, g, b) i 0-1.
+    """
+    billede = dokument[sidenummer - 1].render(scale=0.5).to_pil().convert("RGB")
+    lille = billede.resize((40, 24), Image.BOX)
+    farve = max(lille.getcolors(40 * 24), key=lambda c: c[0])[1]
+    return tuple(k / 255.0 for k in farve)
+
+
+def byg_evalueringsside(opsaetning, url, sidebredde, sidehoejde, skrifter,
+                        baggrund, logo, grundfarve, mappe):
+    """Tegner det dias, der minder om at evaluere dagen.
+
+    :param opsaetning: evalueringsblokken fra dias-noter.json.
+    :param url: den fulde adresse til dagens evaluering.
+    :returns: (pdf_buffer, laenkerektangel).
+    """
+    buffer = io.BytesIO()
+    c = rl_canvas.Canvas(buffer, pagesize=(sidebredde, sidehoejde))
+    tekst_skrift, fed_skrift = skrifter
+
+    if baggrund:
+        c.drawImage(baggrund, 0, 0, width=sidebredde, height=sidehoejde, mask=None)
+        moerk = False
+    else:
+        c.setFillColorRGB(*grundfarve)
+        c.rect(0, 0, sidebredde, sidehoejde, stroke=0, fill=1)
+        lys = 0.299 * grundfarve[0] + 0.587 * grundfarve[1] + 0.114 * grundfarve[2]
+        moerk = lys < 0.55
+
+    blaek = PAPIR if moerk else BLAEK
+    if logo and not moerk:
+        c.drawImage(logo, sidebredde - 0.222 * sidebredde, 0.044 * sidehoejde,
+                    width=0.1716 * sidebredde, height=0.0908 * sidehoejde, mask="auto")
+
+    venstre = 0.1374 * sidebredde
+    c.setFillColor(blaek)
+    c.setFont(fed_skrift, 0.074 * sidehoejde)
+    c.drawString(venstre, 0.76 * sidehoejde, "Evaluér dagen")
+
+    c.setFont(tekst_skrift, 0.0325 * sidehoejde)
+    linjer = [
+        "Inden du går: to-tre minutter på, hvad der virkede, og hvad der ikke gjorde.",
+        "Det er anonymt, og svarene bliver læst inden næste kursusgang.",
+        "Det er dem, der afgør, hvad der bliver lavet om.",
+    ]
+    linje_y = 0.655 * sidehoejde
+    for linje in linjer:
+        c.drawString(venstre, linje_y, linje)
+        linje_y -= 0.048 * sidehoejde
+
+    knap_bredde = 0.315 * sidebredde
+    knap_hoejde = 0.105 * sidehoejde
+    knap_x = venstre
+    knap_y = 0.235 * sidehoejde
+    c.setFillColor(blaek)
+    c.roundRect(knap_x, knap_y, knap_bredde, knap_hoejde, 0.018 * sidehoejde, stroke=0, fill=1)
+    c.setFillColor(PAPIR if not moerk else BLAEK)
+    c.setFont(fed_skrift, 0.036 * sidehoejde)
+    c.drawString(knap_x + 0.028 * sidebredde, knap_y + knap_hoejde - 0.048 * sidehoejde,
+                 "Åbn evalueringen")
+    c.setFont(tekst_skrift, 0.026 * sidehoejde)
+    kort_adresse = url.replace("https://", "").split("/evaluering")[0]
+    c.drawString(knap_x + 0.028 * sidebredde, knap_y + 0.024 * sidehoejde, kort_adresse)
+    tegn_laenkeikon(c, knap_x + knap_bredde - 0.045 * sidebredde,
+                    knap_y + knap_hoejde - 0.05 * sidehoejde,
+                    PAPIR if not moerk else BLAEK)
+
+    qr_billede = qrcode.make(url, box_size=10, border=1)
+    qr_sti = os.path.join(mappe, "qr-%s.png" % opsaetning["dag"])
+    qr_billede.save(qr_sti)
+    qr_side = 0.30 * sidehoejde
+    qr_x = sidebredde - venstre - qr_side
+    qr_y = 0.235 * sidehoejde
+    c.setFillColor(PAPIR)
+    c.roundRect(qr_x - 0.012 * sidebredde, qr_y - 0.022 * sidehoejde,
+                qr_side + 0.024 * sidebredde, qr_side + 0.075 * sidehoejde,
+                0.018 * sidehoejde, stroke=0, fill=1)
+    c.drawImage(qr_sti, qr_x, qr_y + 0.03 * sidehoejde, width=qr_side, height=qr_side, mask=None)
+    c.setFillColor(BLAEK)
+    c.setFont(tekst_skrift, 0.024 * sidehoejde)
+    c.drawCentredString(qr_x + qr_side / 2, qr_y + 0.002 * sidehoejde, "Scan og svar på telefonen")
+
+    c.save()
+    buffer.seek(0)
+    laenke = (knap_x, knap_y, knap_x + knap_bredde, knap_y + knap_hoejde)
+    return buffer, laenke
 
 
 def behandl_diassaet(saet, basisurl, kun_tjek):
@@ -231,6 +404,10 @@ def behandl_diassaet(saet, basisurl, kun_tjek):
     skrifter = registrer_skrifter()
     dokument = pdfium.PdfDocument(sti)
     laeser = PdfReader(sti)
+    if allerede_noteret(laeser, basisurl):
+        return ["  SPRINGES OVER: %s har allerede noter. Gendan den rene udgave først, "
+                "for eksempel med git checkout <commit før noterne> -- \"%s\"" %
+                (saet["fil"], saet["fil"])]
     noter = {}
     for n in saet["noter"]:
         noter.setdefault(n["dias"], []).append(n)
@@ -243,11 +420,14 @@ def behandl_diassaet(saet, basisurl, kun_tjek):
         maal = laeser.pages[nummer - 1].mediabox
         sidebredde = float(maal.width)
         sidehoejde = float(maal.height)
-        gitter, kolonner, raekker, miniature = optaget_kort(
-            dokument[nummer - 1], sidebredde, sidehoejde)
+        maske, miniature = optaget_kort(dokument[nummer - 1], sidebredde, sidehoejde)
         for note in side_noter:
-            bredde, hoejde, overskrift, linjer = maal_note(note, skrifter)
-            plads = find_plads(gitter, kolonner, raekker, sidebredde, sidehoejde, bredde, hoejde)
+            plads = None
+            for loft in (None, 175.0, 155.0, 140.0):
+                bredde, hoejde, overskrift, linjer = maal_note(note, skrifter, loft)
+                plads = find_plads(maske, sidebredde, sidehoejde, bredde, hoejde)
+                if plads is not None:
+                    break
             if plads is None:
                 rapport.append("  dias %-3s INGEN PLADS  %s" % (nummer, note["titel"]))
                 continue
@@ -264,7 +444,7 @@ def behandl_diassaet(saet, basisurl, kun_tjek):
                 "sidehoejde": sidehoejde,
                 "moerk": baggrund_er_moerk(miniature, sidehoejde, x, y, bredde, hoejde),
             })
-            markér_optaget(gitter, kolonner, raekker, sidehoejde, x, y, bredde, hoejde)
+            markér_optaget(maske, sidehoejde, x, y, bredde, hoejde)
             rapport.append("  dias %-3s %-6s x=%5.0f y=%5.0f  %s" %
                            (nummer, note["type"], x, y, note["titel"]))
 
@@ -293,6 +473,31 @@ def behandl_diassaet(saet, basisurl, kun_tjek):
                     url=basisurl + p["note"]["url"],
                 ),
             )
+
+    opsaetning = saet.get("evaluering")
+    if opsaetning:
+        maal = laeser.pages[0].mediabox
+        sidebredde = float(maal.width)
+        sidehoejde = float(maal.height)
+        mappe = os.path.join(ROOD, "scripts", ".skabelon")
+        # Nogle diassæt har tunge billeder på hver side. At pakke dem ud tager
+        # meget lang tid, og de sæt tegner alligevel deres baggrund som flader.
+        if opsaetning.get("skabelonbilleder", True):
+            baggrund, logo = hent_skabelonbilleder(
+                laeser, opsaetning.get("skabelon_dias", 2), mappe, sidebredde, sidehoejde)
+        else:
+            baggrund, logo = None, None
+            os.makedirs(mappe, exist_ok=True)
+        grundfarve = dominerende_farve(dokument, opsaetning.get("skabelon_dias", 2))
+        url = basisurl + "evaluering.html?dag=" + opsaetning["dag"]
+        buffer, laenke = byg_evalueringsside(
+            opsaetning, url, sidebredde, sidehoejde, skrifter,
+            baggrund, logo, grundfarve, mappe)
+        ny_side = PdfReader(buffer).pages[0]
+        plads = opsaetning["efter_dias"]
+        skriver.insert_page(ny_side, index=plads)
+        skriver.add_annotation(page_number=plads, annotation=Link(rect=laenke, url=url))
+        rapport.append("  evalueringsdias indsat som nr. %s" % (plads + 1))
 
     midlertidig = sti + ".ny"
     with open(midlertidig, "wb") as f:

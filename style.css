@@ -1741,3 +1741,23 @@ html.laast body > *:not(.adgang) { display: none !important; }
     font-size: 0.85rem;
   }
 }
+
+/* ---------- Klikbare noter oven på diasset ---------- */
+
+.pdf-links {
+  position: absolute;
+  pointer-events: none;
+}
+
+.pdf-link {
+  position: absolute;
+  display: block;
+  border-radius: 6px;
+  pointer-events: auto;
+  outline: none;
+}
+
+.pdf-link:hover,
+.pdf-link:focus-visible {
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.9), 0 0 0 4px var(--accent);
+}

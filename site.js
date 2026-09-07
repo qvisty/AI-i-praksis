@@ -68,6 +68,10 @@ document.querySelectorAll('[data-pdf-slideshow]').forEach(function (show) {
   var total = Number(show.getAttribute('data-pages')) || 1;
   var page = 1;
   var pdf = null;
+  var stage = canvas.parentNode;
+  var linkLayer = document.createElement('div');
+  linkLayer.className = 'pdf-links';
+  stage.appendChild(linkLayer);
 
   if (!window.pdfjsLib) return;
   window.pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
@@ -91,8 +95,49 @@ document.querySelectorAll('[data-pdf-slideshow]').forEach(function (show) {
       canvas.width = viewport.width;
       canvas.height = viewport.height;
       pdfPage.render({ canvasContext: context, viewport: viewport });
+      visLinks(pdfPage, viewport);
     });
   }
+
+  // Diassene har noter, der peger over på kursets egne aktiviteter. Canvas kan ikke
+  // klikkes, så lænkerne fra PDF'en lægges som usynlige felter oven på diasset.
+  function visLinks(pdfPage, viewport) {
+    linkLayer.textContent = '';
+    if (!pdfPage.getAnnotations) return;
+    pdfPage.getAnnotations({ intent: 'display' }).then(function (annotations) {
+      annotations.forEach(function (annotation) {
+        if (annotation.subtype !== 'Link' || !annotation.url) return;
+        var kasse = viewport.convertToViewportRectangle(annotation.rect);
+        var venstre = Math.min(kasse[0], kasse[2]);
+        var top = Math.min(kasse[1], kasse[3]);
+        var bredde = Math.abs(kasse[2] - kasse[0]);
+        var hoejde = Math.abs(kasse[3] - kasse[1]);
+        var link = document.createElement('a');
+        link.className = 'pdf-link';
+        link.href = annotation.url;
+        link.target = '_blank';
+        link.rel = 'noopener';
+        link.title = 'Åbn aktiviteten i en ny fane';
+        link.setAttribute('aria-label', 'Åbn aktiviteten i en ny fane');
+        link.style.left = (venstre / viewport.width * 100) + '%';
+        link.style.top = (top / viewport.height * 100) + '%';
+        link.style.width = (bredde / viewport.width * 100) + '%';
+        link.style.height = (hoejde / viewport.height * 100) + '%';
+        linkLayer.appendChild(link);
+      });
+      placerLinkLag();
+    });
+  }
+
+  // Canvas skaleres af CSS, så laget skal følge dets faktiske størrelse.
+  function placerLinkLag() {
+    linkLayer.style.left = canvas.offsetLeft + 'px';
+    linkLayer.style.top = canvas.offsetTop + 'px';
+    linkLayer.style.width = canvas.offsetWidth + 'px';
+    linkLayer.style.height = canvas.offsetHeight + 'px';
+  }
+
+  window.addEventListener('resize', placerLinkLag);
 
   show.querySelector('[data-pdf-prev]').addEventListener('click', function () { showPage(page - 1); });
   show.querySelector('[data-pdf-next]').addEventListener('click', function () { showPage(page + 1); });
@@ -110,6 +155,7 @@ document.querySelectorAll('[data-pdf-slideshow]').forEach(function (show) {
     var isFullscreen = document.fullscreenElement === show;
     show.classList.toggle('pdf-is-fullscreen', isFullscreen);
     fullscreenButton.textContent = isFullscreen ? 'Luk stort' : 'Vis stort';
+    window.setTimeout(placerLinkLag, 60);
   });
 });
 

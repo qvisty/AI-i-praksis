@@ -57,8 +57,8 @@
         {
           "dias": 52,
           "type": "udvid",
-          "titel": "Dag 2: Øvelse med billeder",
-          "tekst": "LEGO-anden er forretten. Dag 2 bruger en hel øvelse på billedgenerering.",
+          "titel": "Dag 2: Billedøvelsen",
+          "tekst": "LEGO-anden er forretten. Dag 2 bruger en hel øvelse på det.",
           "url": "dag-2.html#oevelser"
         },
         {
@@ -68,7 +68,12 @@
           "tekst": "De tre ting bliver til billedøvelsen. Headsettet til musikken.",
           "url": "dag-2.html#forberedelse"
         }
-      ]
+      ],
+      "evaluering": {
+        "efter_dias": 57,
+        "dag": "1",
+        "skabelon_dias": 5
+      }
     },
     {
       "fil": "filer/Ai-i-praksis-dag2/Dag 2 - 3526.pdf",
@@ -109,7 +114,12 @@
           "tekst": "Samme teknologi på en tekst fra dit eget arbejde.",
           "url": "modul-5-andre-modaliteter.html#oevelse-2"
         }
-      ]
+      ],
+      "evaluering": {
+        "efter_dias": 38,
+        "dag": "2",
+        "skabelon_dias": 2
+      }
     },
     {
       "fil": "filer/Ai-i-praksis-dag4/Dag 4  - 1926.pdf",
@@ -157,7 +167,12 @@
           "tekst": "0,26 ml vand pr. tekstprompt. Begge tal kan passe.",
           "url": "dag-3.html#ressourcer"
         }
-      ]
+      ],
+      "evaluering": {
+        "efter_dias": 90,
+        "dag": "4",
+        "skabelon_dias": 2
+      }
     },
     {
       "fil": "filer/Ai-i-praksis-dag4/AIgang4Slides.pdf",
@@ -212,7 +227,13 @@
           "tekst": "Det spreder sig, når du kan forklare det uden fagsprog.",
           "url": "modul-4-automatisering.html#oevelse-4"
         }
-      ]
+      ],
+      "evaluering": {
+        "efter_dias": 166,
+        "dag": "4",
+        "skabelon_dias": 5,
+        "skabelonbilleder": false
+      }
     }
   ]
 }
