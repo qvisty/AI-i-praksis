@@ -1,0 +1,211 @@
+{
+  "basisurl": "https://qvisty.github.io/AI-i-praksis/",
+  "diassaet": [
+    {
+      "fil": "filer/Ai-i-praksis-dag1/Dag 1 - 3526.pdf",
+      "dagsside": "dag-1.html",
+      "noter": [
+        {
+          "dias": 5,
+          "type": "erstat",
+          "titel": "Modul 1: AI på dit job",
+          "tekst": "Kør runden med tavlens tre spalter, så I kalibrerer holdet.",
+          "url": "modul-1-lovable.html#ai-paa-dit-job"
+        },
+        {
+          "dias": 6,
+          "type": "udvid",
+          "titel": "Forsiden: Din praksis",
+          "tekst": "Vælg den praksis, du bygger til resten af kurset.",
+          "url": "index.html#din-praksis"
+        },
+        {
+          "dias": 10,
+          "type": "udvid",
+          "titel": "Flere værktøjer: Research",
+          "tekst": "Perplexity og Consensus viser kilden bag svaret.",
+          "url": "flere-vaerktoejer.html#research"
+        },
+        {
+          "dias": 32,
+          "type": "udvid",
+          "titel": "Flere værktøjer: De fem spørgsmål",
+          "tekst": "Modelvalg er nemt. Værktøjsvalg på jobbet kræver fem spørgsmål mere.",
+          "url": "flere-vaerktoejer.html#valg"
+        },
+        {
+          "dias": 36,
+          "type": "udvid",
+          "titel": "Dag 2: De syv byggeblokke",
+          "tekst": "Opgave, rolle, format, kontekst, begrænsning, eksempler, data.",
+          "url": "dag-2.html#begreber"
+        },
+        {
+          "dias": 42,
+          "type": "erstat",
+          "titel": "Modul 3: Skriv og omskriv",
+          "tekst": "Brug en ægte opgave fra dit skrivebord i stedet for en prompt frit fra leveren.",
+          "url": "modul-3-ai-i-hverdagen.html#oevelse-1"
+        },
+        {
+          "dias": 52,
+          "type": "udvid",
+          "titel": "Modul 1: Byg din første app",
+          "tekst": "Samme greb, større udbytte: byg noget, der virker.",
+          "url": "modul-1-lovable.html#oevelse-1"
+        },
+        {
+          "dias": 57,
+          "type": "udvid",
+          "titel": "Dag 2: Tag med hjemmefra",
+          "tekst": "De tre ting bliver til billedøvelsen. Headsettet til musikken.",
+          "url": "dag-2.html#forberedelse"
+        }
+      ]
+    },
+    {
+      "fil": "filer/Ai-i-praksis-dag2/Dag 2 - 3526.pdf",
+      "dagsside": "dag-2.html",
+      "noter": [
+        {
+          "dias": 3,
+          "type": "udvid",
+          "titel": "Dag 4: Prompting-metoder",
+          "tekst": "Når byggeblokkene sidder: chaining, chain of thought og meta-prompting.",
+          "url": "dag-4.html#oevelser"
+        },
+        {
+          "dias": 24,
+          "type": "udvid",
+          "titel": "Modul 6: Maskinrummet",
+          "tekst": "Visualiseringen er smuk, men stum. Her er ordene til den.",
+          "url": "modul-6-forstaa-ai.html#hvordan"
+        },
+        {
+          "dias": 30,
+          "type": "udvid",
+          "titel": "Flere værktøjer: Canva Code og Firefly",
+          "tekst": "Færdig med at prompte? I Canva kan du klikke direkte i resultatet.",
+          "url": "flere-vaerktoejer.html#formidling"
+        },
+        {
+          "dias": 33,
+          "type": "udvid",
+          "titel": "Modul 1, 2 og 4",
+          "tekst": "Kode, agenter og automatisering, prøvet af i tre moduler.",
+          "url": "modul-2-github-claude.html#forklaring"
+        },
+        {
+          "dias": 35,
+          "type": "udvid",
+          "titel": "Modul 5: Lav podcasten",
+          "tekst": "Samme teknologi på en tekst fra dit eget arbejde.",
+          "url": "modul-5-andre-modaliteter.html#oevelse-2"
+        }
+      ]
+    },
+    {
+      "fil": "filer/Ai-i-praksis-dag4/Dag 4  - 1926.pdf",
+      "dagsside": "dag-4.html",
+      "noter": [
+        {
+          "dias": 9,
+          "type": "udvid",
+          "titel": "Modul 3: Hallucination",
+          "tekst": "Sjovt på et billede. Dyrt i et referat.",
+          "url": "modul-3-ai-i-hverdagen.html#forklaring"
+        },
+        {
+          "dias": 21,
+          "type": "udvid",
+          "titel": "Papirklipsen",
+          "tekst": "Tankeeksperimentet: skaden kræver ikke ond vilje.",
+          "url": "papirklips.html#tankeeksperimentet"
+        },
+        {
+          "dias": 35,
+          "type": "udvid",
+          "titel": "Modul 4: Governance",
+          "tekst": "Uddannelse er højrisiko. Derfor er samtalen med IT ikke valgfri.",
+          "url": "modul-4-automatisering.html#forklaring"
+        },
+        {
+          "dias": 55,
+          "type": "udvid",
+          "titel": "Modul 1: Guardrails",
+          "tekst": "Du så guardrails nedefra, da byggeværktøjet sagde nej.",
+          "url": "modul-1-lovable.html#forklaring"
+        },
+        {
+          "dias": 80,
+          "type": "udvid",
+          "titel": "Dag 2: Etik og ophavsret",
+          "tekst": "Fire tekster om, hvem der ejer det, modellen er trænet på.",
+          "url": "dag-2.html#materialer"
+        },
+        {
+          "dias": 82,
+          "type": "udvid",
+          "titel": "Dag 3: Googles egen måling",
+          "tekst": "0,26 ml vand pr. tekstprompt. Begge tal kan passe.",
+          "url": "dag-3.html#ressourcer"
+        }
+      ]
+    },
+    {
+      "fil": "filer/Ai-i-praksis-dag4/AIgang4Slides.pdf",
+      "dagsside": "dag-4.html",
+      "noter": [
+        {
+          "dias": 107,
+          "type": "udvid",
+          "titel": "Modul 4: Automatisering ≠ AI",
+          "tekst": "Samme skelnen, med eksempler fra din egen hverdag.",
+          "url": "modul-4-automatisering.html#forklaring"
+        },
+        {
+          "dias": 120,
+          "type": "erstat",
+          "titel": "Modul 4: Find din gentagelse",
+          "tekst": "En metode til at finde den rigtige opgave at automatisere.",
+          "url": "modul-4-automatisering.html#oevelse-1"
+        },
+        {
+          "dias": 134,
+          "type": "erstat",
+          "titel": "Modul 4: Byg dit første flow",
+          "tekst": "Beskriv den ikke. Byg den. 30 minutter, og den kører.",
+          "url": "modul-4-automatisering.html#oevelse-2"
+        },
+        {
+          "dias": 135,
+          "type": "udvid",
+          "titel": "Teknik: webhooks og Apps Script",
+          "tekst": "Power Automate uden loft: samme flow i kode.",
+          "url": "teknik.html#spor-c"
+        },
+        {
+          "dias": 143,
+          "type": "erstat",
+          "titel": "Modul 2: Sæt Claude Code på arbejde",
+          "tekst": "En agent, der laver arbejdet og afleverer det til din godkendelse.",
+          "url": "modul-2-github-claude.html#oevelse-2"
+        },
+        {
+          "dias": 144,
+          "type": "erstat",
+          "titel": "Modul 5: Byg din notesbog",
+          "tekst": "RAG forklaret er abstrakt. RAG prøvet tager 20 minutter.",
+          "url": "modul-5-andre-modaliteter.html#oevelse-1"
+        },
+        {
+          "dias": 163,
+          "type": "udvid",
+          "titel": "Modul 4: Fortæl det videre",
+          "tekst": "Det spreder sig, når du kan forklare det uden fagsprog.",
+          "url": "modul-4-automatisering.html#oevelse-4"
+        }
+      ]
+    }
+  ]
+}

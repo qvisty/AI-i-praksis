@@ -8,6 +8,8 @@
  *
  * To måder at få en afspiller:
  *   1. Sæt data-video på et link:  <a href="https://youtu.be/ID" data-video>…</a>
+ *      Attributten må gerne have en værdi, som så bliver videoens navn:
+ *      data-video="Deepfake-eksempel". Ellers gættes navnet ud fra konteksten.
  *   2. Lad et afsnit indeholde ét YouTube-link og intet andet. Så bliver det
  *      automatisk til en afspiller — det dækker materialernes "Se videoen på
  *      YouTube"-linjer, uden at hvert enkelt link inde i en brødtekst gør det.
@@ -31,6 +33,39 @@
   }
 
   /**
+   * Finder et navn til videoen, der siger noget om indholdet.
+   * Linkteksten er tit bare "Se videoen på YouTube", som intet fortæller en
+   * skærmlæser. Derfor bruges den nærmeste overskrift før linket, hvis der er
+   * en, og ellers sidens titel.
+   * @param {HTMLAnchorElement} link Linket til videoen.
+   * @returns {string} Et beskrivende navn.
+   */
+  function beskrivelse(link) {
+    // Et navn skrevet direkte i data-video vinder altid over gætteriet.
+    var angivet = (link.getAttribute('data-video') || '').trim();
+    if (angivet) return angivet;
+
+    var knude = link;
+    while (knude && knude !== document.body) {
+      var forrige = knude.previousElementSibling;
+      while (forrige) {
+        if (/^H[1-4]$/.test(forrige.tagName)) return forrige.textContent.trim();
+        var indeni = forrige.querySelector('h1, h2, h3, h4');
+        if (indeni) return indeni.textContent.trim();
+        forrige = forrige.previousElementSibling;
+      }
+      knude = knude.parentElement;
+    }
+
+    var tekst = link.textContent.trim();
+    // Rene opfordringer siger intet om videoen. Så er sidens titel bedre.
+    if (!/^(se|hør|klik|her|videoen|videoeksemplet)\b/i.test(tekst) && tekst.split(/\s+/).length > 1) {
+      return tekst;
+    }
+    return document.title.replace(/\s*\|\s*AI i praksis\s*$/, '').trim() || tekst;
+  }
+
+  /**
    * Bygger afspilleren som et miniaturebillede med en knap foran.
    * Først ved klik udskiftes den med den rigtige iframe.
    * @param {string} id Videoens YouTube-id.
@@ -46,10 +81,16 @@
     knap.className = 'video-start';
     knap.setAttribute('aria-label', 'Afspil videoen' + (titel ? ': ' + titel : ''));
 
+    // maxresdefault er i 16:9 og skarpt nok til en projektor, men findes ikke
+    // for alle videoer. Falder vi tilbage til hqdefault, som altid findes.
     var billede = document.createElement('img');
-    billede.src = 'https://i.ytimg.com/vi/' + id + '/hqdefault.jpg';
+    billede.src = 'https://i.ytimg.com/vi/' + id + '/maxresdefault.jpg';
     billede.alt = '';
     billede.loading = 'lazy';
+    billede.addEventListener('error', function reserve() {
+      billede.removeEventListener('error', reserve);
+      billede.src = 'https://i.ytimg.com/vi/' + id + '/hqdefault.jpg';
+    });
     knap.appendChild(billede);
 
     var trekant = document.createElement('span');
@@ -58,10 +99,16 @@
     knap.appendChild(trekant);
 
     knap.addEventListener('click', function () {
+      // Attributterne følger YouTubes eget indlejringseksempel. Dertil:
+      // playsinline, så iPhone ikke river videoen ud i fuldskærm af sig selv,
+      // og rel=0, så de foreslåede videoer til sidst holder sig til samme kanal.
       var ramme = document.createElement('iframe');
-      ramme.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0';
+      ramme.src = 'https://www.youtube-nocookie.com/embed/' + id +
+        '?autoplay=1&rel=0&playsinline=1';
       ramme.title = titel || 'YouTube-video';
-      ramme.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+      ramme.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; ' +
+        'gyroscope; picture-in-picture; web-share';
+      ramme.referrerPolicy = 'strict-origin-when-cross-origin';
       ramme.allowFullscreen = true;
       ramme.setAttribute('frameborder', '0');
       pakke.replaceChild(ramme, knap);
@@ -96,7 +143,7 @@
       if (!link.hasAttribute('data-video') && !alene) return;
 
       link.setAttribute('data-video-klar', 'ja');
-      var afspiller = byggAfspiller(id, link.textContent.trim());
+      var afspiller = byggAfspiller(id, beskrivelse(link));
       afsnit.parentNode.insertBefore(afspiller, afsnit.nextSibling);
     });
   }
