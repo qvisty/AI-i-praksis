@@ -6,6 +6,7 @@
   <title>Dag 3</title>
   <link rel="stylesheet" href="style.css">
   <script src="adgang.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 </head>
 <body>
 
@@ -22,35 +23,67 @@
     <div class="hero-text">
       <span class="badge">Kursusgang 3</span>
       <h1>Dag 3</h1>
-      <p class="lead">Agenter, kritisk sans og AI’s aftryk. Materialerne er lagt op, diasshowet mangler endnu.</p>
+      <p class="lead">Sådan virker AI indeni, prompting med frameworks, agenter og kritisk sans. Og hvad det hele koster i strøm og vand.</p>
     </div>
   </header>
 
   <section id="overblik">
     <h2>Dagens overblik</h2>
     <div class="note">
-      <span class="label">Diasshowet mangler endnu</span>
-      UCL’s dias til dag 3 er ikke lagt op endnu, så denne side har ikke et program med slidenumre
-      som <a href="dag-1.html">dag 1</a>, <a href="dag-2.html">dag 2</a> og <a href="dag-4.html">dag 4</a>.
-      Til gengæld ligger dagens materialer i mappen, og de peger tydeligt i tre retninger. Siden er
-      bygget ud fra dem. Når diassene kommer, lægges UCL-programmet ind øverst, og resten bliver stående.
+      <span class="label">To spor gennem dagen</span>
+      Denne side følger først UCL-underviserens originale dag 3-materiale i samme rækkefølge som
+      <a href="filer/Ai-i-praksis-dag3/Dag%203%20-%203526.pdf">diasshowet</a>. Undervejs peger
+      <strong>Mine udvidelser</strong> på dine egne moduler, når de går mere praktisk eller dybt
+      ind i det samme emne.
     </div>
     <p>
       De tre spor i materialerne er: hvad AI gør ved vores egen tænkning, hvordan du bygger din egen
       agent, og hvad AI faktisk koster i strøm og vand. Dertil en samlet guide til prompt engineering.
     </p>
     <nav class="day-stepper" aria-label="Dagens trin">
-      <a href="#kritisk-sans"><strong>1</strong><span>Kritisk sans</span></a>
-      <a href="#agenter"><strong>2</strong><span>Byg en agent</span></a>
-      <a href="#ressourcer"><strong>3</strong><span>Strøm og vand</span></a>
-      <a href="#prompting"><strong>4</strong><span>Bedre prompts</span></a>
-      <a href="#materialer"><strong>5</strong><span>Gå videre</span></a>
+      <a href="#program"><strong>1</strong><span>Start dagen</span></a>
+      <a href="#kritisk-sans"><strong>2</strong><span>Kritisk sans</span></a>
+      <a href="#agenter"><strong>3</strong><span>Byg en agent</span></a>
+      <a href="#ressourcer"><strong>4</strong><span>Strøm og vand</span></a>
+      <a href="#prompting"><strong>5</strong><span>Bedre prompts</span></a>
+      <a href="#materialer"><strong>6</strong><span>Gå videre</span></a>
     </nav>
     <div class="explain">
       <span class="label">Dagens røde tråd</span>
       Dag 3 er der, hvor værktøjet begynder at arbejde selv. Derfor hører to spørgsmål med:
       Hvad sker der med min egen tænkning, når jeg lader den om det? Og hvad koster det?
     </div>
+  </section>
+
+  <section id="dias">
+    <h2>UCL’s diasshow: Dag 3</h2>
+    <p>Her kan du bladre gennem det originale UCL-materiale direkte på siden. Brug pilene eller sidetallet til at følge undervisningen.</p>
+    <div class="pdf-slideshow" data-pdf-slideshow data-pdf="filer/Ai-i-praksis-dag3/Dag%203%20-%203526.pdf" data-pages="69">
+      <div class="pdf-stage"><canvas aria-label="UCL’s dias for Dag 3" data-pdf-canvas></canvas></div>
+      <div class="pdf-controls">
+        <button type="button" data-pdf-prev>Forrige</button>
+        <label>Slide <input type="number" min="1" max="69" value="1" data-pdf-page></label>
+        <span data-pdf-count>af 69</span>
+        <button type="button" data-pdf-next>Næste</button>
+        <button type="button" data-pdf-fullscreen>Vis stort</button>
+        <a href="filer/Ai-i-praksis-dag3/Dag%203%20-%203526.pdf" download>Download PDF</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="program">
+    <h2>Program for dagen</h2>
+    <p>Følg UCL-sporet fra venstre mod højre. Brug højre kolonne, når du vil koble dagens begreb til en praktisk aktivitet.</p>
+    <table class="schedule">
+      <tr><th>UCL’s diasshow</th><th>Mine udvidelser</th></tr>
+      <tr><td><strong>Opsamling fra sidst</strong><br>Slides 1-3: Refleksion siden sidst og fjerde del af musikøvelsen</td><td><a href="dag-2.html#efter-dagen">Dag 2: Efter dagen</a><br>Tag dine noter fra sidst med ind i opsamlingen.</td></tr>
+      <tr><td><strong>Hvad består AI af?</strong><br>Slides 4-21: Maskinlæring, neurale netværk, hjernen sammenlignet med AI, dyb læring, generativ AI, sprogmodeller og vektordatabaser</td><td><a href="modul-6-forstaa-ai.html#hvordan">Modul 6: Maskinrummet</a><br>Ordene til diagrammerne, og hvorfor modellen kan tage fejl med selvtillid.<!-- dias-chips --><span class="dias-chips"><a class="dias-chip" href="modul-6-forstaa-ai.html#typer"><strong>Dias 4 &middot; Udvid</strong> Modul 6: Typer af AI<span class="dias-chip-tip">Regelbaseret, prediktiv, generativ: tre skel, der rækker langt.</span></a><a class="dias-chip" href="modul-6-forstaa-ai.html#hvordan"><strong>Dias 19 &middot; Udvid</strong> Modul 6: Maskinrummet<span class="dias-chip-tip">Ordene til diagrammet: derfor kan den formulere sig flot og tage fejl.</span></a><a class="dias-chip" href="modul-5-andre-modaliteter.html#forklaring"><strong>Dias 20 &middot; Udvid</strong> Modul 5: Kildeforankring (RAG)<span class="dias-chip-tip">Vektordatabasen i praksis: NotebookLM slår op, før den svarer.</span></a></span><!-- /dias-chips --></td></tr>
+      <tr><td><strong>Prompting og seks gode råd</strong><br>Slides 22-37: Dagens plan, øvelse i Copilot og de seks råd til bedre prompts</td><td><a href="modul-3-ai-i-hverdagen.html#forklaring">Modul 3: Promptmønsteret</a><br>Rolle, kontekst, opgave og format som fast greb.<!-- dias-chips --><span class="dias-chips"><a class="dias-chip erstat" href="modul-3-ai-i-hverdagen.html#oevelse-1"><strong>Dias 23 &middot; Erstat</strong> Modul 3: Skriv og omskriv<span class="dias-chip-tip">Stil de tre spørgsmål til en ægte opgave fra dit eget skrivebord.</span></a><a class="dias-chip" href="dag-2.html#begreber"><strong>Dias 29 &middot; Udvid</strong> Dag 2: De syv byggeblokke<span class="dias-chip-tip">De seks råd og de syv byggeblokke er samme værktøjskasse.</span></a></span><!-- /dias-chips --></td></tr>
+      <tr><td><strong>Frameworks</strong><br>Slides 38-58: RTF, TAG og RHODES med eksempler, øvelse med eget valg af framework og AI’s temperatur</td><td><a href="#prompting">Prompt-guiden på denne side</a><br>Alle frameworks samlet ét sted, med scorecard og diagnose.<!-- dias-chips --><span class="dias-chips"><a class="dias-chip" href="#prompting"><strong>Dias 54 &middot; Udvid</strong> Prompt-guiden på denne side<span class="dias-chip-tip">Alle frameworks samlet ét sted: skim, og gå i dybden med to-tre.</span></a></span><!-- /dias-chips --></td></tr>
+      <tr><td><strong>Agenter</strong><br>Slides 59-63: Hvad en AI-agent er, og de fire internationale udviklingstrin</td><td><a href="#agenter">Byg din egen agent på denne side</a><br>Fra begreb til noget, der virker, med guides til ChatGPT og Copilot.<!-- dias-chips --><span class="dias-chips"><a class="dias-chip erstat" href="#agenter"><strong>Dias 60 &middot; Erstat</strong> Byg din egen agent<span class="dias-chip-tip">Guides til ChatGPT og Copilot plus øvelsen: en agent, der kan én ting.</span></a><a class="dias-chip" href="papirklips.html#appen"><strong>Dias 62 &middot; Udvid</strong> Papirklipsen: appen Paperclip<span class="dias-chip-tip">Fase 4 i praksis: værktøjet, der leder hele hold af agenter.</span></a></span><!-- /dias-chips --></td></tr>
+      <tr><td><strong>Computer Vision</strong><br>Slides 64-66: Hvad computersyn er, og hvordan det virker</td><td><a href="modul-6-forstaa-ai.html#typer">Modul 6: Typer af AI</a><br>Computersyn er den prediktive gren: genkendelse, ikke generering.</td></tr>
+      <tr><td><strong>Opsamling og øvelser</strong><br>Slides 67-69: Dagens refleksion, øvelserne og dagens evaluering</td><td><a href="evaluering.html?dag=3">Evaluér dag 3</a><br>To-tre minutter, anonymt, læses inden næste kursusdag.</td></tr>
+    </table>
   </section>
 
   <section id="kritisk-sans">
@@ -247,16 +280,6 @@
     </div>
   </section>
 
-  <section id="naar-diassene-kommer">
-    <h2>Når diassene kommer</h2>
-    <div class="note">
-      <span class="label">Sådan opdateres siden</span>
-      Når UCL’s dias til dag 3 er lagt i materialemappen, får siden samme opbygning som de andre dage:
-      en diasvisning med download, et program med slidenumre, og en kolonne med
-      <strong>Mine udvidelser</strong>. Indholdet herover bliver stående, fordi det bygger på dagens
-      egne materialer.
-    </div>
-  </section>
 
   <section id="evaluering">
     <h2>Evaluér dagen</h2>

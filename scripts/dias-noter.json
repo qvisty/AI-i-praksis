@@ -122,6 +122,73 @@
       }
     },
     {
+      "fil": "filer/Ai-i-praksis-dag3/Dag 3 - 3526.pdf",
+      "dagsside": "dag-3.html",
+      "noter": [
+        {
+          "dias": 4,
+          "type": "udvid",
+          "titel": "Modul 6: Typer af AI",
+          "tekst": "Regelbaseret, prediktiv, generativ: tre skel, der rækker langt.",
+          "url": "modul-6-forstaa-ai.html#typer"
+        },
+        {
+          "dias": 19,
+          "type": "udvid",
+          "titel": "Modul 6: Maskinrummet",
+          "tekst": "Ordene til diagrammet: derfor kan den formulere sig flot og tage fejl.",
+          "url": "modul-6-forstaa-ai.html#hvordan"
+        },
+        {
+          "dias": 20,
+          "type": "udvid",
+          "titel": "Modul 5: Kildeforankring (RAG)",
+          "tekst": "Vektordatabasen i praksis: NotebookLM slår op, før den svarer.",
+          "url": "modul-5-andre-modaliteter.html#forklaring"
+        },
+        {
+          "dias": 23,
+          "type": "erstat",
+          "titel": "Modul 3: Skriv og omskriv",
+          "tekst": "Stil de tre spørgsmål til en ægte opgave fra dit eget skrivebord.",
+          "url": "modul-3-ai-i-hverdagen.html#oevelse-1"
+        },
+        {
+          "dias": 29,
+          "type": "udvid",
+          "titel": "Dag 2: De syv byggeblokke",
+          "tekst": "De seks råd og de syv byggeblokke er samme værktøjskasse.",
+          "url": "dag-2.html#begreber"
+        },
+        {
+          "dias": 54,
+          "type": "udvid",
+          "titel": "Prompt-guiden på denne side",
+          "tekst": "Alle frameworks samlet ét sted: skim, og gå i dybden med to-tre.",
+          "url": "dag-3.html#prompting"
+        },
+        {
+          "dias": 60,
+          "type": "erstat",
+          "titel": "Byg din egen agent",
+          "tekst": "Guides til ChatGPT og Copilot plus øvelsen: en agent, der kan én ting.",
+          "url": "dag-3.html#agenter"
+        },
+        {
+          "dias": 62,
+          "type": "udvid",
+          "titel": "Papirklipsen: appen Paperclip",
+          "tekst": "Fase 4 i praksis: værktøjet, der leder hele hold af agenter.",
+          "url": "papirklips.html#appen"
+        }
+      ],
+      "evaluering": {
+        "efter_dias": 68,
+        "dag": "3",
+        "skabelon_dias": 2
+      }
+    },
+    {
       "fil": "filer/Ai-i-praksis-dag4/Dag 4  - 1926.pdf",
       "dagsside": "dag-4.html",
       "noter": [
