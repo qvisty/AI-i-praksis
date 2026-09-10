@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 150" role="img" aria-label="Byg en agent i fire trin: formål, instruktioner, kilder og afprøvning. Efter afprøvningen retter du instruktionerne og prøver igen">
+  <style>
+    text { font-family: system-ui, sans-serif; font-weight: 700; font-size: 12px; fill: #ffffff; }
+    text.loop { font-weight: 400; font-size: 12px; fill: #64748b; }
+    .c1 { animation: slide 6s ease-in-out infinite; }
+    .c2 { animation: slide 6s ease-in-out 0.4s infinite; }
+    .c3 { animation: slide 6s ease-in-out 0.8s infinite; }
+    .c4 { animation: slide 6s ease-in-out 1.2s infinite; }
+    .c5 { animation: slide 6s ease-in-out 1.8s infinite; }
+    @keyframes slide { 0%, 6% { opacity: 0; transform: translateX(-12px); } 18%, 88% { opacity: 1; transform: translateX(0); } 100% { opacity: 0; } }
+    @media (prefers-reduced-motion: reduce) { .c1, .c2, .c3, .c4, .c5 { animation: none !important; opacity: 1; } }
+  </style>
+  <g class="c1">
+    <rect x="10" y="34" width="82" height="34" rx="17" fill="#007a53"/>
+    <text x="51" y="56" text-anchor="middle">FORMÅL</text>
+  </g>
+  <path d="M96 51 h12" stroke="#94a3b8" stroke-width="4" stroke-linecap="round" stroke-dasharray="1 8"/>
+  <g class="c2">
+    <rect x="112" y="34" width="122" height="34" rx="17" fill="#0f9d68"/>
+    <text x="173" y="56" text-anchor="middle">INSTRUKTIONER</text>
+  </g>
+  <path d="M238 51 h12" stroke="#94a3b8" stroke-width="4" stroke-linecap="round" stroke-dasharray="1 8"/>
+  <g class="c3">
+    <rect x="254" y="34" width="76" height="34" rx="17" fill="#34c08e"/>
+    <text x="292" y="56" text-anchor="middle">KILDER</text>
+  </g>
+  <path d="M334 51 h12" stroke="#94a3b8" stroke-width="4" stroke-linecap="round" stroke-dasharray="1 8"/>
+  <g class="c4">
+    <rect x="350" y="34" width="104" height="34" rx="17" fill="#007a53" transform="translate(-16 0)"/>
+    <text x="386" y="56" text-anchor="middle">AFPRØVNING</text>
+  </g>
+  <g class="c5">
+    <path d="M386 74 C 386 112, 173 112, 173 74" stroke="#69a58f" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-dasharray="2 7"/>
+    <path d="M173 74 l-7 12 14 0 z" fill="#69a58f"/>
+    <text class="loop" x="280" y="128" text-anchor="middle">ret og prøv igen</text>
+  </g>
+</svg>

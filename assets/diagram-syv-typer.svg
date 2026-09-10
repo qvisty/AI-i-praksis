@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 260" role="img" aria-label="De syv typer AI fordelt på to spor: hvor meget kan den, og hvordan er den bygget. Fyldte felter findes i dag, felter med kant er teoretiske">
+  <style>
+    text { font-family: system-ui, sans-serif; font-weight: 700; font-size: 12px; fill: #ffffff; }
+    text.lane { font-weight: 700; font-size: 13px; fill: #64748b; }
+    text.out { fill: #0f9d68; }
+    text.small { font-size: 11px; }
+    text.legend { font-weight: 400; font-size: 12px; fill: #64748b; }
+    .t1 { animation: pop 7s ease-in-out infinite; }
+    .t2 { animation: pop 7s ease-in-out 0.4s infinite; }
+    .t3 { animation: pop 7s ease-in-out 0.8s infinite; }
+    .t4 { animation: pop 7s ease-in-out 1.2s infinite; }
+    @keyframes pop { 0%, 4% { opacity: 0; } 12%, 90% { opacity: 1; } 100% { opacity: 0; } }
+    @media (prefers-reduced-motion: reduce) { .t1, .t2, .t3, .t4 { animation: none !important; opacity: 1; } }
+  </style>
+  <text class="lane" x="12" y="20">Hvor meget kan den?</text>
+  <g class="t1">
+    <rect x="12" y="66" width="96" height="32" rx="10" fill="#007a53"/>
+    <text x="60" y="87" text-anchor="middle">SMAL AI</text>
+  </g>
+  <g class="t2">
+    <rect x="124" y="48" width="96" height="32" rx="10" fill="none" stroke="#0f9d68" stroke-width="2.5"/>
+    <text class="out" x="172" y="69" text-anchor="middle">AGI</text>
+  </g>
+  <g class="t3">
+    <rect x="236" y="30" width="164" height="32" rx="10" fill="none" stroke="#0f9d68" stroke-width="2.5"/>
+    <text class="out" x="318" y="51" text-anchor="middle">SUPERINTELLIGENS</text>
+  </g>
+  <text class="lane" x="12" y="132">Hvordan er den bygget?</text>
+  <g class="t1">
+    <rect x="12" y="196" width="86" height="32" rx="10" fill="#007a53"/>
+    <text x="55" y="217" text-anchor="middle">REAKTIV</text>
+  </g>
+  <g class="t2">
+    <rect x="100" y="178" width="186" height="32" rx="10" fill="#007a53"/>
+    <text class="small" x="193" y="199" text-anchor="middle">BEGRÆNSET HUKOMMELSE</text>
+  </g>
+  <g class="t3">
+    <rect x="292" y="160" width="126" height="32" rx="10" fill="none" stroke="#0f9d68" stroke-width="2.5"/>
+    <text class="out" x="355" y="181" text-anchor="middle">THEORY OF MIND</text>
+  </g>
+  <g class="t4">
+    <rect x="330" y="118" width="106" height="32" rx="10" fill="none" stroke="#0f9d68" stroke-width="2.5"/>
+    <text class="out" x="383" y="139" text-anchor="middle">SELVBEVIDST</text>
+  </g>
+  <rect x="12" y="242" width="16" height="12" rx="4" fill="#007a53"/>
+  <text class="legend" x="34" y="252">findes i dag</text>
+  <rect x="130" y="242" width="16" height="12" rx="4" fill="none" stroke="#0f9d68" stroke-width="2"/>
+  <text class="legend" x="152" y="252">teoretisk</text>
+</svg>

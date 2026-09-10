@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240" role="img" aria-hidden="true">
+  <style>
+    .s1 { animation: appear 6s ease-in-out infinite; }
+    .s2 { animation: appear 6s ease-in-out 0.7s infinite; }
+    .s3 { animation: appear 6s ease-in-out 1.4s infinite; }
+    .s4 { animation: appear 6s ease-in-out 2.1s infinite; }
+    .spark { animation: pulse 3s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+    @keyframes appear { 0%, 8% { opacity: 0; } 22%, 86% { opacity: 1; } 100% { opacity: 0; } }
+    @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.18); } }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; opacity: 1 !important; } }
+  </style>
+  <path d="M24 204 H296" stroke="#94a3b8" stroke-width="3" stroke-linecap="round"/>
+  <g class="s1">
+    <rect x="44" y="172" width="26" height="26" rx="6" fill="#94a3b8" opacity="0.55"/>
+    <circle cx="57" cy="204" r="5" fill="#94a3b8"/>
+  </g>
+  <g class="s2">
+    <rect x="106" y="144" width="26" height="54" rx="6" fill="#69a58f"/>
+    <circle cx="119" cy="204" r="5" fill="#69a58f"/>
+  </g>
+  <g class="s3">
+    <rect x="168" y="106" width="26" height="92" rx="6" fill="#0f9d68"/>
+    <circle cx="181" cy="204" r="5" fill="#0f9d68"/>
+  </g>
+  <g class="s4">
+    <rect x="230" y="62" width="26" height="136" rx="6" fill="#007a53"/>
+    <circle cx="243" cy="204" r="5" fill="#007a53"/>
+  </g>
+  <g class="spark">
+    <path d="M243 18 l6 14 14 6 -14 6 -6 14 -6 -14 -14 -6 14 -6 z" fill="#34c08e"/>
+  </g>
+  <path class="s2" d="M57 168 C 90 160, 100 148, 119 140" stroke="#94a3b8" stroke-width="3" fill="none" stroke-linecap="round" stroke-dasharray="1 8"/>
+  <path class="s3" d="M119 140 C 150 128, 160 112, 181 102" stroke="#94a3b8" stroke-width="3" fill="none" stroke-linecap="round" stroke-dasharray="1 8"/>
+  <path class="s4" d="M181 102 C 212 88, 222 70, 243 58" stroke="#94a3b8" stroke-width="3" fill="none" stroke-linecap="round" stroke-dasharray="1 8"/>
+</svg>

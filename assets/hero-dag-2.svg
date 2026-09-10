@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240" role="img" aria-hidden="true">
+  <style>
+    .eq rect { transform-box: fill-box; transform-origin: bottom; }
+    .e1 { animation: eq 1.7s ease-in-out infinite; }
+    .e2 { animation: eq 1.7s ease-in-out 0.25s infinite; }
+    .e3 { animation: eq 1.7s ease-in-out 0.5s infinite; }
+    .e4 { animation: eq 1.7s ease-in-out 0.75s infinite; }
+    .sun { animation: pulse 5s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+    @keyframes eq { 0%, 100% { transform: scaleY(0.35); } 50% { transform: scaleY(1); } }
+    @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.12); } }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
+  <rect x="24" y="36" width="184" height="140" rx="14" fill="none" stroke="#94a3b8" stroke-width="3"/>
+  <circle class="sun" cx="70" cy="78" r="15" fill="#34c08e"/>
+  <path d="M38 160 l42 -54 30 36 22 -26 48 44 z" fill="#007a53"/>
+  <g class="eq">
+    <rect class="e1" x="232" y="96" width="14" height="80" rx="7" fill="#69a58f"/>
+    <rect class="e2" x="254" y="72" width="14" height="104" rx="7" fill="#0f9d68"/>
+    <rect class="e3" x="276" y="88" width="14" height="88" rx="7" fill="#007a53"/>
+    <rect class="e4" x="298" y="110" width="14" height="66" rx="7" fill="#34c08e"/>
+  </g>
+  <path d="M24 204 H312" stroke="#94a3b8" stroke-width="3" stroke-linecap="round" opacity="0.5"/>
+</svg>

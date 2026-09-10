@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240" role="img" aria-hidden="true">
+  <style>
+    .beam { animation: tilt 7s ease-in-out infinite; transform-origin: 160px 64px; }
+    @keyframes tilt { 0%, 100% { transform: rotate(-3deg); } 50% { transform: rotate(3deg); } }
+    @media (prefers-reduced-motion: reduce) { .beam { animation: none !important; } }
+  </style>
+  <rect x="120" y="200" width="80" height="10" rx="5" fill="#94a3b8"/>
+  <rect x="155" y="64" width="10" height="140" rx="5" fill="#94a3b8"/>
+  <circle cx="160" cy="64" r="10" fill="#007a53"/>
+  <g class="beam">
+    <path d="M64 64 H256" stroke="#007a53" stroke-width="8" stroke-linecap="round"/>
+    <path d="M64 68 V104 M256 68 V104" stroke="#94a3b8" stroke-width="4" stroke-linecap="round"/>
+    <path d="M32 104 q32 36 64 0 z" fill="#0f9d68"/>
+    <path d="M224 104 q32 36 64 0 z" fill="#0f9d68"/>
+    <g>
+      <rect x="48" y="76" width="32" height="24" rx="6" fill="#007a53"/>
+      <circle cx="58" cy="88" r="3.5" fill="#ffffff"/>
+      <circle cx="70" cy="88" r="3.5" fill="#ffffff"/>
+      <path d="M64 76 V68" stroke="#007a53" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="64" cy="66" r="3" fill="#34c08e"/>
+    </g>
+    <g>
+      <circle cx="256" cy="80" r="9" fill="#007a53"/>
+      <path d="M242 104 q14 -16 28 0 z" fill="#007a53"/>
+    </g>
+  </g>
+</svg>

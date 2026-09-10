@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 200" role="img" aria-label="Udviklingen fra regelbaseret AI over maskinlæring til generativ AI">
+  <style>
+    text { font-family: system-ui, sans-serif; font-weight: 700; font-size: 14px; fill: #ffffff; }
+    text.sub { font-weight: 400; font-size: 12px; fill: #94a3b8; }
+    .c1 { animation: slide 6s ease-in-out infinite; }
+    .c2 { animation: slide 6s ease-in-out 0.5s infinite; }
+    .c3 { animation: slide 6s ease-in-out 1s infinite; }
+    @keyframes slide { 0%, 6% { opacity: 0; transform: translateY(14px); } 18%, 88% { opacity: 1; transform: translateY(0); } 100% { opacity: 0; } }
+    @media (prefers-reduced-motion: reduce) { .c1, .c2, .c3 { animation: none !important; opacity: 1; } }
+  </style>
+  <g class="c1">
+    <rect x="14" y="118" width="126" height="40" rx="12" fill="#69a58f"/>
+    <text x="77" y="143" text-anchor="middle">REGELBASERET</text>
+    <text class="sub" x="77" y="178" text-anchor="middle">følger regler</text>
+  </g>
+  <path d="M147 112 L157 98" stroke="#94a3b8" stroke-width="4" stroke-linecap="round" stroke-dasharray="1 9"/>
+  <g class="c2">
+    <rect x="162" y="76" width="126" height="40" rx="12" fill="#0f9d68"/>
+    <text x="225" y="101" text-anchor="middle">MASKINLÆRING</text>
+    <text class="sub" x="225" y="136" text-anchor="middle">lærer af data</text>
+  </g>
+  <path d="M295 70 L305 56" stroke="#94a3b8" stroke-width="4" stroke-linecap="round" stroke-dasharray="1 9"/>
+  <g class="c3">
+    <rect x="302" y="34" width="112" height="40" rx="12" fill="#007a53"/>
+    <text x="358" y="59" text-anchor="middle">GENERATIV AI</text>
+    <text class="sub" x="358" y="94" text-anchor="middle">skaber nyt</text>
+  </g>
+</svg>

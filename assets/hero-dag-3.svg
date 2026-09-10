@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240" role="img" aria-hidden="true">
+  <style>
+    .n1 { animation: glow 4s ease-in-out infinite; }
+    .n2 { animation: glow 4s ease-in-out 0.8s infinite; }
+    .n3 { animation: glow 4s ease-in-out 1.6s infinite; }
+    @keyframes glow { 0%, 100% { opacity: 0.55; } 25% { opacity: 1; } 60% { opacity: 0.55; } }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; opacity: 1 !important; } }
+  </style>
+  <g stroke="#94a3b8" stroke-width="2" opacity="0.45">
+    <path d="M52 66 L160 44 M52 66 L160 100 M52 66 L160 156 M52 66 L160 208"/>
+    <path d="M52 122 L160 44 M52 122 L160 100 M52 122 L160 156 M52 122 L160 208"/>
+    <path d="M52 178 L160 44 M52 178 L160 100 M52 178 L160 156 M52 178 L160 208"/>
+    <path d="M160 44 L268 92 M160 100 L268 92 M160 156 L268 92 M160 208 L268 92"/>
+    <path d="M160 44 L268 152 M160 100 L268 152 M160 156 L268 152 M160 208 L268 152"/>
+  </g>
+  <g class="n1">
+    <circle cx="52" cy="66" r="13" fill="#69a58f"/>
+    <circle cx="52" cy="122" r="13" fill="#69a58f"/>
+    <circle cx="52" cy="178" r="13" fill="#69a58f"/>
+  </g>
+  <g class="n2">
+    <circle cx="160" cy="44" r="13" fill="#0f9d68"/>
+    <circle cx="160" cy="100" r="13" fill="#0f9d68"/>
+    <circle cx="160" cy="156" r="13" fill="#0f9d68"/>
+    <circle cx="160" cy="208" r="13" fill="#0f9d68"/>
+  </g>
+  <g class="n3">
+    <circle cx="268" cy="92" r="15" fill="#007a53"/>
+    <circle cx="268" cy="152" r="15" fill="#007a53"/>
+  </g>
+</svg>
