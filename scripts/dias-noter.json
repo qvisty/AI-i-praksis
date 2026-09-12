@@ -20,49 +20,49 @@
           "url": "index.html#din-praksis"
         },
         {
-          "dias": 10,
+          "dias": 11,
           "type": "udvid",
           "titel": "Flere værktøjer: Research",
           "tekst": "Perplexity og Consensus viser kilden bag svaret.",
           "url": "flere-vaerktoejer.html#research"
         },
         {
-          "dias": 34,
+          "dias": 36,
           "type": "udvid",
           "titel": "Flere værktøjer: De fem spørgsmål",
           "tekst": "Modeloversigten er let. Værktøjsvalg på jobbet kræver fem spørgsmål mere.",
           "url": "flere-vaerktoejer.html#valg"
         },
         {
-          "dias": 36,
+          "dias": 38,
           "type": "udvid",
           "titel": "Dag 2: De syv byggeblokke",
           "tekst": "Opgave, rolle, format, kontekst, begrænsning, eksempler, data.",
           "url": "dag-2.html#begreber"
         },
         {
-          "dias": 42,
+          "dias": 44,
           "type": "erstat",
           "titel": "Modul 3: Skriv og omskriv",
           "tekst": "Brug en ægte opgave fra dit skrivebord i stedet for en prompt frit fra leveren.",
           "url": "modul-3-ai-i-hverdagen.html#oevelse-1"
         },
         {
-          "dias": 42,
+          "dias": 44,
           "type": "udvid",
           "titel": "Modul 1: Byg din første app",
           "tekst": "Send den samme prompt til Lovable, og se den blive til noget, du kan klikke i.",
           "url": "modul-1-lovable.html#oevelse-1"
         },
         {
-          "dias": 52,
+          "dias": 54,
           "type": "udvid",
           "titel": "Dag 2: Billedøvelsen",
           "tekst": "LEGO-anden er forretten. Dag 2 bruger en hel øvelse på det.",
           "url": "dag-2.html#oevelser"
         },
         {
-          "dias": 57,
+          "dias": 59,
           "type": "udvid",
           "titel": "Dag 2: Tag med hjemmefra",
           "tekst": "De tre ting bliver til billedøvelsen. Headsettet til musikken.",
@@ -70,7 +70,7 @@
         }
       ],
       "evaluering": {
-        "efter_dias": 57,
+        "efter_dias": 59,
         "dag": "1",
         "skabelon_dias": 5
       }
