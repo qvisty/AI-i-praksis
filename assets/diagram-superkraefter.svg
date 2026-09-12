@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 300" role="img" aria-label="En almindelig person forvandles til en superhelt med kappe: kurset skal give en følelse af superkræfter">
+  <style>
+    .bolt { animation: blink 2.6s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+    .stjerne { animation: blink 2.6s ease-in-out 0.8s infinite; transform-box: fill-box; transform-origin: center; }
+    .helt { animation: svaev 5s ease-in-out infinite; }
+    @keyframes blink { 0%, 100% { opacity: 0.5; transform: scale(0.92); } 50% { opacity: 1; transform: scale(1.1); } }
+    @keyframes svaev { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; opacity: 1 !important; } }
+  </style>
+  <path d="M40 262 H600" stroke="#94a3b8" stroke-width="3" stroke-linecap="round" opacity="0.5"/>
+
+  <g>
+    <circle cx="130" cy="96" r="24" fill="#cbd5e1"/>
+    <path d="M104 262 v-84 q0 -28 26 -28 q26 0 26 28 v84 z" fill="#94a3b8"/>
+    <path d="M104 176 q-14 34 -10 62" stroke="#94a3b8" stroke-width="13" stroke-linecap="round" fill="none"/>
+    <path d="M156 176 q14 34 10 62" stroke="#94a3b8" stroke-width="13" stroke-linecap="round" fill="none"/>
+    <rect x="132" y="228" width="44" height="32" rx="5" fill="#64748b"/>
+    <rect x="148" y="222" width="12" height="8" rx="3" fill="#64748b"/>
+  </g>
+
+  <g class="bolt">
+    <path d="M318 84 l-26 62 h20 l-16 52 44 -68 h-20 l24 -46 z" fill="#34c08e"/>
+  </g>
+  <path d="M262 196 h36 M342 196 h36" stroke="#94a3b8" stroke-width="4" stroke-linecap="round" stroke-dasharray="2 10"/>
+  <path d="M378 196 l-12 -8 v16 z" fill="#94a3b8"/>
+
+  <g class="helt">
+    <path d="M462 128 q-34 60 -18 122 h64 q16 -62 -18 -122 z" fill="#00454E"/>
+    <circle cx="476" cy="92" r="24" fill="#cbd5e1"/>
+    <path d="M452 258 v-84 q0 -26 24 -26 q24 0 24 26 v84 z" fill="#007a53"/>
+    <path d="M452 172 q-16 -26 -22 -58" stroke="#007a53" stroke-width="13" stroke-linecap="round" fill="none"/>
+    <circle cx="428" cy="108" r="9" fill="#0f9d68"/>
+    <path d="M500 172 q18 24 26 54" stroke="#007a53" stroke-width="13" stroke-linecap="round" fill="none"/>
+    <circle cx="528" cy="232" r="9" fill="#0f9d68"/>
+    <circle cx="476" cy="182" r="15" fill="#ffffff"/>
+    <path d="M479 170 l-8 14 h6 l-5 12 12 -16 h-6 l7 -10 z" fill="#0f9d68"/>
+  </g>
+
+  <g class="stjerne">
+    <path d="M560 92 l4 10 10 4 -10 4 -4 10 -4 -10 -10 -4 10 -4 z" fill="#34c08e"/>
+    <path d="M420 48 l3 8 8 3 -8 3 -3 8 -3 -8 -8 -3 8 -3 z" fill="#34c08e"/>
+    <path d="M540 170 l3 7 7 3 -7 3 -3 7 -3 -7 -7 -3 7 -3 z" fill="#34c08e"/>
+  </g>
+</svg>
