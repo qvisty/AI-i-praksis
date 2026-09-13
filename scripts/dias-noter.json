@@ -55,14 +55,14 @@
           "url": "modul-1-lovable.html#oevelse-1"
         },
         {
-          "dias": 55,
+          "dias": 56,
           "type": "udvid",
           "titel": "Dag 2: Billedøvelsen",
           "tekst": "LEGO-anden er forretten. Dag 2 bruger en hel øvelse på det.",
           "url": "dag-2.html#oevelser"
         },
         {
-          "dias": 60,
+          "dias": 61,
           "type": "udvid",
           "titel": "Dag 2: Tag med hjemmefra",
           "tekst": "De tre ting bliver til billedøvelsen. Headsettet til musikken.",
@@ -70,7 +70,7 @@
         }
       ],
       "evaluering": {
-        "efter_dias": 60,
+        "efter_dias": 61,
         "dag": "1",
         "skabelon_dias": 5
       }
