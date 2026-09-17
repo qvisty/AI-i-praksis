@@ -80,35 +80,35 @@
       "dagsside": "dag-2.html",
       "noter": [
         {
-          "dias": 3,
+          "dias": 4,
           "type": "udvid",
           "titel": "Dag 4: Prompting-metoder",
           "tekst": "Når byggeblokkene sidder: chaining, chain of thought og meta-prompting.",
           "url": "dag-4.html#oevelser"
         },
         {
-          "dias": 24,
+          "dias": 25,
           "type": "udvid",
           "titel": "Modul 6: Maskinrummet",
           "tekst": "Visualiseringen er smuk, men stum. Her er ordene til den.",
           "url": "modul-6-forstaa-ai.html#hvordan"
         },
         {
-          "dias": 30,
+          "dias": 31,
           "type": "udvid",
           "titel": "Flere værktøjer: Canva Code og Firefly",
           "tekst": "Færdig med at prompte? I Canva kan du klikke direkte i resultatet.",
           "url": "flere-vaerktoejer.html#formidling"
         },
         {
-          "dias": 33,
+          "dias": 34,
           "type": "udvid",
           "titel": "Modul 1, 2 og 4",
           "tekst": "Kode, agenter og automatisering, prøvet af i tre moduler.",
           "url": "modul-2-github-claude.html#forklaring"
         },
         {
-          "dias": 35,
+          "dias": 36,
           "type": "udvid",
           "titel": "Modul 5: Lav podcasten",
           "tekst": "Samme teknologi på en tekst fra dit eget arbejde.",
@@ -116,7 +116,7 @@
         }
       ],
       "evaluering": {
-        "efter_dias": 38,
+        "efter_dias": 39,
         "dag": "2",
         "skabelon_dias": 2
       }
@@ -126,56 +126,56 @@
       "dagsside": "dag-3.html",
       "noter": [
         {
-          "dias": 4,
+          "dias": 5,
           "type": "udvid",
           "titel": "Modul 6: Typer af AI",
           "tekst": "Regelbaseret, prediktiv, generativ: tre skel, der rækker langt.",
           "url": "modul-6-forstaa-ai.html#typer"
         },
         {
-          "dias": 19,
+          "dias": 20,
           "type": "udvid",
           "titel": "Modul 6: Maskinrummet",
           "tekst": "Ordene til diagrammet: derfor kan den formulere sig flot og tage fejl.",
           "url": "modul-6-forstaa-ai.html#hvordan"
         },
         {
-          "dias": 20,
+          "dias": 21,
           "type": "udvid",
           "titel": "Modul 5: Kildeforankring (RAG)",
           "tekst": "Vektordatabasen i praksis: NotebookLM slår op, før den svarer.",
           "url": "modul-5-andre-modaliteter.html#forklaring"
         },
         {
-          "dias": 23,
+          "dias": 24,
           "type": "erstat",
           "titel": "Modul 3: Skriv og omskriv",
           "tekst": "Stil de tre spørgsmål til en ægte opgave fra dit eget skrivebord.",
           "url": "modul-3-ai-i-hverdagen.html#oevelse-1"
         },
         {
-          "dias": 29,
+          "dias": 30,
           "type": "udvid",
           "titel": "Dag 2: De syv byggeblokke",
           "tekst": "De seks råd og de syv byggeblokke er samme værktøjskasse.",
           "url": "dag-2.html#begreber"
         },
         {
-          "dias": 54,
+          "dias": 55,
           "type": "udvid",
           "titel": "Prompt-guiden på denne side",
           "tekst": "Alle frameworks samlet ét sted: skim, og gå i dybden med to-tre.",
           "url": "dag-3.html#prompting"
         },
         {
-          "dias": 60,
+          "dias": 61,
           "type": "erstat",
           "titel": "Byg din egen agent",
           "tekst": "Guides til ChatGPT og Copilot plus øvelsen: en agent, der kan én ting.",
           "url": "dag-3.html#agenter"
         },
         {
-          "dias": 62,
+          "dias": 63,
           "type": "udvid",
           "titel": "Papirklipsen: appen Paperclip",
           "tekst": "Fase 4 i praksis: værktøjet, der leder hele hold af agenter.",
@@ -183,7 +183,7 @@
         }
       ],
       "evaluering": {
-        "efter_dias": 68,
+        "efter_dias": 69,
         "dag": "3",
         "skabelon_dias": 2
       }
@@ -193,42 +193,42 @@
       "dagsside": "dag-4.html",
       "noter": [
         {
-          "dias": 9,
+          "dias": 10,
           "type": "udvid",
           "titel": "Modul 3: Hallucination",
           "tekst": "Sjovt på et billede. Dyrt i et referat.",
           "url": "modul-3-ai-i-hverdagen.html#forklaring"
         },
         {
-          "dias": 21,
+          "dias": 22,
           "type": "udvid",
           "titel": "Papirklipsen",
           "tekst": "Tankeeksperimentet: skaden kræver ikke ond vilje.",
           "url": "papirklips.html#tankeeksperimentet"
         },
         {
-          "dias": 35,
+          "dias": 36,
           "type": "udvid",
           "titel": "Modul 4: Governance",
           "tekst": "Uddannelse er højrisiko. Derfor er samtalen med IT ikke valgfri.",
           "url": "modul-4-automatisering.html#forklaring"
         },
         {
-          "dias": 55,
+          "dias": 56,
           "type": "udvid",
           "titel": "Modul 1: Guardrails",
           "tekst": "Du så guardrails nedefra, da byggeværktøjet sagde nej.",
           "url": "modul-1-lovable.html#forklaring"
         },
         {
-          "dias": 80,
+          "dias": 81,
           "type": "udvid",
           "titel": "Dag 2: Etik og ophavsret",
           "tekst": "Fire tekster om, hvem der ejer det, modellen er trænet på.",
           "url": "dag-2.html#materialer"
         },
         {
-          "dias": 82,
+          "dias": 83,
           "type": "udvid",
           "titel": "Dag 3: Googles egen måling",
           "tekst": "0,26 ml vand pr. tekstprompt. Begge tal kan passe.",
@@ -236,7 +236,7 @@
         }
       ],
       "evaluering": {
-        "efter_dias": 90,
+        "efter_dias": 91,
         "dag": "4",
         "skabelon_dias": 2
       }
