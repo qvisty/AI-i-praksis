@@ -135,7 +135,7 @@
       <tr><td><strong>Automatisering er ikke AI</strong><br>Slides 107-120: Hvad automatisering er, hvad AI er, og hvorfor de to ikke er det samme</td><td><a href="modul-4-automatisering.html#hvorfor">Modul 4: Hvorfor automatisering?</a><br>Den samme skelnen med udgangspunkt i din egen hverdag.<!-- dias-chips --><span class="dias-chips"><a class="dias-chip" href="modul-4-automatisering.html#forklaring"><strong>Dias 107 &middot; Udvid</strong> Modul 4: Automatisering er ikke AI<span class="dias-chip-tip">Samme skelnen, med eksempler fra din egen hverdag.</span></a><a class="dias-chip erstat" href="modul-4-automatisering.html#oevelse-1"><strong>Dias 120 &middot; Erstat</strong> Modul 4: Find din gentagelse<span class="dias-chip-tip">En metode til at finde den rigtige opgave at automatisere.</span></a></span><!-- /dias-chips --></td></tr>
       <tr><td><strong>RPA, BPA og IA</strong><br>Slides 121-134: Forskellene, fordelene, udfordringerne, sikkerheden og hvordan du kommer gratis i gang</td><td><a href="modul-4-automatisering.html#oevelse-1">Modul 4: Find din gentagelse</a><br>Start med den opgave, du laver igen og igen.<!-- dias-chips --><span class="dias-chips"><a class="dias-chip erstat" href="modul-4-automatisering.html#oevelse-2"><strong>Dias 134 &middot; Erstat</strong> Modul 4: Byg dit første flow<span class="dias-chip-tip">Beskriv den ikke. Byg den. 30 minutter, og den kører.</span></a></span><!-- /dias-chips --></td></tr>
       <tr><td><strong>Power Automate flows</strong><br>Slides 135-136: Microsofts automatiseringsplatform</td><td><a href="modul-4-automatisering.html#oevelse-2">Modul 4: Byg dit første flow</a><br>Trin for trin i Power Automate eller Apps Script.<!-- dias-chips --><span class="dias-chips"><a class="dias-chip" href="teknik.html#spor-c"><strong>Dias 135 &middot; Udvid</strong> Teknik: webhooks og Apps Script<span class="dias-chip-tip">Power Automate uden loft: samme flow i kode.</span></a></span><!-- /dias-chips --></td></tr>
-      <tr><td><strong>Grundmodellen og demoen</strong><br>Slides 137-138: Kæden fra handling til resultat, og vi kører den live med holdets egne svar</td><td><a href="#kaeden">Demoen på denne side</a><br>Og <a href="modul-4-automatisering.html#grundmodellen">Modul 4: Grundmodellen</a> med fællesøvelsen i Make.</td></tr>
+      <tr><td><strong>Grundmodellen og demoen</strong><br>Slides 137-138: Kæden fra handling til resultat, og vi kører den live med holdets egne svar</td><td><a href="#kaeden">Demoen på denne side</a><br>Og <a href="modul-4-automatisering.html#grundmodellen">Modul 4: Grundmodellen</a> bag demoen.</td></tr>
       <tr><td><strong>AI-agenter</strong><br>Slides 139-145: Nøgleegenskaber og fire typer agenter, fra reaktive til lærende</td><td><a href="modul-2-github-claude.html#forklaring">Modul 2: Agenten i praksis</a><br>En agent, der selv læser, retter og afleverer arbejdet til godkendelse.<!-- dias-chips --><span class="dias-chips"><a class="dias-chip erstat" href="modul-2-github-claude.html#oevelse-2"><strong>Dias 145 &middot; Erstat</strong> Modul 2: Sæt Claude Code på arbejde<span class="dias-chip-tip">En agent, der laver arbejdet og afleverer det til din godkendelse.</span></a></span><!-- /dias-chips --></td></tr>
       <tr><td><strong>RAG</strong><br>Slides 146-151: Retrieval Augmented Generation, og hvorfor kildeforankring reducerer fejl</td><td><a href="modul-5-andre-modaliteter.html#forklaring">Modul 5: Kildeforankring</a><br>Samme princip prøvet af i NotebookLM.<!-- dias-chips --><span class="dias-chips"><a class="dias-chip erstat" href="modul-5-andre-modaliteter.html#oevelse-1"><strong>Dias 146 &middot; Erstat</strong> Modul 5: Byg din notesbog<span class="dias-chip-tip">RAG forklaret er abstrakt. RAG prøvet tager 20 minutter.</span></a></span><!-- /dias-chips --></td></tr>
       <tr><td><strong>Giver det mening?</strong><br>Slides 152-164: At skrive selv kontra at bruge en sprogmodel, og hvorfor simplere ofte er bedre</td><td><a href="flere-vaerktoejer.html#valg">De fem spørgsmål</a><br>Opgave, data, kvalitet, adgang og exit, før I tager et værktøj i brug.</td></tr>
@@ -157,6 +157,7 @@
         <li>Du udfylder en kort formular fra telefonen: en god idé fra kurset, du vil tage med hjem på din arbejdsplads, eller et emne, du overvejer til din erhvervscase.</li>
         <li>På storskærmen dukker holdets svar op i et helt andet program, som kort på en tavle. Ingen rører noget undervejs.</li>
         <li>Bagefter åbner vi maskinrummet og ser, hvordan kæden er bygget i Make: triggeren, handlingerne og filtrene.</li>
+        <li>Til sidst drøfter vi: hvor i din hverdag ligger der en gentagelse, som sådan en kæde kunne bære? Og hvad skulle der til, før den blev bygget hos jer?</li>
       </ol>
     </div>
     <div class="note">
@@ -164,11 +165,13 @@
       Demoen gemmer på mere, end I ser på tavlen. Den del afslører vi i lokalet.
     </div>
     <div class="note">
-      <span class="label">Byg selv kæden</span>
-      Hele grundmodellen er forklaret i
-      <a href="modul-4-automatisering.html#grundmodellen">Modul 4: Grundmodellen</a>, og i
-      <a href="modul-4-automatisering.html#faellesoevelsen">fællesøvelsen</a> bygger du din egen
-      udgave i Make med gratis konto som privatperson.
+      <span class="label">Du skal ikke bygge noget her</span>
+      Demoen er underviserens redskab, bygget for at vise begreberne trigger og handling i
+      virkeligheden. Din opgave er kun at udfylde formularen og være med i drøftelsen.
+      Hele grundmodellen bag demoen er forklaret i
+      <a href="modul-4-automatisering.html#grundmodellen">Modul 4: Grundmodellen</a>, og har du
+      senere lyst til selv at prøve kæden, viser modul 4 vejen i de værktøjer, din arbejdsplads
+      allerede har.
     </div>
   </section>
 
