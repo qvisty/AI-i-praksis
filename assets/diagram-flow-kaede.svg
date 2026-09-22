@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 220" role="img" aria-label="Automatiseringens kæde: en handling udløser en trigger, som udfører flere handlinger parallelt, og resultaterne opstår andre steder">
+  <style>
+    text { font-family: system-ui, sans-serif; font-weight: 700; font-size: 12px; fill: #ffffff; }
+    text.cap { font-weight: 400; font-size: 11.5px; fill: #64748b; }
+    .dot { animation: koer 5s ease-in-out infinite; }
+    .dot2 { animation: koer2 5s ease-in-out infinite; }
+    @keyframes koer { 0% { transform: translate(0,0); opacity: 0; } 8% { opacity: 1; } 30% { transform: translate(104px,0); } 55% { transform: translate(208px,-44px); } 80%, 100% { transform: translate(312px,-44px); opacity: 1; } }
+    @keyframes koer2 { 0%, 30% { transform: translate(0,0); opacity: 0; } 34% { transform: translate(104px,0); opacity: 1; } 55% { transform: translate(208px,44px); } 80%, 100% { transform: translate(312px,44px); opacity: 1; } }
+    @media (prefers-reduced-motion: reduce) { .dot, .dot2 { animation: none !important; opacity: 0; } }
+  </style>
+  <path d="M96 110 H140 M236 66 H284 M236 154 H284 M188 110 C 214 110, 214 66, 236 66 M188 110 C 214 110, 214 154, 236 154" stroke="#94a3b8" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-dasharray="1 8"/>
+  <circle class="dot" cx="88" cy="110" r="5.5" fill="#34c08e"/>
+  <circle class="dot2" cx="88" cy="110" r="5.5" fill="#34c08e"/>
+  <g>
+    <rect x="10" y="92" width="86" height="36" rx="18" fill="#69a58f"/>
+    <text x="53" y="115" text-anchor="middle">HANDLING</text>
+    <text class="cap" x="53" y="146" text-anchor="middle">nogen gør noget</text>
+  </g>
+  <g>
+    <rect x="140" y="92" width="82" height="36" rx="18" fill="#007a53"/>
+    <text x="181" y="115" text-anchor="middle">TRIGGER</text>
+    <text class="cap" x="181" y="146" text-anchor="middle">flowet opdager det</text>
+  </g>
+  <g>
+    <rect x="284" y="48" width="92" height="36" rx="18" fill="#0f9d68"/>
+    <text x="330" y="71" text-anchor="middle">HANDLING 1</text>
+    <rect x="284" y="136" width="92" height="36" rx="18" fill="#0f9d68"/>
+    <text x="330" y="159" text-anchor="middle">HANDLING 2</text>
+    <text class="cap" x="330" y="200" text-anchor="middle">i rækkefølge eller parallelt</text>
+  </g>
+  <g>
+    <rect x="384" y="48" width="68" height="36" rx="10" fill="none" stroke="#0f9d68" stroke-width="2.5"/>
+    <text x="418" y="71" text-anchor="middle" fill="#0f9d68" style="fill:#0f9d68">TAVLEN</text>
+    <rect x="384" y="136" width="68" height="36" rx="10" fill="none" stroke="#0f9d68" stroke-width="2.5"/>
+    <text x="418" y="159" text-anchor="middle" style="fill:#0f9d68">ARKET</text>
+  </g>
+  <text class="cap" x="12" y="20">Designet én gang. Kører automatisk hver gang.</text>
+</svg>

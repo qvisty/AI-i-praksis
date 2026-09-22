@@ -50,6 +50,38 @@
     </div>
   </section>
 
+  <section id="grundmodellen">
+    <h2>Grundmodellen: fra handling til resultat</h2>
+    <p>
+      Al automatisering, uanset om den hedder Power Automate, Make, Zapier eller noget fjerde,
+      følger den samme kæde: en bruger eller et system udfører en <strong>handling</strong>,
+      flowet opdager den via en <strong>trigger</strong>, og derefter udføres en eller flere
+      <strong>handlinger</strong>, i rækkefølge eller parallelt, som ender med et
+      <strong>resultat et helt andet sted</strong>. Ofte i et andet program, end der hvor
+      handlingen skete.
+    </p>
+    <img class="figure" src="assets/diagram-flow-kaede.svg" alt="Kæden i al automatisering: en handling udløser en trigger, som udfører flere handlinger parallelt, og resultaterne opstår andre steder, for eksempel på en tavle og i et regneark">
+    <div class="explain">
+      <span class="label">Pointen: tænk processen én gang</span>
+      Du designer flowet én gang. Derefter kører det automatisk, hver gang, uden at du er til
+      stede. Det er dét, der adskiller automatisering fra at bruge et værktøj: værktøjet hjælper
+      dig, mens du arbejder, automatiseringen arbejder, mens du laver noget andet.
+    </div>
+    <div class="explain">
+      <span class="label">Og det er dig, der kan finde på det</span>
+      Kæden kræver ingen kode, kun at du kan beskrive din egen proces: hvad sker der, hvad skal
+      det udløse, og hvor skal resultatet ende? Det er derfor, øvelse 1 hedder
+      <a href="#oevelse-1">Find din gentagelse</a>: den, der kender processen, er den rigtige
+      til at automatisere den.
+    </div>
+    <div class="note">
+      <span class="label">AI er ikke automatisering, men AI kan være et led i kæden</span>
+      Kæden ovenfor er ren automatik: samme input giver samme resultat. Men ét af handlingsleddene
+      kan være et AI-trin, der opsummerer, oversætter eller vurderer undervejs. Det er præcis det,
+      du prøver i <a href="#oevelse-3">øvelse 3: Sæt AI ind i flowet</a>.
+    </div>
+  </section>
+
   <section id="spor">
     <h2>Vælg dit spor</h2>
     <p>Øvelserne findes i tre udgaver. Vælg det spor, der matcher din arbejdsplads.</p>
@@ -110,6 +142,41 @@
       hvor du kan se hvert trin som en node og selv styre data undervejs. Og tag så spor C på siden
       <a href="teknik.html">Til de tekniske</a>, hvor du bygger din egen webhook fra bunden
       med Apps Script og kalder den fra terminalen.
+    </div>
+  </section>
+
+  <section id="faellesoevelsen">
+    <h2>Fællesøvelsen: byg kæden i Make</h2>
+    <p>
+      Sporene ovenfor afhænger af, hvad din arbejdsplads stiller til rådighed. Denne øvelse kan
+      alle lave, fordi <a href="https://www.make.com" target="_blank" rel="noopener">Make</a> er
+      gratis at oprette som privatperson og kan koble hundredvis af systemer sammen. Det er samme
+      grundmodel som i demoen på <a href="dag-4.html#kaeden">dag 4</a>, bare bygget af dig.
+    </p>
+    <div class="exercise">
+      <span class="label">Hands-on, ca. 30 min, alle kan være med</span>
+      <ol class="steps">
+        <li>Opret en gratis konto på <a href="https://www.make.com" target="_blank" rel="noopener">make.com</a> som privatperson, og brug kun fiktivt eller privat indhold.</li>
+        <li>Lav en kort Google-formular på din private konto, for eksempel en mini-tilmelding til den praksis, du byggede til i modul 1.</li>
+        <li>Byg flowet i Make: <strong>trigger</strong> er et nyt formularsvar, <strong>handling 1</strong> sender en mail til dig selv med svaret, <strong>handling 2</strong> tilføjer en række i et regneark. To handlinger, én trigger.</li>
+        <li>Test selv én gang med knappen <strong>Run once</strong>, så du ser kæden køre.</li>
+        <li>Og så det vigtigste trin: <strong>byt formularlinks med de andre ved bordet</strong>, og udfyld hinandens formularer. Din telefon bimler, mens du sidder med hænderne i skødet, fordi en andens handling udløste dit flow.</li>
+        <li>Regn til sidst efter: hvis det her var din faktiske proces fra øvelse 1, hvor mange minutter sparer kæden så, hver gang den kører?</li>
+      </ol>
+    </div>
+    <div class="note">
+      <span class="label">Godt at vide om gratisplanen</span>
+      Makes gratisplan giver 1.000 operationer om måneden, hvilket er rigeligt til øvelsen, men
+      den kører efter et interval i stedet for øjeblikkeligt. Brug <strong>Run once</strong>, når
+      du vil se resultatet med det samme. Google-modulerne kræver, at du forbinder en privat
+      Google-konto, og det er netop pointen: vi øver som privatpersoner, jf.
+      <a href="dag-1.html#privatpersoner">reglen fra dag 1</a>.
+    </div>
+    <div class="note">
+      <span class="label">Tag det med på arbejde</span>
+      Kæden er den samme derhjemme, kun værktøjet skifter navn: i Microsoft-verdenen hedder den
+      Power Automate, i Google-verdenen regler og Apps Script. Vis din chef flowet fra i dag, og
+      drøft hvilken proces hos jer, der fortjener at blive tænkt én gang og kørt tusind gange.
     </div>
   </section>
 

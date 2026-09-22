@@ -274,21 +274,21 @@
           "url": "teknik.html#spor-c"
         },
         {
-          "dias": 143,
+          "dias": 145,
           "type": "erstat",
           "titel": "Modul 2: Sæt Claude Code på arbejde",
           "tekst": "En agent, der laver arbejdet og afleverer det til din godkendelse.",
           "url": "modul-2-github-claude.html#oevelse-2"
         },
         {
-          "dias": 144,
+          "dias": 146,
           "type": "erstat",
           "titel": "Modul 5: Byg din notesbog",
           "tekst": "RAG forklaret er abstrakt. RAG prøvet tager 20 minutter.",
           "url": "modul-5-andre-modaliteter.html#oevelse-1"
         },
         {
-          "dias": 163,
+          "dias": 165,
           "type": "udvid",
           "titel": "Modul 4: Fortæl det videre",
           "tekst": "Det spreder sig, når du kan forklare det uden fagsprog.",
@@ -296,7 +296,7 @@
         }
       ],
       "evaluering": {
-        "efter_dias": 166,
+        "efter_dias": 168,
         "dag": "4",
         "skabelon_dias": 5,
         "skabelonbilleder": false
