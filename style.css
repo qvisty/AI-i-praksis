@@ -529,20 +529,27 @@ nav.day-stepper a:hover strong {
 }
 
 .pdf-stage {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: min(70vh, 42rem);
   background: #ffffff;
   overflow: auto;
-  text-align: center;
 }
 
 .pdf-slideshow:fullscreen .pdf-stage,
-.pdf-slideshow.pdf-is-fullscreen .pdf-stage { height: calc(100vh - 4.5rem); }
+.pdf-slideshow.pdf-is-fullscreen .pdf-stage {
+  height: calc(100vh - 4.5rem);
+  max-height: none;
+  background: var(--code-bg);
+}
 
 .pdf-stage canvas {
   display: block;
   max-width: 100%;
+  max-height: 100%;
+  width: auto;
   height: auto;
   margin: 0 auto;
 }
@@ -593,7 +600,7 @@ nav.day-stepper a:hover strong {
 
   nav.day-stepper::before { display: none; }
 
-  .pdf-stage { height: 58vh; }
+  .pdf-stage { height: auto; max-height: 58vh; }
 }
 
 /* Øvelsesboks — det praktiske */
