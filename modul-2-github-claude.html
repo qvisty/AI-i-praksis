@@ -60,7 +60,7 @@
         <li>Klik på <strong>+</strong> øverst til højre, og vælg <strong>New repository</strong>.</li>
         <li>Giv det navnet <code>min-foerste-side</code>, vælg <strong>Public</strong>, og sæt flueben i <strong>Add a README file</strong>. Klik <strong>Create repository</strong>.</li>
         <li>Klik på filen <code>README.md</code>, klik på blyanten (<em>Edit</em>), og skriv et par linjer om dig selv eller dit projekt.</li>
-        <li>Klik <strong>Commit changes</strong>. Skriv en kort besked om, hvad du ændrede, f.eks. »Tilføjede præsentation«.</li>
+        <li>Klik på den grønne knap <strong>Commit changes</strong> øverst til højre. Der åbner en lille boks: skriv en kort besked om, hvad du ændrede, f.eks. »Tilføjede præsentation«, og klik <strong>Commit changes</strong> igen nederst i boksen.</li>
         <li>Klik derefter på <strong>History</strong> for filen, og se at din ændring er gemt med navn, tidspunkt og besked.</li>
       </ol>
     </div>
@@ -69,8 +69,8 @@
       <span class="label">Hvad skete der lige?</span>
       Et <strong>repository</strong> (»repo«) er en projektmappe med indbygget hukommelse.
       Hver gang du gemmer, laver du en <strong>commit</strong>: et snapshot med en besked om,
-      hvad der blev ændret og hvorfor. Derfor kan man altid rulle tilbage, og derfor kan mange
-      arbejde i samme projekt uden at ødelægge noget for hinanden. Det er versionsstyring,
+      hvad der blev ændret og hvorfor. Det betyder, at man altid kan rulle tilbage, og at mange
+      kan arbejde i samme projekt uden at ødelægge noget for hinanden. Det er versionsstyring,
       og du har lige lavet det uden at installere noget som helst.
     </div>
   </section>
@@ -86,8 +86,9 @@
     <div class="exercise">
       <span class="label">Hands-on, ca. 25 min</span>
       <ol class="steps">
-        <li>Gå til <a href="https://claude.ai/code" target="_blank" rel="noopener">claude.ai/code</a> og log ind.</li>
-        <li>Forbind din GitHub-konto, og vælg dit repo <code>min-foerste-side</code>.</li>
+        <li>Gå til <a href="https://claude.ai/code" target="_blank" rel="noopener">claude.ai/code</a> og log ind. Bemærk adressen: det er <strong>/code</strong>, ikke den almindelige Claude-chat.</li>
+        <li>Første gang beder siden dig forbinde GitHub. Godkend, og når GitHub spørger, hvilke repositories Claude må se, vælger du <strong>Only select repositories</strong> og dit repo <code>min-foerste-side</code>.</li>
+        <li>Tilbage i Claude Code vælger du repoet og starter en ny opgave.</li>
         <li>Giv Claude en opgave i almindeligt sprog. Kopiér f.eks. prompten herunder.</li>
         <li>Følg med, mens Claude arbejder: den læser, skriver filer og forklarer undervejs, hvad den gør.</li>
         <li>Når den er færdig, har den lavet en <strong>pull request</strong> i dit repo. Den kigger vi på i øvelse 3.</li>
@@ -97,6 +98,25 @@
     <div class="prompt" data-copy>Byg en lille personlig hjemmeside i mit repo som en enkelt index.html med lidt CSS.
 Den skal have mit navn, tre linjer om hvad jeg arbejder med, og en pæn, rolig farvepalet.
 Alt indhold skal være på dansk.</div>
+
+    <div class="note">
+      <span class="label">Typisk faldgrube</span>
+      Forbindelsen laves inde i Claude Code, ikke ved at bede den almindelige Claude-chat om at
+      »forbinde til GitHub«. Chatten har sine egne connectors, og det er dér, fejl som
+      »Couldn't register with GitHub's sign-in service« typisk dukker op. Claude Code har
+      desuden hidtil krævet et betalt Claude-abonnement, så tjek det inden kursusdagen.
+    </div>
+
+    <div class="note">
+      <span class="label">Plan B: hvis forbindelsen driller</span>
+      Du kan lave den samme side uden forbindelsen og stadig nå målet:
+      <ol>
+        <li>Giv prompten ovenfor til en hvilken som helst chatbot, fx Claude, ChatGPT eller Gemini, og bed den skrive hele <code>index.html</code>.</li>
+        <li>I dit repo på GitHub klikker du <strong>Add file</strong> og <strong>Create new file</strong>, kalder filen <code>index.html</code> og indsætter koden.</li>
+        <li>Klik <strong>Commit changes</strong> som i øvelse 1.</li>
+      </ol>
+      Så er du selv både bygger og godkender. Øvelse 4 med GitHub Pages virker på præcis samme måde bagefter.
+    </div>
 
     <div class="note">
       <span class="label">Til dem der er foran</span>

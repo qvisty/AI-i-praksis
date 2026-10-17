@@ -19,6 +19,8 @@ document.querySelectorAll('a[href$=".md"]').forEach(function (link) {
   var file = link.getAttribute('href');
   if (file.indexOf('://') !== -1) return;
   link.href = 'markdown.html?file=' + encodeURIComponent(file);
+  link.target = '_blank';
+  link.rel = 'noopener';
 });
 
 // Sætter en "Print handout"-knap på alle øvelsessektioner. Knappen printer
@@ -401,17 +403,43 @@ function paginationLink(page, dir, hash) {
     return out;
   }
 
+  function bigBox(el) {
+    return el.classList.contains('exercise') || el.classList.contains('explain') ||
+      el.classList.contains('note') || el.classList.contains('prompt') ||
+      el.classList.contains('figure') || el.tagName === 'OL' || el.tagName === 'UL';
+  }
+
+  function chunkText(els) {
+    return els.reduce(function (sum, e) { return sum + (e.textContent || '').length; }, 0);
+  }
+
+  // Et indbygget PDF-diasshow kan ikke klones med sin funktion, så i
+  // diasvisningen bliver det til en knap, der hopper ned til det rigtige.
+  function pdfJump(section) {
+    var box = document.createElement('div');
+    box.className = 'slide-jump';
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.textContent = 'Bladr i diasshowet på siden';
+    btn.addEventListener('click', function () {
+      close();
+      section.scrollIntoView();
+    });
+    box.appendChild(btn);
+    return box;
+  }
+
   /**
    * Deler siden op i dias ved at klone sektionernes indhold ned i overlayet.
    * Sektioner med data-ingen-dias springes over: en klonet formular ville give
    * to radiogrupper med samme name, så et valg i overlayet afvælger i den
    * rigtige formular.
-   * @returns {Array<{kicker: string, els: Element[]}>} Ét objekt pr. dias.
+   * @returns {Array<{kicker: string, id: string, els: Element[]}>} Ét objekt pr. dias.
    */
   function buildSlides() {
     var list = [];
     var hero = document.querySelector('header.hero');
-    if (hero) list.push({ kicker: '', els: [hero.cloneNode(true)] });
+    if (hero) list.push({ kicker: '', id: '', els: [hero.cloneNode(true)] });
     main.querySelectorAll(':scope > section').forEach(function (section) {
       if (section.hasAttribute('data-ingen-dias')) return;
       var h2 = section.querySelector(':scope > h2');
@@ -420,22 +448,38 @@ function paginationLink(page, dir, hash) {
       var cur = [];
       var curText = 0;
       function flush() { if (cur.length) { chunks.push(cur); cur = []; curText = 0; } }
+      // Overskrifter, der står alene, rykkes med over på næste dias.
+      function takeHeadings() {
+        if (cur.length && cur.every(function (e) { return e.tagName === 'H3'; })) {
+          var heads = cur;
+          cur = [];
+          curText = 0;
+          return heads;
+        }
+        flush();
+        return [];
+      }
       Array.prototype.forEach.call(section.children, function (el) {
         if (el === h2) return;
-        if (el.classList.contains('grid')) {
+        if (el.classList.contains('pdf-slideshow')) {
+          cur.push(pdfJump(section));
           flush();
+          return;
+        }
+        if (el.classList.contains('grid')) {
+          var heads = takeHeadings();
           var cards = Array.prototype.slice.call(el.children);
           for (var i = 0; i < cards.length; i += 2) {
             var g = document.createElement('div');
             g.className = 'grid';
             cards.slice(i, i + 2).forEach(function (c) { g.appendChild(c.cloneNode(true)); });
-            chunks.push([g]);
+            chunks.push(i === 0 ? heads.concat([g]) : [g]);
           }
           return;
         }
         if (el.tagName === 'TABLE') {
-          flush();
-          chunkTable(el).forEach(function (c) { chunks.push(c); });
+          var th = takeHeadings();
+          chunkTable(el).forEach(function (c, n) { chunks.push(n === 0 ? th.concat(c) : c); });
           return;
         }
         if (el.classList.contains('source')) {
@@ -444,14 +488,20 @@ function paginationLink(page, dir, hash) {
           return;
         }
         if (el.tagName === 'H3') {
-          flush();
+          if (!cur.every(function (e) { return e.tagName === 'H3'; })) flush();
           cur.push(el.cloneNode(true));
           return;
         }
-        var big = el.classList.contains('exercise') || el.classList.contains('explain') ||
-          el.classList.contains('note') || el.classList.contains('prompt') ||
-          el.classList.contains('figure') || el.tagName === 'OL' || el.tagName === 'UL';
-        if (big) {
+        if (el.classList.contains('figure') && !cur.length && chunks.length) {
+          // Et billede lige efter en kort boks deler dias med den.
+          var last = chunks[chunks.length - 1];
+          if (last.length === 1 && bigBox(last[0]) && !last[0].classList.contains('figure') &&
+              chunkText(last) < 300) {
+            last.push(el.cloneNode(true));
+            return;
+          }
+        }
+        if (bigBox(el)) {
           if (curText > 250) flush();
           cur.push(el.cloneNode(true));
           flush();
@@ -462,18 +512,36 @@ function paginationLink(page, dir, hash) {
         if (curText > 550) flush();
       });
       flush();
-      chunks.forEach(function (els) { list.push({ kicker: kicker, els: els }); });
+      chunks.forEach(function (els) { list.push({ kicker: kicker, id: section.id, els: els }); });
     });
     // Afsluttende dias: bladr videre til forrige eller næste modul,
     // som åbner direkte i diasvisning.
     if (pagePrev || pageNext) {
       var wrap = document.createElement('div');
       wrap.className = 'pagination slide-pagination';
-      if (pagePrev) wrap.appendChild(paginationLink(pagePrev, 'prev', '#dias'));
-      if (pageNext) wrap.appendChild(paginationLink(pageNext, 'next', '#dias'));
-      list.push({ kicker: 'Videre herfra', els: [wrap] });
+      if (pagePrev) wrap.appendChild(paginationLink(pagePrev, 'prev', '#diasvisning'));
+      if (pageNext) wrap.appendChild(paginationLink(pageNext, 'next', '#diasvisning'));
+      list.push({ kicker: 'Videre herfra', id: '', els: [wrap] });
     }
     return list;
+  }
+
+  // Finder det dias, der viser et bestemt afsnit eller element på siden.
+  function slideFor(id) {
+    for (var i = 0; i < slides.length; i++) {
+      var s = slides[i];
+      if (s.id === id) return i;
+      for (var j = 0; j < s.els.length; j++) {
+        var el = s.els[j];
+        if (el.id === id || (el.querySelector && el.querySelector('[id="' + id + '"]'))) return i;
+      }
+    }
+    return -1;
+  }
+
+  // Diasnummeret står i adressen, så Tilbage fra et link lander på samme dias.
+  function remember() {
+    history.replaceState(null, '', location.pathname + location.search + '#diasvisning-' + (index + 1));
   }
 
   function render() {
@@ -487,29 +555,35 @@ function paginationLink(page, dir, hash) {
       inner.appendChild(k);
     }
     s.els.forEach(function (el) { inner.appendChild(el); });
+    inner.classList.toggle('only-figure', s.els.length === 1 && s.els[0].classList.contains('figure'));
     inner.querySelectorAll('.copy, .print-btn').forEach(function (b) { b.remove(); });
-    overlay.querySelector('.slide-count').textContent = (index + 1) + ' / ' + slides.length;
+    overlay.querySelector('.slide-page').value = index + 1;
+    overlay.querySelector('.slide-total').textContent = 'af ' + slides.length;
     overlay.querySelector('.slide-stage').scrollTop = 0;
+    remember();
   }
 
-  function step(d) {
+  function go(n) {
     if (!overlay) return;
-    index = Math.min(slides.length - 1, Math.max(0, index + d));
+    index = Math.min(slides.length - 1, Math.max(0, n));
     render();
   }
+
+  function step(d) { go(index + d); }
 
   function close() {
     if (!overlay) return;
     overlay.remove();
     overlay = null;
     document.body.classList.remove('slides-open');
+    history.replaceState(null, '', location.pathname + location.search);
   }
 
-  function open() {
+  function open(start) {
     if (overlay) return;
     slides = buildSlides();
     if (!slides.length) return;
-    index = 0;
+    index = Math.min(slides.length - 1, Math.max(0, (start || 1) - 1));
     overlay = document.createElement('div');
     overlay.className = 'slide-overlay';
     overlay.innerHTML =
@@ -518,7 +592,8 @@ function paginationLink(page, dir, hash) {
       '<span class="slide-foot">© 2026 Jesper Qvist, qvisty.github.io/AI-i-praksis</span>' +
       '<span class="slide-nav">' +
       '<button type="button" class="slide-prev">Forrige</button>' +
-      '<span class="slide-count"></span>' +
+      '<span class="slide-count"><input type="number" class="slide-page" min="1" aria-label="Gå til dias">' +
+      ' <span class="slide-total"></span></span>' +
       '<button type="button" class="slide-next">Næste</button>' +
       '</span>' +
       '<button type="button" class="slide-exit">Luk</button>' +
@@ -528,11 +603,30 @@ function paginationLink(page, dir, hash) {
     overlay.querySelector('.slide-prev').addEventListener('click', function () { step(-1); });
     overlay.querySelector('.slide-next').addEventListener('click', function () { step(1); });
     overlay.querySelector('.slide-exit').addEventListener('click', close);
+    overlay.querySelector('.slide-page').addEventListener('change', function (e) {
+      var n = parseInt(e.target.value, 10);
+      if (n) go(n - 1); else render();
+    });
+    // Links til et andet sted på samme side hopper til det dias, der viser stedet.
+    overlay.querySelector('.slide-stage').addEventListener('click', function (e) {
+      var a = e.target.closest('a[href]');
+      if (!a || !a.hash || a.target === '_blank') return;
+      if (a.pathname !== location.pathname || a.search !== location.search) return;
+      var id = decodeURIComponent(a.hash.slice(1));
+      if (/^dias(visning)?(-\d+)?$/.test(id)) return;
+      e.preventDefault();
+      var n = slideFor(id);
+      if (n !== -1) { go(n); return; }
+      close();
+      var target = document.getElementById(id);
+      if (target) target.scrollIntoView();
+    });
     render();
   }
 
   document.addEventListener('keydown', function (e) {
     if (!overlay) return;
+    if (e.target && e.target.classList && e.target.classList.contains('slide-page')) return;
     if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') { e.preventDefault(); step(1); }
     else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); step(-1); }
     else if (e.key === 'Escape') { close(); }
@@ -542,11 +636,14 @@ function paginationLink(page, dir, hash) {
   toggle.className = 'slides-toggle';
   toggle.type = 'button';
   toggle.textContent = 'Diasvisning';
-  toggle.addEventListener('click', open);
+  toggle.addEventListener('click', function () { open(1); });
   nav.appendChild(toggle);
 
-  // Åbn diasvisningen direkte med #dias i adressen, praktisk til projektoren.
-  if (location.hash === '#dias') open();
+  // Åbn diasvisningen direkte med #diasvisning eller #diasvisning-12 i adressen.
+  // Det gamle #dias virker stadig på sider, hvor intet afsnit hedder dias.
+  var startHash = location.hash.match(/^#diasvisning(?:-(\d+))?$/);
+  if (startHash) open(startHash[1] ? parseInt(startHash[1], 10) : 1);
+  else if (location.hash === '#dias' && !document.getElementById('dias')) open(1);
 })();
 
 // Sammenklappelig menu på smalle skærme: menupunkterne samles i en boks,

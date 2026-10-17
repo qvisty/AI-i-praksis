@@ -1009,6 +1009,54 @@ body.slides-open { overflow: hidden; }
   font-size: 1rem;
   min-width: 5.5rem;
   text-align: center;
+  white-space: nowrap;
+}
+
+.slide-page {
+  width: 3.6rem;
+  padding: 0.3rem 0.4rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--card);
+  color: var(--fg);
+  font: inherit;
+  text-align: center;
+}
+
+.slide-inner.only-figure img.figure {
+  max-width: 100%;
+  max-height: 72vh;
+  width: auto;
+  margin-inline: auto;
+}
+
+.slide-inner img.figure { max-height: 55vh; width: auto; }
+
+.slide-jump button {
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: #ffffff;
+  border-radius: 8px;
+  padding: 0.7rem 1.4rem;
+  font: inherit;
+  cursor: pointer;
+}
+
+/* Tekst og billede side om side, fx bogens forside ved siden af beskrivelsen */
+.split {
+  display: grid;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.split img {
+  max-width: 220px;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+@media (min-width: 640px) {
+  .split { grid-template-columns: 1fr auto; }
 }
 
 @media print {
