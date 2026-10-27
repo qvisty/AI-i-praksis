@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="da" class="laast">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Modul 3b: Byg din egen agent i Copilot</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="adgang.js"></script>
+</head>
+<body>
+
+<nav>
+  <div class="inner">
+    <a class="brand" href="index.html">AI i praksis</a>
+    <a href="index.html">Forside</a>
+    <a href="modul-1-lovable.html">Modul 1: Lovable</a>
+    <a href="modul-2-github-claude.html">Modul 2: GitHub + Claude</a>
+    <a href="modul-3-ai-i-hverdagen.html">Modul 3: Hverdagen</a>
+    <a class="active" href="modul-3b-copilot-agenter.html">Modul 3b: Agenter i Copilot</a>
+    <a href="modul-4-automatisering.html">Modul 4: Automatisering</a>
+    <a href="modul-5-andre-modaliteter.html">Modul 5: NotebookLM</a>
+    <a href="modul-6-forstaa-ai.html">Modul 6: Teorien</a>
+    <a href="flere-vaerktoejer.html">Flere værktøjer</a>
+  </div>
+</nav>
+
+<main>
+
+  <header class="hero">
+    <div class="hero-text">
+      <span class="badge">Modul 3b</span>
+      <h1>Byg din egen agent i Copilot</h1>
+      <p class="lead">Du har lært at skrive en god prompt. Nu gemmer du den som en agent, der kan det samme hver gang, og som dine kolleger også kan bruge.</p>
+    </div>
+    <img class="hero-art" src="assets/hero-modul-3b.svg" alt="">
+  </header>
+
+  <section id="hvorfor">
+    <h2>Hvorfor dette modul?</h2>
+    <p>
+      Indtil nu har du skrevet prompten forfra, hver gang du skulle bruge den. Det er fint til
+      enkeltopgaver, men mange opgaver kommer igen: det samme svar til den samme type henvendelse,
+      det samme referat efter det samme møde, den samme tjekliste til den samme slags sag.
+      En <strong>agent</strong> er en prompt, du har gemt sammen med sine kilder og sine
+      startspørgsmål, så den løser din faste opgave på samme måde hver gang.
+    </p>
+    <div class="explain">
+      <span class="label">Byggeblokkene fra dag 2 er agentens råmateriale</span>
+      De syv byggeblokke, du lærte på <a href="dag-2.html#begreber">dag 2</a>, er præcis det,
+      en agent er lavet af. Forskellen er, at du kun skriver dem én gang.
+    </div>
+    <div class="note">
+      <span class="label">Før du starter: hvilken konto?</span>
+      Agentbyggeren findes i <strong>Microsoft 365 Copilot</strong>, den udgave af Copilot, du
+      logger ind i med en arbejds- eller skolekonto. Den gratis, private Copilot har den ikke.
+      Som altid på kurset gælder:
+      <ul>
+        <li><strong>Har din arbejdsplads Copilot,</strong> må du bygge agenten der, men så gælder arbejdspladsens regler, og du bruger kun fiktivt indhold.</li>
+        <li><strong>Har du ikke,</strong> bygger du samme agent som en <em>Gem</em> i Gemini med din private Google-konto. Det er gratis, og byggeklodserne er de samme.</li>
+      </ul>
+      Se også <a href="dag-1.html#privatpersoner">reglen om at øve som privatperson</a>.
+    </div>
+  </section>
+
+  <section id="oevelse-1">
+    <h2>Øvelse 1: Design agenten på papir</h2>
+    <p>Byg først i hovedet. En agent bliver aldrig bedre end beskrivelsen af den.</p>
+    <div class="exercise">
+      <span class="label">Hands-on, ca. 10 min</span>
+      <ol class="steps">
+        <li>Find én opgave fra din praksis, som du løser mindst en gang om ugen, og som ligner sig selv hver gang.</li>
+        <li>Giv agenten et kort <strong>navn</strong> og en <strong>beskrivelse</strong> i én sætning: hvad kan den, og for hvem?</li>
+        <li>Skriv <strong>instruktionerne</strong> med byggeblokkene: rolle, opgave, format og begrænsning. Hvad må den ikke?</li>
+        <li>Find den <strong>viden</strong>, agenten skal slå op i, fx en fiktiv tjekliste, en skabelon eller en vejledning.</li>
+        <li>Skriv tre <strong>startprompts</strong>: de spørgsmål, en kollega typisk ville stille den.</li>
+      </ol>
+    </div>
+    <table class="schedule">
+      <tr><th>Byggeblok fra dag 2</th><th>Hvor den hører hjemme i agenten</th></tr>
+      <tr><td class="time">Rolle, opgave, format, begrænsning</td><td>Instruktioner</td></tr>
+      <tr><td class="time">Kontekst og data</td><td>Viden: dokumenter, hjemmesider eller andre kilder</td></tr>
+      <tr><td class="time">Eksempler</td><td>Instruktioner eller startprompts</td></tr>
+    </table>
+    <h3>Skabelon til instruktionerne (kopiér og udfyld)</h3>
+    <div class="prompt" data-copy>Du er [rolle, fx en erfaren kollega i kundeservice].
+Din opgave er at [opgave, fx skrive et udkast til svar på henvendelser om ...].
+Brug altid de vedhæftede kilder, og sig tydeligt, hvis svaret ikke står i dem.
+Svar i dette format: [format, fx en kort mail på højst ti linjer med en venlig afslutning].
+Du må ikke [begrænsning, fx love noget om priser eller tidsfrister].
+Skriv på dansk, i en tone der er [tone, fx venlig og klar].
+Spørg ind, hvis du mangler oplysninger, før du svarer.</div>
+  </section>
+
+  <section id="oevelse-2">
+    <h2>Øvelse 2: Byg agenten</h2>
+    <p>Vælg sporet, der passer til din konto. Knapperne kan stå på dansk eller engelsk, afhængigt af dit sprog.</p>
+    <div class="grid">
+      <div class="card">
+        <span class="badge">Spor A</span>
+        <h3>Microsoft 365 Copilot</h3>
+        <p>Med arbejds- eller skolekonto, og kun hvis din arbejdsplads tillader det.</p>
+      </div>
+      <div class="card">
+        <span class="badge">Spor B</span>
+        <h3>Gemini Gems</h3>
+        <p>Med privat Google-konto, gratis. Samme idé, et andet værktøj.</p>
+      </div>
+    </div>
+    <div class="exercise">
+      <span class="label">Spor A: Copilot, ca. 25 min</span>
+      <ol class="steps">
+        <li>Åbn <a href="https://m365.cloud.microsoft/chat" target="_blank" rel="noopener">Microsoft 365 Copilot</a>, og log ind med din arbejdskonto.</li>
+        <li>Vælg <strong>Ny agent</strong> (<em>New agent</em>) i venstre side.</li>
+        <li>Du kan beskrive agenten med almindeligt sprog, så udfylder Copilot felterne for dig. Eller du kan vælge at konfigurere den selv (<em>Skip to configure</em>). Prøv det første, og ret bagefter.</li>
+        <li>Under <strong>Konfigurer</strong> (<em>Configure</em>) tjekker du navn, beskrivelse og instruktioner. Indsæt dine egne instruktioner fra øvelse 1, hvis Copilots udgave ikke rammer.</li>
+        <li>Under <strong>Viden</strong> (<em>Knowledge</em>) tilføjer du dit fiktive dokument eller en offentlig hjemmeside.</li>
+        <li>Tilføj dine tre startprompts, og klik <strong>Opret</strong> (<em>Create</em>).</li>
+      </ol>
+    </div>
+    <div class="exercise">
+      <span class="label">Spor B: Gemini, ca. 25 min</span>
+      <ol class="steps">
+        <li>Åbn <a href="https://gemini.google.com" target="_blank" rel="noopener">gemini.google.com</a> med din private Google-konto.</li>
+        <li>Find <strong>Gems</strong> i venstre side, og vælg <strong>Ny Gem</strong>.</li>
+        <li>Giv den navnet fra øvelse 1, og indsæt dine instruktioner.</li>
+        <li>Tilføj dit fiktive dokument som viden.</li>
+        <li>Gem, og åbn din Gem fra listen.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="oevelse-3">
+    <h2>Øvelse 3: Test og forbedr</h2>
+    <div class="exercise">
+      <span class="label">Hands-on, ca. 15 min</span>
+      <ol class="steps">
+        <li>Stil agenten tre realistiske, fiktive opgaver. I Copilot gør du det under <strong>Prøv det</strong> (<em>Try it</em>).</li>
+        <li>Stil den én opgave, den <em>ikke</em> skal løse. Siger den pænt nej, eller gætter den?</li>
+        <li>Tjek, om den bruger dine kilder, og om den siger det, når svaret ikke står i dem.</li>
+        <li>Ret instruktionerne efter hvert forsøg, og test igen. Det er samme mønster som i modul 1: prøv, kig, ret.</li>
+        <li>Byt agent med din sidemakker, og prøv hinandens. Forstår en anden, hvad agenten er til?</li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="forklaring">
+    <h2>Hvad skete der lige?</h2>
+    <div class="explain">
+      <span class="label">Begreb: Agent</span>
+      En agent i Copilot er en gemt opsætning: instruktioner, viden og startprompts samlet ét
+      sted. Den svarer stadig ved at forudsige tekst, som al anden generativ AI, men den gør det
+      inden for de rammer, du har sat. Mere avancerede agenter kan også handle, fx sende en mail
+      eller oprette en opgave. Det er de næste trin på
+      <a href="dag-3.html#agenter">dag 3's udviklingstrappe</a>.
+    </div>
+    <div class="explain">
+      <span class="label">Begreb: Viden</span>
+      Når agenten slår op i dine dokumenter, før den svarer, er det samme princip som
+      kildeforankring i <a href="modul-5-andre-modaliteter.html#forklaring">modul 5</a>: svaret
+      bygger på dine kilder i stedet for kun på modellens træning.
+    </div>
+    <div class="note">
+      <span class="label">Deling og ansvar</span>
+      En agent kan deles med kolleger. I Copilot ser den kun det, den enkelte bruger i forvejen
+      har adgang til, men instruktionerne er dine. Aftal derfor med din leder eller IT, hvem der
+      vedligeholder agenten, og hvem der har ansvaret for det, den skriver. Se
+      <a href="modul-4-automatisering.html#forklaring">governance i modul 4</a>.
+    </div>
+  </section>
+
+  <section id="refleksion">
+    <h2>Refleksion i plenum</h2>
+    <ul>
+      <li>Hvilken opgave valgte du, og hvorfor lige den?</li>
+      <li>Hvor ofte skulle du rette instruktionerne, før agenten ramte?</li>
+      <li>Hvad skete der, da din sidemakker brugte din agent?</li>
+    </ul>
+    <div class="note">
+      <span class="label">Tag det med på arbejde</span>
+      Hvilken agent ville spare dit team for flest gentagelser? Hvad skulle være på plads hos
+      jer, fx godkendte kilder og en fast ansvarlig, før I delte den med hele afdelingen?
+    </div>
+  </section>
+
+  <section id="kilder">
+    <h2>Kilder og videre læsning</h2>
+    <ul class="sources">
+      <li><a href="https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-build-agents" target="_blank" rel="noopener">Microsoft Learn: Build agents in Agent Builder</a>, den officielle vejledning med alle felter</li>
+      <li><a href="filer/Ai-i-praksis-dag3/Build%20agents%20with%20Copilot%20Studio%20agent%20builder.md">UCL's vejledning fra dag 3</a> om Copilot Studio agent builder</li>
+      <li><a href="dag-2.html#begreber">De syv byggeblokke</a> fra dag 2</li>
+    </ul>
+  </section>
+
+</main>
+
+<footer>
+  <div class="inner">
+    AI i praksis, modul 3b. © 2026 Jesper Qvist. <a href="index.html">Tilbage til forsiden</a>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+
+</body>
+</html>
