@@ -193,50 +193,50 @@
       "dagsside": "dag-4.html",
       "noter": [
         {
-          "dias": 10,
+          "dias": 8,
           "type": "udvid",
           "titel": "Modul 3: Hallucination",
           "tekst": "Sjovt på et billede. Dyrt i et referat.",
           "url": "modul-3-ai-i-hverdagen.html#forklaring"
         },
         {
-          "dias": 22,
+          "dias": 13,
           "type": "udvid",
           "titel": "Papirklipsen",
           "tekst": "Tankeeksperimentet: skaden kræver ikke ond vilje.",
           "url": "papirklips.html#tankeeksperimentet"
         },
         {
-          "dias": 36,
-          "type": "udvid",
-          "titel": "Modul 4: Governance",
-          "tekst": "Uddannelse er højrisiko. Derfor er samtalen med IT ikke valgfri.",
-          "url": "modul-4-automatisering.html#forklaring"
-        },
-        {
-          "dias": 56,
+          "dias": 19,
           "type": "udvid",
           "titel": "Modul 1: Guardrails",
           "tekst": "Du så guardrails nedefra, da byggeværktøjet sagde nej.",
           "url": "modul-1-lovable.html#forklaring"
         },
         {
-          "dias": 85,
+          "dias": 33,
           "type": "udvid",
           "titel": "Dag 2: Etik og ophavsret",
           "tekst": "Fire tekster om, hvem der ejer det, modellen er trænet på.",
           "url": "dag-2.html#materialer"
         },
         {
-          "dias": 87,
+          "dias": 35,
           "type": "udvid",
           "titel": "Dag 3: Googles egen måling",
           "tekst": "0,26 ml vand pr. tekstprompt. Begge tal kan passe.",
           "url": "dag-3.html#ressourcer"
+        },
+        {
+          "dias": 65,
+          "type": "udvid",
+          "titel": "Modul 4: Governance",
+          "tekst": "Uddannelse er højrisiko. Derfor er samtalen med IT ikke valgfri.",
+          "url": "modul-4-automatisering.html#forklaring"
         }
       ],
       "evaluering": {
-        "efter_dias": 95,
+        "efter_dias": 41,
         "dag": "4",
         "skabelon_dias": 2
       }
@@ -246,49 +246,49 @@
       "dagsside": "dag-4.html",
       "noter": [
         {
-          "dias": 107,
+          "dias": 7,
           "type": "udvid",
           "titel": "Modul 4: Automatisering ≠ AI",
           "tekst": "Samme skelnen, med eksempler fra din egen hverdag.",
           "url": "modul-4-automatisering.html#forklaring"
         },
         {
-          "dias": 120,
-          "type": "erstat",
-          "titel": "Modul 4: Find din gentagelse",
-          "tekst": "En metode til at finde den rigtige opgave at automatisere.",
-          "url": "modul-4-automatisering.html#oevelse-1"
-        },
-        {
-          "dias": 134,
-          "type": "erstat",
-          "titel": "Modul 4: Byg dit første flow",
-          "tekst": "Beskriv den ikke. Byg den. 30 minutter, og den kører.",
-          "url": "modul-4-automatisering.html#oevelse-2"
-        },
-        {
-          "dias": 135,
+          "dias": 13,
           "type": "udvid",
           "titel": "Teknik: webhooks og Apps Script",
           "tekst": "Power Automate uden loft: samme flow i kode.",
           "url": "teknik.html#spor-c"
         },
         {
-          "dias": 145,
+          "dias": 20,
           "type": "erstat",
           "titel": "Modul 2: Sæt Claude Code på arbejde",
           "tekst": "En agent, der laver arbejdet og afleverer det til din godkendelse.",
           "url": "modul-2-github-claude.html#oevelse-2"
         },
         {
-          "dias": 146,
+          "dias": 21,
           "type": "erstat",
           "titel": "Modul 5: Byg din notesbog",
           "tekst": "RAG forklaret er abstrakt. RAG prøvet tager 20 minutter.",
           "url": "modul-5-andre-modaliteter.html#oevelse-1"
         },
         {
-          "dias": 165,
+          "dias": 136,
+          "type": "erstat",
+          "titel": "Modul 4: Find din gentagelse",
+          "tekst": "En metode til at finde den rigtige opgave at automatisere.",
+          "url": "modul-4-automatisering.html#oevelse-1"
+        },
+        {
+          "dias": 147,
+          "type": "erstat",
+          "titel": "Modul 4: Byg dit første flow",
+          "tekst": "Beskriv den ikke. Byg den. 30 minutter, og den kører.",
+          "url": "modul-4-automatisering.html#oevelse-2"
+        },
+        {
+          "dias": 169,
           "type": "udvid",
           "titel": "Modul 4: Fortæl det videre",
           "tekst": "Det spreder sig, når du kan forklare det uden fagsprog.",
@@ -296,7 +296,7 @@
         }
       ],
       "evaluering": {
-        "efter_dias": 170,
+        "efter_dias": 22,
         "dag": "4",
         "skabelon_dias": 5,
         "skabelonbilleder": false
