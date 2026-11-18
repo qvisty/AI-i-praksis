@@ -764,6 +764,9 @@ img.figure {
   margin: 1.6rem auto;
 }
 
+/* Brede illustrationer og grafikker, fx tidslinjer og vandmærker */
+img.figure.wide { max-width: 760px; }
+
 img.card-art {
   float: right;
   width: 84px;

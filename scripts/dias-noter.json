@@ -221,14 +221,14 @@
           "url": "modul-1-lovable.html#forklaring"
         },
         {
-          "dias": 81,
+          "dias": 85,
           "type": "udvid",
           "titel": "Dag 2: Etik og ophavsret",
           "tekst": "Fire tekster om, hvem der ejer det, modellen er trænet på.",
           "url": "dag-2.html#materialer"
         },
         {
-          "dias": 83,
+          "dias": 87,
           "type": "udvid",
           "titel": "Dag 3: Googles egen måling",
           "tekst": "0,26 ml vand pr. tekstprompt. Begge tal kan passe.",
@@ -236,7 +236,7 @@
         }
       ],
       "evaluering": {
-        "efter_dias": 91,
+        "efter_dias": 95,
         "dag": "4",
         "skabelon_dias": 2
       }
