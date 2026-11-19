@@ -11,8 +11,8 @@ Siden bruges i stedet for slides og udgives med GitHub Pages.
 | --- | --- |
 | `index.html` | Forside: kursets idé, program og forberedelse |
 | `modul-1-lovable.html` | Modul 1: Byg en app med Lovable (praksis først, forklaring bagefter) |
-| `modul-2-github-claude.html` | Modul 2: GitHub + Claude Code |
-| `modul-3-ai-i-hverdagen.html` | Modul 3: AI i din arbejdsdag (mails, referater, regneark) |
+| `modul-2-github-claude.html` | Ekstra og valgfrit: GitHub + Claude Code |
+| `modul-3-ai-i-hverdagen.html` | Modul 2: AI i din arbejdsdag (mails, referater, regneark) |
 | `modul-4-automatisering.html` | Modul 4: Automatisering i egen infrastruktur (Power Automate, Google, Zapier) |
 | `modul-5-andre-modaliteter.html` | Modul 5: Komplekst indhold i andre modaliteter (NotebookLM, podcast, Copilot) |
 | `modul-6-forstaa-ai.html` | Modul 6: Teoretisk oplæg (AI'ens historie, ordbog, de store diskussioner) |
@@ -22,7 +22,7 @@ Siden bruges i stedet for slides og udgives med GitHub Pages.
 | `evaluering.js` | Spørgsmålene som konfiguration, formularlogik, kladde i localStorage og afsendelse |
 | `resultater.html` og `resultater.js` | Underviserens resultatside: token-låst, med nøgletal, grafer og en færdig analyse-prompt. Bevidst ikke i menuen |
 | `papirklips.html` | Fordybelse: papirklips-tankeeksperimentet, appen Paperclip og zero human companies. Linket fra modul 6 |
-| `teknik.html` | Til de tekniske: fire dybe spor med git, Claude Code i terminalen, webhooks og lokal AI. Linket fra modul 2 og 4 |
+| `teknik.html` | Til de tekniske: fire dybe spor med git, Claude Code i terminalen, webhooks og lokal AI. Linket fra ekstramodulet og modul 4 |
 | `oversigt.html` | Oversigt og stikord: selvopdaterende indholdsfortegnelse over alle sider plus alfabetisk stikordsregister |
 | `dag-1.html` til `dag-4.html` | Kursusgangene: UCL-underviserens dagsforløb med Jesper Qvists egne praksisudvidelser, materialer og hjemmeopgaver |
 | `kursusprogram.html` | Start her: hele kurset på én side med forberedelse, dagens indhold og ekstra materiale, mærket prioriteret, valgfri eller ikke pensum |

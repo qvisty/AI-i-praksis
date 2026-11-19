@@ -176,8 +176,8 @@ var PAGE_SEQUENCES = [
   [
     { file: 'index.html', title: 'Forside' },
     { file: 'modul-1-lovable.html', title: 'Modul 1: Byg en app med Lovable' },
-    { file: 'modul-3-ai-i-hverdagen.html', title: 'Modul 3: AI i din arbejdsdag' },
-    { file: 'modul-3b-copilot-agenter.html', title: 'Modul 3b: Byg din egen agent i Copilot' },
+    { file: 'modul-3-ai-i-hverdagen.html', title: 'Modul 2: AI i din arbejdsdag' },
+    { file: 'modul-3b-copilot-agenter.html', title: 'Modul 3: Byg din egen agent i Copilot' },
     { file: 'modul-4-automatisering.html', title: 'Modul 4: Automatisér din egen hverdag' },
     { file: 'modul-5-andre-modaliteter.html', title: 'Modul 5: Fra dokument til podcast' },
     { file: 'modul-6-forstaa-ai.html', title: 'Modul 6: Forstå AI' },
@@ -257,8 +257,8 @@ function paginationLink(page, dir, hash) {
       { file: 'proeven.html', label: 'Prøven' }
     ] },
     { file: 'modul-1-lovable.html', label: 'Modul 1: Lovable' },
-    { file: 'modul-3-ai-i-hverdagen.html', label: 'Modul 3: Hverdagen' },
-    { file: 'modul-3b-copilot-agenter.html', label: 'Modul 3b: Agenter' },
+    { file: 'modul-3-ai-i-hverdagen.html', label: 'Modul 2: Hverdagen' },
+    { file: 'modul-3b-copilot-agenter.html', label: 'Modul 3: Agenter' },
     { file: 'modul-4-automatisering.html', label: 'Modul 4: Automatisering' },
     { file: 'modul-5-andre-modaliteter.html', label: 'Modul 5: NotebookLM' },
     { file: 'modul-6-forstaa-ai.html', label: 'Modul 6: Teorien' },

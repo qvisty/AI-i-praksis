@@ -43,7 +43,7 @@
         {
           "dias": 33,
           "type": "erstat",
-          "titel": "Modul 3: Skriv og omskriv",
+          "titel": "Modul 2: Skriv og omskriv",
           "tekst": "Brug en ægte opgave fra dit skrivebord i stedet for en prompt frit fra leveren.",
           "url": "modul-3-ai-i-hverdagen.html#oevelse-1"
         },
@@ -103,7 +103,7 @@
         {
           "dias": 25,
           "type": "udvid",
-          "titel": "Modul 1, 3b og 4",
+          "titel": "Modul 1, 3 og 4",
           "tekst": "Apps, agenter og automatisering, prøvet af i tre moduler.",
           "url": "modul-3b-copilot-agenter.html#forklaring"
         },
@@ -142,7 +142,7 @@
         {
           "dias": 18,
           "type": "erstat",
-          "titel": "Modul 3: Skriv og omskriv",
+          "titel": "Modul 2: Skriv og omskriv",
           "tekst": "Stil de tre spørgsmål til en ægte opgave fra dit eget skrivebord.",
           "url": "modul-3-ai-i-hverdagen.html#oevelse-1"
         },
@@ -195,7 +195,7 @@
         {
           "dias": 8,
           "type": "udvid",
-          "titel": "Modul 3: Hallucination",
+          "titel": "Modul 2: Hallucination",
           "tekst": "Sjovt på et billede. Dyrt i et referat.",
           "url": "modul-3-ai-i-hverdagen.html#forklaring"
         },
@@ -268,7 +268,7 @@
         {
           "dias": 20,
           "type": "erstat",
-          "titel": "Modul 3b: Byg agenten",
+          "titel": "Modul 3: Byg agenten",
           "tekst": "Byg en agent i Copilot til en opgave fra dit eget job.",
           "url": "modul-3b-copilot-agenter.html#oevelse-2"
         },
