@@ -185,6 +185,7 @@ var PAGE_SEQUENCES = [
     { file: 'flere-vaerktoejer.html', title: 'Flere værktøjer at prøve' }
   ],
   [
+    { file: 'kursusprogram.html', title: 'Kursusprogram' },
     { file: 'dag-1.html', title: 'Dag 1' },
     { file: 'dag-2.html', title: 'Dag 2' },
     { file: 'dag-3.html', title: 'Dag 3' },
@@ -248,6 +249,7 @@ function paginationLink(page, dir, hash) {
   var MENU = [
     { file: 'index.html', label: 'Forside' },
     { label: 'Kursusdage', children: [
+      { file: 'kursusprogram.html', label: 'Kursusprogram' },
       { file: 'dag-1.html', label: 'Dag 1' },
       { file: 'dag-2.html', label: 'Dag 2' },
       { file: 'dag-3.html', label: 'Dag 3' },

@@ -25,7 +25,8 @@ Siden bruges i stedet for slides og udgives med GitHub Pages.
 | `teknik.html` | Til de tekniske: fire dybe spor med git, Claude Code i terminalen, webhooks og lokal AI. Linket fra modul 2 og 4 |
 | `oversigt.html` | Oversigt og stikord: selvopdaterende indholdsfortegnelse over alle sider plus alfabetisk stikordsregister |
 | `dag-1.html` til `dag-4.html` | Kursusgangene: UCL-underviserens dagsforløb med Jesper Qvists egne praksisudvidelser, materialer og hjemmeopgaver |
-| `proeven.html` | Prøven: skeletside til erhvervscasen og den mundtlige prøve |
+| `kursusprogram.html` | Start her: hele kurset på én side med forberedelse, dagens indhold og ekstra materiale, mærket prioriteret, valgfri eller ikke pensum |
+| `proeven.html` | Prøven: rammerne fra studieordningen, tjekliste, typiske spørgsmål og eksempler på caseoplæg |
 | `AGENTS.md` | Arbejdsaftaler for Claude Code og andre coding agents: UCL-spor, egne udvidelser, Markdown-materialer og publicering |
 | `style.css` | Fælles design (lyst/mørkt tema, øvelses- og forklaringsbokse, animationer) |
 | `site.js` | "Kopiér"-knapper, print af handouts, diasvisning og indtoning ved scroll |

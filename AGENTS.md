@@ -28,7 +28,7 @@ Dette repository er kursussiden for **AI i praksis**. Arbejd altid videre i den 
   - klikbare links med beskrivende linktekst
   - blockquotes til anbefalinger, sikkerhedsnoter og prioriteringer
 - Bevar det faglige indhold og den oprindelige kilde. Ret kun sprog, struktur og tydelige fejl, medmindre andet er aftalt.
-- Markér klart, om noget er **prioriteret**, **valgfrit** eller **ikke pensum**. Når flere kilder dækker samme stof, anbefal én hovedkilde og saml resten som supplerende læsning.
+- Markér klart, om noget er **prioriteret**, **valgfrit** eller **ikke pensum**. På siderne bruges mærkerne `<span class="maerke maerke-prioriteret">`, `maerke-valgfri` og `maerke-ikke-pensum`, og `kursusprogram.html` skal opdateres, når forberedelsen til en dag ændres. Når flere kilder dækker samme stof, anbefal én hovedkilde og saml resten som supplerende læsning.
 - Praktiske arbejdsark skal have en klar opgave, konkrete trin og en kort refleksion eller kontrol af resultatet.
 - Brug kun ufølsomme, offentlige eller fiktive data i øvelsesbeskrivelser. Mind om manuel kontrol, når AI arbejder med tal, planer, oversættelser eller sikkerhed.
 
