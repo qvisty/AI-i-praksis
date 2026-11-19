@@ -55,6 +55,10 @@ def registrer_skrifter():
     fonte = os.path.join(os.environ.get("WINDIR", r"C:\Windows"), "Fonts")
     normal = os.path.join(fonte, "calibri.ttf")
     fed = os.path.join(fonte, "calibrib.ttf")
+    if not (os.path.exists(normal) and os.path.exists(fed)):
+        # Carlito har samme mål som Calibri og findes på mange Linux-maskiner.
+        normal = "/usr/share/fonts/truetype/crosextra/Carlito-Regular.ttf"
+        fed = "/usr/share/fonts/truetype/crosextra/Carlito-Bold.ttf"
     if os.path.exists(normal) and os.path.exists(fed):
         pdfmetrics.registerFont(TTFont("NoteTekst", normal))
         pdfmetrics.registerFont(TTFont("NoteFed", fed))
@@ -340,10 +344,11 @@ def byg_evalueringsside(opsaetning, url, sidebredde, sidehoejde, skrifter,
     venstre = 0.1374 * sidebredde
     c.setFillColor(blaek)
     c.setFont(fed_skrift, 0.074 * sidehoejde)
-    c.drawString(venstre, 0.76 * sidehoejde, "Evaluér dagen")
+    c.drawString(venstre, 0.76 * sidehoejde, opsaetning.get("titel", "Evaluér dagen"))
 
     c.setFont(tekst_skrift, 0.0325 * sidehoejde)
-    linjer = [
+    # Titel og linjer kan sættes i dias-noter.json, fx til slutevalueringen.
+    linjer = opsaetning.get("linjer") or [
         "Inden du går: to-tre minutter på, hvad der virkede, og hvad der ikke gjorde.",
         "Det er anonymt, og svarene bliver læst inden næste kursusgang.",
         "Det er dem, der afgør, hvad der bliver lavet om.",

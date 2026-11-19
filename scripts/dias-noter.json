@@ -237,8 +237,14 @@
       ],
       "evaluering": {
         "efter_dias": 41,
-        "dag": "4",
-        "skabelon_dias": 2
+        "dag": "samlet",
+        "skabelon_dias": 2,
+        "titel": "Evaluér kurset",
+        "linjer": [
+          "Inden du går: cirka fem minutter om hele kurset.",
+          "Det er anonymt, og svarene bliver læst, før kurset køres igen.",
+          "Det er dem, der afgør, hvad der bliver lavet om."
+        ]
       }
     },
     {
@@ -297,9 +303,15 @@
       ],
       "evaluering": {
         "efter_dias": 22,
-        "dag": "4",
+        "dag": "samlet",
         "skabelon_dias": 5,
-        "skabelonbilleder": false
+        "skabelonbilleder": false,
+        "titel": "Evaluér kurset",
+        "linjer": [
+          "Inden du går: cirka fem minutter om hele kurset.",
+          "Det er anonymt, og svarene bliver læst, før kurset køres igen.",
+          "Det er dem, der afgør, hvad der bliver lavet om."
+        ]
       }
     }
   ]
