@@ -103,9 +103,9 @@
         {
           "dias": 25,
           "type": "udvid",
-          "titel": "Modul 1, 2 og 4",
-          "tekst": "Kode, agenter og automatisering, prøvet af i tre moduler.",
-          "url": "modul-2-github-claude.html#forklaring"
+          "titel": "Modul 1, 3b og 4",
+          "tekst": "Apps, agenter og automatisering, prøvet af i tre moduler.",
+          "url": "modul-3b-copilot-agenter.html#forklaring"
         },
         {
           "dias": 27,
@@ -268,9 +268,9 @@
         {
           "dias": 20,
           "type": "erstat",
-          "titel": "Modul 2: Sæt Claude Code på arbejde",
-          "tekst": "En agent, der laver arbejdet og afleverer det til din godkendelse.",
-          "url": "modul-2-github-claude.html#oevelse-2"
+          "titel": "Modul 3b: Byg agenten",
+          "tekst": "Byg en agent i Copilot til en opgave fra dit eget job.",
+          "url": "modul-3b-copilot-agenter.html#oevelse-2"
         },
         {
           "dias": 21,

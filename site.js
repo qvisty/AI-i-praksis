@@ -176,13 +176,13 @@ var PAGE_SEQUENCES = [
   [
     { file: 'index.html', title: 'Forside' },
     { file: 'modul-1-lovable.html', title: 'Modul 1: Byg en app med Lovable' },
-    { file: 'modul-2-github-claude.html', title: 'Modul 2: GitHub + Claude Code' },
     { file: 'modul-3-ai-i-hverdagen.html', title: 'Modul 3: AI i din arbejdsdag' },
     { file: 'modul-3b-copilot-agenter.html', title: 'Modul 3b: Byg din egen agent i Copilot' },
     { file: 'modul-4-automatisering.html', title: 'Modul 4: Automatisér din egen hverdag' },
     { file: 'modul-5-andre-modaliteter.html', title: 'Modul 5: Fra dokument til podcast' },
     { file: 'modul-6-forstaa-ai.html', title: 'Modul 6: Forstå AI' },
-    { file: 'flere-vaerktoejer.html', title: 'Flere værktøjer at prøve' }
+    { file: 'flere-vaerktoejer.html', title: 'Flere værktøjer at prøve' },
+    { file: 'modul-2-github-claude.html', title: 'Ekstra: GitHub + Claude Code' }
   ],
   [
     { file: 'kursusprogram.html', title: 'Kursusprogram' },
@@ -257,7 +257,6 @@ function paginationLink(page, dir, hash) {
       { file: 'proeven.html', label: 'Prøven' }
     ] },
     { file: 'modul-1-lovable.html', label: 'Modul 1: Lovable' },
-    { file: 'modul-2-github-claude.html', label: 'Modul 2: GitHub + Claude' },
     { file: 'modul-3-ai-i-hverdagen.html', label: 'Modul 3: Hverdagen' },
     { file: 'modul-3b-copilot-agenter.html', label: 'Modul 3b: Agenter' },
     { file: 'modul-4-automatisering.html', label: 'Modul 4: Automatisering' },
@@ -266,6 +265,7 @@ function paginationLink(page, dir, hash) {
     { label: 'Mere', children: [
       { file: 'oversigt.html', label: 'Oversigt og stikord' },
       { file: 'flere-vaerktoejer.html', label: 'Flere værktøjer' },
+      { file: 'modul-2-github-claude.html', label: 'Ekstra: GitHub + Claude Code' },
       { file: 'teknik.html', label: 'Til de tekniske' },
       { file: 'papirklips.html', label: 'Fordybelse: Papirklipsen' },
       { file: 'evaluering.html', label: 'Evaluering' }
