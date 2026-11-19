@@ -27,42 +27,42 @@
           "url": "flere-vaerktoejer.html#research"
         },
         {
-          "dias": 39,
+          "dias": 27,
           "type": "udvid",
           "titel": "Flere værktøjer: De fem spørgsmål",
           "tekst": "Modeloversigten er let. Værktøjsvalg på jobbet kræver fem spørgsmål mere.",
           "url": "flere-vaerktoejer.html#valg"
         },
         {
-          "dias": 41,
+          "dias": 29,
           "type": "udvid",
           "titel": "Dag 2: De syv byggeblokke",
           "tekst": "Opgave, rolle, format, kontekst, begrænsning, eksempler, data.",
           "url": "dag-2.html#begreber"
         },
         {
-          "dias": 47,
+          "dias": 33,
           "type": "erstat",
           "titel": "Modul 3: Skriv og omskriv",
           "tekst": "Brug en ægte opgave fra dit skrivebord i stedet for en prompt frit fra leveren.",
           "url": "modul-3-ai-i-hverdagen.html#oevelse-1"
         },
         {
-          "dias": 47,
+          "dias": 33,
           "type": "udvid",
           "titel": "Modul 1: Byg din første app",
           "tekst": "Send den samme prompt til Lovable, og se den blive til noget, du kan klikke i.",
           "url": "modul-1-lovable.html#oevelse-1"
         },
         {
-          "dias": 58,
+          "dias": 42,
           "type": "udvid",
           "titel": "Dag 2: Billedøvelsen",
           "tekst": "LEGO-anden er forretten. Dag 2 bruger en hel øvelse på det.",
           "url": "dag-2.html#oevelser"
         },
         {
-          "dias": 63,
+          "dias": 47,
           "type": "udvid",
           "titel": "Dag 2: Tag med hjemmefra",
           "tekst": "De tre ting bliver til billedøvelsen. Headsettet til musikken.",
@@ -70,7 +70,7 @@
         }
       ],
       "evaluering": {
-        "efter_dias": 63,
+        "efter_dias": 49,
         "dag": "1",
         "skabelon_dias": 5
       }
@@ -87,28 +87,28 @@
           "url": "dag-4.html#oevelser"
         },
         {
-          "dias": 25,
+          "dias": 16,
           "type": "udvid",
           "titel": "Modul 6: Maskinrummet",
           "tekst": "Visualiseringen er smuk, men stum. Her er ordene til den.",
           "url": "modul-6-forstaa-ai.html#hvordan"
         },
         {
-          "dias": 31,
+          "dias": 22,
           "type": "udvid",
           "titel": "Flere værktøjer: Canva Code og Firefly",
           "tekst": "Færdig med at prompte? I Canva kan du klikke direkte i resultatet.",
           "url": "flere-vaerktoejer.html#formidling"
         },
         {
-          "dias": 34,
+          "dias": 25,
           "type": "udvid",
           "titel": "Modul 1, 2 og 4",
           "tekst": "Kode, agenter og automatisering, prøvet af i tre moduler.",
           "url": "modul-2-github-claude.html#forklaring"
         },
         {
-          "dias": 36,
+          "dias": 27,
           "type": "udvid",
           "titel": "Modul 5: Lav podcasten",
           "tekst": "Samme teknologi på en tekst fra dit eget arbejde.",
@@ -116,7 +116,7 @@
         }
       ],
       "evaluering": {
-        "efter_dias": 39,
+        "efter_dias": 30,
         "dag": "2",
         "skabelon_dias": 2
       }
@@ -133,57 +133,57 @@
           "url": "modul-6-forstaa-ai.html#typer"
         },
         {
-          "dias": 20,
+          "dias": 15,
           "type": "udvid",
           "titel": "Modul 6: Maskinrummet",
           "tekst": "Ordene til diagrammet: derfor kan den formulere sig flot og tage fejl.",
           "url": "modul-6-forstaa-ai.html#hvordan"
         },
         {
-          "dias": 21,
-          "type": "udvid",
-          "titel": "Modul 5: Kildeforankring (RAG)",
-          "tekst": "Vektordatabasen i praksis: NotebookLM slår op, før den svarer.",
-          "url": "modul-5-andre-modaliteter.html#forklaring"
-        },
-        {
-          "dias": 24,
+          "dias": 18,
           "type": "erstat",
           "titel": "Modul 3: Skriv og omskriv",
           "tekst": "Stil de tre spørgsmål til en ægte opgave fra dit eget skrivebord.",
           "url": "modul-3-ai-i-hverdagen.html#oevelse-1"
         },
         {
-          "dias": 30,
+          "dias": 22,
           "type": "udvid",
           "titel": "Dag 2: De syv byggeblokke",
           "tekst": "De seks råd og de syv byggeblokke er samme værktøjskasse.",
           "url": "dag-2.html#begreber"
         },
         {
-          "dias": 55,
+          "dias": 30,
           "type": "udvid",
           "titel": "Prompt-guiden på denne side",
           "tekst": "Alle frameworks samlet ét sted: skim, og gå i dybden med to-tre.",
           "url": "dag-3.html#prompting"
         },
         {
-          "dias": 61,
+          "dias": 33,
           "type": "erstat",
           "titel": "Byg din egen agent",
           "tekst": "Guides til ChatGPT og Copilot plus øvelsen: en agent, der kan én ting.",
           "url": "dag-3.html#agenter"
         },
         {
-          "dias": 63,
+          "dias": 35,
           "type": "udvid",
           "titel": "Papirklipsen: appen Paperclip",
           "tekst": "Fase 4 i praksis: værktøjet, der leder hele hold af agenter.",
           "url": "papirklips.html#appen"
+        },
+        {
+          "dias": 49,
+          "type": "udvid",
+          "titel": "Modul 5: Kildeforankring (RAG)",
+          "tekst": "Vektordatabasen i praksis: NotebookLM slår op, før den svarer.",
+          "url": "modul-5-andre-modaliteter.html#forklaring"
         }
       ],
       "evaluering": {
-        "efter_dias": 69,
+        "efter_dias": 41,
         "dag": "3",
         "skabelon_dias": 2
       }
