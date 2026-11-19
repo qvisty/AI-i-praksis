@@ -31,6 +31,9 @@ Siden bruges i stedet for slides og udgives med GitHub Pages.
 | `site.js` | "Kopiér"-knapper, print af handouts, diasvisning og indtoning ved scroll |
 | `adgang.js` | Adgangslåsen: loginboks, tjek af adgangskoden og oplåsning af siden |
 | `scripts/check-links.js` | Lokalt check af HTML-links og anchors uden ekstra dependencies |
+| `soeg.js` | Søgningen i menuen: søger i sider, dias og materialer med dansk ordstamme, synonymer og stavefejlstolerance |
+| `soegeindeks.json` | Søgeindekset, bygget med `scripts/byg-soegeindeks.js`. Commit det sammen med ændringer i indholdet |
+| `scripts/byg-soegeindeks.js` | Bygger søgeindekset. PDF-teksten gemmes i `scripts/soegeindeks-pdf-cache.json` |
 | `scripts/apps-script/Kode.gs` | Referencekopi af det Google Apps Script, der modtager evalueringssvar. Indeholder ingen hemmeligheder |
 | `filer/evaluering-opsaetning.md` | Opsætning og drift af evalueringen: regneark, udrulning, token og nye spørgsmål |
 | `assets/` | Håndlavede SVG-illustrationer til hver side |
@@ -71,3 +74,18 @@ kursusdagene. Følg altid UCL-PDF’en som hovedforløb, og læg egne moduler in
 markerede udvidelser. Nye dag-materialer formatteres som læsbar Markdown og publiceres kun,
 når den pågældende dag er klar. Nye moduler laves nemmest ved at kopiere en eksisterende
 modulside og tilføje et link i navigationen og på forsiden.
+
+### Søgeindekset
+
+Søgningen bruger en færdig indeksfil. Byg den igen, når sider, Markdown-materialer eller
+PDF'er er ændret:
+
+```bash
+node scripts/byg-soegeindeks.js          # skriver soegeindeks.json
+node scripts/byg-soegeindeks.js --tjek   # fejler, hvis indekset er forældet
+```
+
+Nye sider og materialer kommer automatisk med, når de er linket fra en deltagerside.
+Undervisersiden og det, der kun linkes derfra, holdes ude, og det samme gælder PDF-sider,
+der starter med "KUN TIL UNDERVISEREN". Ændrede PDF'er kræver `pdftotext` fra Poppler
+(fx `brew install poppler` eller `winget install poppler`). Uændrede PDF'er læses fra cachen.

@@ -1819,3 +1819,195 @@ html.laast body > *:not(.adgang) { display: none !important; }
 .pdf-link:focus-visible {
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.9), 0 0 0 4px var(--accent);
 }
+
+/* ---------- Søgning (soeg.js) ---------- */
+
+.soeg-knap {
+  order: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.7rem 0.3rem 0.6rem;
+  background: var(--card);
+  color: var(--muted);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font: inherit;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.soeg-knap:hover, .soeg-knap:focus-visible { color: var(--accent); border-color: var(--accent); }
+
+.soeg-knap kbd, .soeg-hjaelp kbd {
+  font: inherit;
+  font-size: 0.75rem;
+  padding: 0 0.35rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--muted);
+}
+
+@media (max-width: 860px) {
+  .soeg-knap { order: 0; margin-left: auto; }
+  .soeg-knap + .nav-burger { margin-left: 0.5rem; }
+  .soeg-knap kbd { display: none; }
+}
+
+html.soeg-aaben { overflow: hidden; }
+
+.soeg-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 900;
+  background: rgba(10, 14, 20, 0.5);
+  padding: 7vh 1rem 1rem;
+}
+
+.soeg-overlay[hidden] { display: none; }
+
+.soeg-panel {
+  display: flex;
+  flex-direction: column;
+  max-width: 46rem;
+  max-height: 84vh;
+  margin: 0 auto;
+  background: var(--card);
+  color: var(--fg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.soeg-top {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--muted);
+}
+
+.soeg-felt {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  background: transparent;
+  color: var(--fg);
+  font: inherit;
+  font-size: 1.15rem;
+  outline: none;
+}
+
+.soeg-felt::-webkit-search-cancel-button { display: none; }
+
+.soeg-luk {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.2rem 0.6rem;
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.soeg-filtre {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  padding: 0.7rem 1rem 0;
+}
+
+.soeg-filtre button {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.15rem 0.7rem;
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.soeg-filtre button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
+.soeg-filtre button:disabled { opacity: 0.45; cursor: default; }
+
+.soeg-status {
+  margin: 0;
+  padding: 0.6rem 1rem 0.4rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.soeg-liste {
+  list-style: none;
+  margin: 0;
+  padding: 0 0.5rem 0.5rem;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.soeg-liste a {
+  display: block;
+  padding: 0.65rem 0.7rem;
+  border-radius: 10px;
+  color: var(--fg);
+  text-decoration: none;
+}
+
+.soeg-liste a:hover, .soeg-liste a.aktiv { background: var(--accent-soft); }
+
+.soeg-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.soeg-type {
+  padding: 0 0.45rem;
+  border-radius: 999px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  background: var(--green-soft);
+  color: var(--green);
+}
+
+.soeg-type-dias { background: var(--blue-soft); color: var(--blue); }
+.soeg-type-materiale, .soeg-bilag { background: var(--amber-soft); color: var(--amber); }
+
+.soeg-titel { display: block; margin: 0.15rem 0 0.1rem; font-size: 1.02rem; }
+
+.soeg-uddrag {
+  display: block;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.soeg-liste mark { background: #ffe58a; color: inherit; padding: 0 1px; border-radius: 2px; }
+
+.soeg-hjaelp {
+  margin: 0;
+  padding: 0.5rem 1rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+@media (prefers-color-scheme: dark) {
+  .soeg-liste mark { background: #6b5400; }
+}
+
+@media (max-width: 600px) {
+  .soeg-overlay { padding: 0; }
+  .soeg-panel { max-height: none; height: 100%; border-radius: 0; border: none; }
+  .soeg-hjaelp { display: none; }
+}
+
+/* Diasshowet, et søgeresultat pegede på */
+.pdf-slideshow.pdf-fundet { outline: 3px solid var(--accent); outline-offset: 6px; border-radius: 6px; }

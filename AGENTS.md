@@ -62,8 +62,9 @@ Dette repository er kursussiden for **AI i praksis**. Arbejd altid videre i den 
 
 ## Før commit og push
 - Kør `get_errors` på alle ændrede HTML-, CSS- og JavaScript-filer.
-- Kør `node --check site.js evaluering.js resultater.js`, når JavaScript er ændret.
+- Kør `node --check site.js soeg.js evaluering.js resultater.js`, når JavaScript er ændret.
 - Kør `node scripts/check-links.js` efter ændringer i sider eller materialelinks.
+- Kør `node scripts/byg-soegeindeks.js` efter ændringer i sider, Markdown eller PDF'er, og commit `soegeindeks.json` og `scripts/soegeindeks-pdf-cache.json` med. `--tjek` viser, om indekset er forældet.
 - Kør `git diff --check`.
 - Kontrollér lokale links og assets, især dagspdf’er, Markdown-filer og billeder.
 - Se `git status --short`, og stage kun den dag og de materialer, der er klar til publicering.
@@ -77,6 +78,7 @@ Dette repository er kursussiden for **AI i praksis**. Arbejd altid videre i den 
 - `markdown.html`: rendered visning af lokale Markdown-filer
 - `scripts/check-links.js`: dependency-frit check af lokale HTML-links og anchors
 - `site.js`: navigation, diasvisning, Markdown-link-routing og interaktion
+- `soeg.js`, `soegeindeks.json` og `scripts/byg-soegeindeks.js`: søgningen og dens indeks. Undervisersider og sider mærket "KUN TIL UNDERVISEREN" må ikke komme med i indekset
 - `adgang.js`: adgangslåsen med loginboks og oplåsning af siden
 - `evaluering.js` og `resultater.js`: evalueringsformularen og den token-låste resultatside
 - `scripts/apps-script/Kode.gs`: referencekopi af Apps Script bag evalueringen. Læse-tokenet må aldrig i repoet

@@ -122,6 +122,25 @@
       });
     }
 
+    /**
+     * Giver overskrifterne id'er, så søgningen kan linke til et afsnit.
+     * Samme regel som slug() i scripts/byg-soegeindeks.js.
+     * @param {HTMLElement} container Elementet med det renderede materiale.
+     */
+    function addHeadingIds(container) {
+      var used = {};
+      container.querySelectorAll('h2, h3, h4, h5, h6').forEach(function (heading) {
+        var id = heading.textContent.toLowerCase().normalize('NFC')
+          .replace(/[^\p{L}\p{N}]+/gu, '-').replace(/^-+|-+$/g, '') || 'afsnit';
+        if (used[id]) { used[id] += 1; id = id + '-' + used[id]; } else { used[id] = 1; }
+        heading.id = id;
+      });
+      if (location.hash) {
+        var target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+        if (target) target.scrollIntoView();
+      }
+    }
+
     if (!file || !file.endsWith('.md') || file.indexOf('://') !== -1 || file.indexOf('..') !== -1) {
       title.textContent = 'Materialet kunne ikke åbnes';
       content.innerHTML = '<p>Linket til materialet er ikke gyldigt.</p>';
@@ -149,6 +168,7 @@
         document.title = title.textContent + ' | AI i praksis';
         showSource(file, sourceUrl, title.textContent);
         resolveLinks(content, sourceUrl);
+        addHeadingIds(content);
         if (window.AIPVideo) window.AIPVideo.opgrader(content);
       })
       .catch(function () {
@@ -157,5 +177,6 @@
       });
   })();
 </script>
+<script src="soeg.js"></script>
 </body>
 </html>

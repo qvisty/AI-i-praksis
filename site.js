@@ -69,6 +69,14 @@ document.querySelectorAll('[data-pdf-slideshow]').forEach(function (show) {
   var fullscreenButton = show.querySelector('[data-pdf-fullscreen]');
   var total = Number(show.getAttribute('data-pages')) || 1;
   var page = 1;
+  // Et søgeresultat kan pege direkte på et dias: side.html?dias=17#sektion.
+  var startPage = 1;
+  var diasParam = parseInt(new URLSearchParams(location.search).get('dias'), 10);
+  var maalSektion = location.hash ? document.getElementById(decodeURIComponent(location.hash.slice(1))) : null;
+  if (diasParam > 0 && maalSektion && maalSektion.contains(show)) {
+    startPage = diasParam;
+    show.classList.add('pdf-fundet');
+  }
   var pdf = null;
   var stage = canvas.parentNode;
   var linkLayer = document.createElement('div');
@@ -83,7 +91,7 @@ document.querySelectorAll('[data-pdf-slideshow]').forEach(function (show) {
     total = document.numPages;
     pageInput.max = total;
     pageCount.textContent = 'af ' + total;
-    showPage(1);
+    showPage(startPage);
   });
 
   function showPage(nextPage) {
@@ -705,3 +713,10 @@ if (!reducedMotion && 'IntersectionObserver' in window) {
     observer.observe(el);
   });
 }
+
+// Søgningen ligger i sin egen fil og hentes på alle sider, der bruger site.js.
+(function () {
+  var script = document.createElement('script');
+  script.src = 'soeg.js';
+  document.body.appendChild(script);
+})();
