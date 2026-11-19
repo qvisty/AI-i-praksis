@@ -714,6 +714,22 @@ if (!reducedMotion && 'IntersectionObserver' in window) {
   });
 }
 
+// Tjeklister: fluebenene huskes i deltagerens egen browser.
+document.querySelectorAll('[data-tjekliste]').forEach(function (liste) {
+  var noegle = 'ai-i-praksis-tjek:' + liste.getAttribute('data-tjekliste');
+  var gemt = [];
+  try { gemt = JSON.parse(localStorage.getItem(noegle) || '[]'); } catch (e) { gemt = []; }
+  var bokse = liste.querySelectorAll('input[type="checkbox"]');
+  bokse.forEach(function (boks, i) {
+    boks.checked = gemt.indexOf(i) !== -1;
+    boks.addEventListener('change', function () {
+      var valgt = [];
+      bokse.forEach(function (b, j) { if (b.checked) valgt.push(j); });
+      try { localStorage.setItem(noegle, JSON.stringify(valgt)); } catch (e) { /* ikke vigtigt */ }
+    });
+  });
+});
+
 // Søgningen ligger i sin egen fil og hentes på alle sider, der bruger site.js.
 (function () {
   var script = document.createElement('script');

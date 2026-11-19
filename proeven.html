@@ -22,43 +22,142 @@
     <div class="hero-text">
       <span class="badge">Eksamen</span>
       <h1>Prøven</h1>
-      <p class="lead">Alt om den afsluttende prøve: erhvervscasen, den mundtlige del og forberedelsen. Indholdet er på vej.</p>
+      <p class="lead">Alt om den afsluttende prøve: erhvervscasen, den mundtlige del og en tjekliste, du kan krydse af undervejs.</p>
     </div>
   </header>
 
-  <section id="indhold">
-    <h2>Indhold på vej</h2>
+  <section id="overblik">
+    <h2>Prøven på én side</h2>
+    <p>
+      Prøven består af to dele: et kort <strong>caseoplæg</strong>, som du afleverer før prøven, og en
+      <strong>mundtlig prøve</strong> på 30 minutter, hvor du folder analysen og konklusionen ud.
+      Du får én samlet karakter efter 7-trinsskalaen for caseoplægget og den mundtlige præstation tilsammen.
+    </p>
+    <table class="schedule">
+      <tr><th>Hvad</th><th>Rammen</th></tr>
+      <tr><td class="time">Modul</td><td>Vf27: AI i praksis, 5 ECTS. Mundtlig prøve kombineret med en erhvervscase. Intern censur.</td></tr>
+      <tr><td class="time">Caseoplægget</td><td>Højst 2 normalsider, cirka 4.800 tegn med mellemrum. Det kan også være en kort video, der viser en virkelighedsnær situation fra din praksis.</td></tr>
+      <tr><td class="time">Indhold</td><td>Problemstilling, problemformulering og metodeovervejelser. Analysen og konklusionen kommer først til den mundtlige prøve.</td></tr>
+      <tr><td class="time">Den mundtlige prøve</td><td>30 minutter i alt: cirka 7 minutters oplæg, 15 minutters samtale og 7 minutters votering og tilbagemelding.</td></tr>
+    </table>
     <div class="note">
-      <span class="label">Under opbygning</span>
-      Her samles vejledningen til prøven, efterhånden som den bliver klar. De formelle rammer,
-      tilmelding og datoer står altid hos
-      <a href="https://www.ucl.dk/efteruddannelser-og-kurser/efteruddannelser/akademimoduler/ai-i-praksis" target="_blank" rel="noopener">UCL</a>.
+      <span class="label">Datoer og aflevering</span>
+      Fristen for caseoplægget, tid og sted for prøven og måden at aflevere på står hos UCL og på itslearning.
+      Tjek dem nu, og skriv fristen ind i din kalender. Kilden til rammerne her er
+      <a href="filer/Ai-i-praksis-pr%C3%B8ve/studieordning.pdf">studieordningen for modulet</a>.
     </div>
   </section>
 
-  <!-- Skabelon til senere: fjern kommentartegnene, og fyld ud.
+  <section id="tjekliste">
+    <h2>Tjeklisten</h2>
+    <p>
+      Kryds af, efterhånden som du bliver færdig. Dine flueben gemmes kun i din egen browser.
+      Brug knappen <strong>Print handout</strong>, hvis du vil have listen på papir.
+    </p>
+    <div class="exercise">
+      <span class="label">1. Vælg casen, gerne nu</span>
+      <ul class="tjekliste" data-tjekliste="proeve-casen">
+        <li><label><input type="checkbox"><span>Jeg har valgt en <strong>konkret udfordring fra mit eget job</strong>, ikke et bredt emne som "AI i sundhedssektoren".</span></label></li>
+        <li><label><input type="checkbox"><span>Udfordringen handler om, hvordan AI kan bruges i <strong>min praksis</strong>, og hvad min faglighed betyder for løsningen.</span></label></li>
+        <li><label><input type="checkbox"><span>Jeg kan beskrive casen uden persondata og fortrolige oplysninger, og jeg bruger fiktive eksempler, hvor det er nødvendigt.</span></label></li>
+        <li><label><input type="checkbox"><span>Jeg har tjekket fristen og afleveringsformen hos UCL eller på itslearning.</span></label></li>
+      </ul>
+    </div>
+    <div class="exercise">
+      <span class="label">2. Skriv caseoplægget, højst 2 sider</span>
+      <ul class="tjekliste" data-tjekliste="proeve-oplaeg">
+        <li><label><input type="checkbox"><span><strong>Problemstilling:</strong> hvad er situationen, hvem berører den, og hvorfor er den et problem nu?</span></label></li>
+        <li><label><input type="checkbox"><span><strong>Problemformulering:</strong> ét spørgsmål, der kan besvares. Fx "Hvordan kan … bruge AI til …, uden at …?"</span></label></li>
+        <li><label><input type="checkbox"><span><strong>Teorier og modeller:</strong> jeg har valgt dem, der passer til casen, og skrevet, hvorfor. Se forslagene i afsnittet <a href="#kurset">Brug kurset i din case</a>.</span></label></li>
+        <li><label><input type="checkbox"><span><strong>Empiri:</strong> jeg har skrevet, hvad jeg vil undersøge, og hvordan. Fx egen afprøvning med logbog, tidsmåling før og efter, sammenligning med det oprindelige eller samtaler med kolleger.</span></label></li>
+        <li><label><input type="checkbox"><span>Jeg har <strong>ikke</strong> skrevet analysen og konklusionen. De kommer til den mundtlige prøve.</span></label></li>
+        <li><label><input type="checkbox"><span>Navn, modul og antal tegn står på forsiden, og jeg er under cirka 4.800 tegn med mellemrum.</span></label></li>
+        <li><label><input type="checkbox"><span>Jeg har skrevet kort, hvordan jeg selv har brugt AI til opgaven, og hvilke værktøjer. Det er ikke et krav i studieordningen, men det er god skik.</span></label></li>
+      </ul>
+    </div>
+    <div class="exercise">
+      <span class="label">3. Lav undersøgelsen, før prøven</span>
+      <ul class="tjekliste" data-tjekliste="proeve-analyse">
+        <li><label><input type="checkbox"><span>Jeg har afprøvet mindst ét AI-værktøj på opgaven og gemt prompts, resultater og mine noter.</span></label></li>
+        <li><label><input type="checkbox"><span>Jeg har kontrolleret resultaterne manuelt og noteret fejl, fx hallucinationer, udeladelser eller skævheder.</span></label></li>
+        <li><label><input type="checkbox"><span><strong>Lovgivning:</strong> jeg ved, hvilket risikoniveau i AI Act løsningen hører til, om min arbejdsplads er udbyder eller idriftsætter, og hvad GDPR betyder for de data, der indgår.</span></label></li>
+        <li><label><input type="checkbox"><span><strong>Integration:</strong> jeg kan forklare, hvordan løsningen passer ind i de IT-systemer, vi allerede har, og hvem der skal godkende den.</span></label></li>
+        <li><label><input type="checkbox"><span>Jeg har 2-3 <strong>begrundede handlemuligheder</strong>, og jeg kender ulemperne ved hver af dem.</span></label></li>
+      </ul>
+    </div>
+    <div class="exercise">
+      <span class="label">4. Øv den mundtlige prøve</span>
+      <ul class="tjekliste" data-tjekliste="proeve-mundtlig">
+        <li><label><input type="checkbox"><span>Mit oplæg tager cirka 7 minutter: casen kort, hvad jeg gjorde, hvad jeg fandt, og hvad jeg anbefaler.</span></label></li>
+        <li><label><input type="checkbox"><span>Jeg har øvet oplægget højt med et ur, gerne for en kollega eller en sidemakker fra holdet.</span></label></li>
+        <li><label><input type="checkbox"><span>Hvis jeg viser noget, har jeg skærmbilleder eller en PDF som reserve, hvis nettet driller.</span></label></li>
+        <li><label><input type="checkbox"><span>Jeg har forberedt svar på spørgsmålene i afsnittet <a href="#mundtlig">Den mundtlige prøve</a>.</span></label></li>
+        <li><label><input type="checkbox"><span>Jeg kan forklare min løsning for en kollega uden fagsprog.</span></label></li>
+      </ul>
+    </div>
+  </section>
 
   <section id="erhvervscasen">
     <h2>Erhvervscasen</h2>
-    <p>...</p>
+    <p>
+      Caseoplægget skitserer et virkelighedsnært scenarie: en konkret, personlig og jobrelateret udfordring.
+      Det skal vise, hvad du vil undersøge, og hvordan. Selve undersøgelsen og dens resultater
+      præsenterer du til den mundtlige prøve.
+    </p>
+    <div class="explain">
+      <span class="label">En god problemformulering</span>
+      Den er så smal, at du kan nå at undersøge den, og så åben, at svaret ikke er givet på forhånd.
+      Den nævner gerne både muligheden og prisen, fx: <em>"Hvordan kan kommunale sagsbehandlere bruge
+      generativ AI til resuméer af sagsakter, uden at det går ud over kvaliteten og det etiske ansvar?"</em>
+    </div>
+    <h3>To eksempler på caseoplæg</h3>
+    <ul>
+      <li><a href="filer/Ai-i-praksis-pr%C3%B8ve/EksempelEksamensopgave2.pdf">AI i den kommunale sagsbehandling</a>: problemstilling om bias og hallucinationer, med interview og triangulering som metode.</li>
+      <li><a href="filer/Ai-i-praksis-pr%C3%B8ve/Erhvervscase_AI_i_praksis_Jobcenter_M365_Erik_Weber-Lauridsen.pdf">AI-assisteret triagering i et jobcenter</a>: et eksempel fra en UCL-underviser med AI Act, GDPR og Microsoft 365.</li>
+    </ul>
+    <p>Brug eksemplerne til at se formen. Din egen case skal tage udgangspunkt i dit eget job.</p>
   </section>
 
   <section id="mundtlig">
     <h2>Den mundtlige prøve</h2>
-    <p>...</p>
-  </section>
-
-  <section id="forberedelse">
-    <h2>Sådan forbereder du dig</h2>
+    <table class="schedule">
+      <tr><th>Del</th><th>Hvad sker der</th></tr>
+      <tr><td class="time">Oplæg, ca. 7 min</td><td>Du præsenterer casen kort, hvad du har undersøgt, hvad du fandt, og hvad du anbefaler.</td></tr>
+      <tr><td class="time">Samtale, ca. 15 min</td><td>Eksaminator og censor spørger ind til dine valg, din analyse og kursets stof.</td></tr>
+      <tr><td class="time">Votering, ca. 7 min</td><td>Du venter udenfor, og bagefter får du karakteren og en kort begrundelse.</td></tr>
+    </table>
     <div class="exercise">
-      <span class="label">Tjekliste</span>
+      <span class="label">Øv svarene på de typiske spørgsmål</span>
       <ol class="steps">
-        <li>...</li>
+        <li>Hvorfor valgte du netop det værktøj, og hvad var alternativet?</li>
+        <li>Hvordan ved du, at resultatet er rigtigt? Hvordan kontrollerede du det?</li>
+        <li>Hvor kan bias eller hallucinationer gøre skade i din case?</li>
+        <li>Hvad siger AI Act og GDPR om din løsning, og hvem har ansvaret?</li>
+        <li>Hvordan passer løsningen ind i jeres eksisterende IT, og hvem skal sige god for den?</li>
+        <li>Hvad er svaghederne ved din metode, og hvad ville du gøre anderledes?</li>
+        <li>Hvordan vil du forklare og udbrede løsningen til dine kolleger?</li>
       </ol>
     </div>
   </section>
 
-  -->
+  <section id="kurset">
+    <h2>Brug kurset i din case</h2>
+    <p>Studieordningens læringsmål og de steder på kurset, hvor du finder stoffet til dem.</p>
+    <table class="schedule">
+      <tr><th>Læringsmål</th><th>Her finder du stoffet</th></tr>
+      <tr><td class="time">AI-løsninger i din praksis</td><td><a href="dag-1.html">Dag 1</a> om, hvordan sprogmodeller virker, og <a href="modul-3-ai-i-hverdagen.html">Modul 3: AI i din arbejdsdag</a>.</td></tr>
+      <tr><td class="time">Lovgivning</td><td><a href="dag-4.html#program-ansvar">Dag 4: AI Act og risikoniveauer</a>, <a href="dag-4.html#begreber">begrebstabellen</a> og <a href="dag-4.html#vandmaerker">mærkning af AI-indhold</a>.</td></tr>
+      <tr><td class="time">Bias og risici</td><td><a href="dag-4.html#program-ansvar">Dag 4: bias og hallucinationer</a> og <a href="dag-2.html#materialer">Dag 2: etik og ophavsret</a>.</td></tr>
+      <tr><td class="time">Værktøjer til konkrete opgaver</td><td><a href="dag-2.html#oevelser">Dag 2: prompting</a>, <a href="modul-3b-copilot-agenter.html">Modul 3b: agenter i Copilot</a> og <a href="modul-5-andre-modaliteter.html">Modul 5: NotebookLM</a>.</td></tr>
+      <tr><td class="time">Integration med eksisterende IT</td><td><a href="modul-4-automatisering.html#grundmodellen">Modul 4: grundmodellen</a> og <a href="dag-4.html#program-automatisering">Dag 4: automatisering, agenter og RAG</a>.</td></tr>
+      <tr><td class="time">Formidling til andre</td><td><a href="modul-4-automatisering.html#oevelse-4">Modul 4: Fortæl det videre</a>.</td></tr>
+      <tr><td class="time">Udvikling af digitale løsninger</td><td><a href="modul-1-lovable.html">Modul 1: byg en app</a> og <a href="modul-2-github-claude.html">Modul 2: GitHub og Claude Code</a>.</td></tr>
+    </table>
+    <div class="note">
+      <span class="label">Prioritér</span>
+      Du skal ikke bruge det hele. Vælg de to-tre teorier og modeller, der passer bedst til din case, og brug dem grundigt.
+    </div>
+  </section>
 
   <section id="evaluering">
     <h2>Evaluér hele kurset</h2>

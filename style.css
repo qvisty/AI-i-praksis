@@ -2011,3 +2011,10 @@ html.soeg-aaben { overflow: hidden; }
 
 /* Diasshowet, et søgeresultat pegede på */
 .pdf-slideshow.pdf-fundet { outline: 3px solid var(--accent); outline-offset: 6px; border-radius: 6px; }
+
+/* Tjeklister med flueben, der huskes i browseren (site.js) */
+.tjekliste { list-style: none; padding: 0; margin: 0.4rem 0 0; }
+.tjekliste li { margin: 0.45rem 0; }
+.tjekliste label { display: flex; gap: 0.6rem; align-items: flex-start; cursor: pointer; }
+.tjekliste input { width: 1.15rem; height: 1.15rem; margin-top: 0.3rem; flex-shrink: 0; accent-color: var(--accent); }
+.tjekliste label:has(input:checked) { color: var(--muted); }
